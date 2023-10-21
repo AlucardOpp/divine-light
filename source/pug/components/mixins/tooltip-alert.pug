@@ -1,0 +1,7 @@
+mixin tooltip-alert(options = {})
+  - const hasNotIconClose = options.hasNotIconClose || false;
+
+  span.tooltip-alert(data-tooltip="parrent")&attributes(attributes)
+    +icon('alert', 20, 20).tooltip-alert__icon
+    +tooltip-content().tooltip-alert__content
+      block

@@ -1,0 +1,34 @@
+mixin slider-cards(options = {})
+  - const hasPagination = options.hasPagination || false;
+  - const buttonMoveSize = options.buttonMoveSize || false;
+  - const buttonNextMoveClasses = [];
+  - const buttonPrevMoveClasses = [];
+  - const buttonMoveTransparent = options.buttonMoveTransparent || false;
+
+  -
+    if (buttonMoveSize === "smallTablet") {
+      buttonNextMoveClasses.push("slider-cards__swiper-button-next--size-small-tablet")
+      buttonPrevMoveClasses.push("slider-cards__swiper-button-prev--size-small-tablet")
+    }
+
+    if (buttonMoveSize === "small") {
+      buttonNextMoveClasses.push("slider-cards__swiper-button-next--small")
+      buttonPrevMoveClasses.push("slider-cards__swiper-button-prev--small")
+    }
+
+  -
+    if (buttonMoveTransparent) {
+      buttonNextMoveClasses.push("slider-cards__swiper-button-next--transparent")
+      buttonPrevMoveClasses.push("slider-cards__swiper-button-prev--transparent")
+    }
+
+  .slider-cards()&attributes(attributes)
+    .slider-cards__swiper.swiper(data-swiper="slider-cards")
+      .slider-cards__swiper-wrapper.swiper-wrapper
+        if block
+          block
+      .slider-cards__swiper-button-next.swiper-button-next(class=buttonNextMoveClasses, data-swiper="button-next")
+      .slider-cards__swiper-button-prev.swiper-button-prev(class=buttonPrevMoveClasses, data-swiper="button-prev")
+      if (hasPagination)
+        .swiper-pagination
+

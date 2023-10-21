@@ -1,0 +1,193 @@
+.filter-select-list {
+  position: relative;
+  width: size(187px);
+  padding: 0;
+  padding-bottom: size(10px);
+
+  @include vp-767 {
+    width: size(160px);
+    padding-bottom: 0;
+  }
+
+  &.is-open {
+    z-index: 7;
+
+    .filter-select-list__button svg {
+      transform: rotate(0);
+    }
+
+    .filter-select-list__list {
+      @include vp-767 {
+        transform: translateX(0);
+      }
+    }
+
+    .filter-select-list__btn-show {
+      @include vp-767 {
+        left: 16px;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+      }
+    }
+
+    .filter-type {
+      @include vp-767 {
+        position: fixed;
+        display: flex;
+        align-items: center;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin-left: 0;
+        margin-right: 0;
+        z-index: 2;
+      }
+    }
+  }
+
+  &__button {
+    width: size(178px);
+    height: size(48px);
+    padding-left: size(13px);
+    padding-right: 0;
+    background-color: $color-transparent;
+    border: 2px solid $color-alice-blue-3;
+    border-radius: size(12px);
+    color: $color-bermuda-grey;
+    transition:  border-color $trans-default;
+
+    @include vp-1023 {
+      margin-left: auto;
+    }
+
+    @include vp-767 {
+      width: size(160px);
+      height: size(40px);
+      font-size: size(14px);
+      line-height: size(18px);
+    }
+
+    @include has-hover {
+      &:hover {
+        border-color: $color-lemon;
+      }
+    }
+
+    &:focus {
+      border-color: $color-lemon;
+    }
+
+    span {
+      color: $color-black-pearl;
+    }
+
+    svg {
+      will-change: transform;
+      transform: rotate(180deg);
+      transition: transform $trans-default, fill $trans-default;
+    }
+  }
+
+  &__list {
+    bottom: 10px;
+    max-height: size(195px);
+    border: none;
+    box-shadow: 0 0 size(3px) 0 rgba($color-black-pearl, 0.03), 0 size(8px) size(32px) 0 rgba($color-black-pearl, 0.08);
+    border-radius: size(12px);
+
+    @include vp-767 {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      left: 0;
+      height: 100vh;
+      max-height: unset;
+      padding-top: size(67px);
+      transform: translateX(-100%);
+      transition: transform $trans-1000, opacity $trans-default, visibility $trans-default;
+      overflow: auto;
+    }
+  }
+
+  &__item {
+    position: relative;
+    padding: size(12px) size(6px) size(12px) size(40px);
+    color: $color-fiord;
+
+    @include vp-767 {
+      padding: size(8px) size(32px) size(10px) size(48px);
+    }
+
+    &::after {
+      @include vp-767 {
+        content: "";
+        position: absolute;
+        top: size(7px);
+        left: size(16px);
+        width: size(24px);
+        height: size(24px);
+        border-radius: 50%;
+        border: 2px solid $color-solitude-1;
+        transition: background-color $trans-default, border-color $trans-default, color $trans-default;
+      }
+    }
+
+    @include has-hover {
+      &:hover {
+        background-color: $color-ivory;
+        color: $color-black-pearl;
+      }
+    }
+
+    &[aria-selected='true'] {
+      color: $color-black-pearl;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: size(18px);
+        left: size(14px);
+        width: size(16px);
+        height: size(11px);
+        background-size: size(16px) size(11px);
+        background-image: url("../img/svg/icon-check.svg");
+        background-repeat: no-repeat;
+
+        @include vp-767 {
+          top: size(13px);
+          left: size(22px);
+          width: size(12px);
+          height: size(12px);
+          background-image: none;
+          background-color: $color-default-white;
+          border-radius: 50%;
+          z-index: 1;
+        }
+      }
+
+      &:after {
+        @include vp-767 {
+          background-color: $color-lemon;
+          border-color: $color-lemon;
+        }
+      }
+    }
+  }
+
+  &__btn-show {
+    display: none;
+
+    @include vp-767 {
+      display: block;
+      position: fixed;
+      bottom: size(24px);
+      width: calc(100% - 16px * 2);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      z-index: 1;
+    }
+  }
+}

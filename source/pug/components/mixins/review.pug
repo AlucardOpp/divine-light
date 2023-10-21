@@ -1,0 +1,21 @@
+mixin review(data)
+  .review
+    .review__head
+      .review__img
+        +icon("login", 20, 20)
+      .review__inner
+        p.review__name!=data.name
+        +rating
+    .review__text.read-more
+      span.read-more__text-before
+        span.read-more__text.read-more__text--before!=data.text_before
+        span.read-more__separator-before .
+      if (data.text_after)
+        span.read-more__text-after(id="moreInfo")
+          span.read-more__separator-after ...
+          span.read-more__text!=data.text_after
+        button.read-more__button(type="button", aria-label="читать дальше", aria-describedby="moreInfo")
+          span Еще
+    p.review__footer
+      span!=data.date
+      span!=data.city

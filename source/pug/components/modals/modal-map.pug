@@ -1,0 +1,16 @@
+mixin modal-map()
+  .modal-map
+    .modal-map__map.scaffold-item
+      | карта
+    .modal-map__form
+      form(action="#")
+        .modal-map__form-wrap
+          button.btn.btn--light.modal-map__location(type="button", aria-label="Поиск местоположения")
+            +icon("location", 13, 11)
+          +custom-input({
+            style: 'simple',
+            inputLabel: "Адрес",
+            hasButton: true,
+            iconInButton: ['search--max-bleed', 16, 16],
+          })(data-validate-type="text").modal-map__input
+          button.btn.modal-map__btn(type="submit") Привезти сюда

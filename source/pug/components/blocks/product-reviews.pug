@@ -1,0 +1,27 @@
+mixin product-reviews({reviewList, hasBtn})
+  section.product-reviews
+    h2.visually-hidden Озтзывы покупателей на купленный товар
+    ul.product-reviews__reviews-list
+      each item in reviewList
+        li.product-reviews__review
+          span.product-reviews__author !{item.author}
+          .product-reviews__column
+            .product-reviews__rating
+              +rating-diagram(80, 16, 100, "stars", "stars-color").rating-diagram--size-80-16
+              span.product-reviews__date !{item.reviewDate}
+
+            .product-reviews__text-wrapper
+              if (item.textExcerpt)
+                p(data-text-excerpt).product-reviews__text !{item.textExcerpt}
+                +btn({text: "Читать полностью"})(aria-label="читать дальше", data-show-text-btn).product-reviews__text-btn.btn--ghost.btn--fiord.btn--underline.btn--hover-lemon
+                p.product-reviews__text(data-all-text).is-hide !{item.text}
+                +btn({text: "Скрыть"})(aria-label="скрыть", data-hide-text-btn).product-reviews__text-btn.btn--ghost.btn--fiord.btn--underline.btn--hover-lemon.is-hide
+              else
+                p.product-reviews__text !{item.text}
+
+            if (item.imgList)
+              +fancybox-img(item.imgList)
+
+    if (hasBtn === true)
+      .product-reviews__btn
+        +btn({text: "Показать больше отзывов"}).btn.btn--true-secondary.product-reviews__button

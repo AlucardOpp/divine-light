@@ -1,0 +1,26 @@
+.map {
+  .clusterIcon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+
+    color: red;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  & [class*=-default-cluster] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__main-marker {
+    svg {
+      filter: drop-shadow(0px 0px 1px rgba(0, 30, 52, 0.05)) drop-shadow(0px 12px 24px rgba(0, 30, 52, 0.2));
+    }
+  }
+}

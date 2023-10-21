@@ -1,0 +1,24 @@
+mixin checkout-item(options = {})
+  - const icon = options.icon || false;
+  - const phone = options.phone || ''
+  - const href = options.href || ''
+  - const text = options.text || ''
+  - const title = options.title || ''
+  - const note = options.note || ''
+  - const button = options.button || false
+
+  .checkout-item
+    if icon
+      +icon(...icon).checkout-item__icon
+    .checkout-item__column
+      if title
+        h3.checkout-item__title!= title
+      if phone
+        a.link.checkout-item__phone(href=href)!=phone
+      if text
+        p.checkout-item__text!= text
+      if note
+        p.checkout-item__note!= note
+    if button
+      +btn({text: "Изменить"}).btn--true-secondary.checkout-item__button
+

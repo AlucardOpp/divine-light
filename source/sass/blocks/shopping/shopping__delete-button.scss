@@ -1,0 +1,28 @@
+.shopping {
+  &__delete-button {
+    padding-bottom: 1px;
+
+    font-size: 14px;
+    line-height: 18px;
+    color: $color-fiord;
+
+    border-bottom: 1px solid $color-fiord;
+    border-radius: 0;
+
+    transition: $trans-default;
+    transition-property: border-color, color, background-color;
+
+    @include has-hover {
+      &:hover {
+        color: $color-black-pearl;
+
+        background-color: $color-laser-lemon;
+        border-color: $color-black-pearl;
+      }
+    }
+  }
+
+  .tooltip-content__text + &__delete-button {
+    margin-top: 16px;
+  }
+}

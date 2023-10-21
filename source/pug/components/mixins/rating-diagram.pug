@@ -1,0 +1,5 @@
+mixin rating-diagram(width, height, rating, iconName, iconColorName)
+  .rating-diagram()&attributes(attributes)
+    +icon(iconName, width, height)
+    span.rating-diagram__color(style = `width: ${rating}%`)
+      +icon(iconColorName, width, height)

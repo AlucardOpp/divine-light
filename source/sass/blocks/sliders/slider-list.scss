@@ -1,0 +1,26 @@
+.slider-list {
+
+  &__container {
+    margin-left: size(-8px);
+  }
+
+  &__item {
+    margin-left: size(8px);
+    margin-right: 0;
+    width: auto;
+    height: auto;
+
+    &.swiper-slide-active {
+      background-color: $color-lemon;
+      color: $color-black-pearl;
+      pointer-events: none;
+    }
+
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &:hover,
+      &:focus {
+        background-color: $color-solitude-2;
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+// @font-face {
+//   font-style: normal;
+//   font-weight: 400;
+//   font-family: "Rouble";
+
+//   font-display: swap;
+//   src:
+//     url("../fonts/rouble.woff2") format("woff2"),
+//     url("../fonts/rouble.woff") format("woff");
+// }
+
+@font-face {
+  font-weight: 300;
+  font-family: "DIN2014Web";
+  font-style: normal;
+  src: url("../fonts/DIN-2014_Light.woff2") format("woff2"),
+    url("../fonts/DIN-2014_Light.woff") format("woff");
+
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 400;
+  font-family: "DIN2014Web";
+  font-style: normal;
+  src: url("../fonts/DIN-2014_Regular.woff2") format("woff2"),
+    url("../fonts/DIN-2014_Regular.woff") format("woff");
+
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 600;
+  font-family: "DIN2014Web";
+  font-style: normal;
+  src: url("../fonts/DIN-2014_Demi.woff2") format("woff2"),
+    url("../fonts/DIN-2014_Demi.woff") format("woff");
+
+  font-display: swap;
+}

@@ -1,0 +1,27 @@
+mixin modal-city(data, searchList)
+  .modal-city
+    .modal-city__navbar.title-2.js-navbar
+      h2 Выберите город
+    .modal-city__wrp.js-scroll-wrp
+      form(method="get" action="#")
+        //- +custom-input({inputPlaceholder: "Ваш город", inputName: "city-search"})
+        //-   .modal-city__input-icon
+        //-     +btn({type: "button"}).btn--primary
+        //-       +icon("search", 24, 24)
+        .custom-input.custom-input--simple-type
+          label(data-frize-label="parent")
+            input(type="text", name="search" id="search", data-frize-label="input")
+            span(class="custom-input__label" data-frize-label="element") Ваш город
+            .modal-city__input-icon
+              +btn({type: "button"}).btn--primary
+                +icon("search", 24, 24)
+        +link({href:"#"}).modal-city__city-btn Определить город
+        .modal-city__wrap-list
+          ul.modal-city__list
+            each item in data
+              li.modal-city__item
+                +custom-input({inputLabel: item.inputLabel, inputType: item.inputType, inputName: item.inputName, inputValue: item.inputValue})
+          ul.modal-city__search-list
+            each item in searchList
+              li.modal-city__search-item
+                +link({href:"#"}).modal-city__search-link(class=item.class ? item.class : null)!=item.letter

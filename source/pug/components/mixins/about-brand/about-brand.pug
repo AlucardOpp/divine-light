@@ -1,0 +1,15 @@
+mixin about-brand()
+  include ./about-brand-data
+
+  .about-brand(data-accordion="parent")
+    .about-brand__accordion(data-accordion="element")
+      .about-brand__head
+        .about-brand__head-content
+          .about-brand__img
+            +picture("content", "logo-mw-light", "png", 94, 31, "лого компании АРТЕ Ламп")
+          p!= data.text.prepend.firstPart
+          button(type="button" aria-label="развернуть блок" data-accordion="button" toggle-button).about-brand__btn
+            +icon("arrow-down", 24, 15)
+      .about-brand__body(data-accordion="content")
+        p!= data.text.prepend.secondPart
+        p!= data.text.prepend.thirdPart

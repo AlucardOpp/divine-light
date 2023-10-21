@@ -1,0 +1,10 @@
+.might-like {
+  &__filters {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: flex-start;
+  }
+}

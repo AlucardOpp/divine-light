@@ -1,0 +1,25 @@
+.light-header {
+  &__phone {
+    white-space: nowrap;
+    justify-self: flex-end;
+    margin-right: 50px;
+    padding: 0 2px;
+
+    @include vp-1279 {
+      margin-right: 34px;
+    }
+
+    @include vp-1023 {
+      margin-right: 48px;
+    }
+
+    @include vp-767 {
+      order: 1;
+      margin-right: 0;
+    }
+
+    @include has-hover {
+      color: $color-black-pearl;
+    }
+  }
+}

@@ -1,0 +1,644 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "UI-kit";
+  - const hasMap = true
+
+  -
+    const bonusDelivery = {
+        mod: "delivery",
+        ok: "true",
+        bonus: "+250 бонусов",
+        delivery: "Доставка 1 ₽"
+      }
+
+  -
+    const bonusDelivery2 = {
+        bonus: "+250 бонусов",
+        delivery: "Доставка 1 ₽"
+      }
+
+block main
+  style.
+    main {
+      margin-top: 100px;
+    }
+
+    main > .container {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+
+    .components-backwards {
+      color: #ffffff;
+      display: inline-block;
+    }
+
+    .components-backwards span:first-child {
+      position: relative;
+      top: -3px;
+
+      display: inline-block;
+      margin-right: 15px;
+
+      font-size: 16px;
+      line-height: 24px;
+      vertical-align: top;
+
+      transform: scale(2);
+    }
+
+    .components-backwards span:last-child {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    .components-backwards + h1 {
+      margin-bottom: 0;
+    }
+
+    .container > section {
+      padding: 70px 0 0 0;
+    }
+
+    section > h2 {
+      margin: 0 0 20px 0;
+      padding: 20px 0;
+      position: relative;
+      color: #ffffff;
+    }
+
+    section > h2::before {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 100vw;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+      background-color: #2c39f2;
+      z-index: -1;
+    }
+
+    .header-ui {
+      background-color: #2c39f2;
+      padding: 20px 0;
+      position: fixed;
+      width: 100vw;
+      z-index: 99;
+      box-shadow: 0 0 3px 1px #000000;
+    }
+
+    .header-ui__nav {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      gap: 20px 80px;
+    }
+
+    .header-ui__inner-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 30px;
+    }
+
+    .header-ui__inner-link {
+      color: #ffffff;
+      transition: color 0.3s ease;
+    }
+
+    .header-ui__inner-link:hover,
+    .header-ui__inner-link.is-active {
+      color: #ff1553;
+    }
+
+    .header-ui__inner-link.is-inactive {
+      color: #ffffff;
+      pointer-events: none;
+    }
+
+  header.header-ui
+    nav.header-ui__nav.container
+      a.components-backwards(href="sitemap.html")
+        span &larr;
+        span вернуться на разводящую
+      ul.header-ui__inner-list
+        li.header-ui__inner-item
+          a.header-ui__inner-link(href="#modals", data-navigation-link) Modals
+        li.header-ui__inner-item
+          a.header-ui__inner-link(href="#buttons", data-navigation-link) Buttons
+        li.header-ui__inner-item
+          a.header-ui__inner-link(href="#links", data-navigation-link) Links
+        li.header-ui__inner-item
+          a.header-ui__inner-link(href="#form-elements", data-navigation-link) Form elements
+        li.header-ui__inner-item
+          a.header-ui__inner-link(href="#badges", data-navigation-link) Badges
+        li.header-ui__inner-item
+          a.header-ui__inner-link(href="#titles", data-navigation-link) Titles
+        li.header-ui__inner-item
+          a.header-ui__inner-link(href="#rating", data-navigation-link) Rating
+        li.header-ui__inner-item
+          a.header-ui__inner-link(href="#cards", data-navigation-link) Card options
+        li.header-ui__inner-item
+          a.header-ui__inner-link(href="#bonus-delivery", data-navigation-link) Bonus+delivery
+
+  main
+    .container
+      h1 UI-kit
+      //- все модалки проекта добавляем сюда, для удобства тестирования
+      section#modals
+        h2 Modals
+        p
+          +btn({text: "modal-feedback"})(data-open-modal="feedback")
+        p
+          +btn({text: "modal-success"})(data-open-modal="success")
+        p
+          +btn({text: "modal-filter"})(data-open-modal="filter")
+        p Окно "Увы мы не нашли.."
+          +btn({text: "modal-alas"})(data-open-modal="alas")
+        p Окно "Авторизация"
+          +btn({text: "modal-authorization"})(data-open-modal="authorization")
+        p
+          +btn({text: "modal-delivery"})(data-open-modal="modal-delivery")
+        p
+          +btn({text: "modal-cheap"})(data-open-modal="modal-cheap")
+        p
+          +btn({text: "modal-install"})(data-open-modal="modal-install")
+        p
+          +btn({text: "modal-buy"})(data-open-modal="modal-buy")
+        p
+          +btn({text: "modal-parts"})(data-open-modal="modal-parts")
+
+
+      section#buttons
+        h2 Buttons
+
+        +btn({text: "я меньше"}).btn--size-small
+        p Пример вызова
+        code
+          pre +btn({text: "я меньше"}).btn--size-small
+
+        +btn({text: "я нормального размера"})
+        p Пример вызова
+        code
+          pre +btn({text: "я нормального размера"})
+
+        +btn({text: "я больше"}).btn--size-medium
+        p Пример вызова
+        code
+          pre +btn({text: "я больше"}).btn--size-medium
+
+        +btn({text: "У меня жирный шрифт"}).btn--wight-medium
+        p Пример вызова
+        code
+          pre +btn({text: "У меня жирный шрифт"}).btn--wight-medium
+
+        +btn({text: "меняется цвет рамки при hover"}).btn--outline
+        p Пример вызова
+        code
+          pre +btn({text: "меняется цвет рамки при hover"}).btn--outline
+
+        +btn({text: "меняется цвет фона при hover"}).btn--light
+        p Пример вызова
+        code
+          pre +btn({text: "меняется цвет фона при hover"}).btn--light
+
+        +btn({text: "кнопка disabled"})(disabled)
+        p Пример вызова
+        code
+          pre +btn({text: "кнопка disabled"})(disabled)
+
+        +btn({text: "Текст в кнопке"}).btn--secondary
+        p Пример вызова
+        code
+          pre +btn({text: "Текст в кнопке"}).btn--secondary
+
+        +btn({text: "кнопка disabled"}).btn--secondary(disabled)
+        p Пример вызова
+        code
+          pre +btn({text: "кнопка disabled"})(disabled).btn--secondary
+
+        +btn
+          +icon("plus", 16, 16)
+        p Пример вызова
+        code
+          pre +btn() <br>
+            | &nbsp;&nbsp;+icon("plus", 16, 16)
+
+        +btn.btn--secondary
+          +icon("minus", 16, 2)
+        p Пример вызова
+        code
+          pre +btn().btn--secondary <br>
+            | &nbsp;&nbsp;+icon("minus", 16, 2)
+
+        +btn.btn--outline
+          +icon("market", 24, 24).icon--size-medium
+        p Пример вызова
+        code
+          pre +btn().btn--outline <br>
+            | &nbsp;&nbsp;+icon("market", 24, 24).icon--size-medium
+
+        +btn
+          +icon("burger", 24, 24).btn__icon.btn__icon--margin-right
+          | Каталог
+        p Пример вызова
+        code
+          pre +btn() <br>
+            | &nbsp;&nbsp;+icon("burger", 24, 24).btn__icon.btn__icon--margin-right
+            | &nbsp;&nbsp;| Каталог
+
+        +btn({href: "#"}).btn--ghost.btn--direction-column
+          +icon("market", 16, 14).btn__icon.btn__icon--margin-bottom.icon--size-medium
+          | Корзина
+        p Пример вызова
+        code
+          pre +btn().btn--ghost.btn--direction-column <br>
+            | &nbsp;&nbsp;| Корзина
+            | &nbsp;&nbsp;+icon("market", 24, 24).btn__icon.btn__icon--margin-bottom
+
+        +btn
+          +badge("-10%").badge--discount-color
+          +icon("plus", 16, 16)
+        p Пример вызова
+        code
+          pre +btn() <br>
+            | &nbsp;&nbsp;+badge("-10%").badge--discount-color
+            | &nbsp;&nbsp;+icon("plus", 16, 16)
+
+        +btn(disabled)
+          +badge("-10%").badge--discount-color
+          +icon("plus", 16, 16)
+        p Пример вызова
+        code
+          pre +btn()(disabled) <br>
+            | &nbsp;&nbsp;+badge("-10%").badge--discount-color
+            | &nbsp;&nbsp;+icon("plus", 16, 16)
+
+        +btn.btn--outline
+          +badge("-10%").badge--discount-color
+          +icon("market", 24, 24).icon--size-medium
+        p Пример вызова
+        code
+          pre +btn().btn--outline <br>
+            | &nbsp;&nbsp;+badge("-10%").badge--discount-color
+            | &nbsp;&nbsp;+icon("market", 24, 24).icon--size-medium
+
+        +btn.btn--light
+          +badge("-10%").badge--discount-color
+          | Купить быстро
+        p Пример вызова
+        code
+          pre +btn().btn--light <br>
+            | &nbsp;&nbsp;+badge("-10%").badge--discount-color
+            | &nbsp;&nbsp; Купить быстро
+
+        +btn.btn--prev
+          +icon('arrow-down', '17', '10')
+        +btn.btn--next
+          +icon('arrow-down', '17', '10')
+
+      section#links
+        h2 Links
+
+        +link({text: "я обычная ссылка", href: "#"})(aria-label="Просто ссылка")
+        p Пример вызова
+        code
+          pre +link({text: "я обычная ссылка", href: "#"})(aria-label="Просто ссылка")
+
+        +link({href: "#"})
+          +icon("sun", 16, 16).link__icon
+          span я ссылка с иконкой
+        p Пример вызова
+        code
+          pre +link({href: "#"}) <br>
+            | &nbsp;&nbsp;+icon("sun", 16, 16).link__icon
+            | &nbsp;&nbsp;span я ссылка с иконкой
+
+      section#form-elements
+        h2 Form elements
+        div(data-validate)
+          form(method="post")
+            +custom-input({inputLabel: "Введите ваше имя", inputError: "Не корректное имя", inputName: "user-name", inputMinLength: "2"})(
+              data-validate-type="text",
+              data-limitations="name"
+            )
+            p Пример вызова
+            code
+              pre +custom-input({inputLabel: "Введите ваше имя", inputError: "Не корректное имя", inputName: "user-name", inputMinLength: "2"})(data-validate-type="text", data-limitations="letters")
+            +custom-input({inputType: "tel",inputLabel: "Введите ваш телефон", inputError: "Не корректный телефон", inputName: "user-phone"})(
+              data-validate-type="phone"
+            )
+            p Пример вызова
+            code
+              pre +custom-input({inputLabel: "Введите ваш телефон", inputError: "Не корректный телефон", inputName: "user-phone"})(data-validate-type="phone")
+            +custom-input({inputType: "email", inputLabel: "Введите ваш email", inputError: "Не корректный email", inputName: "user-email"})(
+              data-validate-type="email"
+            )
+            p Пример вызова
+            code
+              pre +custom-input({inputLabel: "Введите ваш email", inputError: "Не корректный email", inputName: "user-email"})(data-validate-type="email")
+            +custom-textarea({inputLabel: "Расскажите о себе", inputName: "user-info"})
+            p Пример вызова
+            code
+              pre +custom-textarea({inputLabel: "Расскажите о себе", inputName: "user-info"})
+            +custom-select({error: "Выберите тему обращения", optionsList: [{text: "Тема 1", value: "id-1", isActive: true}, {text: "Тема 2", value: "id-2"}, {text: "Тема 3", value: "id-3"}, {text: "Тема 4", value: "id-4"}, {text: "Тема 5", value: "id-5"}, {text: "Тема 6", value: "id-6"}]}).custom-select(
+              data-select,
+              data-validate-type="select",
+              data-name="some-name",
+              data-id="id-example"
+            )
+            code
+              pre
+              | +custom-select({error: "Выберите тему обращения", optionsList: [{text: "Тема 1", value: "id-1"}, {text:
+              | "Тема 2", value: "id-2"}, {text: "Тема 3", value: "id-3"}, {text: "Тема 4", value: "id-4"}, {text: "Тема 5",
+              | value: "id-5"}, {text: "Тема 6", value: "id-6"}]})(data-select, data-validate-type="select", data-name="some-name",
+              | data-id="id-example").custom-select
+            +custom-toggle({inputLabel: "Подтвердите своё согласие", inputError: "Согласие является обязательным", inputName: "user-agreement", inputChecked: true}).custom-toggle--checkbox(
+              data-validate-type="checkbox"
+            )
+            p Пример вызова
+            code
+              pre +custom-toggle({inputLabel: "Подтвердите своё согласие", inputError: "Согласие является обязательным", inputName: "user-agreement", inputChecked: true})(data-validate-type="checkbox").custom-toggle--checkbox
+            +btn({text: "Сбросить форму", type: "reset"})
+            +btn({text: "Отправить форму", type: "submit"})
+      section#badges
+        h2 Badges
+
+        +badge("я бейджик")
+        p Пример вызова
+        code
+          pre +badge("я бейджик")
+
+        +badge("-10%").badge--discount-color
+        p Пример вызова
+        code
+          pre +badge("-10%").badge--discount-color
+
+        +badge("текст в бейджике").badge--outline
+        p Пример вызова
+        code
+          pre +badge("текст в бейджике").badge--outline
+
+        +badge
+          +icon("gift", 10, 10).badge__icon
+          span бейджик с иконкой
+
+        p Пример вызова
+        code
+          pre +badge() <br>
+            | &nbsp;span&nbsp;бейджик с иконкой
+            | &nbsp;+icon("gift", 10, 10).badge__icon
+      section#titles
+        h2 Titles
+        .title-2
+          h2!="Заголовок"
+
+      section#filters
+        h2 Фильтры +filters()
+        p добавление класса is-checked на checkbox-accordion показывает, выбранные фильтры для мобилы
+        +filters()
+
+      section#checkbox-content
+        h2 Контент чекбокса  +catalog-checkbox-content(data)
+        p добавление класса is-active отображает кнопку Показать 26 товаров
+        +catalog-checkbox-content([
+          {
+            text: 'Подвесные',
+            count: '56',
+          },
+          {
+            text: 'На штанге',
+            count: '14',
+          },
+          {
+            text: 'Потолочные',
+            count: '34',
+          },
+          {
+            text: 'Накладные',
+            count: '654',
+          },
+          {
+            text: 'Каскадные',
+            count: '45',
+          },
+          {
+            text: 'Для натяжных потолков',
+            count: '43',
+          },
+          {
+            text: 'Дизайнерские',
+            count: '75',
+          },
+          {
+            text: 'С пультом',
+            count: '4',
+          },
+          {
+            text: 'Светодиодные',
+            count: '54',
+          },
+          {
+            text: 'Большие',
+            count: '3',
+          },
+          {
+            text: 'Накладные',
+            count: '654',
+          },
+          {
+            text: 'Каскадные',
+            count: '45',
+          },
+          {
+            text: 'Для натяжных потолков',
+            count: '43',
+          },
+          {
+            text: 'Дизайнерские',
+            count: '75',
+          },
+          {
+            text: 'С пультом',
+            count: '4',
+          },
+          {
+            text: 'Светодиодные',
+            count: '54',
+          },
+          {
+            text: 'Большие',
+            count: '3',
+          },
+        ])
+
+      section#checkbox-content(style="padding-bottom: 100px")
+        h2 Фильтр, выпадающим списком +filter-select-list()
+        +filter-select-list()
+
+      section#filter-btn
+        h2 Фильтр +filter-btn(data)
+        +filter-btn(['Накладные', 'Накладные', 'Накладные', 'Накладные',])
+
+      section#top-slider
+        h2 Верхний блок каталога +top-slider()
+        p для появления появления хлебных крошек к одной из кнопок .top-slider__button нужно добавить класс is-active
+        +top-slider()
+
+      section#rating
+        h2 Rating +rating-diagram()
+        p при вызове передаем размеры блока со звездами и рейтинг(процент закрашивания), разные размеры блоков, меняем с помощью модификаторов
+        +rating-diagram(240, 48, 70, "stars", "stars-color")
+        p Пример вызова
+        code
+          pre +rating-diagram(240, 48, 70)
+
+        +rating-diagram(160, 32, 30, "stars", "stars-color").rating-diagram--size-160-32
+        p Пример вызова
+        code
+          pre +rating-diagram(160, 32, 30).rating-diagram--size-160-32
+
+
+        +rating-diagram(264, 6, 30, "line", "line-color").rating-diagram--size-264-6
+        p Пример вызова
+        code
+          pre +rating-diagram(264, 6, 30, "line", "line-color").rating-diagram--size-264-6
+
+        +rating-diagram(194, 16, 38, "scale", "scale-color").rating-diagram--size-194-16
+        p Пример вызова
+        code
+          pre  +rating-diagram(194, 16, 38, "scale", "scale-color").rating-diagram--size-194-16
+
+        +product-rate({inputName: "stars", captionName: "Оценка", valueRating: 3, iconName: "stars" , iconWidth: 240, iconHeight: 48, iconColorName:"stars-color"}).product-rate--rating-none
+        p Пример вызова
+        code
+          pre +product-rate({inputName: "stars", captionName: "Оценка", valueRating: 3, iconName: "stars" , iconWidth: 240, iconHeight: 48, iconColorName:"stars-color"}).product-rate--rating-none
+
+        +product-rate({inputName: "stars-empty"}).product-rate--rating-none
+        p Пример вызова
+        code
+          pre +product-rate({inputName: "stars-empty"}).product-rate--rating-none
+
+        +product-rate({inputName: "appearance", valueRating: 4, captionName: "Внешний вид"}).product-rate--line-svg
+        p Пример вызова
+        code
+          pre +product-rate({inputName: "appearance", valueRating: 4, captionName: "Внешний вид"}).product-rate--line-svg
+
+        +product-rate({inputName: "quality", valueRating: 5, captionName: "Качество"}).product-rate--line-svg
+        p Пример вызова
+        code
+          pre +product-rate({inputName: "quality", valueRating: 5, captionName: "Качество"}).product-rate--line-svg
+
+        +product-rate({inputName: "installation", valueRating: 2, captionName: "Легкость установки"}).product-rate--line-svg
+        p Пример вызова
+        code
+          pre +product-rate({inputName: "installation", valueRating: 2, captionName: "Легкость установки"}).product-rate--line-svg
+
+
+        +fancybox-img([
+            {
+              imgBig: "img/content/reviews/user1/odeon-2.jpg",
+              path: 'content/reviews/user1',
+              image: 'odeon-2',
+              format: 'jpg',
+              width: '120',
+              height: '120',
+              title: "Каскадная люстра Odeon Light 4938/4",
+              altText: "Каскадная люстра Odeon Light 4938/4"
+            },
+            {
+              imgBig: "img/content/reviews/user1/odeon-3.jpg",
+              path: 'content/reviews/user1',
+              image: 'odeon-3',
+              width: '120',
+              height: '120',
+              title: "Каскадная люстра Odeon Light 4938/4",
+              altText: "Каскадная люстра Odeon Light 4938/4"
+            },
+            {
+              imgBig: "img/content/reviews/user1/odeon-4.jpg",
+              path: 'content/reviews/user1',
+              image: 'odeon-4',
+              format: 'jpg',
+              width: '120',
+              height: '120',
+              title: "Каскадная люстра Odeon Light 4938/4",
+              altText: "Каскадная люстра Odeon Light 4938/4"
+            },
+          ])
+
+      section#cards
+        h2 Варианты карточек
+
+        p Бедная карточка
+        +product-poor()
+        p Пример вызова
+        code
+          pre +product-poor()
+        br
+        p Минимальные настройки
+        +product-min()
+        p Пример вызова
+        code
+          pre +product-min()
+        br
+        p Статус "Снят с продажи"
+        +product-not-available()
+        p Пример вызова
+        code
+          pre +product-not-available()
+        br
+        p Статус "Под заказ"
+        +product-order()
+        p Пример вызова
+        code
+          pre +product-order()
+
+      section#bonus-delivery
+        h2 Блок информации бонусы + доставка
+        p Вариант для цены товара больше 4 тыс.
+        +bonus-block(bonusDelivery)
+        p Пример вызова
+        code
+          pre +bonus-block(bonusDelivery)
+
+
+        p Вариант для цены товара меньше 4 тыс.
+        +bonus-block(bonusDelivery2)
+        p Пример вызова
+        code
+          pre +bonus-block(bonusDelivery2)
+
+
+
+  script
+    include ../../js/inline/ui-kit.js
+
+block modals
+  +modal("modal--feedback")(data-modal="feedback")
+    +modal-feedback
+  +modal("modal--success modal--no-scale modal--fit-content")(data-modal="success")
+    +modal-success
+  +modal("modal--filter")(data-modal="filter")
+    +modal-filter()
+  +modal("modal--alas")(data-modal="alas")
+    +modal-alas()
+  +modal("modal--authorization")(data-modal="authorization")
+    +modal-authorization()
+  +modal("modal--delivery")(data-modal="modal-delivery")
+    +modal-delivery
+  +modal("modal--with-map")(data-modal="modal-with-map")
+    +modal-with-map()
+  +modal("modal--cheap modal--fit-content")(data-modal="modal-cheap")
+    +modal-cheap()
+  +modal("modal--install modal--fit-content")(data-modal="modal-install")
+    +modal-install()
+  +modal("modal--buy")(data-modal="modal-buy")
+    +modal-buy()
+  +modal("modal--parts")(data-modal="modal-parts")
+    +modal-parts()
+  +modal("modal--point-info")(data-modal="point-info")
+    +modal-point-info()

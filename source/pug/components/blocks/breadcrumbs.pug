@@ -1,0 +1,16 @@
+mixin breadcrumbs(data)
+  .breadcrumbs()&attributes(attributes)
+    .container
+      ul.breadcrumbs__list
+        each item in data
+          if(item.list)
+            li.breadcrumbs__item.breadcrumbs__item--list
+              a.breadcrumbs__link(class=item.mod ? `breadcrumbs__link--${item.mod}` : null)!=item.text
+              ul.breadcrumbs__sublist
+                each it in item.list
+                  li.breadcrumbs__sublist-item
+                    a.breadcrumbs__sublist-link(href='#')!=it
+
+          else
+            li.breadcrumbs__item
+              a(href=item.href)!=item.text

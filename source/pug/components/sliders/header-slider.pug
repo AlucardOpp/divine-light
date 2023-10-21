@@ -1,0 +1,14 @@
+mixin header-slider(data)
+  .header-slider
+    .container
+      .header-slider__wrp
+        .header-slider__swiper.swiper
+          .swiper-wrapper
+            each item in data
+              .header-slider__slide.swiper-slide
+                +link({href: "#"}).header-slider__slide-link(class=item.mod ? `header-slider__slide-link--${item.mod}` : null)
+                  .header-slider__slide-inner
+                    if item.iconName
+                      +icon(item.iconName, item.iconWidth, item.iconHeight).link__icon
+                    span!=item.title
+        +slider-controls

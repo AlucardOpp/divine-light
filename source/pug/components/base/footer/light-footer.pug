@@ -1,0 +1,16 @@
+mixin light-footer(footerMods, options = {})
+  - const isActivePage = options.isActivePage || false;
+  -
+    const contentClassName = [];
+    if (isActivePage) {
+      contentClassName.push(['container-mini', 'light-footer__content--grid-mini'])
+    }
+
+  footer.light-footer(class=footerMods)
+    .container
+      .light-footer__content(class=contentClassName)
+        p.light-footer__copyright © Дивайн Лайт 2020 — Свет покупают у нас
+        a(href="tel:+88007772980").light-footer__phone 8 800 777 29 80
+        p.light-footer__working-hours Звоните с 9:00 до  22:00 #[span.light-footer__text-part или в выходные и праздники с 10:00 до 20:00]
+        a(href="mailto:sale_77862@divine-light.ru", target="_blank").light-footer__email sale_77862@divine-light.ru
+

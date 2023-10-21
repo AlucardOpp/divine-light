@@ -1,0 +1,100 @@
+.payment-variants {
+  height: 100%;
+  display: flex;
+  white-space: normal;
+  width: 100%;
+  padding: size(8px) size(13px);
+  text-align: left;
+
+  border: 2px solid $color-alice-blue-3;
+  border-radius: 12px;
+  background-color: $color-transparent;
+
+  @include has-hover {
+    &:hover {
+      border-color: $color-golden-yellow;
+    }
+  }
+
+  @include vp-1599 {
+    padding: size(9px) size(11px) size(7px) size(16px) ;
+  }
+
+  @include vp-1279 {
+    padding: size(11px) size(13px);
+  }
+
+  @include vp-1023 {
+    padding: size(11px) size(13px);
+  }
+
+  .icon {
+    width: 22px;
+    height: 22px;
+    margin-left: auto;
+    color: $color-bermuda-grey;
+  }
+
+  &__options {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-right: size(6px);
+
+    @include vp-1023 {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  &__name {
+    display: inline-flex;
+    align-items: flex-start;
+    margin-bottom: size(6px);
+    padding: size(3px) size(6px);
+    color: $color-default-white;
+    background: $color-default-black;
+    border-radius: 4px;
+
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+
+    @include vp-1279 {
+      margin-bottom: 0;
+    }
+
+    @include vp-1023 {
+      margin-right: size(16px);
+    }
+
+    .icon {
+      width: 17px;
+      height: 13px;
+      color: $color-default-white;
+    }
+  }
+
+  &__price {
+    display: inline-flex;
+    align-items: flex-start;
+    align-self: flex-start;
+    justify-content: flex-start;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    color: $color-fiord;
+
+    @include vp-1279 {
+      display: none;
+    }
+
+    @include vp-1023 {
+      display: inline-flex;
+      align-self: center;
+    }
+  }
+
+
+}

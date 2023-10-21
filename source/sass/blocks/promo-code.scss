@@ -1,0 +1,82 @@
+.promo-code {
+  display: flex;
+  align-items: flex-start;
+
+  .custom-input .custom-input__error {
+    opacity: 0;
+    height: 0;
+    margin-top: 0;
+
+    transition: $trans-default;
+    transition-property: opacity, margin-top, height, visibility;
+  }
+
+  &.is-value {
+    .custom-input .custom-input__error {
+      opacity: 1;
+      height: unset;
+      margin-top: size(4px);
+    }
+
+    .promo-code__wrap-button {
+      opacity: 1;
+      max-width: 100%;
+    }
+  }
+
+  &__title {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: size(16px);
+
+    font-weight: 300;
+    font-size: size(24px);
+    line-height: size(30px);
+
+    @include vp-1023 {
+      font-size: size(20px);
+      line-height: size(26px);
+    }
+
+    @include vp-767 {
+      font-size: size(16px);
+      line-height: size(22px);
+      margin-bottom: size(16px);
+    }
+  }
+
+  &__input {
+    flex-grow: 1;
+    min-height: 48px;
+  }
+
+  &__button {
+    margin-left: size(12px);
+
+    @include vp-767 {
+      min-height: size(48px);
+      margin-left: size(8px);
+      background-image: url("../img/sprite/check.svg");
+      background-size: size(18px) size(12px);
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+
+  &__wrap-button {
+    flex-shrink: 0;
+    max-width: 0;
+    opacity: 0;
+    display: flex;
+    overflow: hidden;
+
+    transition: $trans-default;
+    transition-property: max-width;
+  }
+
+  &__button-text {
+    @include vp-767 {
+      display: none;
+    }
+  }
+}

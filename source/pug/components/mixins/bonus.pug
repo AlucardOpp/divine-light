@@ -1,0 +1,9 @@
+mixin bonus()
+  section.bonus
+    h2.visually-hidden Бонусы
+    .bonus__toggle-switch.toggle-switch
+      span.toggle-switch__title Списать #[span.basket-menu__switch-count!="187"] #[span.basket-menu__declination!="бонусов"]
+      .toggle-switch__wrap
+        label
+          input(type="checkbox")
+          span.toggle-switch__round(tabindex='0')

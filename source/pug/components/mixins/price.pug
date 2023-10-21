@@ -1,0 +1,11 @@
+mixin price(options = {})
+  - const isNoPrice = options.isNoPrice || false
+  - const isOldPrice = options.isOldPrice || false
+
+  if !isNoPrice
+    .price()&attributes(attributes)
+      .price__current-price 27 270 ₽
+      if isOldPrice
+        .price__old-price 28 340 ₽
+
+

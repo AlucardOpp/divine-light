@@ -1,0 +1,50 @@
+.shopping-widget {
+  &__title {
+    margin-top: 0;
+    margin-bottom: 0;
+
+    font-weight: 300;
+    font-size: size(24px);
+    line-height: size(30px);
+
+    @include vp-767 {
+      font-size: size(20px);
+      line-height: size(26px);
+      margin-bottom: size(16px);
+    }
+  }
+
+  &__product {
+    display: grid;
+    width: 66px;
+  }
+
+  &__products-list {
+    margin-top: size(16px);
+  }
+
+  &__image {
+    height: size(66px);
+    margin-bottom: size(8px);
+    background-color: $color-ivory;
+    border-radius: 4px;
+    overflow: hidden;
+
+    img {
+      mix-blend-mode: multiply;
+      object-fit: contain;
+    }
+  }
+
+  &__price {
+    justify-self: center;
+    font-size: size(12px);
+    font-weight: 600;
+    line-height: size(16px);
+    color: $color-fiord;
+  }
+
+  &__row {
+    margin-top: size(16px);
+  }
+}

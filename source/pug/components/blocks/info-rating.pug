@@ -1,0 +1,22 @@
+-
+  const ratingToolTip = [
+    {starsNumber: "5 звезд", rating: 35, reviewsNumber: 20 },
+    {starsNumber: "4 звезды", rating: 10, reviewsNumber: 8 },
+    {starsNumber: "3 звезды", rating: 15, reviewsNumber: 4},
+    {starsNumber: "2 звезды", rating: 0, reviewsNumber: 0},
+    {starsNumber: "1 звезда", rating: 55, reviewsNumber: 15},
+  ]
+
+
+mixin info-rating(data)
+  .info-rating(class=data.mod ? `info-rating--${data.mod}` : null )
+    +btn()(aria-label= "рейтинг" data-tooltip="parrent" data-tooltip-options="rating" tab-index="1").btn--rating.btn--size-small.btn--wight-medium
+      +icon("star", 24, 24)
+      | !{data.number}
+      +tooltip-content({buttonCloseTag: "span"})
+        +reviews-number(ratingToolTip)
+        +btn({text: "Смотреть все отзывы", href: "great-reviews.html"}).btn--wight-medium.btn--size-small.btn--width100
+
+    +btn({href:"product-review.html"}).btn--comment.btn--size-small.btn--wight-medium
+      +icon("comment2", 24, 24)
+      | !{data.text}

@@ -1,0 +1,19 @@
+mixin checkout-active()
+  section.checkout-active()&attributes(attributes)
+    h2.checkout-active__title Данные получатели и способ получения
+    ul.checkout-active__list
+      li
+        +checkout-item({
+          title: 'Светлова Наталья',
+          icon: ['login--max-edge', 17, 18],
+          phone: '+7 926 789-89-78',
+          href: 'tel:+89267898978',
+        })
+      li
+        +checkout-item({
+          title: 'Доставим курьером по&nbsp;адресу',
+          icon: ['point', 16, 19],
+          text: 'Россия, Московская область, Москва, Калининградская улица, 17к2',
+          note: 'Комментарий курьеру: Прошу не&nbsp;звонить в&nbsp;дверь',
+          button: true
+        })

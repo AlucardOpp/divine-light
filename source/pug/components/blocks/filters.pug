@@ -1,0 +1,350 @@
+mixin filters()
+  .filters.j-filters
+    button.filters__toggle.btn.j-filters-toggle(type="button", aria-label="Переключатель отображения фильтров", aria-pressed="false")
+      span Фильтры
+      +icon('shevron-up', 14, 8)
+    .filters__form
+      form(action="#", method="get")
+        +filter-btn(['Накладные', 'Накладные', 'Накладные', 'Накладные',])
+        +input-range-accordion({
+          buttonText: 'Цена',
+          name: 'price',
+          min: '789',
+          max: '29889',
+        }).is-active
+        +toggle-switch({
+          title: 'Распродажа',
+        })
+        +toggle-switch({
+          title: 'Новинка',
+        })
+        +toggle-switch({
+          title: 'В наличии',
+        })
+        +checkbox-accordion({
+          buttonText: 'Тип',
+          list: [
+            {
+              text: 'Подвесные',
+              count: '56',
+            },
+            {
+              text: 'На штанге',
+              count: '14',
+            },
+            {
+              text: 'Потолочные',
+              count: '34',
+            },
+            {
+              text: 'Накладные',
+              count: '654',
+            },
+            {
+              text: 'Каскадные',
+              count: '45',
+            },
+            {
+              text: 'Для натяжных потолков',
+              count: '43',
+            },
+            {
+              text: 'Дизайнерские',
+              count: '75',
+            },
+            {
+              text: 'С пультом',
+              count: '4',
+            },
+            {
+              text: 'Светодиодные',
+              count: '54',
+            },
+            {
+              text: 'Большие',
+              count: '3',
+            },
+            {
+              text: 'Накладные',
+              count: '654',
+            },
+            {
+              text: 'Каскадные',
+              count: '45',
+            },
+            {
+              text: 'Для натяжных потолков',
+              count: '43',
+            },
+            {
+              text: 'Дизайнерские',
+              count: '75',
+            },
+            {
+              text: 'С пультом',
+              count: '4',
+            },
+            {
+              text: 'Светодиодные',
+              count: '54',
+            },
+            {
+              text: 'Большие',
+              count: '3',
+            },
+          ],
+        }).is-active
+        +checkbox-accordion({
+          buttonText: 'Место',
+          list: [
+            {
+              text: 'Гостиная',
+              count: '14',
+            },
+            {
+              text: 'Спальня',
+              count: '42',
+            },
+            {
+              text: 'Детская',
+              count: '2',
+            },
+            {
+              text: 'Прихожая',
+              count: '86',
+            },
+            {
+              text: 'Кухня',
+              count: '56',
+            },
+            {
+              text: 'Ванная',
+              count: '65',
+            },
+            {
+              text: 'Дача',
+              count: '4',
+            },
+            {
+              text: 'Кабинет',
+              count: '53',
+            },
+            {
+              text: 'Холл',
+              count: '65',
+            },
+            {
+              text: 'В зал',
+              count: '64',
+            },
+          ],
+        }).is-active
+        +checkbox-accordion({
+          buttonText: 'Бренд',
+          list: [
+            {
+              text: 'Бренд',
+              count: '14',
+            },
+          ],
+        })
+        +input-range-accordion({
+          buttonText: `Площадь освещения, м<sup>2</sup>`,
+          name: 'square',
+          step: 1,
+          min: '0',
+          max: '12',
+        })
+        +checkbox-accordion({
+          buttonText: 'В коллекции',
+          list: [
+            {
+              text: 'В коллекции бра',
+              count: '14',
+            },
+            {
+              text: 'В коллекции настольные лампы',
+              count: '18',
+            },
+            {
+              text: 'В коллекции торшеры',
+              count: '2',
+            },
+          ],
+        })
+        +input-range-accordion({
+          buttonText: 'Количество ламп',
+          name: 'lights',
+          min: '1',
+          max: '25',
+        })
+        +checkbox-accordion({
+          buttonText: 'Стиль',
+          list: [
+            {
+              text: 'Стиль',
+              count: '14',
+            },
+          ],
+        })
+        +checkbox-accordion({
+          buttonText: 'Особенности',
+          list: [
+            {
+              text: 'Особенности',
+              count: '14',
+            },
+          ],
+        })
+        +checkbox-accordion({
+          buttonText: 'Размеры',
+          list: [
+            {
+              text: 'Размеры',
+              count: '14',
+            },
+          ],
+        })
+        +checkbox-accordion({
+          buttonText: 'Страна',
+          list: [
+            {
+              text: 'Страна',
+              count: '14',
+            },
+          ],
+        })
+        +checkbox-accordion({
+          buttonText: 'Материал плафона',
+          list: [
+            {
+              text: 'Материал плафона',
+              count: '14',
+            },
+          ],
+        })
+        +checkbox-accordion({
+          buttonText: 'Цвет арматуры',
+          list: [
+            {
+              colorWhite: '#ffffff',
+              text: 'Белый',
+              count: '14',
+            },
+            {
+              color: '#bbe2fe',
+              text: 'Голубой',
+              count: '42',
+            },
+            {
+              color: '#ffd100',
+              text: 'Золотой',
+              count: '2',
+            },
+            {
+              color: '#000000',
+              text: 'Черный',
+              count: '86',
+            },
+          ],
+        })
+        +checkbox-accordion({
+          buttonText: 'Тип лампы',
+          list: [
+            {
+              text: 'Тип лампы',
+              count: '14',
+            },
+          ],
+        })
+        +checkbox-accordion({
+          buttonText: 'Способ крепления',
+          list: [
+            {
+              text: 'Способ крепления',
+              count: '14',
+            },
+          ],
+        })
+        +checkbox-accordion({
+          buttonText: 'Мощность общая',
+          list: [
+            {
+              text: 'Мощность общая',
+              count: '14',
+            },
+          ],
+        })
+        button(type= 'button', data-open-modal="filter").btn.filters__btn.filters__button Показать все фильтры
+        button(type= 'reset').btn.filters__btn.filters__reset.is-active Сбросить
+        button(type= 'button').btn.filters__btn.filters__show.j-show-btn Показать 26 товаров
+    +catalog-checkbox-content([
+      {
+        text: 'Подвесные',
+        count: '56',
+      },
+      {
+        text: 'На штанге',
+        count: '14',
+      },
+      {
+        text: 'Потолочные',
+        count: '34',
+      },
+      {
+        text: 'Накладные',
+        count: '654',
+      },
+      {
+        text: 'Каскадные',
+        count: '45',
+      },
+      {
+        text: 'Для натяжных потолков',
+        count: '43',
+      },
+      {
+        text: 'Дизайнерские',
+        count: '75',
+      },
+      {
+        text: 'С пультом',
+        count: '4',
+      },
+      {
+        text: 'Светодиодные',
+        count: '54',
+      },
+      {
+        text: 'Большие',
+        count: '3',
+      },
+      {
+        text: 'Накладные',
+        count: '654',
+      },
+      {
+        text: 'Каскадные',
+        count: '45',
+      },
+      {
+        text: 'Для натяжных потолков',
+        count: '43',
+      },
+      {
+        text: 'Дизайнерские',
+        count: '75',
+      },
+      {
+        text: 'С пультом',
+        count: '4',
+      },
+      {
+        text: 'Светодиодные',
+        count: '54',
+      },
+      {
+        text: 'Большие',
+        count: '3',
+      },
+    ]).catalog-checkbox-content--mobile

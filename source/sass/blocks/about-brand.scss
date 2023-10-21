@@ -1,0 +1,281 @@
+.about-brand {
+  position: relative;
+  max-width: size(983px);
+  width: 100%;
+  border: size(1px) solid $color-alice-blue-1;
+  border-radius: size(12px);
+  font-size: size(14px);
+  line-height: size(20px);
+  color: $color-fiord;
+
+  @include vp-1439 {
+    max-width: size(1128px);
+  }
+
+  &__btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: $color-transparent;
+    border: none;
+    cursor: pointer;
+
+    transition: $trans-default;
+    transition-property: opacity, background-color, border-color, color;
+
+    user-select: none;
+
+    @include has-hover {
+      &:hover {
+        .icon {
+          opacity: 0.7;
+        }
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top:0;
+    }
+
+    @include vp-767 {
+      order: 2;
+      margin-left: auto;
+      margin: size(-5px) size(-5px) 0 auto;
+    }
+  }
+
+  .icon {
+    color: $color-bermuda-grey;
+    width: size(24px);
+    height: size(15px);
+    cursor: pointer;
+    box-sizing: content-box;
+
+    transition: $trans-default;
+    transition-property: transform, opacity;
+
+    @include has-hover {
+      opacity: 0.7;
+    }
+
+    @include vp-1023 {
+      width: size(20px);
+    }
+
+    @include vp-767 {
+      width: size(14px);
+    }
+  }
+
+  .is-active .icon {
+    transform: rotate(-180deg);
+  }
+
+  .is-active &__hide {
+    transition: $trans-600;
+    transition-property: opacity;
+    opacity: 1;
+  }
+
+  &__accordion {
+    padding: size(16px) size(24px) size(16px) size(24px);
+
+    @include vp-767 {
+      padding: size(12px) size(12px) size(12px) size(12px);
+    }
+  }
+
+  &__head {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    overflow: visible;
+
+    font: inherit;
+    text-align: left;
+    color: inherit;
+
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  &__head-content {
+    display: flex;
+    align-items: center;
+
+    @include vp-767 {
+      flex-wrap: wrap;
+    }
+
+    p {
+      max-width: size(981px);
+      width: 100%;
+      padding-right: size(20px);
+      margin: 0 0 0 size(24px);
+
+      @include vp-1439 {
+        max-width: 100%;
+        padding-right: size(60px);
+      }
+
+      @include vp-1023 {
+        padding-right: size(35px);
+      }
+
+      @include vp-767 {
+        padding-right: 0;
+        margin-left: 0;
+        order: 3;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4;
+        max-height: 100px;
+      }
+    }
+  }
+
+  &__img {
+    min-width: size(104px);
+    margin: auto 0;
+    align-self: start;
+    padding: size(20px) size(5px);
+    background-color: $color-ivory;
+    border-radius: size(8px);
+
+    @include vp-1439 {
+      padding: size(18px) size(5px);
+    }
+
+    @include vp-767 {
+      min-width: size(78px);
+      padding: size(15px) size(3px);
+      margin-bottom: size(5px);
+    }
+
+    img {
+      width: size(94px);
+      height: size(31px);
+      object-fit: contain;
+
+      @include vp-1439 {
+        width: 105px;
+      }
+
+      @include vp-1023 {
+        width: 118px;
+      }
+
+      @include vp-767 {
+        width: 71px;
+        height: 24px;
+      }
+    }
+  }
+
+  &__body {
+    max-width: size(829px);
+    width: 100%;
+    margin-left: auto;
+    padding: 0 size(60px) 0 size(24px);
+
+    @include vp-1439 {
+      max-width: size(975px);
+      padding-right: size(76px);
+    }
+
+    @include vp-1279 {
+      max-width: size(782px);
+      padding-right: size(100px);
+    }
+
+    @include vp-1023 {
+      max-width: size(550px);
+      padding-right: size(65px);
+    }
+
+    @include vp-767 {
+      padding: 0;
+    }
+
+    p {
+      margin: size(8px) 0 0 0;
+
+      @include vp-1439 {
+        margin-top: 6px;
+      }
+
+      @include vp-1279 {
+        margin-top: 4px;
+      }
+
+      @include vp-767 {
+        margin-top: 2px;
+      }
+    }
+  }
+
+  &__read-more {
+    display: none;
+    opacity: 0;
+
+    @include vp-767 {
+      opacity: 1;
+      display: flex;
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+
+  &__row {
+    @include vp-767 {
+      left: 20px;
+      right: 20px;
+      position: absolute;
+      margin-top: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__accordion {
+    @include vp-767 {
+      position: relative;
+    }
+
+    &.is-active {
+      .about-brand__head-content p {
+        @include vp-767 {
+          padding-right: 0;
+          margin-left: 0;
+
+          overflow: visible;
+          text-overflow: clip;
+          display: block;
+          -webkit-line-clamp: none;
+          max-height: 100%;
+        }
+      }
+
+    }
+  }
+
+  &__hide {
+    display: none;
+
+    @include vp-767 {
+      display: block;
+      opacity: 0;
+    }
+  }
+}

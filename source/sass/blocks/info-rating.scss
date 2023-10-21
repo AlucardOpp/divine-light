@@ -1,0 +1,34 @@
+.info-rating {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: size(16px);
+
+  @include vp-767 {
+    margin-right: 0;
+    margin-bottom: size(8px);
+  }
+
+  .btn {
+    margin-right: size(16px);
+
+    @include vp-1023 {
+      font-size: size(16px);
+      line-height: size(22px);
+    }
+
+    @include vp-767 {
+      font-size: size(14px);
+      line-height: size(18px);
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &--data {
+    .btn--rating .icon {
+      opacity: 1;
+    }
+  }
+}

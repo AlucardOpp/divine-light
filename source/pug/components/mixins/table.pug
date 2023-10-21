@@ -1,0 +1,8 @@
+mixin table(data)
+  table
+    caption!=data.caption
+    tbody
+      each item in data.list
+        tr
+          td!=item.line1
+          td!=item.line2

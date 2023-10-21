@@ -1,0 +1,33 @@
+mixin delivery-locations(isModal)
+  .delivery-locations()&attributes(attributes)
+    if(isModal)
+      .delivery-info
+        table
+          tbody
+            tr
+              th Сумма заказа
+              th Доставка
+            tr
+              td до 3 999 ₽
+              td 330 ₽
+            tr
+              td от 4 000 ₽
+              td 1 ₽
+    .delivery-locations__list(data-points-list)
+      //- +delivery-point()
+      //- +delivery-point()
+      //- +delivery-point()
+      //- .delivery-locations__item
+      //-   .delivery-locations__title Cdek
+      //-   .delivery-locations__address Москва, Калининградская улица, 57
+      //-   .delivery-locations__metro-list Театральная
+      //-   .delivery-locations__opening-hours Ежедневно, 10:00–20:00
+      //-   .delivery-locations__phone 8-800-222-80-00
+      //-   .delivery-locations__deliver-here-button Доставить сюда
+      //- .delivery-locations__item
+      //-   .delivery-locations__title Cdek
+      //-   .delivery-locations__address Москва, Калининградская улица, 57
+      //-   .delivery-locations__metro-list Театральная
+      //-   .delivery-locations__opening-hours Ежедневно, 10:00–20:00
+      //-   .delivery-locations__phone 8-800-222-80-00
+      //-   .delivery-locations__deliver-here-button Доставить сюда

@@ -1,0 +1,29 @@
+.great-reviews {
+  padding-bottom: size(81px);
+
+  .reviews-header {
+    @include vp-767 {
+      margin-bottom: size(23px);
+    }
+  }
+
+  @include vp-767 {
+    &--appearance {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 20;
+      width: 100%;
+      overflow-y: auto;
+      background-color: $color-default-white;
+    }
+  }
+}
+
+.great-reviews__wrapper {
+  display: flex;
+
+  @include vp-1023 {
+    flex-direction: column;
+  }
+}

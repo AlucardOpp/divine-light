@@ -1,0 +1,4 @@
+mixin info-message(options = {})
+  - const tag = options.tag || "span";
+
+  #{tag}.info-message()&attributes(attributes) #[+icon("exclamation", 13, 13)] Товар под заказ. Ожидаемое время прихода 5&nbsp;дней

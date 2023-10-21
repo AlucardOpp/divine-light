@@ -1,0 +1,12 @@
+.shopping {
+  &__private-number {
+    margin-top: 0;
+    margin-bottom: 0;
+
+    font-size: 14px;
+    line-height: 18px;
+    color: $color-bermuda-grey;
+
+    grid-column: second-col-start / span 1;
+  }
+}

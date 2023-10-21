@@ -1,0 +1,19 @@
+.phone-link {
+  &__icon {
+    width: 12px;
+    height: 12px;
+  }
+
+  &__icon:first-child {
+    margin-right: 5px;
+  }
+
+  &__icon:last-child {
+    margin-left: 5px;
+  }
+
+  &__icon:only-child {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}

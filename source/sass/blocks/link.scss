@@ -1,0 +1,95 @@
+.link {
+  display: inline-flex;
+  align-items: center;
+  font: inherit;
+  color: inherit;
+  user-select: none;
+  transition: $trans-default;
+  transition-property: opacity, background-color, border-color, color;
+
+  @include has-hover {
+    &:hover {
+      background-color: $color-laser-lemon;
+
+      .link__icon {
+        fill: $color-laser-lemon;
+      }
+    }
+  }
+
+  &--secondary {
+    color: $color-black-pearl;
+
+    @include has-hover {
+      &:hover {
+        color: $color-bermuda-grey;
+        background-color: transparent;
+      }
+    }
+  }
+
+  &--color-fiord {
+    color: $color-fiord;
+
+    @include has-hover {
+      &:hover {
+        color: $color-bermuda-grey;
+        background-color: $color-solitude-2;
+
+      }
+    }
+  }
+
+  &--color-black {
+    color: $color-black-pearl;
+    border-radius: 12px;
+
+    @include has-hover {
+      &:hover {
+        background-color: $color-alice-blue-3;
+      }
+    }
+  }
+
+  &:disabled,
+  &.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  &__icon:last-child:not(:first-child) {
+    margin-left: 4px;
+  }
+
+  &__icon:first-child:not(:last-child) {
+    margin-right: 4px;
+  }
+
+  &__icon {
+    transition: $trans-default;
+    transition-property: fill;
+    fill: $color-lemon;
+  }
+
+  &--underline {
+    text-decoration: underline;
+    text-underline-offset: size(4px);
+    text-decoration-thickness: size(0.5px);
+    text-decoration-color: $color-fiord;
+    border-radius: 0;
+    text-decoration-skip: none;
+    text-decoration-skip-ink: none;
+  }
+
+  &--fill-black {
+    @include has-hover {
+      &:hover {
+        background-color: $color-laser-lemon;
+
+        svg {
+          fill: $color-black-pearl;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+mixin sale-badge(options={})
+  +badge(null, {tag: "button"})(data-tooltip="parrent" data-tooltip-options="sale")&attributes(attributes).badge--outline.shopping__badge.sale-badge
+    | Лампы за 1 ₽
+    +tooltip-content({buttonCloseTag: "span"})
+      p.sale-badge__larget-text Акция! Лампы за 1 ₽
+      p.sale-badge__text Вы сможете выбрать с менеджером после оформления заказа

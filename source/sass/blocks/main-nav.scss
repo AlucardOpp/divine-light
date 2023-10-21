@@ -1,0 +1,49 @@
+.main-nav {
+  &__list {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    .main-nav__link {
+      @include has-hover {
+        &:hover {
+          background-color: $color-transparent;
+
+          span {
+            background-color: $color-laser-lemon;
+          }
+        }
+      }
+    }
+  }
+
+  &__item {
+    color: $color-bermuda-grey;
+
+    &:last-child {
+      .main-nav__link {
+        padding-right: 0;
+
+        @include vp-1279 {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+
+  &__link {
+    padding: size(11px) size(20px);
+
+    @include vp-1279 {
+      padding: size(11px) size(12px);
+    }
+
+    span {
+      display: block;
+      transition: all $trans-default;
+    }
+  }
+}

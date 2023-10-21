@@ -1,0 +1,147 @@
+.product-rate {
+  width: size(238px);
+  display: flex;
+  align-items: center;
+  margin: 0;
+  margin-bottom: size(8px);
+  padding: 0;
+  border: none;
+
+  @include vp-767 {
+    width: 100%;
+    max-width: size(320px);
+    min-width: size(200px);
+  }
+}
+
+.product-rate__caption {
+  margin: 0;
+  padding: 0;
+  font-size: size(14px);
+  line-height: size(18px);
+  color: $color-fiord;
+}
+
+.product-rate__wrapper {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 36px;
+  background-image: url("../img/svg/star-rate.svg");
+  background-size: 20% 100%;
+  background-repeat: repeat-x;
+}
+
+.product-rate__stars-color {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  cursor: pointer;
+
+  background-image: url("../img/svg/star-color-rate.svg");
+  background-repeat: repeat-x;
+}
+
+.product-rate__stars-color:nth-of-type(1) {
+  z-index: 5;
+  width: 20%;
+  background-size: 100% 100%;
+}
+
+.product-rate__stars-color:nth-of-type(2) {
+  z-index: 4;
+  width: 40%;
+  background-size: 50% 100%;
+}
+
+.product-rate__stars-color:nth-of-type(3) {
+  z-index: 3;
+  width: 60%;
+  background-size: 33.3% 100%;
+}
+
+.product-rate__stars-color:nth-of-type(4) {
+  z-index: 2;
+  width: 80%;
+  background-size: 25% 100%;
+}
+
+.product-rate__stars-color:nth-of-type(5) {
+  z-index: 1;
+  width: 100%;
+  background-size: 20% 100%;
+}
+
+.product-rate__evaluation + label {
+  opacity: 0;
+}
+
+.product-rate__evaluation:checked + label {
+  opacity: 1;
+}
+
+@media (hover: hover), screen and (min-width: 0\0) {
+  .product-rate__evaluation:hover + label {
+    opacity: 1;
+  }
+}
+
+@media (hover: hover), screen and (min-width: 0\0) {
+  .product-rate__evaluation:hover ~ .product-rate__evaluation + label {
+    opacity: 0;
+  }
+}
+
+.product-rate__stars-focus {
+  position: absolute;
+  box-sizing: content-box;
+  width: 100%;
+  height: 48px;
+  top: 50%;
+  left: 0;
+  margin-top: -24px;
+  z-index: -1;
+  opacity: 0;
+}
+
+@media (hover: hover), screen and (min-width: 0\0) {
+  .product-rate__evaluation:focus ~ .product-rate__stars-focus {
+    opacity: 1;
+    border-radius: 5px;
+    border: size(2px) solid $color-golden-yellow;
+  }
+}
+
+.product-rate--line-svg {
+  width: size(286px);
+
+  .product-rate__wrapper {
+    height: 6px;
+    background-image: url("../img/svg/line-rate.svg");
+  }
+
+  .product-rate__stars-color {
+    background-image: url("../img/svg/line-color-rate.svg");
+  }
+
+  .product-rate__stars-focus {
+    height: 14px;
+    top: 50%;
+    left: 0;
+    margin-top: -9px;
+  }
+}
+
+.product-rate__value-rating {
+  margin-left: size(15px);
+}
+
+.product-rate--rating-none {
+  .product-rate__value-rating {
+    display: none;
+  }
+}

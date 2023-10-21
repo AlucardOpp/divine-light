@@ -1,0 +1,7 @@
+.light-header {
+  &__first-part-text {
+    @include vp-1023 {
+      display: none;
+    }
+  }
+}

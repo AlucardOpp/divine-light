@@ -1,0 +1,26 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Дивайн Лайт"; //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = "";
+  - const hasHeader = true;
+  - const headerMods = "is-fixed";
+  - const headerType  = "light";
+  - const hasFooter = true;
+  - const footerMods = "";
+  - const footerType = "light";
+  - const currentUrl = ""; //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+  - const hasMap = true
+
+block main
+  main.page.page--checkout
+    h1.page__title.container Оформление заказа
+    +making-order().is-info
+    //- на странице запрещен "голый" код
+    //- все блоки вставляются из папки pug/components/blocks
+
+block modals
+  +modal("modal--point-info")(data-modal="point-info")
+    +modal-point-info()
+  +modal("modal--map")(data-modal="map")
+    +modal-map()

@@ -1,0 +1,31 @@
+mixin popular-categories()
+  -
+    const cards = [
+      {
+        image: ["content/category-card", "category-card-image-1", "jpg", 304, 304, "Диммеры"],
+        text: "Диммеры",
+      },
+      {
+        image: ["content/category-card", "category-card-image-2", "jpg", 304, 304, "Свет для улицы"],
+        text: "Свет для улицы",
+      },
+      {
+        image: ["content/category-card", "category-card-image-3", "jpg", 304, 304, "Детские люстры"],
+        text: "Детские люстры",
+      },
+      {
+        image: ["content/category-card", "category-card-image-4", "jpg", 304, 304, "Светодиодные панели"],
+        text: "Светодиодные панели",
+      },
+      {
+        image: ["content/category-card", "category-card-image-1", "jpg", 304, 304, "Диммеры"],
+        text: "Диммеры",
+      },
+    ]
+
+  section.popular-categories()&attributes(attributes)
+    +section-heading({text: "Популярные категории"}).container
+    +slider-cards({buttonMoveSize: "smallTablet"})(data-slider-cards="categories").slider-cards--type-categories.container
+      each card in cards
+        .slider-cards__swiper-slide.swiper-slide
+          +category-card(card)

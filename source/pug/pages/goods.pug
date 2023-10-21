@@ -1,0 +1,49 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Карточка товара - Дивайн Лайт"; //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = "";
+  - const hasHeader = true;
+  - const headerMods = "";
+  - const hasFooter = true;
+  - const footerMods = "";
+  - const currentUrl = ""; //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+  - const hasMap = true
+  -
+    const textData = {
+      text: "Бра Odeon Light Fabo 2767/1W коричневого цвета можно приобрести по&nbsp;цене от&nbsp;4440 рублей с&nbsp;доставкой по&nbsp;Москве. Осветительный прибор имеет форму цилиндра. Мощность настенного светильника 60&nbsp;Вт позволит осветить комнату размером от&nbsp;4&nbsp;кв.м. Звоните и&nbsp;наши менеджеры помогут вам определиться с&nbsp;выбором."
+      }
+
+
+block main
+  main
+    h1.visually-hidden Каскадная люстра Odeon Light 4938/4
+    +product()
+    +accessory-parts()
+    +characteristics()
+    +about-product()
+    +card-review()
+    +series-goods()
+    +similar-goods()
+    +interiors()
+    +text-block(textData)
+
+block modals
+  +modal("modal--contacts")(data-modal="contacts")
+    +modal-contacts(headerContactsSections, addressList)
+  +modal("modal--city")(data-modal="city")
+    +modal-city(cityList, searchList)
+  +modal("modal--delivery")(data-modal="modal-delivery")
+    +modal-delivery
+  +modal("modal--with-map")(data-modal="modal-with-map")
+    +modal-with-map()
+  +modal("modal--cheap modal--fit-content")(data-modal="modal-cheap")
+    +modal-cheap()
+  +modal("modal--install modal--fit-content")(data-modal="modal-install")
+    +modal-install()
+  +modal("modal--buy")(data-modal="modal-buy")
+    +modal-buy()
+  +modal("modal--parts")(data-modal="modal-parts")
+    +modal-parts()
+  +modal("modal--point-info")(data-modal="point-info")
+    +modal-point-info()

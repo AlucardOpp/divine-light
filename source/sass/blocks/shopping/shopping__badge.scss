@@ -1,0 +1,35 @@
+.shopping {
+  &__badge {
+    margin-bottom: 4px;
+    padding: 2px 6px;
+
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 12px;
+
+    @include vp-767 {
+      margin-right: 4px;
+      margin-bottom: 4px;
+    }
+
+    &:last-child {
+      margin-top: auto;
+      margin-bottom: 0;
+
+      @include vp-767 {
+        margin-top: 0;
+        margin-bottom: 4px;
+      }
+    }
+
+    &:only-child {
+      margin-top: 0;
+      margin-bottom: 0;
+
+      @include vp-767 {
+        margin-right: 0;
+        margin-bottom: 4px;
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+mixin payment-variants(data)
+  button.btn.payment-variants(data-open-modal=data.modal)
+    span.payment-variants__options
+      if(data.icon)
+        span.payment-variants__name
+          +icon(data.icon.name, data.icon.width, data.icon.height)
+          =" "
+          |!{data.title}
+      else
+        span.payment-variants__name!=data.title
+
+      span.payment-variants__price!=data.price
+    +icon(data.name, data.width, data.height)

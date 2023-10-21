@@ -1,0 +1,38 @@
+mixin section-heading(options = {})
+  - const text = options.text || "";
+  - const hasIcon = options.hasIcon || false;
+  - const tag = options.tag || "h2";
+  - const buttonType = options.buttonType || ""; // тип кнопки, по умолчанию кнопка "Смотреть всё"
+  - const isOnlyText = options.isOnlyText || false; // только текст
+  - const isAddSpanText = options.isAddSpanText || false; // текст + span c текстом
+  - const info = options.info || "";
+
+  - const iconArguments = ["sale--bolder", 24, 24];
+  - const iconMore = ["more", 23, 5];
+
+  if isOnlyText
+    .section-heading()&attributes(attributes)
+      #{tag}.section-heading__title!= text
+
+  else if isAddSpanText
+    .section-heading()&attributes(attributes)
+      #{tag}.section-heading__title!= text
+      span.section-heading__info!= info
+
+  else
+    .section-heading()&attributes(attributes)
+      #{tag}.section-heading__title
+        if (hasIcon)
+          .section-heading__wrap-icon-title
+            +icon(...iconArguments).section-heading__icon-title
+        | #{text}
+      case buttonType
+        when "popup"
+          +btn().section-heading__button-more.section-heading__button-more--icon(toggle-button)
+            +icon(...iconMore).section-heading__icon-more
+          block
+        default
+          +btn({href: "#"}).btn--secondary.btn--size-small.section-heading__button-more
+            span.section-heading__first-part-text Смотреть&nbsp;
+            | все
+

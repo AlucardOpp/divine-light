@@ -1,0 +1,8 @@
+mixin point-selected()
+  section.point-selected
+    h2.point-selected__title Способ получения
+    .point-selected__item
+      +icon('point', 18, 22)
+      .point-selected__item-wrap
+        +delivery-point().point-selected__delivery-point
+        +btn({text: "Изменить"}).btn--true-secondary

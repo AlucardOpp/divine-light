@@ -1,0 +1,4 @@
+mixin shopping__on-request-button(options = {})
+  - const isOnRequest = options.isOnRequest || false;
+  if isOnRequest
+    +btn({text: "Под заказ"}).btn--outline.shopping__on-request-button

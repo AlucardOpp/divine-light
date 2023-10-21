@@ -1,0 +1,161 @@
+.section-heading {
+  display: flex;
+  align-items: center;
+
+  @include vp-767 {
+    justify-content: space-between;
+  }
+
+  &__title {
+    display: flex;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: 300;
+    margin-right: size(16px);
+    font-size: size(36px);
+    line-height: size(44px);
+
+    @include vp-1023 {
+      font-size: size(28px);
+      line-height: size(36px);
+    }
+
+    @include vp-767 {
+      font-size: size(20px);
+      line-height: size(26px);
+    }
+
+    &:only-child {
+      margin-right: 0;
+    }
+  }
+
+  &__wrap-icon-title {
+    background-color: $color-radical-red;
+    display: inline-flex;
+    align-self: center;
+
+    margin-right: size(8px);
+    border-radius: size(12px);
+    padding: size(4px);
+
+    @include vp-1023 {
+      padding: size(2px);
+      border-radius: size(8px);
+    }
+
+    @include vp-767 {
+      padding: size(2px);
+      border-radius: size(8px);
+    }
+  }
+
+  &__icon-title {
+    color: $color-default-white;
+    fill: $color-default-white;
+    stroke: $color-default-white;
+    // stroke-width: 2;
+
+    margin: auto;
+
+    width: size(24px);
+    height: size(24px);
+
+    // box-sizing: content-box;
+
+    @include vp-1023 {
+      width: size(20px);
+      height: size(20px);
+      stroke-width: 0;
+    }
+
+    @include vp-767 {
+      width: size(16px);
+      height: size(16px);
+    }
+  }
+
+  &__button-more {
+    border: 2px solid transparent;
+    border-radius: size(12px);
+    padding: size(11px) size(16px);
+
+    background-color: $color-alice-blue-3;
+
+    @include vp-1023 {
+      padding: 7px 12px;
+    }
+
+    @include vp-767 {
+      text-transform: capitalize;
+      padding: size(3px) size(9px);
+      border-radius: size(8px);
+    }
+  }
+
+  & &__button-more {
+    white-space: normal;
+
+    &--icon {
+      background-color: $color-alice-blue-3;
+      color: $color-bermuda-grey;
+      min-height: 40px;
+      min-width: 40px;
+      padding: 0;
+
+      @include vp-1023 {
+        min-height: 32px;
+        min-width: 32px;
+      }
+
+      @include vp-767 {
+        min-height: 24px;
+        min-width: 24px;
+      }
+
+      @include has-hover {
+        background-color: $color-solitude-2;
+        color: $color-bermuda-grey;
+      }
+    }
+  }
+
+  & &__button-more.is-active {
+    border-color: $color-golden-yellow;
+    background-color: $color-default-white;
+
+    @include has-hover {
+      background-color: $color-default-white;
+    }
+  }
+
+  &__first-part-text {
+    @include vp-767 {
+      display: none;
+    }
+  }
+
+  &__icon-more {
+    pointer-events: none;
+    width: size(23px);
+    height: size(5px);
+
+    @include vp-1023 {
+      width: size(18px);
+      height: size(4px);
+    }
+  }
+
+  &__info {
+    // font-weight: 400;
+    // font-size: 16px;
+    // line-height: 22px;
+
+    color: $color-spindle-1;
+
+    @include vp-767 {
+      font-size: size(12px);
+      line-height: size(16px);
+    }
+  }
+}

@@ -1,0 +1,15 @@
+mixin might-like__filters(options = {})
+  - const hasIcon = options.hasIcon || false;
+  - const iconData = options.iconData || ["favorite-2", 16, 15];
+  - const filtersList = options.filtersList || [{text: "Из избранного", hasIcon: true, iconData: ["favorite-2", 16, 15], isActive: true}];
+
+  .might-like__filters-swiper.container.swiper
+    ul.might-like__filters.swiper-wrapper(radio-buttons="parent")&attributes(attributes)
+      each filter in filtersList
+        - const {text, hasIcon, iconData, isActive} = filter;
+        - const classes = isActive ? "is-active" : null;
+
+        li.swiper-slide
+          button(type="button", class=classes, radio-buttons="element").might-like__filters-item!= text
+            if hasIcon
+              +icon(...iconData).might-like__filters-item-icon

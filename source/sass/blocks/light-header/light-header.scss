@@ -1,0 +1,45 @@
+@import "./light-header__content";
+@import "./light-header__first-part-text";
+@import "./light-header__logo";
+@import "./light-header__payment-security";
+@import "./light-header__phone";
+@import "./light-header__return-guarantee";
+@import "./light-header__return-to-car";
+
+.light-header {
+  padding: 24px 0;
+
+  font-size: 14px;
+  line-height: 18px;
+  color: $color-bermuda-grey;
+
+  background-color: $color-ivory;
+
+  @include vp-1023 {
+    padding: 19px 0 18px 0;
+  }
+
+  @include vp-767 {
+    padding: 12px 0;
+  }
+
+  &.is-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+
+    + .page {
+      padding-top: size(130px);
+
+      @include vp-1023 {
+        padding-top: size(110px);
+      }
+
+      @include vp-767 {
+        padding-top: size(85px);
+      }
+    }
+  }
+}

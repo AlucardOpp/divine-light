@@ -1,0 +1,23 @@
+mixin found__row(optyons = {})
+  -const cardSimple = optyons.cardSimple || {};
+  -const card = optyons.card || {};
+
+  .found__row
+    +product-card(cardSimple)
+    +product-card(card)
+    +product-card(cardSimple)
+    +btn({href: "#", isExternal: true}).found__banner
+      +picture("content/found", "banner-image", "jpg", 1056, 108, "")
+    - for (let i = 0; i < 2; i++)
+      +product-card(cardSimple)
+    +product-card(card)
+    - for (let i = 0; i < 2; i++)
+      +product-card(cardSimple)
+    - for (let i = 0; i < 2; i++)
+      +product-card(card)
+    - for (let i = 0; i < 2; i++)
+      +product-card(cardSimple)
+    +product-card(card)
+    +product-card(cardSimple)
+    - for (let i = 0; i < 6; i++)
+      +product-card(card)

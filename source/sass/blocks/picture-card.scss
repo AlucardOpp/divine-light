@@ -1,0 +1,89 @@
+.picture-card {
+  height: 100%;
+
+  background-color: $color-default-white;
+  border-radius: size(12px);
+  transform: translateZ(0);
+  cursor: pointer;
+
+  transition: transform $trans-default;
+
+  @include has-hover {
+    &:hover {
+      transform: translateY(size(-24px));
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: size(400px);
+    overflow: hidden;
+
+    border-top-left-radius: size(12px);
+    border-top-right-radius: size(12px);
+
+    @include vp-1599 {
+      height: size(400px);
+    }
+
+    @include vp-1279 {
+      height: size(351px);
+    }
+
+    @include vp-1023 {
+      height: size(265px);
+    }
+
+    @include vp-767 {
+      height: size(210px);
+    }
+
+    img {
+      width: 100%;
+
+      object-fit: cover;
+    }
+  }
+
+  &__info {
+    padding: size(16px);
+
+    transform: translateZ(0);
+
+    @include vp-1599 {
+      padding: size(16px);
+    }
+
+    @include vp-1279 {
+      padding: size(15px);
+    }
+
+    @include vp-767 {
+      padding: size(13px);
+    }
+  }
+
+  &__name {
+    margin: 0;
+
+    font-weight: 600;
+    font-size: size(18px);
+    line-height: size(24px);
+    color: $color-fiord;
+
+    transform: translateZ(0);
+
+    @include vp-1599 {
+      font-size: size(18px);
+    }
+
+    @include vp-1023 {
+      font-size: size(16px);
+    }
+
+    @include vp-767 {
+      font-size: size(14px);
+      line-height: size(18px);
+    }
+  }
+}

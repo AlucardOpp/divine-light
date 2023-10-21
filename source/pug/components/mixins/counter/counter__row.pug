@@ -1,0 +1,8 @@
+mixin counter__row(options={})
+  -const isQuantityRestrictions = options.isQuantityRestrictions || false;
+  - const maxQuantity = typeof options.maxQuantity === 'number' ? options.maxQuantity : false;
+
+  .counter__row
+    .counter__quantity-products(data-counter="quantity-products") 1
+    if isQuantityRestrictions
+      .counter__quantity-restrictions до #[span(data-counter="quantity-limit")!= maxQuantity] шт.

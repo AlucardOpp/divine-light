@@ -1,0 +1,19 @@
+mixin info-block(data)
+  .info-block&attributes(attributes)
+    ul.info-block__list
+      each item in data
+        if(item.tip)
+          li.info-block__item.info-block__item--tooltip(data-tooltip="parrent" data-tooltip-options="lowPrice" tab-index="1")
+            +btn().btn--ghost.info-block__btn!=item.text
+            +tooltip-content()
+              p.tooltip-content__title Мы сообщим о&nbsp;снижении цены
+              .tooltip-content__form("data-validate")
+                form(method="post")
+                  +custom-input({inputType: "email", inputLabel: "E-mail", inputError: "Не корректный email", inputName: "user-email"})(
+                  data-validate-type="email")
+
+                  +btn({text: "Сообщить", type: "submit"}).btn--wight-medium.btn--size-small.btn--width100.btn--tooltip-info
+              p.tooltip-content__text Нажимая «Сообщить» я принимаю условия политики конфиденциальности и пользовательского соглашения
+        else
+          li.info-block__item
+            +btn({text: item.text})(data-open-modal=item.data).info-block__btn

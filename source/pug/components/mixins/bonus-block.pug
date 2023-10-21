@@ -1,0 +1,19 @@
+mixin bonus-block(data)
+  .bonus-block(class=data.mod ? `bonus-block--${data.mod}` : null )
+    if(data.bonus)
+      .bonus-block__bonus
+        +icon("icon-tick", "20", "20")
+        span.bonus-block__amount!=data.bonus
+    if(data.delivery)
+      .bonus-block__delivery
+        if(data.ok)
+          +icon("icon-tick", "20", "20")
+        else
+          button(type="button" data-tooltip="question").bonus-block__btn
+            +icon("question", 24, 24).bonus-block__info-svg.bonus-block__info-svg--default
+            +icon("question-active", 24, 24).bonus-block__info-svg.bonus-block__info-svg--active
+          .bonus-block__question-popup.visually-hidden(data-tooltip="question-content")
+            p.bonus-block__question-text!="Доставка от 1 р, от 4 тыс."
+        span.bonus-block__delivery-cost!=data.delivery
+
+

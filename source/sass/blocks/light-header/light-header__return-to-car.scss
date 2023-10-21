@@ -1,0 +1,31 @@
+.light-header {
+  &__return-to-car {
+    padding: 7px 22px;
+
+    @include vp-1023 {
+      text-transform: capitalize;
+    }
+
+    @include vp-767 {
+      margin-right: 27px;
+      padding: 0;
+      padding-left: 14px;
+
+      font-size: inherit;
+      color: inherit;
+
+      background-color: transparent;
+      background-image: url("../img/sprite/arrow-left.svg");
+      background-repeat: no-repeat;
+      background-position: 0 50%;
+      border: none;
+
+      @include has-hover {
+        &:hover {
+          background-color: transparent;
+          color: inherit;
+        }
+      }
+    }
+  }
+}

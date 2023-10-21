@@ -1,0 +1,50 @@
+mixin modal-delivery
+  h4.modal__title Доставка и возврат
+  .modal__container
+    .delivery-return
+      .delivery-return__tabs(data-tabs="parent")
+        div.delivery-return__tab-list(data-tabs="controls")
+          +btn({href:"#"}).btn.delivery-return__btn(data-tabs="control") Доставка
+          +btn({href:"#"}).btn.delivery-return__btn(data-tabs="control") Возврат
+        .delivery-return__content(data-tabs="content")
+          div.delivery-return__element(data-tabs="element")
+              p.delivery-return__description Срок доставки 1-2 дня
+              .delivery-return__table
+                .delivery-return__table-row.delivery-return__table-row--title
+                  .delivery-return__table-content Сумма заказа
+                  .delivery-return__table-content Способ доставки
+                  .delivery-return__table-content.delivery-return__table-content--price Цена
+                .delivery-return__table-item
+                  .delivery-return__table-row
+                    .delivery-return__table-content <span>Сумма заказа&nbsp;</span> от 4 000 ₽
+                    .delivery-return__table-content.delivery-return__table-content--description <span>Способ доставки&nbsp;</span> До пункта выдачи
+                    .delivery-return__table-content.delivery-return__table-content--price <span>Цена&nbsp;</span>1 ₽
+                  .delivery-return__table-row
+                    .delivery-return__table-content <span>Сумма заказа&nbsp;</span> от 4 000 ₽
+                    .delivery-return__table-content.delivery-return__table-content--description <span>Способ доставки&nbsp;</span> Курьером по Москве
+                    .delivery-return__table-content.delivery-return__table-content--price <span>Цена&nbsp;</span>1 ₽
+                .delivery-return__table-item
+                  .delivery-return__table-row
+                    .delivery-return__table-content <span>Сумма заказа&nbsp;</span> до 3 999 ₽
+                    .delivery-return__table-content.delivery-return__table-content--description <span>Способ доставки&nbsp;</span> До пункта выдачи
+                    .delivery-return__table-content.delivery-return__table-content--price <span>Цена&nbsp;</span>330 ₽
+                  .delivery-return__table-row
+                    .delivery-return__table-content <span>Сумма заказа&nbsp;</span> до 3 999 ₽
+                    .delivery-return__table-content.delivery-return__table-content--description <span>Способ доставки&nbsp;</span> Курьером по Москве
+                    .delivery-return__table-content.delivery-return__table-content--price <span>Цена&nbsp;</span>430 ₽
+              p.delivery-return__free
+                +icon("fire", 17, 17)
+                span Забрать из магазина Дивайн Лайт — <span class="delivery-return__accent">бесплатно</span>
+              +link({href: "#"}).delivery-return__link(data-open-modal="modal-with-map")
+                +icon("point", 20, 20).link__icon
+                span Смотреть на карте пункты выдачи
+
+          div.delivery-return__element(data-tabs="element")
+            +picture("content", "boxes1", "png", 168, 124, "boxes1").delivery-return__img
+            p.delivery-return__text Если товар не&nbsp;оправдал ваших ожиданий, можно отказаться от&nbsp;него в&nbsp;течение 14&nbsp;дней с&nbsp;момента его получения
+            p.delivery-return__text Товары изготовленные или поставляемые под заказ&nbsp;&mdash; возврату, обмену не&nbsp;подлежат
+
+
+
+
+

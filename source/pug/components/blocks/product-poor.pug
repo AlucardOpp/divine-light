@@ -1,0 +1,71 @@
+mixin product-poor()
+
+  -
+    const list = [
+      {
+        path: 'content/product-slider',
+        image: 'odeon-1',
+        format: 'jpg',
+        width: '696',
+        height: '696',
+        altText: 'Каскадная люстра Odeon Light 4938/4',
+      },
+      {
+        path: 'content/product-slider',
+        image: 'odeon-2',
+        format: 'jpg',
+        width: '696',
+        height: '696',
+        altText: 'Каскадная люстра Odeon Light 4938/4',
+      },
+    ]
+
+  -
+    const listThumb = [
+      {
+        img: true,
+        path: 'content/product-slider',
+        image: 'thumb-odeon-1',
+        format: 'jpg',
+        width: '120',
+        height: '120',
+        altText: 'Каскадная люстра Odeon Light 4938/4',
+      },
+      {
+        img: true,
+        path: 'content/product-slider',
+        image: 'thumb-odeon-2',
+        format: 'jpg',
+        width: '120',
+        height: '120',
+        altText: 'Каскадная люстра Odeon Light 4938/4',
+      },
+    ]
+
+  -
+    const infoBlockContent = [
+      {
+        text: "Доставка и возврат",
+        data: "modal-delivery",
+      },
+      {
+        text: "Нашли дешевле?",
+        data: "modal-cheap",
+      },
+      {
+        text: "Нужна установка?",
+        data: "modal-install",
+      },
+      {
+        text: "Узнать о снижении цены",
+        tip: true,
+      },
+    ]
+
+
+  .product.product--poor
+    .container
+      +product-slider(list, listThumb)
+      .product__information
+        +product-info-poor()
+        +info-block(infoBlockContent)

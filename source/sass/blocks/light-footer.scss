@@ -1,0 +1,165 @@
+.light-footer {
+  font-size: 14px;
+  line-height: 18px;
+
+  background-color: $color-ivory;
+
+  &__content {
+    display: grid;
+    align-items: flex-start;
+    padding: size(38px) 0;
+
+    gap: 0 120px;
+    grid-template-columns: size(414px) auto;
+
+    @include vp-1439 {
+      gap: 0 162px;
+    }
+
+    @include vp-1279 {
+      gap: 0 146px;
+    }
+
+    @include vp-1023 {
+      padding: size(24px) 0;
+
+      gap: 0 80px;
+      grid-template-columns: size(343px) auto;
+    }
+
+    @include vp-767 {
+      grid-template-columns: 1fr;
+    }
+    justify-items: flex-start;
+
+    &--grid-mini {
+      gap: 0 8px;
+      grid-template-columns: size(265px) auto;
+
+      @include vp-1439 {
+        gap: 0 8px;
+      }
+
+      @include vp-1279 {
+        gap: 0 8px;
+      }
+
+      @include vp-1023 {
+        gap: 0 8px;
+      }
+
+      @include vp-767 {
+        gap: 0 8px;
+      }
+    }
+  }
+
+  &__copyright,
+  &__phone,
+  &__working-hours {
+    grid-column: 1 / 2;
+  }
+
+  &__copyright {
+    margin-top: 0;
+    margin-bottom: size(24px);
+
+    color: rgba($color-fiord, 0.8);
+
+    @include vp-1023 {
+      margin-bottom: size(16px);
+    }
+
+    @include vp-767 {
+      margin-bottom: 0;
+
+      grid-row: 4 / span 1;
+    }
+  }
+
+  &__phone {
+    margin-top: 0;
+    margin-bottom: size(15px);
+    padding: 0 size(6px);
+
+    font-size: size(24px);
+    line-height: size(30px);
+    color: $color-black-pearl;
+
+    background-color: $color-laser-lemon;
+
+    transition: $trans-default;
+    transition-property: color;
+
+    @include has-hover {
+      &:hover {
+        color: rgba($color-black-pearl, 0.7);
+      }
+    }
+
+    @include vp-1023 {
+      margin-bottom: size(11px);
+    }
+
+    @include vp-767 {
+      font-size: size(16px);
+      line-height: size(22px);
+
+      grid-row: 1 / span 1;
+    }
+  }
+
+  &__working-hours {
+    margin-top: 0;
+    margin-bottom: 0;
+
+    color: rgba($color-black-pearl, 0.7);
+
+    @include vp-767 {
+      margin-bottom: size(16px);
+    }
+  }
+
+  &__email {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0 size(2px);
+    white-space: nowrap;
+
+    font-size: size(24px);
+    line-height: size(30px);
+    color: $color-black-pearl;
+
+    background-color: $color-laser-lemon;
+
+    grid-column: 2 / 3;
+    grid-row: 2 / span 1;
+
+    transition: $trans-default;
+    transition-property: color;
+
+    @include has-hover {
+      &:hover {
+        color: rgba($color-black-pearl, 0.7);
+      }
+    }
+
+    @include vp-767 {
+      grid-column: 1 / 2;
+      grid-row: 3 / span 1;
+    }
+
+    @include vp-767 {
+      margin-bottom: size(16px);
+
+      font-size: size(16px);
+      line-height: size(22px);
+    }
+  }
+
+  &__text-part {
+    @include vp-767 {
+      display: block;
+    }
+  }
+}

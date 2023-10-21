@@ -1,0 +1,9 @@
+.section {
+  &__title {
+    margin-bottom: size(32px);
+
+    @include vp-1279 {
+      margin-bottom: 24px;
+    }
+  }
+}

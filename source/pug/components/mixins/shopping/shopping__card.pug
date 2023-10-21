@@ -1,0 +1,19 @@
+mixin shopping__card(options = {})
+  include ./shopping-options
+  include ./shopping-variables
+
+  li.shopping__card
+    .shopping__card-content
+      +shopping__image({image, isWithdrawnSale})
+      +shopping__withdrawn-sale({isWithdrawnSale})
+      +shopping__badges-list({hasGiftBadge, hasDiscountBadge, hasStockBadge, hasСashbackBadge})
+      +shopping__private-number({isPrivateNumber})
+      +shopping__title({isWithdrawnSale})
+      +shopping__product-under-order({isProductUnderOrder})
+      +shopping__need-installation({isNeedInstallation})
+      +counter({isQuantityRestrictions, isNoRender: isNoCounter, isDiscount, minQuantity, maxQuantity}).shopping__counter
+      +shopping__gift({isGift})
+      +price({isOldPrice, isNoPrice}).shopping__price
+      +shopping__delete-item()
+      +favorite-togle({isNoRender: isNoFavorite}).shopping__favorite
+      +shopping__on-request-button({isOnRequest})

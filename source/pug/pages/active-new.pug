@@ -1,0 +1,85 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Дивайн Лайт"; //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = "";
+  - const hasHeader = true;
+  - const headerMods = "is-fixed";
+  - const headerType  = "light";
+  - const hasFooter = true;
+  - const footerMods = "";
+  - const footerType = "light";
+  - const currentUrl = ""; //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+  - const hasMap = true
+
+  -
+    const dataFields = [
+      {
+        label: "10 товаров • 35 кг",
+        value: "15 487 ₽",
+        valueBlack: true,
+        valueRed: false,
+        fieldBlack: false,
+        tooltip: false,
+        tooltipContent: "",
+      },
+      {
+        label: "Скидка",
+        value: "- 8 974 ₽",
+        valueBlack: false,
+        valueRed: true,
+        fieldBlack: false,
+        tooltip: false,
+        tooltipContent: "",
+      },
+      {
+        label: "Скидка по промокоду",
+        value: "- 87 ₽",
+        valueBlack: false,
+        valueRed: true,
+        fieldBlack: false,
+        tooltip: false,
+        tooltipContent: "",
+      },
+      {
+        label: "Доставка",
+        value: "584 ₽",
+        valueBlack: true,
+        valueRed: false,
+        fieldBlack: false,
+        tooltip: false,
+        tooltipContent: "",
+      },
+    ]
+
+block main
+  main.page.page--checkout
+    h1.page__title.container Оформление заказа
+
+    - const isNotRenderTotal = true;
+    - const orderButton = {text: "Оплатить СПБ", type: "submit"};
+    - const getReceipt = {inputName: 'get-receipt', inputLabel: 'Получить чек на email'};
+    - const subscribeNews = {inputName: 'subscribe-news', inputLabel: 'Подписаться на самые актуальные новости и акции'};
+
+    .making-order.container(data-validate)
+      form(action="#")
+        .making-order__wrapper
+          .making-order__column
+            +checkout-active()
+            +payment-method().making-order__payment-method
+            +shopping-widget({isNotRenderTotal}).making-order__shopping-widget
+          .making-order__wrap-shopping-widget
+            .making-order__aside
+              +promo-code({hiddenTitle: true}).making-order__promo-code
+              +bonus()
+              +cost-estimate({fields: dataFields, isAutorized: true}).making-order__cost-estimate
+              +btn(orderButton).making-order__place-order-button
+              +custom-toggle(subscribeNews).custom-toggle--checkbox.making-order__subscribe-news
+
+
+    //- на странице запрещен "голый" код
+    //- все блоки вставляются из папки pug/components/blocks
+
+block modals
+  //- +modal("modal--point-gallery")(data-modal="point-gallery")
+  //-   +modal-point-gallery()

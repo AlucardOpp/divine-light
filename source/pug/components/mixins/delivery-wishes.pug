@@ -1,0 +1,24 @@
+mixin delivery-wishes()
+  section.delivery-wishes(data-accordion="parent")
+    .delivery-wishes__accordion-element(data-accordion="element")
+      button.delivery-wishes__button(type=button, data-accordion="button")
+        h2.delivery-wishes__title Пожелания к заказу
+        +icon("arrow-down", 16, 9).delivery-wishes__icon
+      .delivery-wishes__content(data-accordion="content")
+        +custom-input({
+          style: 'simple',
+          inputLabel: "Комментарий курьеру",
+          tag: 'textarea',
+        })(data-validate-type="email").delivery-wishes__textarea
+        +custom-toggle({
+          inputName: 'contactless-delivery',
+          inputLabel: 'Бесконтактная доставка',
+        }).custom-toggle--checkbox
+        +custom-toggle({
+          inputName: 'get-receipt',
+          inputLabel: 'Получить чек на email'
+        }).custom-toggle--checkbox
+        +custom-input({
+          style: 'simple',
+          inputLabel: "E-mail",
+        })(data-validate-type="email")

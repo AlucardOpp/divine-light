@@ -1,0 +1,18 @@
+mixin recipient-details()
+  section.recipient-details()&attributes(attributes)
+    h2.recipient-details__title Укажите данные получателя заказа
+    .recipient-details__row
+      +custom-input({
+        style: 'simple',
+        inputLabel: "Телефон",
+        inputError: 'Введите телефон',
+        inputRequared: true,
+      })(data-validate-type="phone").recipient-details__phone
+      +custom-input({
+        style: 'simple',
+        inputLabel: "Имя",
+      })(data-validate-type="text").recipient-details__name
+      +custom-input({
+        style: 'simple',
+        inputLabel: "E-mail",
+      })(data-validate-type="email").recipient-details__email

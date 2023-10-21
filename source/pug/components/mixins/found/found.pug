@@ -1,0 +1,10 @@
+mixin found()
+  include ./found-variables
+  include ./found__row
+
+  .found()&attributes(attributes)
+    +found__row({cardSimple, card})
+    +btn({text: "Показать еще"}).found__more-btn
+    .found__bottom-row
+      +pagination()
+      +go-page()

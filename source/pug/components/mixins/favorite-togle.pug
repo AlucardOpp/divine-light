@@ -1,0 +1,8 @@
+mixin favorite-togle(options = {})
+  - const isNoRender = options.isNoRender || false;
+
+  if !isNoRender
+    label.favorite-togle()&attributes(attributes)
+      input.visually-hidden(type="checkbox" name="is-favorites")
+      +icon("heart", 20, 18).favorite-togle__icon
+      +icon("favorite-2", 20, 18).favorite-togle__icon.favorite-togle__icon--hover

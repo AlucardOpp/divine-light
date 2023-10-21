@@ -1,0 +1,237 @@
+mixin modal-filter()
+  form(action="#").modal-filter
+    .title-2.modal-filter__title
+      h2 Фильтр
+    +custom-input({
+      inputType: 'text',
+      inputName: 'filter-search',
+      inputPlaceholder: 'Название фильтра',
+    }).custom-input--grey.modal-filter__search
+      +icon('search', 20, 20).modal-filter__search-icon
+    .modal-filter__accordions
+      .modal-filter__col
+        +checkbox-accordion({
+          buttonText: '3d/видео/фото в интерьере',
+          list: [
+            {
+              text: 'Подвесные',
+              count: '56',
+            },
+            {
+              text: 'На штанге',
+              count: '14',
+            },
+            {
+              text: 'Потолочные',
+              count: '34',
+            },
+          ],
+        })
+        +checkbox-accordion({
+          buttonText: 'Остаток',
+          list: [
+            {
+              text: 'Подвесные',
+              count: '56',
+            },
+            {
+              text: 'На штанге',
+              count: '14',
+            },
+            {
+              text: 'Потолочные',
+              count: '34',
+            },
+          ],
+        })
+        +checkbox-accordion({
+          buttonText: 'Тег функции',
+          list: [
+            {
+              text: 'Подвесные',
+              count: '56',
+            },
+            {
+              text: 'На штанге',
+              count: '14',
+            },
+            {
+              text: 'Потолочные',
+              count: '34',
+            },
+          ],
+        })
+        +checkbox-accordion({
+          buttonText: 'Напряжение',
+          list: [
+            {
+              text: 'Подвесные',
+              count: '56',
+            },
+            {
+              text: 'На штанге',
+              count: '14',
+            },
+            {
+              text: 'Потолочные',
+              count: '34',
+            },
+          ],
+        })
+        +checkbox-accordion({
+          buttonText: 'Мощность лампы',
+          list: [
+            {
+              text: 'Подвесные',
+              count: '56',
+            },
+            {
+              text: 'На штанге',
+              count: '14',
+            },
+            {
+              text: 'Потолочные',
+              count: '34',
+            },
+          ],
+        })
+        +checkbox-accordion({
+          buttonText: 'Тег оформления',
+          list: [
+            {
+              text: 'Подвесные',
+              count: '56',
+            },
+            {
+              text: 'На штанге',
+              count: '14',
+            },
+            {
+              text: 'Потолочные',
+              count: '34',
+            },
+          ],
+        })
+        +checkbox-accordion({
+          buttonText: 'Степерь защиты ip',
+          list: [
+            {
+              text: 'Подвесные',
+              count: '56',
+            },
+            {
+              text: 'На штанге',
+              count: '14',
+            },
+            {
+              text: 'Потолочные',
+              count: '34',
+            },
+          ],
+        })
+      .modal-filter__col
+        +checkbox-accordion({
+          buttonText: 'Тип подвеса',
+          list: [
+            {
+              text: 'Подвесные',
+              count: '56',
+            },
+            {
+              text: 'На штанге',
+              count: '14',
+            },
+            {
+              text: 'Потолочные',
+              count: '34',
+            },
+          ],
+        })
+        +checkbox-accordion({
+          buttonText: 'Форма',
+          list: [
+            {
+              text: 'Подвесные',
+              count: '56',
+            },
+            {
+              text: 'На штанге',
+              count: '14',
+            },
+            {
+              text: 'Потолочные',
+              count: '34',
+            },
+          ],
+        })
+        +checkbox-accordion({
+          buttonText: 'Тип цоколя',
+          list: [
+            {
+              text: 'Подвесные',
+              count: '56',
+            },
+            {
+              text: 'На штанге',
+              count: '14',
+            },
+            {
+              text: 'Потолочные',
+              count: '34',
+            },
+          ],
+        })
+        +checkbox-accordion({
+          buttonText: 'Цвет свечения',
+          list: [
+            {
+              text: 'Подвесные',
+              count: '56',
+            },
+            {
+              text: 'На штанге',
+              count: '14',
+            },
+            {
+              text: 'Потолочные',
+              count: '34',
+            },
+          ],
+        })
+        +checkbox-accordion({
+          buttonText: 'Направление плафонов',
+          list: [
+            {
+              text: 'Подвесные',
+              count: '56',
+            },
+            {
+              text: 'На штанге',
+              count: '14',
+            },
+            {
+              text: 'Потолочные',
+              count: '34',
+            },
+          ],
+        })
+        +checkbox-accordion({
+          buttonText: 'Доп.св-ва (пульт, подстветка, диммируемость)',
+          list: [
+            {
+              text: 'Подвесные',
+              count: '56',
+            },
+            {
+              text: 'На штанге',
+              count: '14',
+            },
+            {
+              text: 'Потолочные',
+              count: '34',
+            },
+          ],
+        })
+    .modal-filter__btns
+      button.btn.btn--secondary(type="button", data-close-modal="filter") Отменить
+      a(href="#").btn Показать все 2 457 товара

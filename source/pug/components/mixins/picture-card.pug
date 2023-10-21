@@ -1,0 +1,6 @@
+mixin picture-card(data)
+  .picture-card
+    .picture-card__img
+      +picture("content/pictures", data.photo.name, data.photo.format, data.photo.width, data.photo.height, data.photo.altText)
+    .picture-card__info
+      p.picture-card__name!=data.name

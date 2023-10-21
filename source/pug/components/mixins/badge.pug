@@ -1,0 +1,12 @@
+mixin badge(text, options = {})
+  - const tag = options.href ? options.tag || "a" : options.tag || "span";
+  - const href = options.href || false;
+  - const type = options.type || tag === "button" ? options.type || "button" : false;
+  - const target = options.isExternal ? "_blank" : false;
+  - const rel = options.isExternal ? "nofollow noopener noreferrer" : false;
+
+  #{tag}.badge(href=href, target=target, rel=rel, type=type)&attributes(attributes)
+    if block
+      block
+    else if (text !== true)
+      != text

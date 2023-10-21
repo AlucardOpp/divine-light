@@ -1,0 +1,36 @@
+mixin cost-estimate-field(options = {})
+  - const label = options.label || "10 товаров • 35 кг"
+  - const value = options.value || "15 487 ₽"
+  - const isFieldAccentBlack = options.isFieldAccentBlack || false
+  - const isValueAccentRed = options.isValueAccentRed || false
+  - const isValueAccentBlack = options.isValueAccentBlack || false
+  - const tooltip = options.tooltip || false
+
+  - const className = []
+  - const classNameValue = []
+  -
+    if (isValueAccentRed) {
+      classNameValue.push('cost-estimate-field__value--accent-red')
+    }
+
+    if (isValueAccentBlack) {
+      classNameValue.push('cost-estimate-field__value--accent')
+    }
+
+    if (isFieldAccentBlack) {
+      className.push('cost-estimate-field--size-big')
+    }
+
+    if (tooltip) {
+      classNameValue.push('cost-estimate-field__value--margin-right')
+    }
+
+  p.cost-estimate-field(class= className)&attributes(attributes)
+    span.cost-estimate-field__label!= label
+    span.cost-estimate-field__value(class=classNameValue)!= value
+    if tooltip === "question"
+      +popup-question({hasNotIconClose: true})(data-tooltip-options="needInstallation").cost-estimate-field__tooltip
+        block
+    if tooltip === "alert"
+      +tooltip-alert({hasNotIconClose: true})(data-tooltip-options="alert").cost-estimate-field__tooltip
+        block

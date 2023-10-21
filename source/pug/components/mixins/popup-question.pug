@@ -1,0 +1,8 @@
+mixin popup-question(options = {})
+  - const hasNotIconClose = options.hasNotIconClose || false;
+
+  span.popup-question(data-tooltip="parrent")&attributes(attributes)
+    button.popup-question__wrap-icon(type="button")
+      +icon('question-icon', 6, 10).popup-question__icon
+    +tooltip-content({hasNotIconClose}).popup-question__content
+      block

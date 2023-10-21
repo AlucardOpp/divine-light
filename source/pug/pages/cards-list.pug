@@ -1,0 +1,54 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Виды карточек товара - Дивайн Лайт"; //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = "";
+  - const hasHeader = true;
+  - const headerMods = "";
+  - const hasFooter = false;
+  - const footerMods = "";
+  - const currentUrl = ""; //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+  - const hasMap = true
+
+
+
+block main
+  main
+    +product-error()
+    .container
+      h2 Бедная карточка
+    +product-poor()
+    .container
+      h2 Минимальные настройки
+    +product-min()
+    .container
+      h2 Максимальные настройки
+    +product-max()
+    .container
+      h2 Статус "Снят с продажи"
+    +product-not-available()
+    .container
+      h2 Статус "Под заказ"
+    +product-order()
+
+
+
+block modals
+  +modal("modal--contacts")(data-modal="contacts")
+    +modal-contacts(headerContactsSections, addressList)
+  +modal("modal--city")(data-modal="city")
+    +modal-city(cityList, searchList)
+  +modal("modal--delivery")(data-modal="modal-delivery")
+    +modal-delivery
+  +modal("modal--with-map")(data-modal="modal-with-map")
+    +modal-with-map()
+  +modal("modal--cheap modal--fit-content")(data-modal="modal-cheap")
+    +modal-cheap()
+  +modal("modal--install modal--fit-content")(data-modal="modal-install")
+    +modal-install()
+  +modal("modal--buy")(data-modal="modal-buy")
+    +modal-buy()
+  +modal("modal--parts")(data-modal="modal-parts")
+    +modal-parts()
+  +modal("modal--point-info")(data-modal="point-info")
+    +modal-point-info()

@@ -1,0 +1,5 @@
+mixin shopping__product-under-order(options = {})
+  - const isProductUnderOrder = options.isProductUnderOrder || false;
+
+  if isProductUnderOrder
+    +info-message({tag: "p"}).shopping__product-under-order

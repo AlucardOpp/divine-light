@@ -1,0 +1,24 @@
+@import "./might-like__category-list-image";
+@import "./might-like__category-list-item";
+@import "./might-like__category-list";
+@import "./might-like__filters";
+@import "./might-like__filters-item";
+@import "./might-like__filters-item-icon";
+@import "./might-like__section-heading";
+
+.might-like {
+  overflow: hidden;
+
+  &__filters-swiper {
+    margin-bottom: 17px;
+  }
+
+  .slider-cards__swiper {
+    padding-top: 16px;
+    margin-top: -16px;
+  }
+
+  &__tab-element {
+    width: 100%;
+  }
+}

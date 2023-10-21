@@ -1,0 +1,18 @@
+mixin catalog-checkbox-content(data)
+  .catalog-checkbox-content&attributes(attributes)
+    +filter-type({
+      title: 'Тип',
+    })
+    each item in data
+      .catalog-checkbox-content__item
+        label
+          input(type="checkbox" name=item.text value= item.text)
+          span
+            if (item.color)
+              p.catalog-checkbox-content__color(style= "background-color:" + item.color)
+            if (item.colorWhite)
+              p.catalog-checkbox-content__color.catalog-checkbox-content__color--white(style= "background-color:" + item.colorWhite)
+            span= item.text
+            span= item.count
+    button(type="button").btn.catalog-checkbox-content__show-button.j-type-btn Показать 26 товаров
+

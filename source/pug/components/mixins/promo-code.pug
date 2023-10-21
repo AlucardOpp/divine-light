@@ -1,0 +1,17 @@
+mixin promo-code(options={})
+  - const selectedHelper = options.selectedHelper || false
+  - const isValue = options.isValue || false
+  - const valueInput = options.valueInput || false
+  - const hiddenTitle = options.hiddenTitle || false
+
+  section.promo-code(class=isValue ? "is-value": false, data-promo-code="parrent")&attributes(attributes)
+    h2.promo-code__title(class=hiddenTitle ? "visually-hidden" : false) Промокод
+    +custom-input({
+      style: 'simple',
+      inputLabel: "Есть промокод?",
+      selectedHelper
+    })(data-validate-type="text", data-promo-code="input").promo-code__input
+    .promo-code__wrap-button
+      +btn()(data-promo-code="button").btn--true-secondary.promo-code__button
+        span.promo-code__button-text Применить
+

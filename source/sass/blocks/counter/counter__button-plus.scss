@@ -1,0 +1,10 @@
+.counter {
+  &__button-plus {
+    grid-column: -1 \ span 1;
+    background-color: $color-lemon;
+
+    @include has-hover {
+      background-color: $color-golden-yellow;
+    }
+  }
+}

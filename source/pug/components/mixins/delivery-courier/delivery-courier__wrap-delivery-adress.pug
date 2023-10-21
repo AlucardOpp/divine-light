@@ -1,0 +1,36 @@
+mixin delivery-courier__wrap-delivery-adress()
+  .delivery-courier__wrap-delivery-adress()&attributes(attributes)
+    +custom-input({
+      style: 'simple',
+      inputLabel: "Город",
+      inputError: 'Введите название города',
+      inputRequared: true,
+      hasButton: true,
+      iconInButton: ['location', 13, 11],
+    })(data-validate-type="text").delivery-courier__delivery-city
+    +custom-input({
+      style: 'simple',
+      inputLabel: "Улица",
+      inputError: 'Введите название улицы',
+      inputRequared: true,
+    })(data-validate-type="text").delivery-courier__delivery-street
+    +custom-input({
+      style: 'simple',
+      inputLabel: "Дом",
+      inputError: 'Введите номер дома',
+      inputRequared: true,
+    })(data-validate-type="text").delivery-courier__delivery-house
+    +custom-input({
+      style: 'simple',
+      inputLabel: "Кв.",
+      inputError: 'Введите номер квартиры',
+      inputRequared: true,
+    })(data-validate-type="text").delivery-courier__delivery-apartment
+    +custom-input({
+      style: 'simple',
+      inputLabel: "Подъезд",
+    })(data-validate-type="text").delivery-courier__delivery-porch
+    +custom-input({
+      style: 'simple',
+      inputLabel: "Этаж",
+    })(data-validate-type="text").delivery-courier__delivery-floor

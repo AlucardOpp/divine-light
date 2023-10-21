@@ -1,0 +1,10 @@
+mixin shopping__need-installation(options = {})
+  - const isNeedInstallation = options.isNeedInstallation || false;
+
+  - const hasNotIconClose = true;
+
+  if isNeedInstallation
+    .shopping__need-installation
+      +toggle-switch-second()
+      +popup-question({hasNotIconClose})(data-tooltip-options="needInstallation")
+        | Менеджер свяжется с вами и обсудит установку

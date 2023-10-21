@@ -1,0 +1,55 @@
+.modal-filter {
+  &__title {
+    margin-bottom: size(16px);
+  }
+
+  &__search {
+    position: relative;
+    margin-bottom: size(24px);
+
+    label {
+      input {
+        padding: size(13px) size(16px);
+        font-size: size(16px);
+        line-height: size(22px);
+      }
+    }
+  }
+
+  &__search-icon {
+    position: absolute;
+    top: size(14px);
+    right: size(16px);
+    color: $color-bermuda-grey;
+  }
+
+  &__accordions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: size(80px);
+    // margin-bottom: size(40px);
+    height: size(376px);
+    max-height: 36vh;
+    overflow: auto;
+    font-size: size(18px);
+    line-height: size(22px);
+
+    .checkbox-accordion__button {
+      font-size: size(18px);
+      line-height: size(22px);
+    }
+  }
+
+  &__btns {
+    padding: size(24px);
+    margin-left: size(-40px);
+    margin-right: size(-40px);
+    margin-bottom: size(-40px);
+    box-shadow: 0px size(8px) size(32px) rgba(0, 30, 52, 0.08), 0px 0px size(3px) rgba(0, 30, 52, 0.03);
+
+    .btn {
+      margin-right: size(8px);
+      padding-inline: size(24px);
+    }
+  }
+}

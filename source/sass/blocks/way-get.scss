@@ -1,0 +1,92 @@
+.way-get {
+  @include vp-1279 {
+    max-width: 100%;
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: size(16px);
+
+    font-weight: 300;
+    font-size: size(24px);
+    line-height: size(30px);
+
+    @include vp-767 {
+      margin-bottom: size(16px);
+
+      font-size: size(20px);
+      line-height: size(26px);
+    }
+  }
+
+  &__tab {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: size(14px);
+
+    white-space: normal;
+
+    border-radius: size(12px);
+  }
+
+  &__tab-list {
+    display: grid;
+    margin-bottom: size(32px);
+
+    gap: size(16px);
+    grid-auto-rows: minmax(size(96px), auto);
+    grid-template-columns: repeat(3, 1fr);
+
+    @include vp-1279 {
+      margin-bottom: size(26px);
+    }
+
+    @include vp-1023 {
+      max-width: 100%;
+
+      gap: size(16px);
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include vp-767 {
+      gap: size(7px);
+      grid-auto-rows: minmax(size(72px), auto);
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__tab-title {
+    margin-top: 0;
+    margin-bottom: 0;
+
+    font-size: size(16px);
+    line-height: size(22px);
+    color: $color-black-pearl;
+
+    @include vp-767 {
+      font-size: size(14px);
+      line-height: size(18px);
+    }
+  }
+
+  &__tab-desc {
+    margin-top: size(5px);
+    margin-bottom: 0;
+
+    font-size: size(14px);
+    line-height: size(18px);
+    color: $color-fiord;
+  }
+
+  &__tab.is-active {
+    border-color: $color-lemon;
+
+    @include has-hover {
+      &:hover {
+        border-color: $color-golden-yellow;
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+.counter {
+  &__button-minus {
+    margin-right: 2px;
+    background-color: $color-alice-blue-3;
+
+    @include has-hover {
+      background-color: $color-solitude-1;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.sale-badge {
+  border-width: 1px;
+  padding: 1px 5px;
+
+  &__larget-text {
+    margin-top: 0;
+    margin-bottom: 4px;
+    color: $color-radical-red;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 600;
+  }
+
+  &__text {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 14px;
+    line-height: 18px;
+  }
+}

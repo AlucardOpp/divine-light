@@ -1,0 +1,152 @@
+.characteristics {
+  margin-bottom: size(80px);
+
+  @include vp-1023 {
+    margin-bottom: size(43px);
+  }
+
+  .section-heading {
+    margin-bottom: size(32px);
+
+    @include vp-1023 {
+      margin-bottom: size(26px);
+    }
+
+    @include vp-767 {
+      margin-bottom: size(22px);
+    }
+  }
+
+  &__wrapper {
+    margin: 0 auto;
+    padding: size(48px);
+    border-radius: size(12px);
+
+    background: $color-ivory;
+
+    @include vp-1279 {
+      padding: size(32px) size(24px);
+    }
+
+    @include vp-1023 {
+      padding: size(32px);
+    }
+
+    @include vp-767 {
+      padding: size(16px) size(14px);
+    }
+  }
+
+  &__list {
+    margin-bottom: size(16px);
+    columns: 3 size(357px);
+    column-gap: size(124px);
+
+    @include vp-1599 {
+      columns: 3 size(301px);
+      column-gap: size(64px);
+    }
+
+    @include vp-1439 {
+      margin-bottom: size(30px);
+    }
+
+    @include vp-1279 {
+      columns: 3 size(239px);
+      column-gap: size(56px);
+    }
+
+    @include vp-1023 {
+      column-gap: size(48px);
+      margin-bottom: size(24px);
+    }
+
+    @include vp-767 {
+      columns: 1 size(640px);
+      column-gap: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  &__list table:nth-child(n+7) {
+    display: none;
+  }
+
+  @include vp-1023 {
+    &__list table:nth-child(n+5) {
+      display: none;
+    }
+  }
+
+  @include vp-767 {
+    &__list table:nth-child(n+3) {
+      display: none;
+    }
+  }
+
+  &__list-btn {
+    text-align: center;
+  }
+
+  &__button {
+    @include vp-1023 {
+      font-size: size(14px);
+      line-height: size(18px);
+    }
+  }
+
+  table {
+    width: 100%;
+    margin-bottom: size(64px);
+    border-collapse: collapse;
+    border-spacing: 0;
+    break-inside: avoid;
+
+    @include vp-1439 {
+      margin-bottom: size(56px);
+    }
+
+    @include vp-1023 {
+      margin-bottom: size(24px);
+
+      font-size: size(14px);
+      line-height: size(18px);
+    }
+
+    caption {
+      margin-bottom: size(14px);
+      text-align: left;
+
+      font-weight: 600;
+      font-size: size(18px);
+      line-height: size(24px);
+
+      color: $color-black-pearl;
+
+      @include vp-1023 {
+        font-size: size(16px);
+        line-height: size(22px);
+      }
+    }
+  }
+
+  td {
+    padding: 0 0 size(26px);
+
+    @include vp-1023 {
+      padding: 0 0 size(16px);
+    }
+
+    &:first-child {
+      color: $color-fiord;
+    }
+
+    &:nth-child(2) {
+      text-align: right;
+    }
+  }
+
+  tr:last-child td {
+    padding-bottom: 0;
+  }
+}

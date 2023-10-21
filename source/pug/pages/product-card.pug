@@ -1,0 +1,171 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "ProjectName"; //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = "";
+  - const hasHeader = true;
+  - const headerMods = "";
+  - const hasFooter = true;
+  - const footerMods = "";
+  - const currentUrl = "index.html"; //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+  -
+    const cards = {
+      slider: [
+        {
+          properties: ["вариант 1", "15 x 21 мм"],
+          isSliderCard: true,
+          isAvailable: true,
+          isOldPrice: true,
+          isDiscount: true,
+          isItemNew: true,
+          isVideo: true,
+          isSaleItem: true,
+          isShowNumberProduct: true,
+          isFavorites: true,
+          isMatching: true,
+        },
+        {
+          properties: ["вариант 4", "15 x 21 мм"],
+          isSliderCard: true,
+          isAvailable: true,
+        },
+        {
+          properties: ["вариант 5", "15 x 21 мм"],
+          isSliderCard: true,
+          isOldPrice: true,
+          isAvailable: true,
+        },
+        {
+          properties: ["вариант 6", "15 x 21 мм"],
+          isSliderCard: true,
+          isDiscount: true,
+          isAvailable: true,
+        },
+        {
+          properties: ["вариант 7", "15 x 21 мм"],
+          isSliderCard: true,
+          isItemNew: true,
+          isAvailable: true,
+        },
+        {
+          properties: ["вариант 8", "15 x 21 мм"],
+          isSliderCard: true,
+          isVideo: true,
+          isAvailable: true,
+        },
+        {
+          properties: ["вариант 9", "15 x 21 мм"],
+          isSliderCard: true,
+          isSaleItem: true,
+          isAvailable: true,
+        },
+        {
+          properties: ["вариант 10", "15 x 21 мм"],
+          isSliderCard: true,
+          isShowNumberProduct: true,
+          isAvailable: true,
+        },
+        {
+          properties: ["вариант 11", "15 x 21 мм"],
+          isSliderCard: true,
+          isFavorites: true,
+          isAvailable: true,
+        },
+        {
+          properties: ["вариант 12", "15 x 21 мм"],
+          isSliderCard: true,
+          isMatching: true,
+          isAvailable: true,
+        },
+      ],
+      catalog: [
+        {
+          properties: ["Maytoni", "15 x 21 мм", "освещение: 15 кв. м."],
+          isAvailable: true,
+          isOldPrice: true,
+          isDiscount: true,
+          isItemNew: true,
+          isVideo: true,
+          isSaleItem: true,
+          isShowNumberProduct: true,
+          isFavorites: true,
+          isMatching: true,
+        },
+        {
+          properties: ["Maytoni", "15 x 21 мм", "освещение: 15 кв. м."],
+          isNotSale: false,
+          isAvailable: false,
+          isOldPrice: false,
+          isDiscount: false,
+          isItemNew: false,
+          isVideo: false,
+          isSaleItem: false,
+          isShowNumberProduct: false,
+          isFavorites: false,
+          isMatching: false,
+        },
+        {
+          properties: ["Maytoni", "15 x 21 мм", "освещение: 15 кв. м."],
+          isNotSale: true,
+        },
+        {
+          properties: ["Maytoni", "15 x 21 мм", "освещение: 15 кв. м."],
+          isAvailable: true,
+        },
+        {
+          properties: ["Maytoni", "15 x 21 мм", "освещение: 15 кв. м."],
+          isOldPrice: true,
+          isAvailable: true,
+        },
+        {
+          properties: ["Maytoni", "15 x 21 мм", "освещение: 15 кв. м."],
+          isDiscount: true,
+          isAvailable: true,
+        },
+        {
+          properties: ["Maytoni", "15 x 21 мм", "освещение: 15 кв. м."],
+          isItemNew: true,
+          isAvailable: true,
+        },
+        {
+          properties: ["Maytoni", "15 x 21 мм", "освещение: 15 кв. м."],
+          isVideo: true,
+          isAvailable: true,
+        },
+        {
+          properties: ["Maytoni", "15 x 21 мм", "освещение: 15 кв. м."],
+          isSaleItem: true,
+          isAvailable: true,
+        },
+        {
+          properties: ["Maytoni", "15 x 21 мм", "освещение: 15 кв. м."],
+          isShowNumberProduct: true,
+          isAvailable: true,
+        },
+        {
+          properties: ["Maytoni", "15 x 21 мм", "освещение: 15 кв. м."],
+          isFavorites: true,
+          isAvailable: true,
+        },
+        {
+          properties: ["Maytoni", "15 x 21 мм", "освещение: 15 кв. м."],
+          isMatching: true,
+          isAvailable: true,
+        },
+      ],
+    };
+
+block main
+  main
+    .container
+      +slider-cards()(data-slider-cards="slider").slider-cards--type-slider
+        each card in cards.slider
+          .slider-cards__swiper-slide.swiper-slide
+            +product-card(card)
+
+      +slider-cards(data-slider-cards="catalog").slider-cards--type-catalog
+        each card in cards.catalog
+          .slider-cards__swiper-slide.swiper-slide
+            +product-card(card)
+block modals

@@ -1,0 +1,149 @@
+mixin top-slider()
+  -
+    const list = [
+      {
+        href: '#',
+        path: 'content/top-slider',
+        image: 'img',
+        format: 'jpg',
+        width: '96',
+        height: '96',
+        altText: 'Подвесные',
+        title: 'Подвесные',
+      },
+      {
+        href: '#',
+        path: 'content/top-slider',
+        image: 'img-1',
+        format: 'jpg',
+        width: '96',
+        height: '96',
+        altText: 'Светодиодные',
+        title: 'Светодиодные',
+      },
+      {
+        href: '#',
+        path: 'content/top-slider',
+        image: 'img-2',
+        format: 'jpg',
+        width: '96',
+        height: '96',
+        altText: 'Для натяжных потолков',
+        title: 'Для натяжных потолков',
+      },
+      {
+        href: '#',
+        path: 'content/top-slider',
+        image: 'img-3',
+        format: 'jpg',
+        width: '96',
+        height: '96',
+        altText: 'Подвесные',
+        title: 'Подвесные',
+      },
+      {
+        href: '#',
+        path: 'content/top-slider',
+        image: 'img-4',
+        format: 'jpg',
+        width: '96',
+        height: '96',
+        altText: 'С пультом',
+        title: 'С пультом',
+      },
+      {
+        href: '#',
+        path: 'content/top-slider',
+        image: 'img-5',
+        format: 'jpg',
+        width: '96',
+        height: '96',
+        altText: 'Дизайнерские',
+        title: 'Дизайнерские',
+      },
+      {
+        href: '#',
+        path: 'content/top-slider',
+        image: 'img-6',
+        format: 'jpg',
+        width: '96',
+        height: '96',
+        altText: 'Недорогие',
+        title: 'Недорогие',
+      },
+      {
+        href: '#',
+        path: 'content/top-slider',
+        image: 'img-7',
+        format: 'jpg',
+        width: '96',
+        height: '96',
+        altText: 'Большие',
+        title: 'Большие',
+      },
+      {
+        href: '#',
+        path: 'content/top-slider',
+        image: 'img-8',
+        format: 'jpg',
+        width: '96',
+        height: '96',
+        altText: 'С вентилятором',
+        title: 'С вентилятором',
+      },
+      {
+        href: '#',
+        path: 'content/top-slider',
+        image: 'img-9',
+        format: 'jpg',
+        width: '96',
+        height: '96',
+        altText: 'Каскадные',
+        title: 'Каскадные',
+      },
+      {
+        href: '#',
+        path: 'content/top-slider',
+        image: 'img',
+        format: 'jpg',
+        width: '96',
+        height: '96',
+        altText: 'Подвесные',
+        title: 'Подвесные',
+      },
+    ]
+
+  -
+    const buttons = ['Тип', 'Место', 'Стиль', 'Бренд', 'Цвет плафона', 'Материал плафона', 'Цвет арматуры', 'Материал арматуры', 'Тип лампы']
+
+  .top-slider
+    +breadcrumbs([
+      {
+        href: '#',
+        text: 'Люстры',
+      },
+      {
+        href: '#',
+        text: 'Подвесные люстры',
+      },
+    ])
+    .container
+      h2.top-slider__title
+        span Люстры
+        span 4 789 товаров
+      .top-slider__filters
+        each item in buttons
+         +btn.top-slider__button= item
+      .top-slider__slider.swiper.mySwiper
+        ul.top-slider__list.swiper-wrapper
+          each item in list
+            li.top-slider__item.swiper-slide
+              a.top-slider__link(href= item.href)
+                .top-slider__img
+                  +picture(item.path, item.image, item.format, item.width, item.height, item.altText)
+                .top-slider__slide-title
+                  span= item.title
+        +btn.btn--next.swiper-button-next.top-slider-next
+          +icon('arrow-down', '17', '10')
+        +btn.btn--prev.top-slider-prev.swiper-button-prev
+          +icon('arrow-down', '17', '10')

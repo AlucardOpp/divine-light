@@ -1,0 +1,39 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Бренд - Дивайн Лайт"; //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = "";
+  - const hasHeader = true;
+  - const headerMods = "";
+  - const hasFooter = true;
+  - const footerMods = "";
+  - const currentUrl = ""; //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+  main.page.page--catalog
+    h1.visually-hidden товары бренда АРТЕ Ламп
+    +breadcrumbs([
+      {
+        href: "index.html",
+        text: "Главная",
+      },
+      {
+        href: "brands.html",
+        text: "Бренды",
+      },
+      {
+        text: "MW-LIGHT"
+      },
+    ]).is-active.breadcrumbs--big-margin
+    +brand()
+    +you-watched()
+
+
+
+block modals
+  +modal("modal--contacts")(data-modal="contacts")
+    +modal-contacts(headerContactsSections, addressList)
+  +modal("modal--city")(data-modal="city")
+    +modal-city(cityList, searchList)
+  +modal("modal--filter")(data-modal="filter")
+    +modal-filter()

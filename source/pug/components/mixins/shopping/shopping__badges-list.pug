@@ -1,0 +1,22 @@
+mixin shopping__badges-list(options = {})
+  - const hasGiftBadge = options.hasGiftBadge || false;
+  - const hasDiscountBadge = options.hasDiscountBadge || false;
+  - const hasStockBadge = options.hasStockBadge || false;
+  - const hasСashbackBadge = options.hasСashbackBadge || false;
+
+  if hasGiftBadge || hasDiscountBadge || hasStockBadge || hasСashbackBadge
+    .shopping__badges-list
+      .shopping__inner-badges-list
+        if hasСashbackBadge
+          +badge(null, {tag: "button"}).badge--cashback-color.shopping__badge
+            | Кэшбэк
+        if hasGiftBadge
+          +badge(null, {tag: "button"}).badge--gift-color.shopping__badge
+            +icon("gift--not-padding", 8, 8).badge__icon
+            span Подарок
+        if hasDiscountBadge
+          +badge(null, {tag: "button"}).badge--discount-color.shopping__badge
+            | 10%
+        if hasStockBadge
+          +sale-badge().shopping__badge
+            span Лампы за 1 ₽

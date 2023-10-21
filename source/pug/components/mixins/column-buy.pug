@@ -1,0 +1,25 @@
+mixin column-buy(options = {})
+  - const isNotSale = options.isNotSale || false;
+  - const isAvailable = options.isAvailable || false;
+  - const isDiscount = options.isDiscount || false;
+  - const isSliderCard = options.isSliderCard || false;
+
+  .column-buy
+    +btn({href: "#"})(
+      aria-label="купить товар",
+      data-prevent-default="on"
+    ).btn--true-light.column-buy__button
+      +icon("market", 20, 18).column-buy__buy-icon
+
+    //- +product-counter({isSliderCard, isDiscount})
+
+
+  //- .column-buy
+  //-   +btn({href: "#"})(
+  //-     aria-label="купить товар",
+  //-     data-toggle-show-or-hidden="button-show",
+  //-     data-prevent-default="on"
+  //-   ).btn--true-light.column-buy__button
+  //-     +icon("market", 20, 18).column-buy__buy-icon
+
+  //-   +product-counter({isSliderCard, isDiscount})

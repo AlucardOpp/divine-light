@@ -1,0 +1,294 @@
+.tabs-lighting {
+  margin-top: 0;
+
+  @include vp-767 {
+    position: relative;
+  }
+
+  & .tabs-lighting__element {
+    background-color: $color-ivory;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0;
+    border-radius: size(12px);
+
+    @include vp-767 {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      background-color: $color-transparent;
+    }
+
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &:hover,
+      &:focus {
+        & .tabs-lighting__list {
+          overflow-y: auto;
+        }
+      }
+    }
+  }
+
+  &__container {
+    @include vp-1023 {
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+
+    @include vp-767 {
+      padding-left: 16px;
+      padding-right: 16px;
+      margin-top: -32px;
+      top: 260px;
+      z-index: 10;
+    }
+  }
+
+  &__controls {
+    margin-left: size(-9px);
+    margin-bottom: size(32px);
+    z-index: 2;
+
+    @include vp-1279 {
+      margin-bottom: 24px;
+    }
+
+    @include vp-767 {
+      height: auto;
+    }
+  }
+
+  &__images {
+    position: relative;
+
+    @include vp-767 {
+      order: -1;
+    }
+  }
+
+  &__image {
+    height: 100%;
+    transition: opacity $trans-default;
+
+    &.is-show {
+      opacity: 1;
+    }
+
+    &.is-hide {
+      opacity: 0;
+    }
+
+    &--hover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+    }
+
+    & img {
+      width: 100%;
+      height: 100%;
+      border-radius: 0 size(12px) size(12px) 0;
+      object-fit: cover;
+    }
+
+    @include vp-767 {
+      height: 180px;
+      margin-bottom: 69px;
+
+      & img {
+        border-radius: 12px;
+      }
+    }
+  }
+
+  &__control {
+    margin-left: size(9px);
+    margin-right: 0;
+    width: auto;
+    height: auto;
+    opacity: 1;
+
+
+    &.is-active {
+      background-color: $color-lemon;
+      color: $color-black-pearl;
+    }
+
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &:hover,
+      &:focus {
+        background-color: $color-solitude-2;
+      }
+    }
+  }
+
+  &__content {
+    @include vp-1023 {
+      width: calc(100% - 64px);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @include vp-767 {
+      width: calc(100% - 32px);
+    }
+  }
+
+  &__text-content {
+    padding: size(81px) size(80px) size(86px);
+
+    @include vp-1599 {
+      padding: 57px 72px 79px 40px;
+    }
+
+    @include vp-1279 {
+      padding: 54px 92px 56px 40px;
+    }
+
+    @include vp-1023 {
+      padding: 40px 26px 24px 32px;
+    }
+
+    @include vp-767 {
+      padding: 0;
+    }
+  }
+
+  &__title {
+    font-weight: 300;
+    font-size: size(32px);
+    line-height: size(41px);
+    text-transform: uppercase;
+    margin: 0 0 size(24px) 0;
+    color: $color-bermuda-grey;
+
+    @include vp-1279 {
+      font-size: 26px;
+      line-height: 33px;
+    }
+
+    @include vp-1023 {
+      font-size: 20px;
+      line-height: 26px;
+      margin-bottom: 16px;
+    }
+
+    @include vp-767 {
+      display: none;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    margin: size(-24px) 0 0 0;
+    padding: 0 0 0 size(68px);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-height: size(432px);
+    overflow-y: hidden;
+    overflow-x: hidden;
+    scrollbar-color: rgba($color-bermuda-grey, 0.3) $color-transparent;
+    scrollbar-width: thin;
+
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &::-webkit-scrollbar {
+        width: size(4px);
+        height: size(4px);
+        background-color: $color-transparent;
+      }
+
+      &::-webkit-scrollbar-track {
+        -webkit-box-shadow: none;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: rgba($color-bermuda-grey, 0.3);
+        border-radius: size(8px);
+      }
+    }
+
+    @include vp-1599 {
+      padding-left: 24px;
+    }
+
+    @include vp-1279 {
+      margin-top: -17px;
+      max-height: 328px;
+    }
+
+    @include vp-1023 {
+      padding-left: 16px;
+      margin-top: -12px;
+      max-height: 272px;
+    }
+  }
+
+  &__item {
+    margin-top: size(24px);
+
+    @include vp-1279 {
+      margin-top: 17px;
+    }
+
+    @include vp-1023 {
+      margin-top: 12px;
+    }
+  }
+
+  &__link {
+    font-weight: 300;
+    font-size: size(24px);
+    line-height: size(30px);
+    color: $color-fiord;
+    transition: color $trans-default, font-weight $trans-default;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      overflow: hidden;
+      width: calc(100% + 10px);
+      height: 100%;
+      left: -4px;
+      top: 0;
+      background-color: $color-laser-lemon;
+      opacity: 0;
+      transition: opacity $trans-default;
+      z-index: -1;
+    }
+
+    @include vp-1279 {
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+    @include vp-1023 {
+      font-size: 16px;
+      line-height: 22px;
+    }
+
+    @include vp-767 {
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &:hover,
+      &:focus {
+        color: $color-black-pearl;
+
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__new {
+    color: $color-radical-red;
+  }
+}

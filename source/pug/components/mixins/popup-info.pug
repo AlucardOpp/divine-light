@@ -1,0 +1,10 @@
+mixin popup-info(data)
+  .popup-info&attributes(attributes)
+    if data.icon
+      +icon(data.icon, 24, 24)
+    .popup-info__content
+      h3.popup-info__title!= data.title
+      if data.text
+        p.popup-info__text!= data.text
+      if data.link
+        +link({href:data.href, text: data.textLink}).popup-info__link

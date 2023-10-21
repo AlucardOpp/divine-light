@@ -1,0 +1,27 @@
+mixin product-card__images-list(options = {})
+  - const isItemNew = options.isItemNew || false;
+  - const isVideo = options.isVideo || false;
+  - const isSaleItem = options.isSaleItem || false;
+  - const slider = options.slider || [];
+
+  .swiper.product-card__images-list
+    +grid-hover({href: "#"}).product-card__grid-hover
+    .product-card__badges
+      .product-card__badges-top
+        if (isItemNew)
+          +badge("Новинка", {tag: "button"}).badge--new-item-color.product-card__badge-news-item
+        if (isVideo)
+          +badge("Есть видео", {tag: "button"}).product-card__badge-video
+      .product-card__badges-bottom
+        if (isSaleItem)
+          +badge("Лампы за 1 ₽", {tag: "button"})(data-tooltip="sale-item").badge--outline.product-card__sale-item
+          .product-card__badge-sale-item.visually-hidden(data-tooltip="sale-item-content")
+            +btn()(aria-label="закрыть подсказку").btn--ghost.product-card__badge-sale-close-button
+              +icon("close", 9, 9).product-card__badge-sale-close-icon.btn__icon
+            p.product-card__badge-content-title Акция! Лампы за 1 ₽
+            p.product-card__badge-content-desc Вы сможете выбрать с менеджером после оформления заказа
+    .swiper-wrapper
+      each slide in slider
+        .product-card__images.swiper-slide
+          a.product-card__link(href="#")
+            +picture(...slide.image)

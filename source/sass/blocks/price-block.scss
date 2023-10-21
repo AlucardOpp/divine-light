@@ -1,0 +1,50 @@
+.price-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-width: size(113px);
+  margin-right: size(20px);
+
+  &__cost {
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 44px;
+    font-variant: small-caps;
+    color: $color-black-pearl;
+
+    @include vp-1023 {
+      font-size: 28px;
+      line-height: 36px;
+    }
+  }
+
+  &__old {
+    position: relative;
+    font-size: 20px;
+    line-height: 26px;
+    color: $color-black-pearl;
+
+    opacity: 0.6;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: size(13px);
+      left: size(0.06px);
+
+      width: 100%;
+      height: size(1.2px);
+
+      background: $color-radical-red;
+
+      border-radius: size(0.4px);
+      transform: matrix(1, -0.04, -0.05, -1, 0, 0);
+    }
+
+    @include vp-1023 {
+      font-size: size(18px);
+      line-height: size(24px);
+    }
+  }
+}

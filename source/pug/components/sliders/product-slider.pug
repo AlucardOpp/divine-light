@@ -1,0 +1,32 @@
+mixin product-slider(list, listThumb)
+
+  .product-slider
+    // thumbs
+    .product-slider__thumbs.swiper-container
+      ul.product-slider__thumbs-list.swiper-wrapper
+        each item in listThumb
+          li.product-slider__thumbs-item.swiper-slide(class=item.mod ? `product-slider__thumbs-item--${item.mod}` : null)
+            if(item.img)
+              .product-slider__thumbs-img
+                +picture(item.path, item.image, item.format, item.width, item.height, item.altText)
+            if(item.text)
+              .product-slider__thumbs-text
+                +icon(item.icon.name, item.icon.width, item.icon.height)
+                =" "
+                |!{item.text}
+      +slider-controls()
+
+    .product-slider__slider.swiper-container(data-slider-product="product-slider")
+      ul.product-slider__list.swiper-wrapper
+        each item in list
+          if(item.video)
+            li.product-slider__item.swiper-slide(class=item.mod ? `product-slider__item--${item.mod}` : null)
+              +video(item)
+          if(item.graphic)
+            li.product-slider__item.swiper-slide(class=item.mod ? `product-slider__item--${item.mod}` : null)
+              |!{item.text}
+          if(item.image)
+            li.product-slider__item.swiper-slide
+              +picture(item.path, item.image, item.format, item.width, item.height, item.altText)
+      .product-slider__swiper-pagination.swiper-pagination
+

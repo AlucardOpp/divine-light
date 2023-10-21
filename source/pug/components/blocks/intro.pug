@@ -1,0 +1,30 @@
+mixin intro()
+  - const logo = ["content/intro", "intro-logo", "png", 81, 81, "логотип"];
+  - const bgImage = ["content/intro", "intro-image", "jpg", 707, 476, "фоновая картинка"];
+  - const largetText = "Стоит быть"
+  - const accentText = "смелым"
+  -
+    const descriptions = [
+      "Полный диапазонрегулировки яркости",
+      "Чугунная основа, плафон из&nbsp;поликарбоната, диффузор&nbsp;из&nbsp;полиэстера",
+      "48 см • 60 см • 72 см"
+    ]
+
+  .intro
+    +slider-cards({
+      hasPagination: true,
+      buttonMoveSize: "smallTablet",
+      buttonMoveTransparent: true,
+    })(data-slider-cards="intro").slider-cards--type-intro.container
+      - for (let i = 0; i < 5; i++)
+        .slider-cards__swiper-slide.swiper-slide
+          a.intro__slide(href="#")
+            .intro__content
+              .intro__logo
+                +picture(...logo)
+              .intro__larget-text #{largetText} #[span.intro__accent #[span.intro__accent-text!= accentText]]
+              .intro__desc
+                each descItem in descriptions
+                  .intro__desc-item!= descItem
+            .intro__image
+              +picture(...bgImage)

@@ -1,0 +1,142 @@
+.toggle-switch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: size(24px);
+  padding-right: size(19px);
+  -webkit-tap-highlight-color: $color-transparent;
+  transition: opacity $trans-default;
+
+  &.is-active {
+    .show-filter-btn {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: all;
+    }
+  }
+
+  @include vp-1023 {
+    margin-bottom: 0;
+    padding: 0;
+    padding-top: size(14px);
+    padding-bottom: size(12px);
+  }
+
+  @include vp-767 {
+    margin-left: -16px;
+    margin-right: -16px;
+    padding: 13px 16px 3px;
+  }
+
+  & + .checkbox-accordion,
+  & + .input-range-accordion {
+    @include vp-1023 {
+      margin-top: 14px;
+    }
+  }
+
+  &__title {
+    width: 80%;
+    font-size: size(18px);
+    line-height: size(24px);
+    color: $color-fiord;
+    font-weight: 600;
+
+    @include vp-1279 {
+      font-size: size(16px);
+      line-height: size(22px);
+    }
+  }
+
+  &__wrap {
+    position: relative;
+    display: inline-block;
+    width: size(40px);
+    height:size(24px);
+  }
+
+  input {
+    display: none;
+
+    &:checked + .toggle-switch__round {
+      background-color: $color-lemon;
+
+      @include has-hover {
+        &:hover {
+          background-color: $color-golden-yellow;
+        }
+      }
+    }
+
+    &:checked + .toggle-switch__round:before {
+      transform: translateX(size(16px));
+    }
+
+  }
+
+  &__round {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $color-solitude-1;
+    transition: transform $trans-default, background-color $trans-default;
+    cursor: pointer;
+    border-radius: size(12px);
+    outline: none;
+
+    &:before {
+      position: absolute;
+      content: "";
+      height: size(16px);
+      width: size(16px);
+      left: size(4px);
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      background-color: $color-default-white;
+      transition: transform $trans-default;
+      border-radius: 50%;
+    }
+
+    @include has-hover {
+      &:hover {
+        background-color: $color-pattens-blue-2;
+      }
+    }
+  }
+
+  .show-filter-btn {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    position: absolute;
+    right: -180px;
+    top: 0;
+    transform: translateY(-25%);
+    z-index: 3;
+
+    &:hover::before {
+      border-right-color: $color-golden-yellow;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: -22px;
+
+      transform: translateY(-50%);
+
+      border: 11px solid $color-transparent;
+      border-right: 11px solid $color-lemon;
+      background: $color-transparent;
+
+      @include vp-1023 {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.light-header {
+  &__logo {
+    .main-logo {
+      @include vp-767 {
+        display: none;
+      }
+    }
+
+    .main-logo--type-mini {
+      display: none;
+
+      @include vp-767 {
+        display: inline-flex;
+      }
+    }
+  }
+}

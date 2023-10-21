@@ -1,0 +1,5 @@
+mixin shopping__title(options={})
+  -const isWithdrawnSale = options.isWithdrawnSale || false;
+
+  h3.shopping__title(class=isWithdrawnSale ? "opacity" : null)
+    | Детская настольная лампа Omnilux OML-16404-01

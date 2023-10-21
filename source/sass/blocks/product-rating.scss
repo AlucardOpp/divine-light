@@ -1,0 +1,43 @@
+.product-rating {
+  margin-bottom: size(31px);
+
+  @include vp-1023 {
+    width: 100%;
+  }
+}
+
+.product-rating__stars {
+  display: flex;
+  align-items: center;
+  margin-bottom: size(15px);
+
+  @include vp-767 {
+    margin-bottom: size(18px);
+  }
+}
+
+.product-rating__value {
+  margin: 0 0 0 size(8px);
+  padding: 0;
+  // margin-left: 8px;
+  font-weight: 600;
+  font-size: size(24px);
+  line-height: size(30px);
+  color: $color-fiord;
+
+  @include vp-1023 {
+    font-size: size(20px);
+    line-height: size(26px);
+  }
+}
+
+.product-rating__customers-percent {
+  margin: 0;
+  padding: 0;
+  color: $color-fiord;
+
+  @include vp-1023 {
+    font-size: size(14px);
+    line-height: size(18px);
+  }
+}

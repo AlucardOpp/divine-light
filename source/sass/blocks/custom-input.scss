@@ -1,0 +1,276 @@
+.custom-input,
+.custom-textarea {
+  position: relative;
+
+  display: flex;
+
+  font-size: size(12px);
+  line-height: size(16px);
+
+  &.custom-input--filled,
+  &.is-valid {
+    & label span {
+      font-weight: 600;
+      font-size: size(9px);
+      line-height: size(12px);
+      transform: translateY(calc(-50% - (10 / 16 * 1rem)));
+    }
+  }
+
+  label {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    input,
+    textarea {
+      flex-grow: 1;
+      min-height: size(40px);
+      padding: size(10px);
+      font: inherit;
+      color: inherit;
+
+      border: size(2px) solid transparent;
+      border-radius: size(5px);
+      outline: none;
+
+      transition: border $trans-default;
+
+      &:hover {
+        border: size(2px) solid $color-golden-yellow;
+      }
+
+      &:focus {
+        border: size(2px) solid $color-golden-yellow;
+      }
+    }
+
+    input::placeholder {
+      font: inherit;
+      color: $color-bermuda-grey;
+    }
+  }
+
+  &__error {
+    position: absolute;
+    right: 0;
+    bottom: size(-5px);
+
+    color: $color-torch-red;
+
+    opacity: 0;
+
+    transition: opacity $trans-default;
+  }
+
+  &.is-invalid {
+    input {
+      // border: size(2px) solid $color-torch-red;
+
+      &:focus,
+      &:hover {
+        // border: size(2px) solid rgba($color-torch-red, 0.5);
+      }
+    }
+
+    [requared] ~ .custom-input__label,
+    [requared] ~ .custom-textarea__label
+    {
+      color: $color-radical-red;
+    }
+
+    .custom-input__error {
+      opacity: 1;
+    }
+  }
+
+  &--grey {
+    label {
+      input,
+      textarea {
+        border: size(2px) solid $color-alice-blue-1;
+      }
+    }
+  }
+
+  &.selected-helper {
+    .custom-input__error {
+      opacity: 1;
+      color: $color-bermuda-grey;
+    }
+  }
+
+  .requared-color {
+    color: $color-radical-red;
+  }
+
+  /*&.is-valid {
+    input {
+      border: 2px solid $color-malachite;
+
+      &:focus,
+      &:hover {
+        border: 2px solid rgba($color-malachite, 0.5);
+      }
+    }
+  }*/
+
+  &--simple-type {
+    display: flex;
+    flex-direction: column;
+
+    .custom-input__error {
+      pointer-events: none;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding-left: size(16px);
+
+      color: $color-radical-red;
+
+      opacity: 0;
+      font-size: size(12px);
+      line-height: size(16px);
+
+      transition: $trans-default;
+      transition-property: opacity;
+    }
+
+    &.is-invalid .custom-input__error,
+    &.selected-helper .custom-input__error {
+      opacity: 1;
+      position: static;
+      margin-top: 4px;
+    }
+
+    label {
+      position: relative;
+      align-items: stretch;
+      flex-grow: 1;
+    }
+
+    label input,
+    label textarea {
+      border: size(2px) solid $color-alice-blue-1;
+      border-radius: size(8px);
+      padding: size(17px) size(14px) size(5px);
+      font-weight: 400;
+      font-size: size(16px);
+      caret-color: $color-black-pearl;
+      color: $color-fiord;
+      line-height: size(22px);
+      min-height: size(48px);
+      max-width: inherit;
+      width: inherit;
+
+      @include vp-767 {
+        font-size: size(14px);
+        line-height: size(18px);
+      }
+
+      &:focus ~ .custom-input__label,
+      &:focus ~ .custom-textarea__label
+      {
+        font-weight: 600;
+        font-size: size(10px);
+        line-height: size(12px);
+        transform: translateY(calc(-50% - #{size(10px)}));
+      }
+    }
+
+    label textarea {
+      padding-top: size(25px);
+    }
+
+    //label textarea:focus ~ .custom-input__label {
+    //  transform: translateY(calc(-50% - #{size(3px)}));
+    //}
+
+    label .custom-input__label,
+    label .custom-textarea__label
+    {
+      color: $color-bermuda-grey;
+      font-weight: 400;
+      font-size: size(16px);
+      line-height: 138%;
+      position: absolute;
+      left: size(16px);
+      top: 50%;
+      transform: translateY(-50%) translateZ(0);
+      pointer-events: none;
+      transition: font-size $trans-default, transform $trans-default;
+
+      @include vp-1023 {
+        font-size: size(14px);
+        line-height: 129%;
+      }
+    }
+
+    label textarea + .custom-input__label,
+    label textarea + .custom-textarea__label
+    {
+      top: size(25px);
+    }
+
+    .is-value .custom-input__label,
+    .is-value .custom-textarea__label
+    {
+      font-weight: 600;
+      font-size: size(10px);
+      line-height: size(12px);
+      transform: translateY(calc(-50% - #{size(10px)}));
+    }
+
+    .custom-input__button {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      background-color: transparent;
+      border: none;
+      padding: 0 18px;
+      cursor: pointer;
+      color: $color-bermuda-grey;
+
+      transition: $trans-default;
+      transition-property: opacity;
+
+      @include has-hover {
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+}
+
+.custom-input--label-on-top label {
+  flex-direction: column;
+  align-items: flex-start;
+
+  .custom-input__label {
+    margin-bottom: size(4px);
+  }
+
+  input {
+    width: 100%;
+  }
+}
+
+.custom-input--label-on-top {
+
+  &.is-invalid .custom-input__error {
+    bottom: size(-16px);
+  }
+
+  &.custom-input--filled,
+  &.is-valid {
+    & label span {
+      font-weight: 400;
+      font-size: size(12px);
+      line-height: size(16px);
+      transform: none;
+    }
+  }
+}

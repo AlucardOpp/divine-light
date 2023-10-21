@@ -1,0 +1,217 @@
+.about-chandeliers {
+  border: 1px solid $color-alice-blue-1;
+  border-radius: 12px;
+  font-size: 16px;
+  line-height: 22px;
+  color: $color-fiord;
+
+  .icon {
+    color: $color-bermuda-grey;
+    position: absolute;
+    right: 27px;
+    top: 31px;
+    width: 24px;
+    height: 15px;
+    cursor: pointer;
+    padding: 20px;
+    margin: -20px;
+    box-sizing: content-box;
+
+    transition: $trans-default;
+    transition-property: transform, opacity;
+
+    @include has-hover {
+      opacity: 0.7;
+    }
+
+    @include vp-1439 {
+      width: 18px;
+    }
+
+    @include vp-1279 {
+      top: 40px;
+    }
+
+    @include vp-767 {
+      width: 14px;
+      position: static;
+      transition-property: none;
+    }
+  }
+
+  .is-active .icon {
+    transform: rotate(-180deg);
+  }
+
+  .is-active &__row {
+    bottom: 16px;
+  }
+
+  .is-active &__head {
+    @include vp-767 {
+      position: static;
+      transition: $trans-default;
+      padding-bottom: 0;
+    }
+  }
+
+  .is-active &__hide {
+
+    transition: $trans-600;
+    transition-property: opacity;
+    opacity: 1;
+  }
+
+  .is-active &__read-more {
+    @include vp-767 {
+      display: none;
+    }
+  }
+
+  &__body > *:last-child {
+    @include vp-767 {
+      margin-bottom: 50px;
+    }
+  }
+
+  p {
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+
+  &__head {
+    position: relative;
+    width: auto;
+    margin: 0;
+    overflow: visible;
+    padding: 16px 24px 12px 24px;
+
+    font: inherit;
+    text-align: left;
+    color: inherit;
+
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+    @include vp-767 {
+      position: static;
+      padding: 12px 12px 38px 12px;
+    }
+  }
+
+  &__head p {
+    padding-right: 50px;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    @include vp-767 {
+      padding-right: 0;
+    }
+  }
+
+  &__body {
+    padding: 0 24px 3px 24px;
+
+    @include vp-767 {
+      padding: 0 12px 0 12px;
+    }
+  }
+
+  &__body h2 {
+    font-weight: 600;
+    margin-top: 32px;
+    margin-bottom: 16px;
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  &__body p + p {
+    margin-bottom: 12px;
+  }
+
+  &__body ul {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  &__body li {
+    padding-left: 16px;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: $color-golden-yellow;
+    }
+  }
+
+  &__body li + li {
+    margin-top: 12px;
+  }
+
+  &__body .images-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 240px;
+    gap: 24px;
+
+    @include vp-767 {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+  }
+
+  &__body img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+  &__read-more {
+    display: none;
+    opacity: 0;
+
+    @include vp-767 {
+      opacity: 1;
+      display: flex;
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+
+  &__row {
+    @include vp-767 {
+      left: 20px;
+      right: 20px;
+      position: absolute;
+      margin-top: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__accordion {
+    @include vp-767 {
+      position: relative;
+    }
+  }
+
+  &__hide {
+    display: none;
+
+    @include vp-767 {
+      display: block;
+      opacity: 0;
+    }
+  }
+}

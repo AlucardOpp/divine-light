@@ -1,0 +1,10 @@
+{
+  "trailingComma": "es5",
+  "tabWidth": 2,
+  "printWidth": 120,
+  "singleQuote": false,
+  "bracketSpacing": false,
+  "pugSortAttributesBeginning": ["^class$"],
+  "pugSingleQuote": false,
+  "pugPrintWidth": 100
+}

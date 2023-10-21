@@ -1,0 +1,397 @@
+.btn {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: size(13px);
+  white-space: nowrap;
+
+  font-weight: 400;
+  font-size: size(16px);
+  line-height: size(22px);
+  font-family: inherit;
+  color: $color-black-pearl;
+
+  background-color: $color-lemon;
+  border: none;
+  border-radius: size(12px);
+  cursor: pointer;
+
+  transition: $trans-default;
+  transition-property: opacity, background-color, border-color, color;
+
+  user-select: none;
+
+  @include has-hover {
+    &:hover {
+      background-color: $color-golden-yellow;
+    }
+  }
+
+  &:disabled {
+    color: $color-spindle-2;
+    pointer-events: none;
+
+    background-color: $color-solitude-2;
+  }
+
+  &--size-small {
+    font-size: size(14px);
+    line-height: size(18px);
+  }
+
+  &--size-medium {
+    font-size: size(18px);
+    line-height: size(24px);
+  }
+
+  &--size-mobile-small {
+    @include vp-767 {
+      font-size: size(14px);
+      line-height: size(18px);
+    }
+  }
+
+  &--wight-medium {
+    font-weight: 600;
+  }
+
+  &--width100 {
+    width: 100%;
+  }
+
+
+  &--padding-16 {
+    padding: size(16px);
+
+    @include vp-1023 {
+      padding: size(13px);
+    }
+
+    @include vp-767 {
+      padding: size(12px);
+    }
+  }
+
+  &--padding-12 {
+    padding: size(4px) size(12px);
+
+    @include vp-767 {
+      padding: size(3px) size(8px);
+    }
+  }
+
+  &__icon {
+    transition: $trans-default;
+    transition-property: opacity;
+
+    &--margin-left {
+      margin-left: size(10px);
+    }
+
+    &--margin-right {
+      margin-right: size(10px);
+    }
+
+    &--margin-top {
+      margin-top: size(7px);
+    }
+
+    &--margin-bottom {
+      margin-bottom: size(7px);
+    }
+  }
+
+  &--red {
+    background-color: $color-torch-red;
+  }
+
+  &--secondary {
+    color: $color-fiord;
+
+    background-color: $color-alice-blue-1;
+
+    @include has-hover {
+      &:hover {
+        color: $color-fiord;
+
+        background-color: $color-solitude-1;
+      }
+    }
+
+    &:disabled {
+      color: $color-spindle-1;
+    }
+  }
+
+  &--third {
+    color: $color-fiord;
+
+    background-color: $color-alice-blue-3;
+
+    @include vp-767 {
+      border-radius: size(8px);
+    }
+
+    @include has-hover {
+      &:hover {
+        color: $color-fiord;
+
+        background-color: $color-solitude-1;
+      }
+    }
+  }
+
+  &--outline {
+    background-color: $color-default-white;
+    border: size(2px) solid $color-alice-blue-1;
+
+    @include has-hover {
+      &:hover {
+        border-color: $color-solitude-1;
+        background-color: $color-default-white;
+      }
+    }
+  }
+
+  &--light {
+    background-color: $color-default-white;
+    border: solid size(2px) $color-alice-blue-1;
+
+    @include has-hover {
+      &:hover {
+        background-color: $color-ivory;
+        border-color: $color-ivory;
+      }
+    }
+  }
+
+  &--light-second {
+    padding: size(14px);
+    background-color: $color-default-white;
+    border: solid size(2px) $color-alice-blue-3;
+    color: $color-fiord;
+
+    @include has-hover {
+      &:hover {
+        background-color: $color-default-white;
+        border-color: $color-solitude-2;
+        color: $color-fiord;
+      }
+    }
+  }
+
+  &--light-third {
+    padding: size(14px);
+    background-color: $color-default-white;
+    border: solid size(2px) $color-alice-blue-3;
+    color: $color-bermuda-grey;
+
+    .icon {
+      transition: color $trans-default;
+    }
+
+    @include has-hover {
+      &:hover {
+        background-color: $color-default-white;
+        border-color: $color-solitude-2;
+        color: $color-fiord;
+      }
+    }
+  }
+
+  &--true-light {
+    background-color: $color-default-white;
+    border: solid size(2px) $color-alice-blue-3;
+    color: $color-fiord;
+
+    font-size: 16px;
+    line-height: 22px;
+    padding: 13px 24px;
+
+    @include has-hover {
+      &:hover {
+        background-color: $color-default-white;
+        border-color: $color-solitude-2;
+        color: $color-fiord;
+      }
+    }
+  }
+
+  &--true-secondary {
+    background-color: $color-alice-blue-3;
+    border: solid size(2px) $color-alice-blue-3;
+    color: $color-fiord;
+
+    font-size: 16px;
+    line-height: 22px;
+    padding: 11px 22px;
+
+    @include has-hover {
+      &:hover {
+        background-color: $color-solitude-2;
+        border-color: $color-solitude-2;
+        color: $color-fiord;
+      }
+    }
+  }
+
+  &--ghost {
+    background-color: transparent;
+    padding: 0;
+    opacity: 1;
+
+    @include has-hover {
+      &:hover {
+        color: $color-bermuda-grey;
+        background-color: transparent;
+
+        .btn__icon {
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+
+  &--direction-column {
+    flex-direction: column;
+  }
+
+  &--fiord {
+    color: $color-fiord;
+
+    @include has-hover {
+      &:hover {
+        color: $color-fiord;
+      }
+    }
+  }
+
+  &--underline {
+    text-decoration: underline;
+    text-underline-offset: size(4px);
+    text-decoration-thickness: size(0.5px);
+    text-decoration-color: $color-fiord;
+    border-radius: 0;
+    text-decoration-skip: none;
+    text-decoration-skip-ink: none;
+  }
+
+  &--rating {
+    display: flex;
+    align-items: center;
+    color: $color-fiord;
+
+    background-color: transparent;
+    padding: 0;
+    opacity: 1;
+
+    @include has-hover {
+      &:hover {
+        color: $color-black-pearl;
+        background-color: transparent;
+
+        .icon {
+          opacity: 1;
+        }
+      }
+    }
+
+    .icon {
+      width: size(24px);
+      height: size(24px);
+      margin-right: size(4px);
+      transition: opacity $trans-default;
+      opacity: 0.3;
+    }
+  }
+
+  &--comment {
+    display: flex;
+    align-items: center;
+    color: $color-fiord;
+
+    background-color: $color-transparent;
+    padding: 0;
+    opacity: 1;
+
+    @include has-hover {
+      &:hover {
+        color: $color-black-pearl;
+        background-color: $color-transparent;
+
+        .icon {
+          color: $color-black-pearl;
+        }
+      }
+    }
+
+    .icon {
+      width: size(24px);
+      height: size(24px);
+      margin-right: size(4px);
+      color: $color-bermuda-grey;
+      transition: color $trans-default;
+    }
+  }
+
+  .badge {
+    position: absolute;
+    top: size(-5px);
+    left: size(-5px);
+    z-index: 1;
+
+    transform: rotate(-12deg) perspective(100px) translate3d(0, 0, 0) translateZ(0);
+
+    // start: что бы иконка перестала размываться
+    -webkit-font-smoothing: antialiased;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform: rotateZ(0deg);
+    -webkit-backface-visibility: hidden;
+    -webkit-transform-origin: 50%  51%;
+    -webkit-transform: perspective(1px) rotate(-12deg) perspective(100px) translate3d(0, 0, 0) translateZ(0);
+    zoom: 1.005;
+    will-change: transform;
+    // end: что бы иконка перестала размываться
+  }
+
+  &--next,
+  &--prev {
+    width: size(64px);
+    height: size(64px);
+    background-color: $color-default-white;
+    box-shadow: 0 0 size(3px) 0 rgba($color-black-pearl, 0.02), 0 size(8px) size(14px) 0 rgba($color-black-pearl, 0.08);
+    border: 2px solid $color-transparent;
+    transition: border-color $trans-default;
+    -webkit-tap-highlight-color: $color-transparent;
+
+    @include has-hover {
+      &:hover {
+        background-color: $color-default-white;
+        border-color: $color-lemon;
+      }
+    }
+
+    &::after {
+      display: none;
+    }
+
+    svg {
+      transform: rotate(90deg);
+    }
+  }
+
+  &--next svg {
+    transform: rotate(-90deg);
+  }
+
+  &--hover-lemon {
+    @include has-hover {
+      &:hover {
+        background-color: $color-laser-lemon;
+        color: $color-black-pearl;
+      }
+    }
+  }
+}

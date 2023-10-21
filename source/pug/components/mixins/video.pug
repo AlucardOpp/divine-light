@@ -1,0 +1,6 @@
+mixin video(data={})
+  - const {src, width, height} = data
+
+  .video(class!=attributes.class)
+    video.video__content(controls, src=src width=width height=height)
+

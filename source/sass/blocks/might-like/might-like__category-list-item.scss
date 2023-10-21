@@ -1,0 +1,23 @@
+.might-like {
+  &__category-list-item {
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: block;
+
+    background: transparent;
+
+    &::after {
+      transition: $trans-default;
+      transition-property: background-color;
+      content: "";
+      display: block;
+      height: 3px;
+      background-color: transparent;
+    }
+  }
+
+  &__category-list-item.is-active::after {
+    background-color: $color-lemon;
+  }
+}

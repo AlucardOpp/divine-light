@@ -1,0 +1,8 @@
+mixin go-page()
+  .go-page(action="#", data-validate)
+    form
+      +custom-input(
+        {inputLabel: "Перейти на страницу"}
+      )(data-limitations="digit")
+      +btn({text:"Перейти", type: "submit"})
+

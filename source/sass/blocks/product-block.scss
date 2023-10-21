@@ -1,0 +1,13 @@
+.product-block {
+  margin-left: auto;
+  color: $color-fiord;
+
+
+  @include vp-1279 {
+    margin-top: size(84px);
+  }
+
+  @include vp-1279 {
+    margin-top: 0;
+  }
+}

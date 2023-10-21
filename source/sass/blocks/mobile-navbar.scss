@@ -1,0 +1,46 @@
+.mobile-navbar {
+  position: sticky;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: size(9px) size(6px) size(5px) size(8px);
+  background-color: $color-default-white;
+  box-shadow: 0 4px 24px rgba($color-black-pearl, 0.06),
+    0 1px 4px rgba($color-black-pearl, 0.04);
+
+  @include vp-1023 {
+    display: flex;
+    z-index: 2;
+  }
+
+  &__back-btn {
+    padding: size(8px);
+    background-color: $color-transparent;
+
+    .btn__icon {
+      width: size(20px);
+      height: size(20px);
+      transform: rotate(180deg);
+    }
+  }
+
+  &__close-btn {
+    padding: size(12px);
+    background-color: $color-transparent;
+
+    .btn__icon {
+      width: size(12px);
+      height: size(12px);
+    }
+  }
+
+  &__title {
+    padding: 0 size(12px);
+    font-weight: 600;
+    text-align: center;
+  }
+}

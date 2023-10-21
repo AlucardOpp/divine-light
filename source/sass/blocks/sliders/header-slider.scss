@@ -1,0 +1,120 @@
+.header-slider {
+  .container {
+    position: relative;
+
+    @include vp-1023 {
+      padding: 0;
+    }
+  }
+
+  &__wrp {
+    position: relative;
+  }
+
+  &__slide-link {
+    padding: size(17px) size(21px) size(24px);
+
+    @include vp-1279 {
+      padding: size(17px) size(13px) size(24px);
+    }
+
+    @include vp-1023 {
+      padding: size(12px) size(13px) size(16px);
+    }
+
+    @include vp-767 {
+      padding: size(12px) size(8px) size(12px);
+    }
+
+    @include has-hover {
+      &:hover {
+        color: $color-black-pearl;
+        background-color: $color-transparent;
+
+        .header-slider__slide-inner {
+          background-color: $color-laser-lemon;
+        }
+      }
+    }
+  }
+
+  &__slide {
+    width: max-content;
+    font-weight: 600;
+    font-size: size(14px);
+    line-height: size(16px);
+    color: $color-fiord;
+
+    @include vp-1023 {
+      font-size: size(12px);
+    }
+
+    @include vp-767 {
+      font-weight: 400;
+    }
+
+    &:first-child {
+      .header-slider__slide-link {
+        padding-left: 0;
+      }
+    }
+
+    &:last-child {
+      .header-slider__slide-link {
+        padding-right: 0;
+      }
+    }
+  }
+
+  &__slide-inner {
+    display: flex;
+    align-items: center;
+
+    .link__icon {
+      color: $color-black-pearl;
+      border-radius: 50%;
+
+      &:first-child:not(:last-child) {
+        margin: 0 size(6px) 0 0;
+      }
+    }
+  }
+
+  .slider-controls {
+    right: 0;
+    left: 0;
+
+    // @include vp-1439 {
+    //   right: size(76px);
+    //   left: size(76px);
+    // }
+
+    // @include vp-1279 {
+    //   right: size(44px);
+    //   left: size(44px);
+    // }
+
+    button {
+      width: size(32px);
+      height: size(32px);
+      border-radius: size(8px);
+
+      svg {
+        width: size(16px);
+        height: size(16px);
+      }
+    }
+  }
+
+  &__swiper {
+    position: relative;
+
+    @include vp-1023 {
+      padding: 0 size(32px);
+    }
+
+    @include vp-767 {
+      padding: 0 size(16px);
+    }
+  }
+}

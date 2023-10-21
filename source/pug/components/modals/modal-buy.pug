@@ -1,0 +1,23 @@
+mixin modal-buy
+  h4.modal__title Купить в 1 клик
+  .modal__container
+    +buy-item()
+    form(method="get" action="#")
+      +custom-input({
+        style: 'simple',
+        inputLabel: "Фамилия и Имя",
+        style: 'simple',
+        inputName: "buy-link"})
+      +custom-input({
+        style: 'simple',
+        inputLabel: "Телефон",
+        inputError: 'Введите телефон',
+        inputName: "buy-phone",
+        inputRequared: true,
+      })
+      +custom-textarea({
+        style: 'simple',
+        inputLabel: "Комментарий",
+        inputName: "buy-info"})
+      +btn({text: "Купить в 1 клик", type: 'submit'}).btn.btn--primary
+      p.modal__info Нажимая кнопку "Купить в 1 клик", Вы подтверждаете, что ознакомлены с Офертой и Политикой обработки персональных данных и даете свое согласие на обработку персональных данных

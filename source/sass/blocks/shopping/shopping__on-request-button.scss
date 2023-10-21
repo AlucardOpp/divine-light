@@ -1,0 +1,27 @@
+.shopping__on-request-button.btn {
+  margin-right: 56px;
+  margin-left: 24px;
+  padding: 7px 14px;
+  border-color: $color-alice-blue-3;
+
+  @include has-hover {
+    border-color: $color-solitude-2;
+  }
+
+  font-weight: 600;
+
+  grid-column: third-col-start / span 1;
+
+  @include vp-767 {
+    margin-right: 0;
+    margin-left: 0;
+    padding: 5px 18px;
+
+    font-size: 14px;
+    line-height: 18px;
+
+    grid-column: third-col-start / span 2;
+    justify-self: flex-end;
+  }
+  justify-self: flex-start;
+}

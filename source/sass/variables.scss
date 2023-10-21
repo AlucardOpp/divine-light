@@ -1,0 +1,110 @@
+// Colors
+// ---------------------------------
+
+// Project palette
+// для нейминга цветов используем https://www.htmlcsscolor.com/hex/334482
+
+$color-alice-blue-1:                #ebf2f7; // background/primary
+$color-alice-blue-2:                #edf1f5;
+$color-alice-blue-3:                #f4f6f8; // button/secondary
+$color-bermuda-grey:                #67859b; // text-icon/tertiary
+$color-black-pearl:                 #001e34; // text-icon/primary
+$color-dodger-blue:                 #0997ff;
+$color-fiord:                       #4a5f6d; // text-icon/secondary
+$color-golden-yellow:               #ffdd00; // button/hover
+$color-ivory:                       #f6f6f4; // background/secondary
+$color-laser-lemon:                 #fcff59; // background/Illumination
+$color-lemon:                       #ffe81d; // button/primary
+$color-laser:                       #c2a661; // accent/gold
+$color-maya-blue:                   #85b6ff;
+$color-neon-blue:                   #2c39f2;
+$color-nero:                        #242121;
+$color-pattens-blue-1:              #bbe2fe;
+$color-pattens-blue-2:              #d1dae1;
+$color-solitude-1:                  #e5ebf0;
+$color-solitude-2:                  #e6ebef; // button/secondary-hover
+$color-spindle-1:                   #b3c2cd;
+$color-spindle-2:                   #b5c4ce; // text-icon/desable
+$color-tangerine-yellow:            #ffd100;
+$color-ivory-2:                     #f5f5f3;
+$color-alabaster:                   #efeee5; // accent/beige
+$color-radical-red:                 #ff3055; // accent/red
+$color-torch-red:                   #ff1553;
+$color-torch-red:                   #fe0018;
+$color-scarlet:                     #e41d10;
+$color-crimson:                     #e41b3f;
+$color-light-yellow:                #ffffdd;
+$color-pattens-blue:                #dbe0e5;
+$color-caribbean-green:             #01b98d;
+$color-islamic-green:               #16b912;
+$color-lime-green:                  #19c416;
+$color-very-light-grey:             #c8c8c8;
+$color-cavern-pink:                 #e0b0b0;
+$color-double-spanish-white:        #d4c1a1;
+$color-whisper:                     #E5E5E5;
+$color-cadet:                       #64A3A0;
+
+// For metro
+
+$color-cerulean:                    #0277bd;
+$color-deep-sky-blue:               #1ac0f0;
+$color-sun:                         #f28532;
+$color-vivid-violet:                #8e469c;
+$color-sunglow:                     #ffca2e;
+$color-grey-chateau:                #a0a1a3;
+$color-conifer:                     #b2d348;
+$color-spray:                       #7bcccf;
+$color-light-steel-blue:            #aabfdc;
+
+// Default
+
+$color-default-black:               $color-black-pearl;
+$color-default-white:               #ffffff;                // background/primary
+$color-transparent:                 rgba(255, 255, 255, 0);
+
+// Gradient
+
+$black-to-right:                    linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 75%);
+
+// Typography
+// ---------------------------------
+
+// переменная используемая в html для подключения скейлинга
+$fz-default:                        16px;
+
+// у некоторых шрифтов в ios возникают проблемы с символом рубля
+// https://www.artlebedev.ru/kovodstvo/sections/159/#13
+$ff-rouble:                         "Rouble", "Arial", sans-serif;
+
+$ff-placeholder:                    "DIN2014Web", "Arial", sans-serif;
+
+// Animation
+// ---------------------------------
+
+$tf-default:                        ease;
+$trans-default:                     0.3s $tf-default;
+
+// если требуется изинг отличный от $tf-default, то переменную называем не цифрой
+$trans-modal:                       0.6s cubic-bezier(0.55, 0, 0.1, 1);
+
+$trans-600:                         0.6s $tf-default;
+$trans-1000:                        1s $tf-default;
+
+// Viewports
+// ---------------------------------
+
+$vp-320:                            320px;
+$vp-375:                            375px;
+$vp-768:                            768px;
+$vp-1024:                           1024px;
+$vp-1280:                           1280px;
+$vp-1440:                           1440px;
+$vp-1600:                           1600px;
+$vp-1920:                           2560px;
+$vp-2601:                           2601px;
+
+// Retina
+// ---------------------------------
+
+$retina-dpi:                        144dpi;
+$retina-dppx:                       1.5dppx;

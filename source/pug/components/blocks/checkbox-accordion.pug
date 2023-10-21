@@ -1,0 +1,12 @@
+mixin checkbox-accordion(data)
+  .checkbox-accordion.accordion(data-accordion="parent" data-single)&attributes(attributes)
+    .checkbox-accordion__element.accordion__element(data-accordion="element")&attributes(attributes)
+      button.checkbox-accordion__button.accordion__button.accordion__button.btn(type="button" data-accordion="button")
+        span!= data.buttonText
+        +icon('shevron-up', 14, 8)
+        +icon('close', 11, 11)
+      .checkbox-accordion__active-filters
+        span Накладные
+      .checkbox-accordion__content.accordion__content(data-accordion="content")
+        +catalog-checkbox-content(data.list)
+

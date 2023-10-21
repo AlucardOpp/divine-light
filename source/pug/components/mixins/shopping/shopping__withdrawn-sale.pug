@@ -1,0 +1,5 @@
+mixin shopping__withdrawn-sale(options = {})
+  - const isWithdrawnSale = options.isWithdrawnSale || false;
+
+  if isWithdrawnSale
+    p.shopping__withdrawn-sale Снят с продажи

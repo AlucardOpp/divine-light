@@ -1,0 +1,105 @@
+.designers {
+  padding: size(80px) 0;
+  margin-bottom: size(80px);
+
+  background-color: $color-alabaster;
+
+  @include vp-1599 {
+    padding: 80px 0;
+  }
+
+  @include vp-1279 {
+    padding: 56px 0;
+  }
+
+  @include vp-1023 {
+    padding: 40px 0;
+    margin-bottom: 48px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    margin: 0 0 size(32px);
+
+    font-family: $ff-placeholder;
+    font-weight: 300;
+    font-size: size(36px);
+    line-height: 122%;
+
+    @include vp-1599 {
+      font-size: 36px;
+      margin-bottom: 30px;
+    }
+
+    @include vp-1279 {
+      margin-bottom: 24px;
+    }
+
+    @include vp-1023 {
+      font-size: 28px;
+    }
+
+    @include vp-767 {
+      font-size: 20px;
+    }
+  }
+
+  &__slider {
+    @include vp-1023 {
+      margin: 0 -32px;
+    }
+
+    @include vp-767 {
+      margin: 0 -16px;
+    }
+  }
+
+  .slider-cards__swiper {
+    @include vp-1023 {
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+
+    @include vp-767 {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  }
+
+  .slider-cards__swiper-slide {
+    width: size(336px);
+    height: auto;
+
+    @include vp-1599 {
+      width: 336px;
+    }
+
+    @include vp-1279 {
+      width: 296px;
+    }
+
+    @include vp-1023 {
+      width: 224px;
+    }
+
+    @include vp-767 {
+      width: 177px;
+    }
+  }
+
+  .slider-cards__swiper-button-prev,
+  .slider-cards__swiper-button-next {
+    opacity: 0.7;
+
+    &.swiper-button-disabled {
+      opacity: 0;
+    }
+
+    @include vp-1023 {
+      display: none;
+    }
+  }
+}

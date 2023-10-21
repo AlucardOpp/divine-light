@@ -1,0 +1,15 @@
+mixin tooltip-content(options = {})
+  - const buttonCloseTag = options.buttonCloseTag || false; // тег кнопки закрыть подсказку
+  - const hasNotIconClose = options.hasNotIconClose || false; // нет кнопки закрыть подсказку
+
+  //- для использования на родителе нужно поставить data-tooltip="parrent"
+
+  span.visually-hidden.tooltip-content(data-tooltip="content")&attributes(attributes)
+    block
+    if (!buttonCloseTag && !hasNotIconClose)
+      button(type="button", aria-label="закрыть подсказку").btn.tooltip-content__button-close
+        +icon("close", 9, 9).btn__icon
+    else
+      if !hasNotIconClose
+        #{buttonCloseTag}(aria-label="закрыть подсказку").tooltip-content__button-close
+            +icon("close", 9, 9).tooltip-content__close-icon

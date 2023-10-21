@@ -1,0 +1,26 @@
+.container {
+  width: 100%;
+  max-width: size(1600px);
+  margin: 0 auto;
+  padding: 0 size(92px);
+
+  @include vp-1599 {
+    // max-width: size(1192px);
+    padding: 0 76px;
+  }
+
+  @include vp-1279 {
+    // max-width: size(1000px);
+    padding: 0 44px;
+  }
+
+  @include vp-1023 {
+    // max-width: size(752px);
+    padding: 0 32px;
+  }
+
+  @include vp-767 {
+    // max-width: size(450px);
+    padding: 0 16px;
+  }
+}

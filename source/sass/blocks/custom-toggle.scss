@@ -1,0 +1,158 @@
+.custom-toggle {
+  position: relative;
+
+  display: flex;
+
+  &__error {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    color: $color-torch-red;
+
+    opacity: 0;
+
+    transition: opacity $trans-default;
+  }
+
+  input {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+
+    clip: rect(0 0 0 0);
+  }
+
+  label {
+    display: flex;
+    align-items: flex-start;
+    color: $color-fiord;
+    font-size: size(16px);
+    line-height: size(22px);
+
+    position: relative;
+
+    cursor: pointer;
+
+    @include has-hover {
+      &:hover .custom-toggle__icon {
+        border-color: $color-pattens-blue-2;
+      }
+    }
+
+    span {
+      margin-bottom: 0;
+      margin-left: 0;
+    }
+  }
+
+  &--checkbox {
+    .custom-toggle__icon {
+      flex-shrink: 0;
+      display: inline-flex;
+      position: relative;
+
+      width: 24px;
+      height: 24px;
+
+      border: 2px solid $color-solitude-1;
+      border-radius: 4px;
+      margin-right: 8px;
+
+      transition: border $trans-default;
+
+      &::before {
+        content: "";
+        position: absolute;
+        opacity: 0;
+        top: 50%;
+        left: 50%;
+
+        width: 13px;
+        height: 9px;
+
+        background-color: $color-transparent;
+
+        transform: translate(-50%, -50%);
+
+        transition: $trans-default;
+        transition-property: opacity, background-color;
+      }
+    }
+  }
+
+  &--radio {
+    .custom-toggle__icon {
+      position: absolute;
+      top: 2px;
+      left: 0;
+
+      width: 16px;
+      height: 16px;
+
+      border: 1px solid rgba($color-default-black, 0.2);
+      border-radius: 50%;
+
+      transition: border $trans-default;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        width: 6px;
+        height: 6px;
+
+        color: $color-transparent;
+
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+
+        transition: color $trans-default;
+      }
+    }
+  }
+
+  input:checked + .custom-toggle__icon {
+    border: 2px solid $color-lemon;
+    background-color: $color-lemon;
+
+    &::before {
+      opacity: 1;
+      background-color: transparent;
+      background-image: url("../img/sprite/check.svg");
+      width: 13px;
+      height: 9px;
+    }
+  }
+
+  @include has-hover {
+    label:hover input:checked + .custom-toggle__icon {
+      border-color: $color-golden-yellow;
+      background-color: $color-golden-yellow;
+    }
+
+    label:hover input:checked + .custom-toggle__icon::before {
+      background-color: $color-golden-yellow;
+    }
+  }
+
+  &.is-invalid {
+    .custom-toggle__icon {
+      border: 1px solid $color-torch-red;
+    }
+
+    .custom-toggle__error {
+      opacity: 1;
+    }
+  }
+
+  /*&.is-valid {
+    label span {
+      color: $color-eucalyptus;
+    }
+  }*/
+}

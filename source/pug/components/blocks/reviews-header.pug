@@ -1,0 +1,9 @@
+mixin reviews-header(title, linkHref)
+  .reviews-header()&attributes(attributes)
+    .reviews-header__wrapper
+      +link({href: linkHref})(aria-label="Вернуться назад").reviews-header__link-back.link--fill-black
+        +icon("chevron-left", 32, 32)
+      .title-2.reviews-header__title
+        h1 !{title}
+      +link({href: linkHref})(aria-label="Закрыть страницу").reviews-header__header-close.link--fill-black
+        +icon("close-review", 20, 20)

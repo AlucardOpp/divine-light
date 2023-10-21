@@ -1,0 +1,10 @@
+.popup-question {
+  &__icon {
+    transition: $trans-default;
+    transition-property: color;
+
+    width: 45%;
+    height: 75%;
+    color: $color-spindle-1;
+  }
+}

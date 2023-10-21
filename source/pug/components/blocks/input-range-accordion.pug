@@ -1,0 +1,37 @@
+mixin input-range-accordion(data)
+  .input-range-accordion.accordion(data-accordion="parent" data-single)&attributes(attributes)
+    .input-range-accordion__element.accordion__element(data-accordion="element")&attributes(attributes)
+      button.input-range-accordion__button.accordion__button.accordion__button.btn(type="button" data-accordion="button")
+        span!= data.buttonText
+        +icon('shevron-up', 14, 8)
+      .input-range-accordion__content.accordion__content(data-accordion="content")
+        if (data.step)
+          .input-range-accordion__wrap.input-range-accordion__wrap--step.accordion__wrapper(data-step=data.step)
+            .input-range-accordion__slider.input-range-accordion__slider--step
+              .input-range-accordion__steps
+                //- span.input-range-accordion__step.input-range-accordion__step--1 1
+                //- span.input-range-accordion__step.input-range-accordion__step--2 2
+                //- span.input-range-accordion__step.input-range-accordion__step--4 4
+                //- span.input-range-accordion__step.input-range-accordion__step--6 6
+                //- span.input-range-accordion__step.input-range-accordion__step--8 8
+                //- span.input-range-accordion__step.input-range-accordion__step--10 10
+                //- span.input-range-accordion__step.input-range-accordion__step--12 12
+            .input-range-accordion__info
+              .input-range-accordion__info-block
+                input(type="text", value=data.min, data-value= data.min).input-range-accordion__min-price
+                span от
+              .input-range-accordion__info-block
+                input(type="text", value=data.max, data-value= data.max).input-range-accordion__max-price
+                span до
+        else
+          .input-range-accordion__wrap.accordion__wrapper
+            .input-range-accordion__slider.input-range-accordion__slider--no-step
+            .input-range-accordion__info
+              .input-range-accordion__info-block
+                input(type="text", value= data.min, data-value= data.min).input-range-accordion__min-price
+                span от
+              .input-range-accordion__info-block
+                input(type="text", value= data.max, data-value= data.max).input-range-accordion__max-price
+                span до
+
+        button(type= 'button').btn.show-filter-btn.j-type-btn Показать 26 товаров

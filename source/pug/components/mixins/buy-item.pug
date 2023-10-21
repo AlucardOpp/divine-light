@@ -1,0 +1,13 @@
+mixin buy-item()
+  .buy-item
+    +picture("content/slider", "slider-image-2", "jpg", 304, 304)
+    .buy-item__description
+      p.buy-item__name Садовый светильник ST-Luce&nbsp;SL083.705.01
+      .buy-item__wrapper
+        +counter({
+          isNoCounter: false,
+          isNoRender: isNoCounter,
+          minQuantity: 1,
+        })
+        +price({isOldPrice: true, isNoPrice: false})
+      +favorite-togle

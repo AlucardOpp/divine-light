@@ -1,0 +1,100 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Дивайн Лайт"; //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = "";
+  - const hasHeader = true;
+  - const headerMods = "is-fixed";
+  - const headerType  = "light";
+  - const hasFooter = true;
+  - const footerMods = "";
+  - const footerType = "light";
+  - const currentUrl = ""; //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+  - const hasMap = true
+
+  -
+    const dataFields = [
+      {
+        label: "10 товаров • 35 кг",
+        value: "15 487 ₽",
+        valueBlack: true,
+        valueRed: false,
+        fieldBlack: false,
+        tooltip: false,
+        tooltipContent: "",
+      },
+      {
+        label: "Скидка",
+        value: "- 8 974 ₽",
+        valueBlack: false,
+        valueRed: true,
+        fieldBlack: false,
+        tooltip: false,
+        tooltipContent: "",
+      },
+      {
+        label: "Скидка по промокоду",
+        value: "- 87 ₽",
+        valueBlack: false,
+        valueRed: true,
+        fieldBlack: false,
+        tooltip: false,
+        tooltipContent: "",
+      },
+      {
+        label: "Доставка",
+        value: "584 ₽",
+        valueBlack: true,
+        valueRed: false,
+        fieldBlack: false,
+        tooltip: false,
+        tooltipContent: "",
+      },
+    ]
+
+block main
+  main.page.page--checkout
+    h1.page__title.container Оформление заказа
+
+    - const isNotRenderTotal = true;
+    - const orderButton = {text: "Оплатить СПБ", type: "submit"};
+    - const getReceipt = {inputName: 'get-receipt', inputLabel: 'Получить чек на email'};
+    - const subscribeNews = {inputName: 'subscribe-news', inputLabel: 'Подписаться на самые актуальные новости и акции'};
+
+    .making-order.container(data-validate)
+      form(action="#")
+        .making-order__wrapper
+          .making-order__column
+            +recipient-details().making-order__recipient-details.making-order__container
+            +point-selected()
+            +payment-method().making-order__payment-method
+            +shopping-widget({isNotRenderTotal}).making-order__shopping-widget
+          .making-order__wrap-shopping-widget
+            .making-order__aside
+              .making-order__popups
+                +popup-info({icon: "error-line", title: "Введите номер квартиры", text: "Без номера квартиры курьер не&nbsp;сможет доставить по&nbsp;адресу"}).popup-info--error
+                +popup-info({icon: "icon-ok-fill", title: "Промокод применен"}).popup-info--success
+                +popup-info({title: "Введите номер квартиры"}).popup-info--info
+              +promo-code({hiddenTitle: true}).making-order__promo-code
+              +cost-estimate({fields: dataFields}).making-order__cost-estimate
+              +btn(orderButton).making-order__place-order-button
+              +custom-toggle(getReceipt).custom-toggle--checkbox.making-order__get-receipt
+              +custom-toggle(subscribeNews).custom-toggle--checkbox.making-order__subscribe-news
+              .making-order__check-email(data-check-email)
+                +custom-input({
+                  style: 'simple',
+                  inputLabel: "E-mail",
+                  name: "check-email"
+                })(data-validate-type="email")
+              .making-order__offer-rules.
+                Нажимая кнопку &laquo;Оформить заказ&raquo;,
+                Вы&nbsp;подтверждаете, что ознакомлены
+                с&nbsp;Офертой и&nbsp;Политикой обработки
+                персональных данных и&nbsp;даете свое согласие
+                на обработку персональных данных
+
+block modals
+  +modal("modal--point-info")(data-modal="point-info")
+    +modal-point-info()
+  +modal("modal--map")(data-modal="map")
+    +modal-map()

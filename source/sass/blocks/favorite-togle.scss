@@ -1,0 +1,59 @@
+.favorite-togle {
+  position: relative;
+  display: flex;
+  color: rgba($color-spindle-1, 0.6);
+  cursor: pointer;
+
+  width: 20px;
+  height: 18px;
+
+  transition: $trans-default;
+  transition-property: opacity, color;
+
+  @include vp-767 {
+    width: 16px;
+    height: 15px;
+  }
+
+  @include has-hover {
+    &:hover .favorite-togle__icon {
+      opacity: 0;
+      transition: $trans-default;
+      transition-property: opacity;
+    }
+
+    &:hover .favorite-togle__icon--hover {
+      opacity: 1;
+    }
+  }
+
+  &::before {
+    content: "";
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% + 15px);
+    height: calc(100% + 15px);
+    position: absolute;
+  }
+
+
+  input:checked + &__icon {
+    color: $color-radical-red;
+    transition: $trans-default;
+    transition-property: opacity;
+  }
+
+  &__icon {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    &--hover {
+      opacity: 0;
+      color: $color-radical-red;
+      transition: $trans-default;
+      transition-property: opacity, color;
+    }
+  }
+}

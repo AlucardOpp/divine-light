@@ -1,0 +1,282 @@
+.making-order {
+  padding-left: size(164px);
+  padding-right: size(164px);
+
+  @include vp-1599 {
+    padding-left: size(164px);
+    padding-right: size(164px);
+  }
+
+  @include vp-1439 {
+    margin-bottom: size(24px);
+    padding-left: size(76px);
+    padding-right: size(76px);
+  }
+
+  @include vp-1279 {
+    padding-left: size(44px);
+    padding-right: size(44px);
+  }
+
+  @include vp-1023 {
+    padding-left: size(32px);
+    padding-right: size(32px);
+  }
+
+  @include vp-767 {
+    margin-bottom: size(16px);
+    padding-left: size(16px);
+    padding-right: size(18px);
+  }
+
+  &.is-error {
+    .popup-info--error {
+      display: flex;
+    }
+  }
+
+  &.is-success {
+    .popup-info--success {
+      display: flex;
+    }
+  }
+
+  &.is-info {
+    .popup-info--info {
+      display: flex;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    @include vp-1279 {
+      flex-direction: column;
+    }
+  }
+
+  &__column {
+    width: 60.4%;
+
+    @include vp-1439 {
+      width: 61.7%;
+    }
+
+    @include vp-1279 {
+      width: 100%;
+      margin-bottom: size(39px);
+    }
+
+    @include vp-767 {
+      margin-bottom: size(31px);
+    }
+  }
+
+  &__container {
+    display: grid;
+    max-width: 408px;
+
+    @include vp-1279 {
+      max-width: 456px;
+    }
+
+    @include vp-1023 {
+      max-width: 100%;
+    }
+  }
+
+  &__recipient-details {
+    margin-bottom: size(48px);
+
+    @include vp-1279 {
+      margin-bottom: size(40px);
+    }
+
+    @include vp-767 {
+      margin-bottom: size(34px);
+    }
+  }
+
+  &__way-get {
+    width: 100%;
+    margin-bottom: size(48px);
+
+    @include vp-1279 {
+      margin-bottom: size(40px);
+      max-width: 100%;
+    }
+
+    @include vp-767 {
+      margin-bottom: size(32px);
+    }
+  }
+
+  &__payment-method {
+    margin-bottom: size(48px);
+
+    @include vp-1279 {
+      margin-bottom: size(40px);
+    }
+
+    @include vp-767 {
+      margin-bottom: size(32px);
+    }
+  }
+
+  &__promo-code {
+    margin-bottom: size(32px);
+
+    @include vp-767 {
+      margin-bottom: size(26px);
+    }
+  }
+
+  &__wrap-shopping-widget {
+    position: relative;
+    width: 32%;
+
+    @include vp-1439 {
+      width: 29.7%;
+    }
+
+    @include vp-1279 {
+      width: 100%;
+    }
+  }
+
+  &__popups {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+
+    transform: translateY(calc(-100% - #{size(12px)}));
+
+    @include vp-1279 {
+      width: calc(100% - 20px * 2);
+      max-width: size(400px);
+      position: fixed;
+      top: size(24px);
+      z-index: 1000;
+
+      left: 50%;
+
+      transform: translate3d(-50%, 0, 0);
+
+    }
+
+    .popup-info {
+      display: none;
+    }
+  }
+
+  &__aside {
+    padding: size(24px);
+    position: sticky;
+    top: size(200px);
+    right: 0;
+
+    box-shadow: 0px 8px 32px rgba(0, 30, 52, 0.08), 0px 0px 3px rgba(0, 30, 52, 0.03);
+    border-radius: 12px;
+
+    @include vp-1279 {
+      position: relative;
+      top: auto;
+      max-width: size(616px);
+      margin: 0 auto;
+    }
+
+    @include vp-1023 {
+      max-width: none;
+    }
+
+    @include vp-767 {
+      padding: size(16px);
+    }
+
+    .bonus {
+      margin-top: size(-16px);
+    }
+
+    .bonus__toggle-switch {
+      margin-bottom: size(32px);
+    }
+  }
+
+  &__mobyle-shopping-widget {
+    display: none;
+    max-width: size(312px);
+
+    @include vp-1279 {
+      display: block;
+      margin-bottom: size(40px);
+    }
+
+    @include vp-767 {
+      margin-bottom: size(32px);
+    }
+  }
+
+  &__cost-estimate {
+    margin-bottom: size(32px);
+
+    @include vp-767 {
+      margin-bottom: size(26px);
+    }
+  }
+
+  &__place-order-button {
+    width: 100%;
+    margin-bottom: size(24px);
+
+    @include vp-767 {
+      padding-top: size(9px);
+      padding-bottom: size(9px);
+      margin-bottom: size(16px);
+    }
+  }
+
+  &__get-receipt {
+    justify-self: flex-start;
+    margin-bottom: size(26px);
+
+    @include vp-767 {
+      margin-bottom: size(18px);
+    }
+  }
+
+  &__subscribe-news {
+    justify-self: flex-start;
+    margin-bottom: size(24px);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include vp-1023 {
+      margin-bottom: size(26px);
+    }
+
+    @include vp-767 {
+      margin-bottom: size(16px);
+    }
+  }
+
+  &__offer-rules {
+    font-size: size(14px);
+    line-height: size(18px);
+    color: $color-bermuda-grey;
+  }
+
+  &__check-email {
+    height: 0;
+    overflow: hidden;
+
+    transition: height $trans-default;
+
+    .custom-input {
+      margin-bottom: size(24px);
+    }
+  }
+}

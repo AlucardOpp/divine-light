@@ -1,0 +1,18 @@
+mixin way-get()
+  section.way-get()&attributes(attributes)
+    h2.way-get__title Способ получения
+    .way-get__tabs(data-tabs="parent")
+      div.way-get__tab-list(data-tabs="controls")
+        +btn({href:"#"}).btn--true-light.way-get__tab(data-tabs="control")
+          h3.way-get__tab-title Доставка курьером
+          p.way-get__tab-desc До вашего адреса
+        +btn({href:"#"}).btn--true-light.way-get__tab(data-tabs="control")
+          h3.way-get__tab-title Пункт выдачи
+          p.way-get__tab-desc Дивайн Лайт, Cdek, Boxberry
+        +btn({href:"#"}).btn--true-light.way-get__tab(data-tabs="control")
+          h3.way-get__tab-title Доставка ТК
+          p.way-get__tab-desc До транспортной компании по России
+      .way-get__content(data-tabs="content")
+        +delivery-courier()(data-tabs="element")
+        +select-pickup-point()(data-tabs="element")
+        +delivery-transport-company()(data-tabs="element")

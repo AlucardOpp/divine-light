@@ -1,0 +1,56 @@
+.go-page {
+  $gap: 8px;
+
+  form {
+    display: grid;
+    justify-content: flex-start;
+
+    gap: $gap;
+    grid-auto-flow: column;
+  }
+
+  label {
+    display: grid;
+    justify-content: flex-start;
+
+    font-size: 14px;
+    line-height: 18px;
+    color: $color-bermuda-grey;
+
+    gap: $gap;
+    grid-auto-flow: column;
+    grid-template-columns: auto 73px;
+
+    @include vp-767 {
+      grid-template-columns: auto 38px;
+    }
+  }
+
+  .custom-input input {
+    border-color: $color-alice-blue-1;
+    height: 40px;
+    color: $color-fiord;
+    font-size: 16px;
+    line-height: 22px;
+
+    @include vp-767 {
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+
+  .btn {
+    color: $color-fiord;
+    font-size: 16px;
+    line-height: 22px;
+    padding: 9px 24px;
+
+    background-color: $color-alice-blue-3;
+
+    @include has-hover {
+      &:hover {
+        background-color: $color-solitude-2;
+      }
+    }
+  }
+}

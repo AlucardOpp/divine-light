@@ -1,0 +1,7 @@
+mixin modal-cart
+  .modal-cart
+    .modal-cart__title.title-2
+      h2 Очистить корзину
+    p.modal-cart__description!="Вы&nbsp;действительно хотите удалить все товары? Если вы&nbsp;удалите товары, отменить действие будет невозможно"
+    +btn({text: "Удалить товары"})(data-close-modal).modal-cart__btn.modal-cart__btn--delete
+    +btn({text: "Отмена"})(data-close-modal).modal-cart__btn.modal-cart__btn--cansel.btn--secondary

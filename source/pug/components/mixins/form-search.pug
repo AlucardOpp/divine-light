@@ -1,0 +1,11 @@
+mixin form-search()
+  .form-search
+    form(method="get" action="#")
+      +custom-input({inputPlaceholder: "Поиск среди 50 000 товаров", inputName: "site-search"})
+        .form-search__icon-wrp
+          +btn({type: "button"}).form-search__btn.form-search__btn--image
+            +icon("image", 24, 24)
+            span.visually-hidden Кнопка поиска
+          +btn({type: "button"}).btn--primary.form-search__btn.form-search__btn--search
+            +icon("search", 24, 24)
+            span.visually-hidden Кнопка поиска

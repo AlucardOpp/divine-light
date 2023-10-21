@@ -1,0 +1,97 @@
+.cost-estimate-field {
+  margin: 0;
+  display: flex;
+
+  &--size-big &__label,
+  &--size-big &__value {
+    font-size: size(18px);
+    line-height: size(24px);
+    font-weight: 600;
+
+    @include vp-767 {
+      font-size: size(16px);
+      line-height: size(22px);
+    }
+  }
+
+  &__label {
+    font-size: size(16px);
+    line-height: size(22px);
+    margin-right: auto;
+
+    @include vp-767 {
+      font-size: size(14px);
+      line-height: size(18px);
+    }
+  }
+
+  &__value {
+    font-size: size(18px);
+    line-height: size(24px);
+
+    @include vp-767 {
+      font-size: size(16px);
+      line-height: size(22px);
+    }
+
+    &--accent {
+      font-size: size(16px);
+      font-weight: 600;
+      line-height: size(22px);
+
+      @include vp-767 {
+        font-size: size(14px);
+        line-height: size(18px);
+      }
+    }
+
+    &--accent-red {
+      font-size: size(16px);
+      font-weight: 600;
+      line-height: size(22px);
+      color: $color-radical-red;
+
+      @include vp-767 {
+        font-size: size(14px);
+        line-height: size(18px);
+      }
+    }
+
+    &--margin-right {
+      margin-right: size(8px);
+
+      @include vp-767 {
+        margin-right: size(5px);
+      }
+    }
+  }
+
+  &__tooltip {
+    align-self: center;
+    width: size(20px);
+    height: size(20px);
+    margin-right: size(2px);
+
+    @include vp-767 {
+      width: size(16px);
+      height: size(16px);
+      margin-right: size(1px);
+    }
+  }
+
+  &__tooltip-text {
+    max-width: size(168px);
+    color: $color-black-pearl;
+    margin-bottom: size(16px);
+  }
+
+  &__tooltip-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__tooltip-link {
+    color: $color-fiord;
+    border-bottom: 1px solid $color-fiord;
+  }
+}

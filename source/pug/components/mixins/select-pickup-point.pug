@@ -1,0 +1,22 @@
+mixin select-pickup-point(isModal)
+  - const boxberryСheckbox = {inputName: 'boxberry', inputLabel: 'Boxberry', inputChecked: true};
+  - const cdekСheckbox = {inputName: 'cdek', inputLabel: 'Cdek', inputChecked: true};
+
+  section.select-pickup-point(class=isModal ? "select-pickup-point--modal" : "")&attributes(attributes)
+    .select-pickup-point__column
+      if(!isModal)
+        h2.select-pickup-point__title Выберите пункт выдачи
+      +custom-input({
+        style: 'simple',
+        inputLabel: "Поиск по адресу, району или метро",
+        hasButton: true,
+        iconInButton: ['search--max-bleed', 16, 16],
+      })(data-validate-type="text" data-search-point).select-pickup-point__search-input
+      .select-pickup-point__checkbox-list(data-pickup-filter)
+        +custom-toggle(boxberryСheckbox).custom-toggle--checkbox.select-pickup-point__checkbox
+        +custom-toggle(cdekСheckbox).custom-toggle--checkbox.select-pickup-point__checkbox
+    //.is-active на select-pickup-point__wrapper активирует карту
+    .select-pickup-point__wrapper(data-pickup-wrapper)
+      .select-pickup-point__delivery-locations
+        +delivery-locations(isModal)
+      .map.select-pickup-point__map(data-pickup-map)

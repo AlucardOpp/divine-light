@@ -1,0 +1,123 @@
+.choice {
+  display: grid;
+  align-items: flex-start;
+  padding-top: size(13px);
+
+  grid-template-areas:
+    "filters row"
+    "filters row";
+
+  grid-template-columns: 284px minmax(auto, 1128px);
+  grid-template-rows: minmax(0, auto);
+  // justify-content: space-between;
+  grid-column-gap: size(5px);
+
+  @include vp-1439 {
+    grid-template-columns: 264px minmax(840px, 1fr);
+    padding-top: size(41px);
+  }
+
+  @include vp-1279 {
+    grid-template-columns: 216px minmax(696px, 1fr);
+    padding-top: size(41px);
+  }
+
+  @include vp-1023 {
+    grid-template-areas:
+      "filters sorting-mobile"
+      "options options"
+      "row     row";
+    grid-template-columns: 148px 1fr;
+    padding-top: size(25px);
+  }
+
+  @include vp-767 {
+    grid-template-columns: 120px 1fr;
+  }
+
+  &.container {
+    @include vp-1439 {
+      padding-top: size(12px);
+    }
+
+    @include vp-1279 {
+      margin-bottom: size(45px);
+    }
+
+    @include vp-1023 {
+      padding-top: size(5px);
+    }
+
+    @include vp-767 {
+      padding-top: 0;
+    }
+  }
+
+  &__sorting-desktop {
+    grid-area: sorting-desktop;
+    margin-bottom: size(14px);
+
+    @include vp-1023 {
+      display: none;
+    }
+  }
+
+  &__filters {
+    grid-area: filters;
+
+    @include vp-1023 {
+      margin-bottom: size(15px);
+    }
+
+    @include vp-767 {
+      margin-bottom: 0;
+    }
+  }
+
+  &__row {
+    grid-area: row;
+
+    @include vp-1439 {
+      margin-left: 24px;
+    }
+
+    @include vp-1023 {
+      margin-left: 0;
+    }
+  }
+
+  &__enabled-filtering-options {
+    display: none;
+
+    @include vp-1023 {
+      display: flex;
+      grid-area: options;
+      margin-bottom: size(5px);
+    }
+
+    @include vp-767 {
+      margin-top: size(19px);
+      margin-bottom: size(16px);
+    }
+  }
+
+  &__sorting-mobile {
+    display: none;
+
+    grid-area: sorting-mobile;
+
+    @include vp-1023 {
+      display: flex;
+      justify-self: flex-end;
+      margin-bottom: size(-13px);
+    }
+  }
+
+  &__about-chandeliers {
+    // min-height: 76px; // временно
+  }
+
+  .filters {
+    width: auto;
+  }
+}

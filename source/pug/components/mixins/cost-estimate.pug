@@ -1,0 +1,16 @@
+mixin cost-estimate({fields, isAutorized = false})
+  section.cost-estimate()&attributes(attributes)
+    h2.visually-hidden Cмета расходов
+    .cost-estimate__row
+      each field in fields
+        +cost-estimate-field({label:  field.label, value: field.value, isValueAccentBlack: field.valueBlack, isValueAccentRed: field.valueRed, tooltip: field.tooltip})
+          !=field.tooltipContent
+    .cost-estimate__row
+      +cost-estimate-field({label:  "Итого", value: "15 487 ₽", isFieldAccentBlack: true})
+      if (isAutorized)
+        +cost-estimate-field({label:  "Начислим бонусы", value: "+ 87", isValueAccentBlack: true})
+      else
+        +cost-estimate-field({label:  "Начислим бонусы", value: "+ 87", isValueAccentBlack: true, tooltip: "alert"})
+          span.cost-estimate-field__tooltip-content
+            span.cost-estimate-field__tooltip-text Бонусы начисляются только авторизованным или зарегистрированным пользователям
+            a.link.cost-estimate-field__tooltip-link(href="#") Войти или зарегистрироваться

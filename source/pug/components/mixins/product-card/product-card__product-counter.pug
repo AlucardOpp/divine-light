@@ -1,0 +1,26 @@
+mixin product-card__product-counter(options = {})
+  - const isSliderCard = options.isSliderCard || false;
+  - const isDiscount = options.isDiscount || false;
+
+  .product-card__product-counter
+    +btn(
+      aria-label="убрать 1 товар из корзины",
+      data-toggle-show-or-hidden="button-minus"
+    ).btn--true-secondary.product-card__remove-product
+      +icon("minus", 16, 2).product-card__remove-icon
+    .product-card__product-counter-col
+      if (isSliderCard)
+        p.product-card__product-counter-value(data-toggle-show-or-hidden="counter") 0
+          span.product-card__product-counter-units &nbsp;шт.
+      else
+        p.product-card__product-counter-value(data-toggle-show-or-hidden="counter") 0
+          span.product-card__product-counter-units &nbsp;шт.
+        p.product-card__product-counter-limit до #[span(data-counter-max-limin='30') 30] шт.
+    +btn(
+      class=isSliderCard ? 'null' : ".btn--secondary",
+      aria-label="добавить 1 товар в корзину"
+      data-toggle-show-or-hidden="button-plus"
+    ).product-card__add-product
+      if (isDiscount)
+        +badge("-10%").badge--discount-color.product-card__discount-badge-button
+      +icon("plus", 16, 16).product-card__add-icon

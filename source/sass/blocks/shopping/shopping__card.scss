@@ -1,0 +1,52 @@
+.shopping {
+  &__card {
+    position: relative;
+
+    display: flex;
+    padding: 40px 0 40px 0;
+
+    @media (max-width: 1600px) and (min-width: 1228px) {
+      padding: 32px 0 32px 0;
+    }
+
+    @media (max-width: 1024px) {
+      padding: 24px 0 24px 0;
+    }
+
+    @include vp-1023 {
+      padding: 32px 0 32px 0;
+    }
+
+    @include vp-767 {
+      padding: 24px 0 24px 0;
+    }
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    &:not(:only-child)::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      width: 100%;
+      height: size(1px);
+
+      background-color: $color-alice-blue-1;
+
+      @include vp-767 {
+        box-shadow: 100px 0 0 0 $color-alice-blue-1, -100px 0 0 0 $color-alice-blue-1;
+      }
+    }
+
+    &:last-child:not(:first-child)::before {
+      display: none;
+    }
+  }
+}

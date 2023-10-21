@@ -1,0 +1,8 @@
+mixin icon-tooltip(options = {})
+  - const iconProps = options.iconProps || ['house', 16, 16];
+  - const tooltipName = options.tooltipName || 'designerCard';
+
+  .icon-tooltip(data-tooltip="parrent", data-tooltip-options=tooltipName)&attributes(attributes)
+    +icon(...iconProps)
+    +tooltip-content({hasNotIconClose: true})
+      block

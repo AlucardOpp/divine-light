@@ -1,0 +1,19 @@
+mixin basket-popup()
+  .basket-popup.is-open(data-basket-popup)
+    .basket-popup__content
+      .basket-popup__top
+        .basket-popup__inner-top
+          - for (let i = 0; i < 7; i++)
+            a(href="#").basket-popup__item-card
+                .basket-popup__item-card-image
+                  +picture("content/slider", "slider-image-1", "jpg", 304, 304)
+                .basket-popup__item-card-row
+                  .basket-popup__item-card-title Детская настольная лампа Omnilux OML-16404-01
+                  .basket-popup__price
+                    p.basket-popup__item-current-price 27 270 ₽
+                    p.basket-popup__item-old-price 27 270 ₽
+      .basket-popup__bottom
+        .basket-popup__price
+          p.basket-popup__current-price 27 270 ₽
+          p.basket-popup__old-price 27 270 ₽
+        +btn({text: "В корзине"})

@@ -1,0 +1,28 @@
+.light-header {
+  &__payment-security {
+    margin-right: 120px;
+    white-space: nowrap;
+    padding: 0 3px;
+
+    @include vp-1439 {
+      margin-right: 63px;
+    }
+
+    @include vp-1279 {
+      margin-right: 24px;
+    }
+
+    @include vp-1023 {
+      display: none;
+    }
+
+    @include has-hover {
+      color: $color-black-pearl;
+    }
+
+    .icon {
+      flex-shrink: 0;
+      margin-right: 10px;
+    }
+  }
+}

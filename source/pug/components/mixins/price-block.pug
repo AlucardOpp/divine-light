@@ -1,0 +1,7 @@
+mixin price-block(data)
+  .price-block
+    if (data.isDiscount)
+      span.price-block__cost=data.cost
+      span.price-block__old=data.old
+    else
+      span.price-block__cost=data.cost

@@ -1,0 +1,8 @@
+mixin toggle-switch(data)
+  .toggle-switch
+    span.toggle-switch__title= data.title
+    .toggle-switch__wrap
+      label
+        input(type="checkbox")
+        span.toggle-switch__round(tabindex='0')
+    button(type= 'button').btn.show-filter-btn.j-type-btn Показать 26 товаров

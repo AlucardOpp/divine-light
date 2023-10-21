@@ -1,0 +1,25 @@
+mixin tabs-lighting(data)
+  .tabs.tabs-lighting&attributes(attributes)(data-tabs="parent")
+    .tabs-lighting__container.swiper
+      .tabs__controls.tabs-lighting__controls.swiper-wrapper(data-tabs="controls")
+        each item in data
+          +chips(item).tabs__control.tabs-lighting__control.swiper-slide(data-tabs="control")
+    .tabs__content.tabs-lighting__content(data-tabs="content")
+      each item in data
+        .tabs__element.tabs-lighting__element(data-tabs="element")
+          .tabs-lighting__text-content
+            h3.tabs-lighting__title!=item.title
+            ul.tabs-lighting__list
+              - for (let i = 0; i < item.items.length; i++)
+                  if (item.items[i].new === "true")
+                    li.tabs-lighting__item
+                      a(href="#" aria-label="Перейти к товарам" data-image=`${i+1}`).tabs-lighting__link #{item.items[i].title} #[span.tabs-lighting__new!="new"]
+                  else
+                    li.tabs-lighting__item
+                      a(href="#" aria-label="Перейти к товарам" data-image=`${i+1}`).tabs-lighting__link!=item.items[i].title
+          .tabs-lighting__images
+            .tabs-lighting__image.tabs-lighting__image--main
+              +picture("content/select-lighting", item.image, "jpg", 707, 640, item.title)
+            - for (let i = 0; i < item.items.length; i++)
+              .tabs-lighting__image.tabs-lighting__image--hover(data-image=`${i+1}`)
+                +picture("content/select-lighting", item.items[i].image, "jpg", 707, 640, item.title)

@@ -1,0 +1,146 @@
+mixin product-info-error()
+
+  -
+    const priceBlock = {
+      isDiscount: "true",
+      old: "3 340 ₽",
+      cost: "3 270 ₽"
+    }
+
+  -
+    const dataPayment= [
+      {
+        modal: "",
+        title: "В рассрочку",
+        price: "от 2 895 ₽/мес",
+        name: "chevron-right",
+        width: "25",
+        height: "25",
+      },
+      {
+        modal: "",
+        title: "долями",
+        price: "4 платежа по 659 ₽",
+        name: "chevron-right",
+        width: "25",
+        height: "25",
+        modal: "modal-parts",
+        icon: {
+          name: "icon-lines",
+          width: "17",
+          height: "13",
+        }
+      }
+    ]
+
+  -
+    const bonusData = {
+        bonus: "+250 бонусов",
+        delivery: "Доставка 1 ₽"
+      }
+
+  -
+    const dataRating = {
+        number: "0",
+        text: "Оставить отзыв",
+      }
+
+
+
+  .product-info.is-error-compare
+    .product-info__badges
+      +badge("Новинка", {tag: "button"}).badge--new-item-color.badge--size-large
+      +badge("Скидка -10%", {tag: "button"}).badge--big-discount-color.badge--size-large
+    .product-info__block-title.title-2
+      .product-info__title-wrap
+        h2 Каскадная люстра Odeon Light 4938/4
+        p.product-info__code
+          span Код товара:
+          =" "
+          | 361134-2721
+      .product-info__btns-icon-mobile
+        +btn()(aria-label= "добавить в избранное").btn--light-third
+          +icon("favorite", "24", "24")
+        +btn()(aria-label= "добавить для сравнения").btn--light-third
+          +icon("compare", "24", "24")
+
+    .product-info__offer
+      +price-block(priceBlock)
+
+      +bonus-block(bonusData)
+
+    ul.product-info__payment
+      each item in dataPayment
+        li.product-info__payment-item
+          +payment-variants(item)
+
+    .product-info__form
+      form(action="#")
+        .product-info__form-inner
+          .radio-block
+            span.radio-block__name Мощность
+            .radio-block__variants
+              .btn-radio
+                input(type="radio" id="power1" value="15" name= "power" checked)
+                label(for="power1") 15 Вт
+              .btn-radio
+                input(type="radio" id="power2" value="40" name= "power")
+                label(for="power2") 40 Вт
+              .btn-radio
+                input(type="radio" id="power3" value="60" name= "power")
+                label(for="power3") 60 Вт
+
+          .radio-block
+            span.radio-block__name Размер
+            .radio-block__variants
+              .btn-radio
+                input(type="radio" id="size1" value="15" name= "size" checked)
+                label(for="size1") 80 См
+              .btn-radio
+                input(type="radio" id="size2" value="40" name= "size")
+                label(for="size2") 120 См
+              .btn-radio
+                input(type="radio" id="size3" value="60" name= "size")
+                label(for="size3") 140 См
+
+          .color-radio
+            span.color-radio__name Цвет
+            .color-radio__variants
+              .btn-radio
+                input(type="radio" id="color1" value="#D4C1A1" name= "color" checked)
+                label(for="color1")
+              .btn-radio
+                input(type="radio" id="color2" value="#E0B0B0" name= "color")
+                label(for="color2")
+              .btn-radio
+                input(type="radio" id="color3" value="#C8C8C8" name= "color")
+                label(for="color3")
+              .btn-radio
+                input(type="radio" id="color4" value="#FFFFFF" name= "color")
+                label(for="color4")
+    .product-info__add-btn
+      +btn({text: "Добавить в корзину"})(
+        data-toggle-show-or-hidden="button-show",
+        data-prevent-default="on").btn--size-medium.btn--wight-medium.btn--padding-16.product-info__add-basket
+    .product-info__counter-block
+      +counter({isQuantityRestrictions: true, isNoRender: isNoCounter, minQuantity: 0, maxQuantity: 269}).product-info__counter
+      +btn({text: "Перейти в корзину", href:"basket.html"}).btn--size-medium.btn--wight-medium.btn--padding-16.product-info__go-basket
+    .product-info__btns
+      +btn({text: "Купить в 1 клик"})(data-open-modal="modal-buy").btn--size-medium.btn--light-second.btn--wight-medium.btn--padding-16.product-info__one-click
+      .product-info__btns-icon
+        +btn()(aria-label= "добавить в избранное").btn--light-third
+          +icon("favorite", "24", "24")
+        +btn()(aria-label= "добавить для сравнения").btn--light-third
+          +icon("compare", "24", "24")
+
+      .product-info__popups
+        +popup-info({icon: "error-line", title: "Для добавления товара в&nbsp;избранное, необходимо", link: true, href: "#", textLink: "Войти или зарегистрироваться"}).popup-info--error-favorite
+        +popup-info({icon: "error-line", title: "Для добавления товара в&nbsp;сравнение, необходимо", link: true, href: "#", textLink: "Войти или зарегистрироваться"}).popup-info--error-compare
+
+    .product-info__line
+      +info-rating(dataRating)
+
+      .product-info__available
+        +icon("icon-tick", "20", "20")
+        span.product-info__amount В наличии 269&nbsp;шт
+

@@ -1,0 +1,16 @@
+mixin counter(options = {})
+  include ./counter__button-plus
+  include ./counter__button-minus
+  include ./counter__row
+
+  - const isQuantityRestrictions = options.isQuantityRestrictions || false;
+  - const isNoRender = options.isNoRender || false;
+  - const isDiscount = options.isDiscount || false;
+  - const minQuantity = typeof options.minQuantity === 'number' ? options.minQuantity : false;
+  - const maxQuantity = typeof options.maxQuantity === 'number' ? options.maxQuantity : 99999;
+
+  if !isNoRender
+    .counter(data-counter="parrent")&attributes(attributes)
+      +counter__button-minus()(data-counter="minus", data-counter-min-quantity=minQuantity)
+      +counter__row({isQuantityRestrictions, maxQuantity})
+      +counter__button-plus({isDiscount})(data-counter="plus", data-counter-max-quantity=maxQuantity)

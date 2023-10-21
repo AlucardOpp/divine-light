@@ -1,0 +1,40 @@
+mixin tabbar(currentUrl, menuList)
+  .tabbar
+    .container
+      ul.tabbar__user-menu
+        //- li.tabbar__user-menu-item
+        //-   if (currentUrl === "index.html")
+        //-     //- lighthouse снимает 10 баллов SEO за <a> без href
+        //-     span.tabbar__logo
+        //-       +picture("content", "logo-tabbar", "png", 24, 24, "Логотип Дивайн Лайт")
+        //-   else
+        //-     a.tabbar__logo(href="index.html", aria-label="Переход на главную")
+        //-       +picture("content", "logo-tabbar", "png", 24, 24, "Логотип Дивайн Лайт")
+        each item in menuList
+          -
+            const {mod, badge, badgeMod, href, iconName, iconWidth, iconHeight, label} = item
+            const itemClassName = []
+            const badgeClassName = []
+            const labelsToPagesName = {
+              'Главная': 'index.html',
+              'Каталог': 1,
+              'Корзина': 4,
+            } // значение value = currentUrl "написано в pug файлике каждой страницы"
+
+            if (labelsToPagesName[label] === currentUrl) {
+              itemClassName.push(`is-active`);
+            }
+
+            if (mod) {
+              itemClassName.push(`tabbar__user-menu-item--${mod}`);
+            }
+
+            if (badgeMod) {
+              badgeClassName.push(`badge--${badgeMod}`);
+            }
+
+          li.tabbar__user-menu-item(class=itemClassName)
+            +link({href})
+              +icon(iconName, iconWidth, iconHeight).link__icon
+              if badge
+                +badge(badge).badge--discount-color(class=badgeClassName)

@@ -1,0 +1,142 @@
+.checkbox-accordion {
+  max-width: unset;
+  margin: 0;
+  margin-bottom: size(8px);
+
+  @include vp-1023 {
+    margin-bottom: 0;
+    padding-bottom: size(12px);
+    border-top: 1px solid $color-alice-blue-1;
+    transition: border-color $trans-default;
+  }
+
+  @include vp-767 {
+    margin-left: -16px;
+    margin-right: -16px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  &.is-active + .input-range-accordion.is-active {
+    @include vp-1023 {
+      border-color: $color-transparent;
+    }
+  }
+
+  &.is-active + .checkbox-accordion.is-active {
+    @include vp-1023 {
+      border-color: $color-transparent;
+    }
+  }
+
+  &:last-of-type {
+    @include vp-1023 {
+      border-bottom: 1px solid $color-alice-blue-1;
+    }
+  }
+
+  &.is-checked {
+    @include vp-1023 {
+      .checkbox-accordion__active-filters {
+        display: flex;
+      }
+
+      .checkbox-accordion__button svg:last-of-type {
+        display: block;
+      }
+    }
+  }
+
+  &__element {
+    position: relative;
+
+    padding: 0;
+
+    &.is-active {
+      svg {
+        transform: rotate(0);
+      }
+
+      & > .checkbox-accordion__button {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__content {
+    padding-right: size(20px);
+  }
+
+  &__button {
+    background-color: $color-transparent;
+    border-radius: 0;
+    justify-content: space-between;
+    margin-bottom: size(5px);
+    padding-left: 0;
+    padding-right: size(22px);
+    text-transform: none;
+    font-size: size(18px);
+    line-height: size(24px);
+    color: $color-spindle-1;
+    font-weight: 600;
+    transition: color $trans-default, opacity $trans-default;
+    outline: none;
+    white-space: normal;
+    text-align: left;
+    -webkit-tap-highlight-color: $color-transparent;
+
+    @include vp-1279 {
+      font-size: size(16px);
+      line-height: size(22px);
+    }
+
+    @include vp-1023 {
+      margin-bottom: 0;
+      padding-top: size(14px);
+      padding-bottom: 0;
+      padding-right: size(5px);
+    }
+
+    @include vp-767 {
+      transition: color $trans-default, opacity $trans-default, padding $trans-default;
+    }
+
+    svg {
+      transform: rotate(180deg);
+      transition: transform $trans-default, fill $trans-default;
+
+      &:last-of-type {
+        display: none;
+      }
+
+      &:first-of-type {
+        @include vp-1023 {
+          display: none;
+        }
+      }
+    }
+
+    span {
+      width: 93%;
+      color: $color-fiord;
+    }
+
+    @include has-hover {
+      &:hover {
+        opacity: 0.5;
+        background-color: $color-transparent;
+      }
+    }
+  }
+
+  &__active-filters {
+    display: none;
+
+    @include vp-1023 {
+      flex-wrap: wrap;
+      font-size: size(14px);
+      line-height: size(18px);
+      color: $color-bermuda-grey;
+    }
+  }
+}

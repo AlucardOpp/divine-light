@@ -1,0 +1,20 @@
+mixin delivery-point(data)
+  .delivery-point&attributes(attributes)
+    h3.delivery-point__title Boxberry
+    address.delivery-point__address Россия, Московская область, Москва, Калининградская улица, 17к2
+    ul.delivery-point__metro-list
+      li.delivery-point__metro-item
+        span.delivery-point__metro-station.delivery-point__metro-station--green Театральная
+      li.delivery-point__metro-item
+        span.delivery-point__metro-station.delivery-point__metro-station--red Площадь Революции
+    .delivery-point__info
+      span Ежедневно, 10:00&ndash;20:00
+      span 8-800-222-80-00
+    p.delivery-point__descr Доступ на&nbsp;территорию только для жителей коттеджного жилого комплекса Потапово.
+    .delivery-point__slider.swiper
+      .swiper-wrapper
+        .swiper-slide(data-src="img/content/cdek.jpg")
+          +picture("content", "cdek", "jpg", 60, 60, "cdek")
+        .swiper-slide(data-src="img/content/cdek-2.jpg")
+          +picture("content", "cdek-2", "jpg", 60, 60, "cdek")
+    +btn({text: "Доставить сюда"})

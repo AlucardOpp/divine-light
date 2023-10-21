@@ -1,0 +1,29 @@
+.popular-products {
+  .slider-cards__swiper-button-next {
+    right: 0;
+  }
+
+  .slider-cards__swiper-button-prev {
+    left: 0;
+  }
+
+  .section-heading {
+    margin-bottom: size(32px);
+
+    @include vp-1439 {
+      margin-bottom: size(32px);
+    }
+
+    @include vp-1279 {
+      margin-bottom: size(22px);
+    }
+
+    @include vp-1023 {
+      margin-bottom: size(17px);
+    }
+
+    @include vp-767 {
+      margin-bottom: size(5px);
+    }
+  }
+}

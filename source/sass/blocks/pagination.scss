@@ -1,0 +1,40 @@
+.pagination {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: grid;
+  justify-content: flex-start;
+
+  font-size: 16px;
+  line-height: 22px;
+  color: $color-black-pearl;
+
+  gap: 8px;
+  grid-auto-flow: column;
+
+  .link {
+    justify-content: center;
+    min-width: 40px;
+    min-height: 40px;
+    padding: 8px 4px;
+
+    border-radius: 12px;
+
+    @include has-hover {
+      &:hover {
+        background-color: $color-alice-blue-2;
+      }
+    }
+  }
+
+  .is-active {
+    background-color: $color-lemon;
+
+    @include has-hover {
+      &:hover {
+        background-color: $color-golden-yellow;
+      }
+    }
+  }
+}

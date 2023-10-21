@@ -1,0 +1,17 @@
+@import "./popup-question__wrap-icon";
+@import "./popup-question__icon";
+
+.popup-question {
+  width: size(18px);
+  height: size(18px);
+  position: relative;
+
+  &:hover .popup-question__wrap-icon {
+    background-color: $color-golden-yellow;
+    border-color: $color-golden-yellow;
+  }
+
+  &:hover .popup-question__icon {
+    color: $color-fiord;
+  }
+}

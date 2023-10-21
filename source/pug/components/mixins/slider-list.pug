@@ -1,0 +1,6 @@
+mixin slider-list(data)
+  .slider-list&attributes(attributes)
+    .slider-list__container.swiper
+      .slider-list__list.swiper-wrapper
+        each item in data
+          +chips(item).slider-list__item.swiper-slide

@@ -1,0 +1,8 @@
+mixin pagination()
+  ul.pagination()
+    li
+      a.link.is-active(href="#") 1
+    each item in [2, 3, 4, "...", 254]
+      li
+        a.link(href="#")!= item
+

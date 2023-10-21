@@ -1,0 +1,7 @@
+mixin shopping__delete-item(options = {})
+  .shopping__delete-item
+    div(data-tooltip="parrent" data-tooltip-options="removeBasketItem" tab-index="1").shopping__delete-item-content
+      +btn().btn--ghost.shopping__delete-button Удалить #[span.shopping__hidden-mobyle &nbsp;товар]
+      +tooltip-content()
+        p.tooltip-content__text Если вы удалите товар, отменить действие будет невозможно
+        +btn().btn--ghost.shopping__delete-button Удалить товар

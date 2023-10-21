@@ -1,0 +1,19 @@
+mixin modal-with-map()
+  .modal-with-map
+    h4.modal__title
+      button.modal__return-btn(type="button" data-open-modal="modal-delivery" aria-label="Вернуться к предыдущему окну")
+        +icon("arrow-left", 25, 25)
+      | Пункты выдачи
+    .delivery-info.delivery-info--mobile
+      table
+        tbody
+          tr
+            th Сумма заказа
+            th Доставка
+          tr
+            td до 3 999 ₽
+            td 330 ₽
+          tr
+            td от 4 000 ₽
+            td 1 ₽
+    +select-pickup-point(true)

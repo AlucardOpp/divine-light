@@ -1,0 +1,41 @@
+.shopping {
+  &__title {
+    margin-top: 8px;
+    margin-bottom: 0;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+
+    grid-column: second-col-start / span 1;
+
+    @include vp-767 {
+      margin-right: 8px;
+      margin-bottom: 16px;
+      margin-top: 0;
+
+      font-size: 14px;
+      line-height: 18px;
+
+      grid-column: second-col-start / span 2;
+    }
+  }
+
+  .shopping__withdrawn-sale + &__title {
+    max-width: 612px;
+
+    grid-column: second-col-start / span 3;
+
+    @include vp-1439 {
+      grid-column: second-col-start / span 2;
+    }
+
+    @include vp-1279 {
+      grid-column: second-col-start / span 3;
+    }
+
+    @include vp-767 {
+      grid-column: second-col-start / span 2;
+    }
+  }
+}

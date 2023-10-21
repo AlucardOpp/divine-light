@@ -1,0 +1,6 @@
+mixin product-img(productImg)
+  .product-img()&attributes(attributes)
+    .product-img__img
+      +picture(productImg.path, productImg.image, productImg.format, productImg.width, productImg.height, productImg.altText)
+    p.product-img__title!=productImg.title
+

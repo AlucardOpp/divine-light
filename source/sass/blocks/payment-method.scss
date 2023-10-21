@@ -1,0 +1,156 @@
+.payment-method {
+  @include vp-1279 {
+    max-width: 100%;
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: size(16px);
+
+    font-weight: 300;
+    font-size: size(24px);
+    line-height: size(30px);
+
+    @include vp-767 {
+      font-size: size(20px);
+      line-height: size(26px);
+      margin-bottom: size(16px);
+    }
+  }
+
+  &__list {
+    display: grid;
+    margin-top: 0;
+    margin-bottom: size(32px);
+    padding: 0;
+
+    list-style: none;
+
+    gap: size(16px);
+    grid-auto-rows: minmax(size(96px), auto);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    @include vp-1279 {
+      margin-bottom: size(24px);
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include vp-1023 {
+      max-width: 100%;
+
+      gap: size(16px);
+      grid-template-columns: repeat(4, minmax(size(164px), auto));
+    }
+
+    @include vp-767 {
+      gap: size(8px);
+      grid-auto-rows: minmax(size(72px), auto);
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: size(14px);
+
+    white-space: normal;
+
+    border-radius: size(12px);
+
+    @include vp-1439 {
+      padding-bottom: size(8px);
+    }
+
+    @include vp-1279 {
+      padding: size(16px) size(14px) size(12px);
+    }
+
+    @include vp-1023 {
+      padding: size(16px) size(14px) size(8px);
+    }
+
+    @include vp-767 {
+      padding: size(14px) size(14px) size(9px);
+    }
+  }
+
+  &__item-title {
+    margin-top: 0;
+    margin-bottom: 0;
+
+    font-size: size(16px);
+    line-height: size(22px);
+    color: $color-black-pearl;
+
+    @include vp-1279 {
+      line-height: size(20px);
+    }
+
+    @include vp-767 {
+      font-size: size(14px);
+      line-height: size(18px);
+    }
+  }
+
+  &__item-desc {
+    margin-top: 0;
+    margin-bottom: 0;
+
+    font-size: size(14px);
+    line-height: size(18px);
+    color: $color-fiord;
+  }
+
+  &__item-title + &__item-desc {
+    margin-top: size(8px);
+
+    @include vp-1279 {
+      margin-top: size(9px);
+    }
+
+    @include vp-767 {
+      margin-top: size(4px);
+    }
+  }
+
+  &__item.is-active {
+    border-color: $color-lemon;
+
+    @include has-hover {
+      &:hover {
+        border-color: $color-golden-yellow;
+      }
+    }
+  }
+
+  &__item-big-image {
+    margin: auto;
+
+    width: size(96px);
+    height: size(48px);
+
+    @include vp-767 {
+      width: size(79px);
+      height: size(40px);
+      margin-left: 0;
+    }
+  }
+
+  &__item-title + &__item-image-list {
+    margin-top: size(8px);
+
+    @include vp-767 {
+      margin-top: size(6px);
+    }
+  }
+
+  &__item-image-list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, size(24px));
+    gap: size(8px);
+  }
+}

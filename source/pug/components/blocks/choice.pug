@@ -1,0 +1,13 @@
+mixin choice()
+  .choice.container
+    .choice__enabled-filtering-options
+      +filter-btn(['Тип: Подвесные', 'Тип: Каскадные', 'Площадь освещения, м2: 6-10',])
+    .choice__filters
+      +filters()
+    .choice__sorting-mobile
+      +filter-select-list()
+    .choice__row
+      .choice__sorting-desktop
+        +filter-select-list()
+      +found()
+      +about-chandeliers()

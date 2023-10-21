@@ -1,0 +1,83 @@
+-
+  //- isWithdrawnSale:          состояние:         товар снят с продажи
+  //- hasGiftBadge:             отрисовать:        бэйджик подарка
+  //- hasDiscountBadge:         отрисовать:        бэйджик скидки
+  //- hasStockBadge:            отрисовать:        бэйджик акции "Лампы за 1р"
+  //- hasСashbackBadge:         отрисовать:        бэйджик кэшбека
+  //- isPrivateNumber:          отрисовать:        оказать личный номер продукта
+  //- isNeedInstallation:       отрисовать:        нужна установка
+  //- isProductUnderOrder:      отрисовать:        инфо сообщение продукт под заказ
+  //- isQuantityRestrictions:   отрисовать:        ограничение по колличеству товаров, отображается в счетчике
+  //- isGift:                   отрисовать:        бирка в подарок
+  //- isOldPrice:               отрисовать:        старая цена
+  //- isDiscount:               отрисовать:        скидку в счетчике на кнопке +
+  //- isOnRequest:              отрисовать:        кнопку под заказ
+  //- isNoPrice:                не отрисовывать:   текущую цену
+  //- isNoCounter:              не отрисовывать:   счетчик товаров
+  //- maxQuantity:              колличество:       максимальное колличество в счетчике
+  //- minQuantity:              колличество:       минимальное колличество в счетчике
+  //- isNoCounter:              не отрисовывать:   счетчик товаров
+  //- isNoFavorite:             не отрисовывать:   иконку избранного
+
+  const cardsOptions = [
+    {
+      id: 1,
+      hasGiftBadge: true,
+      isGift: true,
+      isNeedInstallation: true,
+      isNoPrice: true,
+      isQuantityRestrictions: true,
+      maxQuantity: 1,
+    },
+    {
+      id: 2,
+      hasDiscountBadge: true,
+    },
+    {
+      id: 3,
+      hasDiscountBadge: true,
+      isNeedInstallation: true,
+      isOldPrice: true,
+      hasDiscountBadge: true,
+      hasStockBadge: true,
+    },
+    {
+      id: 4,
+      hasDiscountBadge: true,
+    },
+    {
+      id: 5,
+      isNeedInstallation: true,
+      isOldPrice: true,
+      hasDiscountBadge: true,
+    },
+    {
+      id: 6,
+      isNeedInstallation: true,
+      isProductUnderOrder: true,
+      hasDiscountBadge: true,
+      isOldPrice: true,
+      hasDiscountBadge: true,
+      hasStockBadge: true,
+      hasСashbackBadge: true,
+    },
+    {
+      id: 7,
+      isNoCounter: true,
+      isNoFavorite: true,
+      isNoPrice: true,
+      isWithdrawnSale: true,
+    },
+    {
+      id: 8,
+      hasDiscountBadge: true,
+      isNoCounter: true,
+      isOnRequest: true,
+    },
+    {
+      id: 8,
+      isPrivateNumber: true,
+    },
+  ]
+
+- const image = ["content/shopping", "shopping-image-1", "jpg", 120, 120];

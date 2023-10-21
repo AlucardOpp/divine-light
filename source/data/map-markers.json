@@ -1,0 +1,299 @@
+{
+  "markers": [
+    {
+      "location": [55.66835838995257,37.47487696822578],
+      "icon": "./img/svg/marker-main.svg",
+      "iconId": "marker-main",
+      "iconWidth": 105,
+      "iconHeight": 56,
+      "offset": [-52, -56],
+      "coordsShape": [[-53, -56], [53, 0]],
+      "category": "main",
+      "data": {
+        "title": "Дивайн Лайт",
+        "address": "Москва, Калининградская улица, 17к2",
+        "metro": [
+          {
+            "color": "green",
+            "name": "Театральная"
+          },
+          {
+            "color": "red",
+            "name": "Площадь Революции"
+          }
+        ],
+        "info": [
+          "Ежедневно, 10:00–20:00",
+          "8-800-222-80-00"
+        ],
+        "description": "Доступ на территорию только для жителей коттеджного жилого комплекса Потапово.",
+        "images": [
+          "cdek",
+          "cdek-2",
+          "cdek",
+          "cdek",
+          "cdek-2",
+          "cdek",
+          "cdek-2"
+        ]
+      }
+    },
+    {
+      "location": [55.72263309263239,37.666038312500014],
+      "icon": "./img/svg/marker.svg",
+      "iconId": "marker",
+      "iconWidth": 56,
+      "iconHeight": 56,
+      "offset": [-28, -28],
+      "coordsShape": [[-28, -28], [28, 28]],
+      "category": "boxberry",
+      "data": {
+        "title": "Boxberry",
+        "address": "Москва, Калининградская улица, 17к2",
+        "metro": [
+          {
+            "color": "green",
+            "name": "Театральная"
+          },
+          {
+            "color": "red",
+            "name": "Площадь Революции"
+          }
+        ],
+        "info": [
+          "Ежедневно, 10:00–20:00",
+          "8-800-222-80-00"
+        ],
+        "description": "Доступ на территорию только для жителей коттеджного жилого комплекса Потапово.",
+        "images": [
+          "cdek",
+          "cdek-2",
+          "cdek",
+          "cdek",
+          "cdek-2",
+          "cdek",
+          "cdek",
+          "cdek-2",
+          "cdek",
+          "cdek-2"
+        ]
+      }
+    },
+    {
+      "location": [55.91243006884243, 37.84031849999999],
+      "icon": "./img/svg/marker.svg",
+      "iconId": "marker",
+      "iconWidth": 56,
+      "iconHeight": 56,
+      "offset": [-28, -28],
+      "coordsShape": [[-28, -28], [28, 28]],
+      "category": "boxberry",
+      "data": {
+        "title": "Boxberry",
+        "address": "Москва, Калининградская улица, 17к2",
+        "metro": [
+          {
+            "color": "blue",
+            "name": "Театральная"
+          },
+          {
+            "color": "light-blue",
+            "name": "Площадь Революции"
+          }
+        ],
+        "info": [
+          "Ежедневно, 10:00–20:00",
+          "8-800-222-80-00"
+        ],
+        "description": "Доступ на территорию только для жителей коттеджного жилого комплекса Потапово.",
+        "images": [
+          "cdek",
+          "cdek-2",
+          "cdek",
+          "cdek",
+          "cdek-2",
+          "cdek",
+          "cdek",
+          "cdek-2",
+          "cdek",
+          "cdek-2"
+        ]
+      }
+    },
+    {
+      "location": [55.751092827299054, 37.608683466280674],
+      "icon": "./img/svg/marker.svg",
+      "iconId": "marker",
+      "iconWidth": 56,
+      "iconHeight": 56,
+      "offset": [-28, -28],
+      "coordsShape": [[-28, -28], [28, 28]],
+      "category": "boxberry",
+      "data": {
+        "title": "Boxberry",
+        "address": "Москва, Калининградская улица, 17к2",
+        "metro": [
+          {
+            "color": "orange",
+            "name": "Театральная"
+          },
+          {
+            "color": "purple",
+            "name": "Площадь Революции"
+          }
+        ],
+        "info": [
+          "Ежедневно, 10:00–20:00",
+          "8-800-222-80-00"
+        ],
+        "description": "Доступ на территорию только для жителей коттеджного жилого комплекса Потапово.",
+        "images": [
+          "cdek",
+          "cdek-2",
+          "cdek",
+          "cdek-2"
+        ]
+      }
+    },
+    {
+      "location": [55.750281989982966, 37.60559356149551],
+      "icon": "./img/svg/marker.svg",
+      "iconId": "marker",
+      "iconWidth": 56,
+      "iconHeight": 56,
+      "offset": [-28, -28],
+      "coordsShape": [[-28, -28], [28, 28]],
+      "category": "cdek",
+      "data": {
+        "title": "Cdek",
+        "address": "Москва, Калининградская улица, 17к2",
+        "metro": [
+          {
+            "color": "yellow",
+            "name": "Театральная"
+          },
+          {
+            "color": "grey",
+            "name": "Площадь Революции"
+          }
+        ],
+        "info": [
+          "Ежедневно, 10:00–20:00",
+          "8-800-222-80-00"
+        ],
+        "description": "Доступ на территорию только для жителей коттеджного жилого комплекса Потапово.",
+        "images": [
+          "cdek",
+          "cdek-2",
+          "cdek",
+          "cdek-2"
+        ]
+      }
+    },
+    {
+      "location": [55.66212902604837,38.632835187500014],
+      "icon": "./img/svg/marker.svg",
+      "iconId": "marker",
+      "iconWidth": 56,
+      "iconHeight": 56,
+      "offset": [-28, -28],
+      "coordsShape": [[-28, -28], [28, 28]],
+      "category": "cdek",
+      "data": {
+        "title": "Cdek",
+        "address": "Москва, Калининградская улица, 17к2",
+        "metro": [
+          {
+            "color": "lime",
+            "name": "Театральная"
+          },
+          {
+            "color": "blue-grey",
+            "name": "Театральная"
+          },
+          {
+            "color": "teal",
+            "name": "Площадь Революции"
+          }
+        ],
+        "info": [
+          "Ежедневно, 10:00–20:00",
+          "8-800-222-80-00"
+        ],
+        "description": "Доступ на территорию только для жителей коттеджного жилого комплекса Потапово.",
+        "images": [
+          "cdek",
+          "cdek-2",
+          "cdek",
+          "cdek-2"
+        ]
+      }
+    },
+    {
+      "location": [55.80507507941251,37.49025706250002],
+      "icon": "./img/svg/marker.svg",
+      "iconId": "marker",
+      "iconWidth": 56,
+      "iconHeight": 56,
+      "offset": [-28, -28],
+      "coordsShape": [[-28, -28], [28, 28]],
+      "category": "cdek",
+      "data": {
+        "title": "Cdek",
+        "address": "Москва, Калининградская улица, 17к2",
+        "metro": [],
+        "info": [
+          "Ежедневно, 10:00–20:00"
+        ],
+        "description": "Доступ на территорию только для жителей коттеджного жилого комплекса Потапово.",
+        "images": [
+          "cdek",
+          "cdek-2",
+          "cdek",
+          "cdek-2"
+        ]
+      }
+    },
+    {
+      "location": [55.84335932023547,37.67702464062502],
+      "icon": "./img/svg/marker.svg",
+      "iconId": "marker",
+      "iconWidth": 56,
+      "iconHeight": 56,
+      "offset": [-28, -28],
+      "coordsShape": [[-28, -28], [28, 28]],
+      "category": "cdek",
+      "data": {
+        "title": "Cdek",
+        "address": "Москва, Калининградская улица, 17к2",
+        "metro": [],
+        "info": [],
+        "description": "",
+        "images": [
+          "cdek",
+          "cdek-2",
+          "cdek",
+          "cdek-2"
+        ]
+      }
+    },
+    {
+      "location": [55.83872294831474,37.75118235546875],
+      "icon": "./img/svg/marker.svg",
+      "iconId": "marker",
+      "iconWidth": 56,
+      "iconHeight": 56,
+      "offset": [-28, -28],
+      "coordsShape": [[-28, -28], [28, 28]],
+      "category": "cdek",
+      "data": {
+        "title": "Cdek",
+        "address": "Москва, Калининградская улица, 17к2",
+        "metro": [],
+        "info": [],
+        "description": "",
+        "images": []
+      }
+    }
+  ]
+}

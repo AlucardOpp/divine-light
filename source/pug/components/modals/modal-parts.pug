@@ -1,0 +1,39 @@
+mixin modal-parts
+  h4.modal__title Долями
+  .modal__container
+      .modal__title-img
+        +picture("content", "parts", "png", "180", "32", "Долями")
+      h5.modal__sub-title Оплатите с Долями только 25% стоимости покупки
+      p.modal__description Оставшиеся три платежа спишутся автоматически с шагом в две недели
+      .pay-by-parts-scheme
+        ul.pay-by-parts-scheme__list
+          li.pay-by-parts-scheme__item
+            p.pay-by-parts-scheme__percent 25%
+            p.pay-by-parts-scheme__text Платеж cегодня
+          li.pay-by-parts-scheme__item
+            p.pay-by-parts-scheme__percent 25%
+            p.pay-by-parts-scheme__text Через 2 недели
+          li.pay-by-parts-scheme__item
+            p.pay-by-parts-scheme__percent 25%
+            p.pay-by-parts-scheme__text Через 4 недели
+          li.pay-by-parts-scheme__item
+            p.pay-by-parts-scheme__percent 25%
+            p.pay-by-parts-scheme__text Через 6 недели
+        ul.pay-by-parts-scheme__list.pay-by-parts-scheme__list--icons
+          li.pay-by-parts-scheme__icon
+            +icon("parts-1", 14, 14)
+          li.pay-by-parts-scheme__icon
+            +icon("parts-2", 14, 14)
+          li.pay-by-parts-scheme__icon
+            +icon("parts-3", 14, 14)
+          li.pay-by-parts-scheme__icon
+            +icon("parts-4", 14, 14)
+        ul.pay-by-parts-scheme__benefits
+          li.pay-by-parts-scheme__benefit
+            +icon("icon-tick", 20, 20)
+            |Оплачивайте покупки частями — по 25% каждые две недели
+          li.pay-by-parts-scheme__benefit
+            +icon("icon-tick", 20, 20)
+            |Никаких дополнительных платежей — как обычная оплата картой
+      p.modal__info Подробную информацию о работе сервиса можно посмотреть на сайте
+        +link({text: "dolame.ru", href: "https://www.dolame.ru/"})

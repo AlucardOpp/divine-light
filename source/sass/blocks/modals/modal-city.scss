@@ -1,0 +1,259 @@
+.modal-city {
+  width: 100%;
+  max-height: 100%;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    margin: size(16px) 0 0;
+
+    @include vp-767 {
+      margin: size(24px) 0 0;
+    }
+  }
+
+  .custom-input {
+    margin: 0 0 size(16px);
+    font-size: size(16px);
+    line-height: size(22px);
+
+    @include vp-767 {
+      margin: 0 0 size(24px);
+    }
+
+    // input {
+    //   padding: size(11px) size(42px) size(11px) size(15px);
+    //   border: 2px solid $color-alice-blue-1;
+    //   border-radius: size(8px);
+    // }
+  }
+
+  &__navbar {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background-color: $color-default-white;
+
+    @include vp-767 {
+      right: size(-16px);
+      left: size(-16px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding: size(14px) size(13px);
+      box-shadow: 0 4px 24px rgba($color-black-pearl, 0.06),
+        0 1px 4px rgba($color-black-pearl, 0.04);
+    }
+
+    h2 {
+      @include vp-767 {
+        font-weight: 600;
+        font-size: size(16px);
+        line-height: size(22px);
+      }
+    }
+  }
+
+  &__input-icon {
+    position: absolute;
+    // top: 10px;
+    top: 0;
+    right: 0;
+
+    @include vp-767 {
+      top: 0;
+    }
+
+    .btn {
+      width: size(48px);
+      height: size(48px);
+      padding: 0;
+      color: $color-bermuda-grey;
+      background-color: $color-transparent;
+
+      @include has-hover {
+        &:hover {
+          background-color: $color-transparent;
+        }
+      }
+
+      svg {
+        width: size(20px);
+        height: size(20px);
+      }
+    }
+  }
+
+  &__wrp,
+  &__wrap-list {
+    height: 100%;
+    overflow: hidden;
+    scrollbar-color: rgba($color-bermuda-grey, 0.3) $color-transparent;
+    scrollbar-width: thin;
+
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &::-webkit-scrollbar {
+        width: size(4px);
+        height: size(4px);
+        background-color: $color-transparent;
+      }
+
+      &::-webkit-scrollbar-track {
+        -webkit-box-shadow: none;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: rgba($color-bermuda-grey, 0.3);
+        border-radius: size(8px);
+      }
+    }
+
+    @include vp-767 {
+      padding: 0 size(16px) size(16px);
+    }
+  }
+
+  &__wrp {
+    .custom-input[data-validate-type="email"] {
+      flex-grow: 1;
+
+      & label span {
+        font-weight: 400;
+        font-size: size(16px);
+        line-height: size(22px);
+        position: absolute;
+        left: size(16px);
+        top: 50%;
+        transform: translateY(-50%) translateZ(0);
+        pointer-events: none;
+        transition: font-size $trans-default, transform $trans-default;
+        color: $color-bermuda-grey;
+
+        @include vp-767 {
+          font-size: 14px;
+          line-height: 18px;
+        }
+      }
+
+      & label input {
+        &:focus ~ span {
+          font-weight: 600;
+          font-size: size(9px);
+          line-height: size(12px);
+          transform: translateY(calc(-50% - (10 / 11 * 1rem)));
+        }
+      }
+    }
+  }
+
+  &__city-btn {
+    align-self: flex-start;
+    font-size: size(18px);
+    line-height: size(24px);
+    color: $color-fiord;
+    border-bottom: 1px solid rgba($color-fiord, 0.5);
+
+    @include vp-767 {
+      font-size: size(16px);
+      line-height: size(22px);
+    }
+  }
+
+  &__wrap-list {
+    overflow: auto;
+    height: size(480px);
+
+    @include vp-767 {
+      height: auto;
+    }
+  }
+
+  &__list {
+    column-count: 3;
+    column-gap: size(52px);
+    margin: size(24px) 0 0;
+    padding: 0;
+    list-style: none;
+
+    @include vp-767 {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &__item {
+    color: $color-fiord;
+
+    .custom-input {
+      label {
+        cursor: pointer;
+
+        @include has-hover {
+          &:hover {
+            span {
+              background-color: $color-laser-lemon;
+            }
+          }
+        }
+
+        span {
+          background-color: $color-transparent;
+          transition: all $trans-default;
+        }
+      }
+
+      input {
+        position: absolute;
+
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+
+        white-space: nowrap;
+
+        border: 0;
+
+        clip: rect(0 0 0 0);
+        clip-path: inset(100%);
+      }
+    }
+  }
+
+  &__search-list {
+    position: fixed;
+    top: 30.3%;
+    right: size(2px);
+    display: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @include vp-767 {
+      display: block;
+    }
+  }
+
+  &__search-item {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__search-link {
+    justify-content: center;
+    width: 100%;
+    padding: 0 size(6px);
+    font-size: size(14px);
+    line-height: size(24px);
+    color: $color-spindle-1;
+    text-transform: uppercase;
+
+    &.is-active {
+      color: $color-bermuda-grey;
+    }
+  }
+}

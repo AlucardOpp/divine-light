@@ -1,0 +1,13 @@
+mixin thanks()
+  section.thanks.thanks--appearance
+    .container
+      +reviews-header("Ваш отзыв о товаре", "#").is-hide
+      h1.visually-hidden Ваш отзыв отправлен на модерацию
+      .thanks__wrapper
+        .thanks__img
+          +picture("content", "casual-life", "png", "264", "264", "Сотрудник работает за ноутбуком")
+        .thanks__text
+          p.thanks__message Спасибо
+          p.thanks__explanation Отзыв отправлен на модерацию
+
+        +btn({href:"#", text: "Перейти к покупкам"}).btn--wight-medium.btn--padding-16.thanks__btn

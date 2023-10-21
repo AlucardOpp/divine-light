@@ -1,0 +1,55 @@
+mixin footer(footerMods)
+  footer.footer(class=footerMods)
+    .footer__content.container
+      .footer__form(data-validate)
+        p.footer__form-desc.footer__larger-text Узнавайте о скидках первыми
+        // .selected-helper к .custom-input для появления подсказки
+        form(action="#", name="subscribe")
+          +custom-input({
+            style: 'simple',
+            inputLabel: "Email",
+            inputError: 'Введите email',
+            inputRequared: true,
+            isNotStarRequared: true,
+          })(data-validate-type="email")
+          +btn({text: "Подписаться", type: 'submit'}).btn--primary
+      ul.footer__socials.footer__list
+        li.footer__social-item
+          a.footer__social-link(href="#", aria-label="facebook", target="_blank", rel="nofollow noopener" )
+            +icon("facebook", 24, 24).footer__social-icon
+        li.footer__social-item
+          a.footer__social-link(href="#", aria-label="instagram", target="_blank", rel="nofollow noopener" )
+            +icon("instagram", 24, 24).footer__social-icon
+        li.footer__social-item
+          a.footer__social-link(href="#", aria-label="youtube", target="_blank", rel="nofollow noopener" )
+            +icon("youtube", 24, 24).footer__social-icon
+      a.footer__tv-event(href="#")
+        span.footer__wrap-icon
+          +icon("camera", 13, 16).footer__tv-event-icon
+        | Участие в ТВ программах
+      p.footer__copyright © Дивайн Лайт 2020 — Свет покупают у нас
+      .footer__nav
+        .footer__nav-col
+          p.footer__nav-heading.footer__larger-text О компании
+          ul.footer__nav-list.footer__list
+            each text in ["Публичная оферта", "Конфиденциальность", "Реквизиты", "Контакты", "Шоу-рум в Москве", "Дилерам", "Дизайнерам"]
+              li.footer__nav-item
+                a.footer__nav-link(href="#")= text
+        .footer__nav-col
+          p.footer__nav-heading.footer__larger-text Покупателю
+          ul.footer__nav-list.footer__list
+            each text in ["Доставка и оплата", "Как вернуть", "Вопросы и ответы", "Отзывы", "Гарантии", "Наши дизайнеры", "Сервисные центры"]
+              li.footer__nav-item
+                a.footer__nav-link(href="#")= text
+      .footer__contacts
+        a.footer__phone.footer__accent-text(href="tel:+88007772980") 8 800 777 29 80
+        p.footer__phone-desc
+          | Звоните с 9:00 до 22:00 <br>
+          | или в выходные и праздники с 10:00 до&nbsp;20:00
+        a.footer__email.footer__accent-text(
+          href="mailto:sale_77862@divine-light.ru",
+          target="_blank"
+        ) sale_77862@divine-light.ru
+      .footer__partners
+        .footer__partner-logo
+          +picture("content", "partner-logo", "jpg", 176, 44, "Логотип нашего партнера")

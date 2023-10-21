@@ -1,0 +1,38 @@
+mixin brands()
+  section.brands
+    +section-heading({tag: "h1", text: "Бренды", info: "254", isAddSpanText: true}).container
+    .container
+      .brands__head
+        .brands__alphabet
+          .brands__alphabet-block
+            ul.brands__alphabet-list
+              each item in alphabetList
+                li.brands__alphabet-item
+                  if(item.active)
+                    a.brands__alphabet-link.link.link--color-fiord.active(href!= item.href)!=item.link
+                  else if(item.disabled)
+                    a.brands__alphabet-link.link.link--color-fiord.disabled(href!= item.href)!=item.link
+                  else
+                    a.brands__alphabet-link.link.link--color-fiord.js-trigger(href!= item.href)!=item.link
+          .brands__alphabet-block
+            ul.brands__alphabet-list
+              each item in alphabetList2
+                li.brands__alphabet-item
+                  a.brands__alphabet-link.link.link--color-fiord(href!= item.href)!=item.link
+
+        .form-search.form-search--brands
+          form(method="get" action="#")
+            +custom-input({inputPlaceholder: "Найти бренд", inputName: "brand-search"})
+              .form-search__search-icon
+                +btn({type: "button"}).btn--primary.form-search__btn.form-search__btn--search
+                  +icon("search", 20, 20)
+                  span.visually-hidden Кнопка поиска
+
+
+      +brands-block(brandsDataA).brands__block
+      +brands-block(brandsDataB).brands__block
+      +brands-block(brandsDataC).brands__block
+      +brands-block(brandsDataD).brands__block
+
+
+

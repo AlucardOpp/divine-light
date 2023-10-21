@@ -1,0 +1,7 @@
+mixin might-like__category-list(options = {})
+    ul.might-like__category-list(radio-buttons="parent", data-tabs=options.tabs ? "controls" : false)&attributes(attributes)
+      each item, index in Array(3)
+        li
+          button(type="button", class=(index===0) ? "is-active" : false, data-tabs=options.tabs ? "control" : false, data-index=options.tabs ? index : false).might-like__category-list-item
+            .might-like__category-list-image
+              +picture("content/slider", `slider-image-${index + 1}`, "jpg", 96, 96, "")

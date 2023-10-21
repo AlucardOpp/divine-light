@@ -1,0 +1,126 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Дивайн Лайт"; //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = "";
+  - const lightHeaderOptions = {isActivePage: true}
+  - const hasHeader = true;
+  - const headerMods = "is-fixed";
+  - const headerType  = "light";
+  - const hasFooter = true;
+  - const footerMods = "";
+  - const lightFooterOptions = {isActivePage: true};
+  - const footerType = "light";
+  - const currentUrl = ""; //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+  - const hasMap = true
+
+  -
+    const dataFields = [
+      {
+        label: "10 товаров • 35 кг",
+        value: "15 487 ₽",
+        valueBlack: true,
+        valueRed: false,
+        fieldBlack: false,
+        tooltip: false,
+        tooltipContent: "",
+      },
+      {
+        label: "Скидка",
+        value: "- 400 ₽",
+        valueBlack: false,
+        valueRed: true,
+        fieldBlack: false,
+        tooltip: false,
+        tooltipContent: "",
+      },
+      {
+        label: "Скидка по промокоду",
+        value: "- 87 ₽",
+        valueBlack: false,
+        valueRed: true,
+        fieldBlack: false,
+        tooltip: false,
+        tooltipContent: "",
+      },
+      {
+        label: "Доставка",
+        value: "от 1 ₽",
+        valueBlack: true,
+        valueRed: false,
+        fieldBlack: false,
+        tooltip: "question",
+        tooltipContent: "Точная стоимость будет рассчитана после ввода адреса и выбора способа доставки",
+      },
+    ]
+
+block main
+  main.page.page--active
+    .container
+      .container-mini
+        h1.page__title смотри http://localhost:3001/checkout.html
+        p
+          +btn({text: "modal-delivery"})(data-open-modal="modal-delivery")
+        p
+          +btn({text: "modal-success"})(data-open-modal="success")
+        p
+          +btn({text: "contacts"})(data-open-modal="contacts")
+        p
+          +btn({text: "modal-filter"})(data-open-modal="filter")
+        p
+          +btn({text: "modal-cheap"})(data-open-modal="modal-cheap")
+        p
+          +btn({text: "modal-install"})(data-open-modal="modal-install")
+        p
+          +btn({text: "modal-buy"})(data-open-modal="modal-buy")
+        p
+          +btn({text: "modal-parts"})(data-open-modal="modal-parts")
+        p Окно "Увы мы не нашли.."
+          +btn({text: "modal-alas"})(data-open-modal="alas")
+        p Окно "Авторизация"
+          +btn({text: "modal-authorization"})(data-open-modal="authorization")
+        p Окно "Авторизация"
+          +btn({text: "point-info"})(data-open-modal="point-info")
+        p
+          +link({href: "#"}).header__contacts-link.header__contacts-link--city(data-open-modal="city")
+            .header__contacts-link-inner
+              +icon("city-sign", 16, 16).link__icon
+              span Москва
+        p
+          +btn()(data-open-modal="modal-with-map")
+            +icon("point", 12, 12)
+            | Карта
+        p
+          button(type="button" data-open-modal="cart").basket-section__popup-btn.basket-section__popup-btn--empty!="Очистить корзину"
+    //- на странице запрещен "голый" код
+    //- все блоки вставляются из папки pug/components/blocks
+
+block modals
+  +modal("modal--alas")(data-modal="alas")
+    +modal-alas()
+  +modal("modal--authorization")(data-modal="authorization")
+    +modal-authorization()
+  +modal("modal--contacts")(data-modal="contacts")
+    +modal-contacts(headerContactsSections, addressList)
+  +modal("modal--city")(data-modal="city")
+    +modal-city(cityList, searchList)
+  +modal("modal--cart")(data-modal="cart")
+    +modal-cart
+  +modal("modal--success modal--no-scale modal--fit-content")(data-modal="success")
+    +modal-success
+  +modal("modal--filter")(data-modal="filter")
+    +modal-filter()
+  +modal("modal--point-info")(data-modal="point-info")
+    +modal-point-info()
+  +modal("modal--delivery")(data-modal="modal-delivery")
+    +modal-delivery
+  +modal("modal--with-map")(data-modal="modal-with-map")
+    +modal-with-map()
+  +modal("modal--cheap modal--fit-content")(data-modal="modal-cheap")
+    +modal-cheap()
+  +modal("modal--install modal--fit-content")(data-modal="modal-install")
+    +modal-install()
+  +modal("modal--buy")(data-modal="modal-buy")
+    +modal-buy()
+  +modal("modal--parts")(data-modal="modal-parts")
+    +modal-parts()

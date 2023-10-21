@@ -1,0 +1,192 @@
+.filters {
+  width: 20%;
+
+  @include vp-1439 {
+    width: 22.4%;
+  }
+
+  @include vp-1279 {
+    width: 24.5%;
+  }
+
+  @include vp-1023 {
+    padding: 0;
+    overflow: auto;
+  }
+
+  &.is-active {
+    .filters__form {
+      @include vp-1023 {
+        height: 100%;
+        transform: translateX(0);
+        pointer-events: all;
+        overflow: hidden;
+      }
+    }
+  }
+
+  .catalog-checkbox-content {
+    @include vp-1023 {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  &__btn {
+    width: 93%;
+    color: $color-fiord;
+    white-space: normal;
+
+    @include vp-1023 {
+      width: 100%;
+    }
+  }
+
+  &__show {
+    display: none;
+
+    @include vp-1023 {
+      position: fixed;
+      bottom: 24px;
+      display: block;
+      margin-top: size(26px);
+      color: $color-black-pearl;
+      width: calc(100% - 32px * 2);
+    }
+
+    @include vp-767 {
+      width: calc(100% - 16px * 2);
+    }
+  }
+
+  &__button {
+    margin-top: size(9px);
+    margin-bottom: size(8px);
+    background-color: $color-alice-blue-3;
+    transition: color $trans-default, background-color $trans-default;
+
+    @include vp-1023 {
+      margin-top: 0;
+      display: none;
+    }
+
+    @include has-hover {
+      &:hover {
+        color: $color-black-pearl;
+        background-color: $color-solitude-2;
+      }
+    }
+  }
+
+  &__reset {
+    padding-top: size(11px);
+    padding-bottom: size(11px);
+    background-color: $color-transparent;
+    border: 2px solid $color-alice-blue-3;
+    transition: border-color $trans-default, opacity $trans-default;
+    opacity: 0;
+    pointer-events: none;
+    transition: border-color $trans-default;
+
+    @include vp-1023 {
+      display: none;
+    }
+
+    &.is-active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    @include has-hover {
+      &:hover {
+        background-color: $color-transparent;
+        border-color: $color-solitude-2;
+      }
+    }
+  }
+
+  &__toggle {
+    display: none;
+
+    @include vp-1023 {
+      display: flex;
+      justify-content: space-between;
+      width: 68%;
+      min-width: size(148px);
+      padding: size(10px);
+      padding-right: size(17px);
+      text-transform: none;
+      font-size: size(16px);
+      line-height: size(22px);
+      color: $color-bermuda-grey;
+      transition: color $trans-default, border-color $trans-default;
+      outline: none;
+      white-space: normal;
+      text-align: left;
+      background-color: $color-transparent;
+      border: 2px solid $color-alice-blue-3;
+      -webkit-tap-highlight-color: $color-transparent;
+
+      @include vp-767 {
+        width: 80%;
+        min-width: 120px;
+        padding: size(9px) size(15px) size(9px) size(14px);
+        font-size: size(14px);
+        line-height: size(18px);
+      }
+
+      svg {
+        transform: rotate(180deg);
+        transition: transform $trans-default, fill $trans-default;
+      }
+
+      span {
+        width: 93%;
+        color: $color-black-pearl;
+      }
+
+      @include has-hover {
+        &:hover {
+          border-color: $color-golden-yellow;
+          background-color: $color-transparent;
+        }
+      }
+    }
+  }
+
+  &__form {
+    @include vp-1023 {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100vh;
+      /* stylelint-disable-next-line */
+      height: calc(100 * var(--vh, 1vh));
+      transform: translateX(-100%);
+      margin-left: size(-32px);
+      padding: size(50px) 0 size(24px);
+      pointer-events: none;
+      transition: transform 1s ease;
+      background-color: $color-default-white;
+      z-index: 11;
+    }
+
+    @include vp-767 {
+      margin-left: size(-16px);
+    }
+
+    form {
+      @include vp-1023 {
+        overflow-x: hidden;
+        overflow-y: auto;
+        height: 100%;
+        padding: size(25px) size(32px) size(73px);
+      }
+
+      @include vp-767 {
+        padding: size(25px) size(16px) size(73px);
+      }
+    }
+  }
+}

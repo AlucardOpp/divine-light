@@ -1,0 +1,25 @@
+mixin delivery-courier()
+  include ./delivery-courier__wrap-delivery-adress
+
+  section.delivery-courier()&attributes(attributes)
+    h2.delivery-courier__title Куда доставить заказ?
+    +btn()(data-open-modal="map").btn--true-secondary.delivery-courier__map-button
+      +icon("point", 12, 12)
+      | Карта
+    +custom-input({
+      style: 'simple',
+      inputLabel: "Адрес",
+      hasButton: true,
+      iconInButton: ['search--max-bleed', 16, 16],
+    })(data-validate-type="text").delivery-courier__delivery-adress-input
+    +delivery-courier__wrap-delivery-adress()
+    +custom-input({
+      style: 'simple',
+      inputLabel: "Комментарий курьеру",
+      tag: 'textarea',
+    })(data-validate-type="email").delivery-courier__comment
+    +custom-toggle({
+      inputName: 'contactless-delivery',
+      inputLabel: 'Бесконтактная доставка',
+    }).custom-toggle--checkbox.delivery-courier__contactless-delivery
+    +delivery-map().delivery-courier__delivery-map.scaffold-item

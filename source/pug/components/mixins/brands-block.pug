@@ -1,0 +1,8 @@
+mixin brands-block(data)
+  .brands-block&attributes(attributes)
+    each item in data
+      h2.brands-block__title(id=item.id)!=item.letter
+      ul.brands-block__list
+        each it in item.list
+          li.brands-block__item
+            a.link.link--color-black.brands-block__link(href="#")!=it

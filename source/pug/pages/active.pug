@@ -1,0 +1,75 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Дивайн Лайт"; //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = "";
+  - const lightHeaderOptions = {isActivePage: true}
+  - const hasHeader = true;
+  - const headerMods = "is-fixed";
+  - const headerType  = "light";
+  - const hasFooter = true;
+  - const footerMods = "";
+  - const lightFooterOptions = {isActivePage: true};
+  - const footerType = "light";
+  - const currentUrl = ""; //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+  - const hasMap = true
+
+  -
+    const dataFields = [
+      {
+        label: "10 товаров • 35 кг",
+        value: "15 487 ₽",
+        valueBlack: true,
+        valueRed: false,
+        fieldBlack: false,
+        tooltip: false,
+        tooltipContent: "",
+      },
+      {
+        label: "Скидка",
+        value: "- 400 ₽",
+        valueBlack: false,
+        valueRed: true,
+        fieldBlack: false,
+        tooltip: false,
+        tooltipContent: "",
+      },
+      {
+        label: "Скидка по промокоду",
+        value: "- 87 ₽",
+        valueBlack: false,
+        valueRed: true,
+        fieldBlack: false,
+        tooltip: false,
+        tooltipContent: "",
+      },
+      {
+        label: "Доставка",
+        value: "от 1 ₽",
+        valueBlack: true,
+        valueRed: false,
+        fieldBlack: false,
+        tooltip: "question",
+        tooltipContent: "Точная стоимость будет рассчитана после ввода адреса и выбора способа доставки",
+      },
+    ]
+
+block main
+  main.page.page--active
+    .container
+      .container-mini
+        h1.page__title Оформление заказа
+        +checkout-active()
+        +promo-code({selectedHelper: "Скидка на 10% действует на все лампы", isValue: true}).page__promo-code
+        +bonus()
+        +shopping-widget({isNotRenderTotal: true})
+        +delivery-wishes()
+        +cost-estimate({fields: dataFields})
+        +btn({text: "Оформить заказ", type: "submit"}).page__place-order-button
+
+    //- на странице запрещен "голый" код
+    //- все блоки вставляются из папки pug/components/blocks
+
+block modals
+  //- +modal("modal--point-gallery")(data-modal="point-gallery")
+  //-   +modal-point-gallery()

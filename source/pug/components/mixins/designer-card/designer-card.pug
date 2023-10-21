@@ -1,0 +1,29 @@
+mixin designer-card(data)
+  include ./tooltip-house
+  include ./tooltip-phone
+  include ./tooltip-email
+
+  .designer-card
+    .designer-card__img
+      +picture("content/designers", data.photo.name, data.photo.format, "336", "400", "")
+    .designer-card__info
+      .designer-card__designer-photo
+        +picture("content/designers", data.designerPhoto.name, data.designerPhoto.format, "56", "56", "")
+      .designer-card__desc
+        p.designer-card__name!=data.name
+        .designer-card__contacts
+          if (data.contacts.siteHref)
+            +tooltip-house()
+          if (data.contacts.phone)
+            +tooltip-phone()
+          if (data.contacts.email)
+            +tooltip-email()
+          if (data.contacts.socialHref)
+            a.designer-card__link(href=data.contacts.socialHref, target="_blank", aria-label="перейти в социальную сеть дизайнера")
+              +icon('insta', 16, 16)
+        ul.designer-card__tags
+          each tag in data.tags
+            li.designer-card__tag!= tag
+
+
+

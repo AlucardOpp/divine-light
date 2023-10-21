@@ -1,0 +1,9 @@
+mixin category-card(options = {})
+  - const image = options.image || ["content/category-card", "category-card-image-1", "jpg", 304, 304, " "];
+  - const text = options.text || "Диммеры";
+
+  a.category-card(href="#")
+    .category-card__image
+      +picture(...image)
+    .category-card__title!= text
+

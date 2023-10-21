@@ -1,0 +1,25 @@
+mixin modal-cheap
+  h4.modal__title Нашли дешевле?
+  .modal__container
+    p.modal__description Пришлите нам ссылку и&nbsp;мы&nbsp;сделаем Вам дополнительную скидку*
+    form(method="get" action="#")
+      +custom-input({
+        style: 'simple',
+        inputLabel: "Ссылка",
+        style: 'simple',
+        inputName: "cheap-link"})
+      +custom-input({
+        style: 'simple',
+        inputLabel: "Телефон",
+        inputError: 'Введите телефон',
+        inputName: "cheap-phone",
+        inputRequared: true,
+      })
+      +custom-textarea({
+        style: 'simple',
+        inputLabel: "Комментарий",
+        inputName: "cheap-info"})
+      +btn({text: "Отправить", type: 'submit'}).btn.btn--primary
+      +btn({text: "Отмена", type: 'reset'}).btn.btn--secondary
+      p.modal__info Отправляя форму, Вы&nbsp;даете согласие на&nbsp;обработку персональных данных
+      p.modal__info *Факт предоставления скидки и&nbsp;ее&nbsp;размер ООО&nbsp;&laquo;Денкирс&nbsp;Рус&raquo; определяет самостоятельно

@@ -1,0 +1,155 @@
+mixin filters-brand()
+  .filters.j-filters
+    button.filters__toggle.btn.j-filters-toggle(type="button", aria-label="Переключатель отображения фильтров", aria-pressed="false")
+      span Фильтры
+      +icon('shevron-up', 14, 8)
+    .filters__form
+      form(action="#", method="get")
+        .filter-btn
+          +filter-type({
+            title: 'Фильтр',
+            })
+        +input-range-accordion({
+          buttonText: 'Цена',
+          name: 'price',
+          min: '789',
+          max: '29889',
+        }).is-active
+        +toggle-switch({
+          title: 'Распродажа',
+        })
+        +checkbox-accordion({
+          buttonText: 'Тип',
+          list: [
+            {
+              text: 'Подвесные',
+              count: '56',
+            },
+            {
+              text: 'На штанге',
+              count: '14',
+            },
+            {
+              text: 'Потолочные',
+              count: '34',
+            },
+            {
+              text: 'Накладные',
+              count: '654',
+            },
+            {
+              text: 'Каскадные',
+              count: '45',
+            },
+          ],
+        }).is-active
+        +checkbox-accordion({
+          buttonText: 'Место',
+          list: [
+            {
+              text: 'Гостиная',
+              count: '14',
+            },
+            {
+              text: 'Спальня',
+              count: '42',
+            },
+            {
+              text: 'Детская',
+              count: '2',
+            },
+            {
+              text: 'Прихожая',
+              count: '86',
+            },
+          ],
+        }).is-active
+        +checkbox-accordion({
+          buttonText: 'Стиль',
+          list: [
+            {
+              text: 'Стиль',
+              count: '14',
+            },
+          ],
+        })
+        +checkbox-accordion({
+          buttonText: 'Размеры',
+          list: [
+            {
+              text: 'Размеры',
+              count: '14',
+            },
+          ],
+        })
+        button(type= 'button').btn.filters__btn.filters__show.j-show-btn Показать 26 товаров
+    +catalog-checkbox-content([
+      {
+        text: 'Подвесные',
+        count: '56',
+      },
+      {
+        text: 'На штанге',
+        count: '14',
+      },
+      {
+        text: 'Потолочные',
+        count: '34',
+      },
+      {
+        text: 'Накладные',
+        count: '654',
+      },
+      {
+        text: 'Каскадные',
+        count: '45',
+      },
+      {
+        text: 'Для натяжных потолков',
+        count: '43',
+      },
+      {
+        text: 'Дизайнерские',
+        count: '75',
+      },
+      {
+        text: 'С пультом',
+        count: '4',
+      },
+      {
+        text: 'Светодиодные',
+        count: '54',
+      },
+      {
+        text: 'Большие',
+        count: '3',
+      },
+      {
+        text: 'Накладные',
+        count: '654',
+      },
+      {
+        text: 'Каскадные',
+        count: '45',
+      },
+      {
+        text: 'Для натяжных потолков',
+        count: '43',
+      },
+      {
+        text: 'Дизайнерские',
+        count: '75',
+      },
+      {
+        text: 'С пультом',
+        count: '4',
+      },
+      {
+        text: 'Светодиодные',
+        count: '54',
+      },
+      {
+        text: 'Большие',
+        count: '3',
+      },
+    ]).catalog-checkbox-content--mobile

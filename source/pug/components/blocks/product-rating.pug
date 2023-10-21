@@ -1,0 +1,13 @@
+mixin product-rating(rating)
+  .product-rating
+    h2.visually-hidden Рейтинг товара
+    .product-rating__stars
+      +rating-diagram(160, 32, rating.ratingStars, "stars", "stars-color").rating-diagram--size-160-32
+      p.product-rating__value !{rating.productEvaluation} из 5
+    p.product-rating__customers-percent &#128077;&nbsp;
+      span.product-rating__percent !{rating.customersPercent}%
+      |  покупателей рекомендуют этот товар
+
+
+
+

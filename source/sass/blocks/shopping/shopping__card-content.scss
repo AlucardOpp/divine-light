@@ -1,0 +1,44 @@
+.shopping {
+  &__card-content {
+    flex-grow: 1;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: min-content
+      [second-col-start] 460px
+      [third-col-start] min-content
+      [fourth-col-start] 108px;
+
+    align-items: flex-start;
+    position: relative;
+
+    @include vp-1439 {
+      grid-template-columns: min-content
+        [second-col-start] 244px
+        [third-col-start] min-content
+        [fourth-col-start] 108px;
+    }
+
+    @include vp-1279 {
+      grid-template-columns: min-content
+        [second-col-start] 460px
+        [third-col-start] auto
+        [fourth-col-start] 108px
+        auto;
+    }
+
+    @include vp-1023 {
+      grid-template-columns: min-content
+        [second-col-start] 228px
+        [third-col-start] auto
+        [fourth-col-start] 108px
+        auto;
+    }
+
+    @include vp-767 {
+      grid-auto-flow: dense;
+      grid-template-columns: min-content
+        [second-col-start] minmax(91px, auto)
+        [third-col-start] auto;
+    }
+  }
+}

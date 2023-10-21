@@ -1,0 +1,57 @@
+.tooltip-content {
+  position: relative;
+  display: block;
+
+  &__button-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    padding: 0;
+
+    color: $color-bermuda-grey;
+
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    transition: $trans-default;
+    transition-property: color;
+
+    @include has-hover {
+      color: $color-black-pearl;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      margin: -15px;
+      padding: 15px;
+    }
+  }
+
+  &__icon {
+    width: size(6px);
+    height: size(10px);
+  }
+
+  &__larget-text {
+    margin-top: 0;
+    margin-bottom: 4px;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  &__text {
+    margin-top: 0;
+    margin-bottom: 0;
+
+    font-size: 14px;
+    line-height: 18px;
+  }
+}

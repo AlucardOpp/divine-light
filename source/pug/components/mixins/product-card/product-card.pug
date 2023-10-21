@@ -1,0 +1,31 @@
+mixin product-card(options = {})
+  include ./product-card-mixins
+  include ./product-card-options
+  include ./product-card-data
+  include ./product-card-varables
+
+  .product-card(
+    class=productCardClasses,
+    data-toggle-show-or-hidden="parrent",
+    data-swiper="product-card"
+  )&attributes(attributes)
+    if (isNotSale)
+      p.product-card__is-not-sale Снят&nbsp;с продажи
+    +product-card__images-list({isItemNew, isVideo, isSaleItem, slider})
+    .product-card__swiper-pagination.swiper-pagination
+    .product-card__content
+      +product-card__wrap-badges-mobyle({isItemNew, isVideo, isSaleItem})
+      +product-card__row-top({isShowNumberProduct, isFavorites, isMatching})
+      .product-card__title
+        +link({href: "#", text: "Садовый светильник ST-Luce SL083.705.01"}).link--secondary.product-card__title-link
+      .product-card__wrap-product-properties-list
+        ul.product-card__product-properties-list
+          each prop, index in properties
+            li.product-card__product-properties!= prop
+      //- .product-card__row-price-wrap
+      .product-card__row-price
+        div.product-card__wrap-cost
+          if (isOldPrice)
+            .product-card__old-cost 28 340 ₽
+          .product-card__cost 27 270 ₽
+        +product-card__column-buy({isNotSale, isAvailable, isDiscount, isSliderCard})

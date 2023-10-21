@@ -1,0 +1,16 @@
+mixin info-card(options = {})
+  include ./product-card/product-card-options
+
+
+
+  .info-card(data-toggle-show-or-hidden="parrent", data-swiper="info-card")&attributes(attributes)
+    .info-card__img
+      +picture(options.photo.path, options.photo.name, options.photo.format, options.photo.width, options.photo.height, options.photo.altText)
+    .info-card__content
+      a(href="#").info-card__title!=options.title
+      .info-card__row-price
+        +price-block(options)
+        .column-buy
+          +btn()(aria-label="купить товар", data-toggle-show-or-hidden="button-show").btn--true-light.column-buy__button
+            +icon("market", 20, 18)
+        +product-counter()

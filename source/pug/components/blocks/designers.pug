@@ -1,0 +1,109 @@
+mixin designers
+  -
+    const cards = {
+      slider: [
+        {
+          photo: {
+            name: "designer-card",
+            format: "jpg"
+          },
+          designerPhoto: {
+            name: "designer-photo",
+            format: "png"
+          },
+          name: "Анна Чеснокова",
+          contacts: {
+            siteHref: "#",
+            phone: "+7 902 728 88 44",
+            email: "mail@mail.ru"
+          },
+          tags: ["лофт", "современный", "классический"]
+        },
+        {
+          photo: {
+            name: "designer-card",
+            format: "jpg"
+          },
+          designerPhoto: {
+            name: "designer-photo",
+            format: "png"
+          },
+          name: "Галина Чеснокова",
+          contacts: {
+            siteHref: "#",
+            phone: "12345456",
+            email: "mail@mail.ru"
+          },
+          tags: ["современный", "классический"]
+        },
+        {
+          photo: {
+            name: "designer-card",
+            format: "jpg"
+          },
+          designerPhoto: {
+            name: "designer-photo",
+            format: "png"
+          },
+          name: "Ксения Харькова",
+          contacts: {
+            phone: "12345456",
+          },
+          tags: ["современный", "лофт"]
+        },
+        {
+          photo: {
+            name: "designer-card",
+            format: "jpg"
+          },
+          designerPhoto: {
+            name: "designer-photo",
+            format: "png"
+          },
+          name: "Ксения Харькова",
+          contacts: {
+            phone: "12345456",
+          },
+          tags: ["современный", "лофт", "кантри", "классический"]
+        },
+        {
+          photo: {
+            name: "designer-card",
+            format: "jpg"
+          },
+          designerPhoto: {
+            name: "designer-photo",
+            format: "png"
+          },
+          name: "Ксения Харькова",
+          contacts: {
+            phone: "12345456",
+          },
+          tags: ["современный", "лофт", "кантри", "классический"]
+        },
+        {
+          photo: {
+            name: "designer-card",
+            format: "jpg"
+          },
+          designerPhoto: {
+            name: "designer-photo",
+            format: "png"
+          },
+          name: "Ксения Харькова",
+          contacts: {
+            phone: "12345456",
+          },
+          tags: ["современный", "лофт", "кантри", "классический"]
+        },
+      ],
+    };
+
+  section.designers
+    .container
+      h2.designers__title Дизайнеры
+      .designers__slider
+          +slider-cards()(data-slider-cards="slider")
+            each card in cards.slider
+              .slider-cards__swiper-slide.swiper-slide
+                +designer-card(card)

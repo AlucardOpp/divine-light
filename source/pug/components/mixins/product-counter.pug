@@ -1,0 +1,16 @@
+mixin product-counter(options = {})
+  - const isSliderCard = options.isSliderCard || false;
+
+  .product-counter
+    +btn(
+      aria-label="убрать 1 товар из корзины",
+      data-toggle-show-or-hidden="button-minus"
+    ).btn--true-secondary.product-counter__remove-product
+      +icon("minus", 12, 2).product-counter__remove-icon
+    .product-counter__col
+      p.product-counter__value(data-toggle-show-or-hidden="counter" data-no-units) 0
+    +btn(
+      aria-label="добавить 1 товар в корзину"
+      data-toggle-show-or-hidden="button-plus"
+    ).product-counter__add-product
+      +icon("plus", 12, 12).add-icon

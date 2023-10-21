@@ -1,0 +1,29 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Дивайн Лайт"; //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = "";
+  - const hasHeader = true;
+  - const headerMods = "";
+  - const hasFooter = true;
+  - const footerMods = "";
+  - const currentUrl = 1; //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+  main.page.page--catalog
+    h1.visually-hidden Дивайн Лайт - Каталог товаров
+    //- .placeholder.container люстры
+    +top-slider()
+    +choice()
+    +you-watched()
+
+    //- на странице запрещен "голый" код
+    //- все блоки вставляются из папки pug/components/blocks
+
+block modals
+  +modal("modal--contacts")(data-modal="contacts")
+    +modal-contacts(headerContactsSections, addressList)
+  +modal("modal--city")(data-modal="city")
+    +modal-city(cityList, searchList)
+  +modal("modal--filter")(data-modal="filter")
+    +modal-filter()

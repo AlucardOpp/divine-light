@@ -1,0 +1,71 @@
+.brand {
+  .section-heading {
+    align-items: baseline;
+    margin-bottom: size(24px);
+
+    @include vp-1023 {
+      margin-bottom: size(16px);
+    }
+
+    @include vp-767 {
+      justify-content: flex-start;
+      margin-bottom: size(24px);
+    }
+
+    &__title {
+      margin-right: size(8px);
+
+      @include vp-767 {
+        margin-right: size(4px);
+      }
+    }
+  }
+
+  &__info {
+    margin-bottom: size(32px);
+
+    @include vp-1023 {
+      margin-bottom: size(24px);
+    }
+  }
+
+  &__slider {
+    .title {
+      margin-bottom: size(16px);
+    }
+
+    .chips {
+      padding: size(5px) size(12px);
+      font-size: size(16px);
+      line-height: size(22px);
+    }
+  }
+
+  .choice.container {
+    padding-top: size(30px);
+
+    @include vp-1439 {
+      padding-top: size(30px);
+    }
+
+    @include vp-1279 {
+      padding-top: size(23px);
+    }
+
+    @include vp-1023 {
+      padding-top: size(25px);
+    }
+
+    @include vp-767{
+      padding-top: size(25px);
+    }
+
+    .filter-select-list__button {
+      margin-top: size(8px);
+
+      @include vp-1023 {
+        margin-top: 0;
+      }
+    }
+  }
+}

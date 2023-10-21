@@ -1,0 +1,24 @@
+.light-header {
+  &__return-guarantee {
+    white-space: nowrap;
+    margin-right: 50px;
+    padding: 0 3px;
+
+    @include vp-1279 {
+      margin-right: 34px;
+    }
+
+    @include vp-1023 {
+      display: none;
+    }
+
+    .icon {
+      flex-shrink: 0;
+      margin-right: 10px;
+    }
+
+    @include has-hover {
+      color: $color-black-pearl;
+    }
+  }
+}

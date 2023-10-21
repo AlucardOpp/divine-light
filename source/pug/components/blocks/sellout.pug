@@ -1,0 +1,79 @@
+mixin sellout()
+  -
+    const cards = {
+      slider: [
+        {
+          properties: ["вариант 1", "15 x 21 мм"],
+          isSliderCard: true,
+          isAvailable: true,
+          isOldPrice: true,
+          isDiscount: true,
+          isItemNew: true,
+          isVideo: true,
+          isSaleItem: true,
+          isShowNumberProduct: true,
+          isFavorites: true,
+          isMatching: true,
+        },
+        {
+          properties: ["вариант 4", "15 x 21 мм"],
+          isSliderCard: true,
+          isAvailable: true,
+        },
+        {
+          properties: ["вариант 5", "15 x 21 мм"],
+          isSliderCard: true,
+          isAvailable: true,
+        },
+        {
+          properties: ["вариант 6", "15 x 21 мм"],
+          isSliderCard: true,
+          isDiscount: true,
+          isOldPrice: true,
+          isAvailable: true,
+        },
+        {
+          properties: ["вариант 7", "15 x 21 мм"],
+          isSliderCard: true,
+          isItemNew: true,
+          isAvailable: true,
+        },
+        {
+          properties: ["вариант 8", "15 x 21 мм"],
+          isSliderCard: true,
+          isVideo: true,
+          isAvailable: true,
+        },
+        {
+          properties: ["вариант 9", "15 x 21 мм"],
+          isSliderCard: true,
+          isSaleItem: true,
+          isAvailable: true,
+        },
+        {
+          properties: ["вариант 10", "15 x 21 мм"],
+          isSliderCard: true,
+          isShowNumberProduct: true,
+          isAvailable: true,
+        },
+        {
+          properties: ["вариант 11", "15 x 21 мм"],
+          isSliderCard: true,
+          isFavorites: true,
+          isAvailable: true,
+        },
+        {
+          properties: ["вариант 12", "15 x 21 мм"],
+          isSliderCard: true,
+          isMatching: true,
+          isAvailable: true,
+        },
+      ],
+    };
+
+  section.sellout()&attributes(attributes)
+    +section-heading({text: "Распродажа", hasIcon: true}).container
+    +slider-cards()(data-slider-cards="slider").slider-cards--type-slider.container
+      each card in cards.slider
+        .slider-cards__swiper-slide.swiper-slide
+          +product-card(card)

@@ -1,0 +1,14 @@
+mixin product-rate(options = {})
+  - const inputName = options.inputName || "rating";
+  - const captionName = options.captionName || "";
+  - const valueRating = options.valueRating || 0;
+
+  fieldset.product-rate()&attributes(attributes)
+    legend.product-rate__caption=captionName
+    .product-rate__wrapper
+      each item in [1, 2, 3, 4, 5]
+        - let check = (valueRating === item) ? true : false;
+        input(type="radio" name=inputName  id=`${inputName}-${item}` value = item checked=check tabindex="0").product-rate__evaluation.visually-hidden
+        label(for=`${inputName}-${item}` aria-label = `оценка ${item}`).product-rate__stars-color
+      .product-rate__stars-focus
+    span.product-rate__value-rating=valueRating

@@ -1,0 +1,6 @@
+mixin slider-controls
+  .slider-controls&attributes(attributes)
+    button.slider-controls__button-prev(type="button" aria-label="Предыдущий слайд")
+      +icon('chevron-right', 32, 32)
+    button.slider-controls__button-next(type="button" aria-label="Следующий слайд")
+      +icon('chevron-right', 32, 32)

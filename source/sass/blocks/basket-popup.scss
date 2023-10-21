@@ -1,0 +1,189 @@
+.is-open.basket-popup {
+  display: flex;
+}
+
+.basket-popup {
+  display: none;
+  position: absolute;
+  width: size(320px);
+  height: size(404px);
+  background-color: $color-default-white;
+  z-index: 5;
+  right: size(-25px);
+  top: size(65px);
+  border-radius: size(12px);
+  overflow: hidden;
+
+  box-shadow: 0 8px 32px rgba(0, 30, 52, 0.08), 0 0 3px rgba(0, 30, 52, 0.03);
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    z-index: 5;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: size(-8px);
+      right: size(40px);
+      width: size(16px);
+      height: size(16px);
+      transform: rotate(45deg);
+      background-color: $color-default-white;
+    }
+  }
+
+  &__top {
+    padding-right: size(4px);
+    min-height: size(324px);
+    padding-top: size(16px);
+    display: flex;
+    flex-grow: 1;
+
+  }
+
+  &__inner-top {
+    scrollbar-color: rgba($color-bermuda-grey, 0.3) rgba($color-ivory, 0.8);
+    scrollbar-width: thin;
+
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &::-webkit-scrollbar {
+        width: size(4px);
+        height: size(249px);
+        background-color: rgba($color-ivory, 0.8);
+      }
+
+      &::-webkit-scrollbar-track {
+        /* stylelint-disable-next-line property-no-vendor-prefix */
+        -webkit-box-shadow: none;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: rgba($color-bermuda-grey, 0.3);
+        border-radius: size(8px);
+      }
+    }
+
+    padding: 0 size(16px);
+    display: grid;
+    grid-template-columns: 1fr;
+    align-content: flex-start;
+    gap: size(16px);
+
+    flex-grow: 1;
+    overflow: auto;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: size(16px);
+      height: size(24px);
+      right: 0;
+      background-color: $color-default-white;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: size(16px);
+      height: size(35px);
+      right: 0;
+      bottom: size(80px);
+      background-color: $color-default-white;
+    }
+  }
+
+  &__item-card {
+    display: flex;
+    min-height: size(86px);
+    transition: $trans-default;
+    transition-property: opacity;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+  &__bottom {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    min-height: size(80px);
+    background-color: $color-default-white;
+    padding: size(16px) size(24px);
+
+    box-shadow: 3px 0 5px rgba(74, 95, 109, 0.15);
+  }
+
+  .btn {
+    padding: size(13px) size(24px);
+  }
+
+  &__current-price,
+  &__old-price,
+  &__item-current-price,
+  &__item-old-price {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  &__item-old-price,
+  &__old-price {
+    display: inline-flex;
+    position: relative;
+    opacity: 0.6;
+
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      bottom: size(8px);
+      left: 0;
+
+      width: 100%;
+      height: size(1px);
+
+      background-color: $color-radical-red;
+      transform: rotate(-2deg);
+      transform-origin: bottom left;
+    }
+  }
+
+  &__current-price {
+    font-size: size(20px);
+    font-weight: 600;
+    line-height: size(26px);
+  }
+
+  &__old-price {
+    font-size: size(16px);
+    line-height: size(22px);
+  }
+
+  &__item-card-image {
+    flex-shrink: 0;
+    width: size(64px);
+    height: size(64px);
+    margin-right: size(12px);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  &__item-current-price {
+    font-size: size(18px);
+    line-height: size(24px);
+  }
+
+  &__item-old-price {
+    font-size: size(14px);
+    line-height: size(18px);
+  }
+
+  &__item-card-title {
+    font-weight: 400;
+    font-size: size(14px);
+    line-height: size(18px);
+  }
+}

@@ -1,0 +1,26 @@
+mixin product-card__row-top(options = {})
+  - const isShowNumberProduct = options.isShowNumberProduct || false;
+  - const isFavorites = options.isFavorites || false;
+  - const isMatching = options.isMatching || false;
+
+  .product-card__row-top
+    .product-card__counter-list
+      +btn().btn--ghost.product-card__rating-counter
+        +icon("star", 16, 16).product-card__icon-rating.btn__icon
+        | 4.2
+      +btn().btn--ghost.product-card__comment-counter
+        +icon("comment", 16, 16).product-card__icon-comment.btn__icon
+        | 4
+    if (isShowNumberProduct)
+      .product-card__product-number 653793-68940
+    .product-card__toggle-buttons
+      +btn(
+        class=isFavorites ? "is-active" : null,
+        toggle-button
+      ).btn--ghost.product-card__favorite-button
+        +icon("heart", 20, 18).product-card__icon-favorite.btn__icon
+      +btn(
+        class=isMatching ? "is-active" : null,
+        toggle-button
+      ).btn--ghost.product-card__matching-button
+        +icon("matching", 17, 18).product-card__icon-matching.btn__icon

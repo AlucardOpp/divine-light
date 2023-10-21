@@ -1,0 +1,5 @@
+mixin shopping__gift(options = {})
+  - const isGift = options.isGift || false;
+
+  if isGift
+    .shopping__gift #[+icon("gift--not-padding", 20, 18)] В подарок

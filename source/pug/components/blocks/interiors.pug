@@ -1,0 +1,65 @@
+mixin interiors
+  -
+    const interiorCards = {
+      slider: [
+        {
+          photo: {
+            name: "interior-1",
+            format: "jpg",
+            width: "336",
+            height: "400",
+            altText: "интерьер",
+          },
+          name: "Интерьер детской комнаты для мальчика",
+        },
+        {
+          photo: {
+            name: "interior-2",
+            format: "jpg",
+            width: "336",
+            height: "400",
+            altText: "интерьер",
+          },
+          name: "Интерьер кабинета",
+        },
+        {
+          photo: {
+            name: "interior-3",
+            format: "jpg",
+            width: "336",
+            height: "400",
+            altText: "интерьер",
+          },
+          name: "Интерьер детской комнаты для мальчика",
+        },
+        {
+          photo: {
+            name: "interior-4",
+            format: "jpg",
+            width: "336",
+            height: "400",
+            altText: "интерьер",
+          },
+          name: "Интерьер детской комнаты для мальчика",
+        },
+        {
+          photo: {
+            name: "interior-3",
+            format: "jpg",
+            width: "336",
+            height: "400",
+            altText: "интерьер",
+          },
+          name: "Интерьер детской комнаты для мальчика",
+        },
+      ],
+    };
+
+  section.interiors
+    .container
+      h2.interiors__title Фото в интерьере
+      .interiors__slider
+        +slider-cards()(data-slider-cards="slider")
+          each card in interiorCards.slider
+            .slider-cards__swiper-slide.swiper-slide
+              +picture-card(card)

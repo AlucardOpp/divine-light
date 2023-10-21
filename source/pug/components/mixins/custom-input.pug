@@ -1,0 +1,82 @@
+mixin custom-input(options = {})
+  - const inputLabel = options.inputLabel ? options.inputLabel : false;
+  - const inputPlaceholder = options.inputPlaceholder ? options.inputPlaceholder : false;
+  - const inputError = options.inputError ? options.inputError : false;
+  - const inputType = options.inputType ? options.inputType : "text";
+  - const inputId = options.inputId ? options.inputId : false;
+  - const inputName = options.inputName ? options.inputName : false;
+  - const inputValue = options.inputValue ? options.inputValue : false;
+  - const inputMinLength = options.inputMinLength ? options.inputMinLength : false;
+  - const inputMaxLength = options.inputMaxLength ? options.inputMaxLength : false;
+  - const hasButton = options.hasButton || false;                                                 // кнопка в инпуте
+  - const iconInButton = options.iconInButton || ['search--max-bleed', 16, 16];                   // кнопка в инпуте
+  - const inputRequared = options.inputRequared || false;                                         // обязательное поле
+  - const isNotStarRequared = options.isNotStarRequared || false;                                 // если не нужна * на обязательном поле
+  - const selectedHelper = options.selectedHelper || false;                                       // если нужен хелпер подсказка
+  - const tag = options.tag|| 'input';                                                            // тег инпут по дефолту или textarea
+  - const style = options.style || '';                                                            // стиль инпута (модификатор), что бы не поломать старый код
+
+  - const className = [];
+  - let labelText = inputLabel;
+  - let frizeLabelParent = null;
+  - let frizeLabelElement = null;
+  - let frizeLabelInput = null;
+  - const isStyleSimple = () => (inputLabel && style === 'simple');
+  -
+    if (style === 'simple') {
+      className.push('custom-input--simple-type');
+      frizeLabelParent = "parent";
+      frizeLabelInput = "input";
+      frizeLabelElement = "element";
+    }
+
+    if (inputRequared && !isNotStarRequared) {
+      labelText = inputLabel + '<span class="requared-color">*</span>'
+    }
+
+    if (selectedHelper) {
+      className.push('selected-helper');
+    }
+
+  .custom-input(class=className)&attributes(attributes)
+    label(
+      data-frize-label=frizeLabelParent
+    )
+      if (inputLabel && !isStyleSimple())
+        span.custom-input__label!= labelText
+      if (tag === 'input')
+        input(
+          type=inputType,
+          id=inputId,
+          name=inputName,
+          value=inputValue,
+          minlength=inputMinLength,
+          maxlength=inputMaxLength,
+          placeholder=inputPlaceholder,
+          required=inputRequared,
+          data-frize-label=frizeLabelInput
+        )
+      if (tag === 'textarea')
+        textarea(
+          id=inputId,
+          name=inputName,
+          value=inputValue,
+          minlength=inputMinLength,
+          maxlength=inputMaxLength,
+          placeholder=inputPlaceholder,
+          required=inputRequared,
+          data-frize-label=frizeLabelInput
+        )
+      if (inputLabel && isStyleSimple())
+        span.custom-input__label(
+          data-frize-label=frizeLabelElement
+        )!= labelText
+      if hasButton
+        button.custom-input__button(type="button")
+          +icon(...iconInButton)
+    if block
+      block
+    if selectedHelper
+      .custom-input__error!= selectedHelper
+    if inputError
+      .custom-input__error!= inputError

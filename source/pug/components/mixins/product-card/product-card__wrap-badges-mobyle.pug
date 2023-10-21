@@ -1,0 +1,14 @@
+mixin product-card__wrap-badges-mobyle(options = {})
+  - const isItemNew = options.isItemNew || false;
+  - const isVideo = options.isVideo || false;
+  - const isSaleItem = options.isSaleItem || false;
+
+  if isItemNew || isVideo || isSaleItem
+    .product-card__wrap-badges-mobyle
+      .product-card__badges-mobyle
+        if (isItemNew)
+          +badge("Новинка", {tag: "button"}).badge--new-item-color.product-card__badge-news-item
+        if (isVideo)
+          +badge("Есть видео", {tag: "button"}).product-card__badge-video
+        if (isSaleItem)
+          +badge("Лампы за 1 ₽", {tag: "button"}).badge--outline.product-card__sale-item

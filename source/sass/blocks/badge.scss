@@ -1,0 +1,84 @@
+button.badge:hover,
+a.badge:hover {
+  @include has-hover {
+    opacity: 0.7;
+    cursor: pointer;
+    user-select: none;
+  }
+}
+
+button.badge,
+a.badge {
+  user-select: none;
+}
+
+.badge {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+
+  padding: size(3px) size(10px);
+
+  font-size: size(11px);
+  line-height: size(12px);
+  color: $color-default-white;
+
+  background-color: $color-caribbean-green;
+  border-radius: size(12px);
+
+  transition: $trans-default;
+  transition-property: opacity;
+
+  &--size-larget {
+    padding: size(3px) size(8px);
+
+    font-size: size(12px);
+    line-height: size(16px);
+
+    border-width: size(2px);
+  }
+
+  &--size-large {
+    padding: size(3px) size(8px);
+
+    font-weight: 600;
+    font-size: size(14px);
+    line-height: size(18px);
+  }
+
+  &--outline {
+    color: rgba($color-black-pearl, 0.7);
+
+    background-color: $color-default-white;
+    border: size(2px) solid $color-alice-blue-1;
+  }
+
+  &__icon:first-child:not(:last-child) {
+    margin-right: size(2px);
+  }
+
+  &__icon:last-child:not(:first-child) {
+    margin-left: size(2px);
+  }
+
+  &--discount-color {
+    background-color: $color-radical-red;
+  }
+
+  &--gift-color {
+    background-color: $color-radical-red;
+  }
+
+  &--cashback-color {
+    background-color: $color-fiord;
+  }
+
+  &--new-item-color {
+    background-color: $color-dodger-blue;
+  }
+
+  &--big-discount-color {
+    background-color: $color-crimson;
+  }
+}

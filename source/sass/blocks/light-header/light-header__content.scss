@@ -1,0 +1,11 @@
+.light-header {
+  &__content {
+    display: grid;
+    grid-template-columns: min-content auto min-content min-content min-content;
+    align-items: center;
+
+    @include vp-767 {
+      grid-template-columns: auto min-content min-content;
+    }
+  }
+}

@@ -1,0 +1,166 @@
+.review {
+  padding: size(25px);
+
+  border-radius: 12px;
+
+  transition: background-color $trans-default, box-shadow $trans-default;
+
+  @include vp-1599 {
+    padding: 25px;
+  }
+
+  @include vp-1279 {
+    padding: 24px;
+  }
+
+  @include vp-1023 {
+    padding: 16px;
+  }
+
+  @include vp-767 {
+    padding: 0;
+  }
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover,
+    &:focus {
+        background: $color-default-white;
+        /* med */
+
+        box-shadow: 0px 8px 32px rgba(0, 30, 52, 0.08), 0px 0px 3px rgba(0, 30, 52, 0.03);
+    }
+  }
+
+  &__head {
+    display: flex;
+    align-items: center;
+  }
+
+  &__img {
+    overflow: hidden;
+    width: size(48px);
+    height: size(48px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: $color-ivory;
+    border-radius: 12px;
+
+    margin-right: size(16px);
+
+    @include vp-1599 {
+      width: 48px;
+      height: 48px;
+
+      margin-right: 16px;
+    }
+
+    @include vp-1023 {
+      margin-right: 12px;
+    }
+
+    svg {
+      width: size(20px);
+      height: size(20px);
+
+      color: $color-bermuda-grey;
+
+      @include vp-1599 {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    img {
+      object-fit: cover;
+    }
+  }
+
+  &__name {
+    margin: 0 0 size(2px);
+    font-size: size(18px);
+    line-height: 133%;
+
+    @include vp-1599 {
+      margin-bottom: 2px;
+      font-size: 18px;
+    }
+
+    @include vp-1023 {
+      font-size: 16px;
+    }
+
+    @include vp-767 {
+      margin-bottom: 0;
+      padding-top: 2px;
+    }
+  }
+
+  .rating {
+    @include vp-767 {
+      padding-left: 2px;
+    }
+  }
+
+  .rating__value {
+    span:first-of-type {
+      font-size: size(18px);
+      line-height: 129%;
+
+      @include vp-1599 {
+        font-size: 18px;
+      }
+    }
+
+    span:last-of-type {
+      font-size: size(12px);
+      line-height: 133%;
+
+      @include vp-1599 {
+        font-size: 12px;
+      }
+    }
+  }
+
+  &__text {
+    position: relative;
+    margin: size(16px) 0 size(13px);
+    font-size: size(14px);
+    line-height: 143%;
+
+    color: $color-black-pearl;
+
+    opacity: 0.7;
+
+    transition: max-height .3s ease;
+
+    @include vp-1599 {
+      font-size: 14px;
+      margin: 16px 0 12px;
+    }
+
+    @include vp-767 {
+      margin-bottom: 14px;
+    }
+
+
+    // &.is-open {
+    //   -webkit-line-clamp: unset;
+    //   max-height: unset;
+    // }
+  }
+
+  &__footer {
+    margin: 0;
+
+    font-size: size(14px);
+    line-height: 129%;
+    color: $color-bermuda-grey;
+
+    @include vp-1599 {
+      font-size: 14px;
+    }
+  }
+}

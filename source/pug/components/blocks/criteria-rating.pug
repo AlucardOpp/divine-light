@@ -1,0 +1,13 @@
+mixin criteria-rating(criterionList)
+  .criteria-rating
+    h2.visually-hidden Рейтинг товара по критериям
+    ul.criteria-rating__list
+      each item in criterionList
+        - const percent = item.rating*20
+        li.criteria-rating__item
+          p.criteria-rating-title !{item.criterionName}
+          .criteria-rating__diagram
+            +rating-diagram(264, 6, percent, "line", "line-color").rating-diagram--size-264-6
+            p.criteria-rating__value !{item.rating}
+
+

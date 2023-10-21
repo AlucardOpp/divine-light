@@ -1,0 +1,7 @@
+mixin counter__button-plus(options = {})
+  - const isDiscount = options.isDiscount || false;
+
+    +btn()&attributes(attributes).counter__button-plus
+      if isDiscount
+        +badge("-10%").badge--discount-color.counter__discount-badge
+      +icon("plus", 13, 13)

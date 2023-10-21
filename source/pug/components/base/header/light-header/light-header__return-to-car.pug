@@ -1,0 +1,9 @@
+mixin light-header__return-to-car(options = {})
+  - const isShortTextBtn = options.isShortTextBtn || false
+
+  +btn({href:"basket.html"}).btn--true-light.light-header__return-to-car
+    if !isShortTextBtn
+      span.light-header__first-part-text Вернуться
+      | &nbsp;в корзину
+    else
+      | в корзину

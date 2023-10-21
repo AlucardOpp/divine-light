@@ -1,0 +1,17 @@
+mixin shopping-widget(options = {})
+  - const isNotRenderTotal = options.isNotRenderTotal || false;
+
+  section.shopping-widget()&attributes(attributes)
+    h2.shopping-widget__title Товары в заказе
+    div.shopping-widget__products-list
+      +slider-cards({buttonMoveSize: "small"})(data-slider-cards="small")
+        - for (let i = 0; i < 4; i++)
+            .slider-cards__swiper-slide.swiper-slide
+              a(href="#").shopping-widget__product
+                +picture('content', 'product-card__image', 'jpg', 66, 66).shopping-widget__image
+                .shopping-widget__price 8 340 ₽
+    if (!isNotRenderTotal)
+      +cost-estimate-field({label: "Итого", value: "15 487 ₽", isFieldAccentBlack: true}).shopping-widget__row
+
+
+

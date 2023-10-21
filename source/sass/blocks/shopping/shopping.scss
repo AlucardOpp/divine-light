@@ -1,0 +1,44 @@
+@import "./shopping__badge";
+@import "./shopping__badges-list";
+@import "./shopping__card";
+@import "./shopping__card-content";
+@import "./shopping__counter";
+@import "./shopping__delete-button";
+@import "./shopping__delete-item";
+@import "./shopping__delete-item-content";
+@import "./shopping__favorite";
+@import "./shopping__gift";
+@import "./shopping__hidden-mobyle";
+@import "./shopping__image";
+@import "./shopping__inner-badges-list";
+@import "./shopping__list";
+@import "./shopping__need-installation";
+@import "./shopping__on-request-button";
+@import "./shopping__price";
+@import "./shopping__private-number";
+@import "./shopping__product-under-order";
+@import "./shopping__title";
+@import "./shopping__withdrawn-sale";
+
+.shopping {
+  .popup-question {
+    display: flex;
+    align-items: center;
+  }
+
+  .toggle-switch-second {
+    margin-right: 5px;
+  }
+
+  .badge--discount-color {
+    padding: 2px 7px;
+
+    font-size: 10px;
+    line-height: 12px;
+  }
+
+  .badge--outline {
+    font-size: 10px;
+    line-height: 12px;
+  }
+}

@@ -1,0 +1,8 @@
+mixin grid-hover(options = {})
+  - const tag = options.href ? "a" : "span";
+  - const href = options.href || false;
+  - const target = options.isExternal ? "_blank" : false;
+  - const rel = options.isExternal ? "nofollow noopener noreferrer" : false;
+
+  .grid-hover(data-grid-hover="parrent")&attributes(attributes)
+    #{tag}.grid-hover__hover-item(href=href, target=target, rel=rel, data-grid-hover="item")

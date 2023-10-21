@@ -1,0 +1,457 @@
+.footer {
+  padding: size(64px) 0;
+
+  font-size: size(14px);
+  line-height: size(18px);
+  color: $color-fiord;
+
+  background-color: $color-ivory;
+
+  @include vp-1023 {
+    padding-top: size(48px);
+    padding-bottom: size(48px);
+  }
+
+  @include vp-767 {
+    padding-top: size(24px);
+    padding-bottom: size(104px);
+
+    font-size: size(12px);
+    line-height: size(16px);
+  }
+
+  &__list {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+
+    list-style: none;
+  }
+
+  &__content {
+    display: grid;
+
+    grid-template-areas:
+      "form nav contacts"
+      "socials    nav contacts"
+      "tv-event   nav partners"
+      "copyright  nav partners";
+    grid-template-columns: minmax(auto, size(441px)) minmax(auto, size(469px)) auto;
+
+    column-gap: size(86px);
+
+    @include vp-1439 {
+      grid-template-columns: minmax(auto, size(347px)) minmax(auto, size(356px)) auto;
+      column-gap: size(72px);
+    }
+
+    @include vp-1279 {
+      grid-template-columns: size(296px) minmax(auto, size(356px)) auto;
+      column-gap: size(42px);
+    }
+
+    @include vp-1023 {
+      grid-template-areas:
+        "form socials"
+        "nav       contacts"
+        "nav       partners"
+        "tv-event  copyright";
+      grid-template-columns: size(464px) auto;
+      column-gap: 0;
+    }
+
+    @include vp-767 {
+      grid-template-areas:
+        "form"
+        "nav"
+        "contacts"
+        "tv-event"
+        "socials"
+        "partners"
+        "copyright";
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__form {
+    grid-area: form;
+    margin-bottom: size(24px);
+
+    @include vp-1023 {
+      margin-bottom: 47px;
+    }
+
+    @include vp-767 {
+      margin-bottom: size(33px);
+    }
+  }
+
+  &__copyright {
+    grid-area: copyright;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    @include vp-1023 {
+      margin-top: size(3px);
+
+      font-size: size(12px);
+      line-height: size(16px);
+    }
+
+    @include vp-767 {
+      margin-top: 0;
+    }
+  }
+
+  &__contacts {
+    justify-self: flex-start;
+    grid-area: contacts;
+
+    @include vp-1023 {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__partners {
+    grid-area: partners;
+    margin-top: size(26px);
+
+    @include vp-1023 {
+      align-self: flex-end;
+      margin-top: 0;
+      margin-bottom: size(32px);
+    }
+
+    @include vp-767 {
+      margin-bottom: size(24px);
+    }
+  }
+
+  .custom-input {
+    flex-grow: 1;
+
+    & label span {
+      font-weight: 400;
+      font-size: size(12px);
+      line-height: size(16px);
+      position: absolute;
+      left: size(16px);
+      top: 50%;
+      transform: translateY(-50%) translateZ(0);
+      pointer-events: none;
+      transition: font-size $trans-default, transform $trans-default;
+
+      @include vp-767 {
+        font-size: 14px;
+        line-height: 18px;
+      }
+    }
+  }
+
+  .btn {
+    padding: size(15px) size(16px);
+
+    font-size: size(14px);
+    line-height: normal;
+    font-weight: 600;
+
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: size(12px);
+    border-bottom-right-radius: size(12px);
+  }
+
+  form {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .custom-input input {
+    align-items: stretch;
+
+    border-radius: 0;
+    border-top-left-radius: size(12px);
+    border-bottom-left-radius: size(12px);
+    border-color: transparent;
+  }
+
+  .custom-input label {
+    align-items: stretch;
+  }
+
+  &__larger-text {
+    margin-top: 0;
+
+    font-size: size(20px);
+    line-height: size(26px);
+    color: $color-black-pearl;
+
+    @include vp-767 {
+      font-size: size(16px);
+      line-height: size(22px);
+    }
+  }
+
+  &__form-desc {
+    margin-bottom: size(14px);
+
+    @include vp-767 {
+      font-size: size(20px);
+      line-height: size(26px);
+    }
+  }
+
+  &__socials {
+    display: grid;
+    grid-area: socials;
+    grid-auto-columns: size(40px);
+    grid-auto-flow: column;
+    grid-auto-rows: size(40px);
+    margin-bottom: size(24px);
+
+    gap: size(12px);
+
+    @include vp-1023 {
+      align-content: flex-end;
+      margin-bottom: size(51px);
+      margin-left: size(45px);
+
+      gap: size(16px);
+    }
+
+    @include vp-767 {
+      grid-auto-columns: size(32px);
+      grid-auto-rows: size(32px);
+      margin-bottom: size(24px);
+      margin-left: 0;
+    }
+  }
+
+  &__social-item {
+    display: flex;
+  }
+
+  &__social-link {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+
+    color: $color-bermuda-grey;
+
+    background-color: $color-default-white;
+    border-radius: size(12px);
+
+    transition: color $trans-default;
+
+    @include has-hover {
+      &:hover {
+        color: rgba($color-bermuda-grey, 0.7);
+      }
+    }
+  }
+
+  &__social-icon {
+    width: size(24px);
+    height: size(24px);
+
+    @include vp-767 {
+      width: size(20px);
+      height: size(20px);
+    }
+  }
+
+  &__tv-event {
+    display: flex;
+    align-items: center;
+    justify-self: flex-start;
+
+    grid-area: tv-event;
+    margin-bottom: size(32px);
+
+    font-weight: 600;
+    font-size: size(14px);
+    line-height: size(18px);
+    color: $color-black-pearl;
+
+    transition: color $trans-default;
+
+    @include vp-1023 {
+      margin-bottom: size(24px);
+    }
+
+    @include vp-767 {
+      margin-bottom: size(24px);
+    }
+
+    @include has-hover {
+      &:hover {
+        color: rgba($color-fiord, 0.7);
+      }
+    }
+  }
+
+  &__wrap-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: size(20px);
+    height: size(20px);
+    margin-right: size(8px);
+
+    background-color: $color-laser-lemon;
+  }
+
+  &__tv-event-icon {
+    width: size(17px);
+    height: size(16px);
+  }
+
+  &__nav {
+    display: grid;
+    justify-content: space-between;
+
+    gap: size(24px);
+    grid-area: nav;
+    grid-auto-columns: minmax(auto, size(192px));
+    grid-auto-flow: column;
+
+    @include vp-1439 {
+      gap: size(46px);
+    }
+
+    @include vp-1279 {
+      grid-auto-columns: size(136px);
+    }
+
+    @include vp-1023 {
+      max-width: size(370px);
+      margin-bottom: size(32px);
+    }
+
+    @include vp-767 {
+      max-width: size(140px);
+
+      gap: size(11px);
+    }
+  }
+
+  &__nav-list {
+    display: grid;
+
+    gap: size(12px);
+  }
+
+  &__nav-heading {
+    margin-bottom: size(24px);
+
+    @include vp-1023 {
+      margin-bottom: 17px;
+    }
+
+    @include vp-767 {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__nav-link {
+    color: $color-fiord;
+    transition: color 0.3s $tf-default;
+
+    @include has-hover {
+      &:hover {
+        color: rgba($color-fiord, 0.7);
+      }
+    }
+  }
+
+  &__phone {
+    display: inline-flex;
+    margin-bottom: size(16px);
+
+    @include vp-1439 {
+      padding-right: size(3px);
+      padding-left: size(3px);
+    }
+
+    @include vp-1279 {
+      margin-bottom: size(12px);
+    }
+
+    @include vp-1023 {
+      margin-bottom: size(13px);
+    }
+
+    @include vp-767 {
+      margin-bottom: size(12px);
+    }
+  }
+
+  &__phone-desc {
+    margin-top: 0;
+    margin-bottom: size(32px);
+
+    @include vp-1023 {
+      margin-bottom: size(24px);
+    }
+
+    @include vp-767 {
+      margin-bottom: size(16px);
+
+      font-size: size(14px);
+      line-height: size(18px);
+    }
+  }
+
+  &__email {
+    padding-right: size(2px);
+    padding-left: size(2px);
+
+    white-space: nowrap;
+
+    @include vp-767 {
+      margin-bottom: size(32px);
+    }
+  }
+
+  &__accent-text {
+    padding-left: size(4px);
+    padding-right: size(4px);
+    font-size: size(24px);
+    line-height: size(30px);
+    color: $color-black-pearl;
+
+    background-color: $color-laser-lemon;
+
+    transition: $trans-default;
+
+    @include vp-1279 {
+      padding-left: size(2px);
+      padding-right: size(2px);
+      font-size: 1.97vw;
+      white-space: nowrap;
+    }
+
+    @include vp-1023 {
+      font-size: size(20px);
+    }
+
+    @include vp-767 {
+      font-size: size(16px);
+      line-height: size(22px);
+    }
+
+    @include has-hover {
+      &:hover {
+        color: rgba($color-black-pearl, 0.7);
+      }
+    }
+  }
+
+  &__partner-logo img {
+    width: size(176px);
+    height: size(44px);
+  }
+}

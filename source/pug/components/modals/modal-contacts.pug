@@ -1,0 +1,49 @@
+mixin modal-contacts(data, addressList)
+  .modal-contacts
+    .modal-contacts__navbar.title-2.js-navbar
+      h2 Контакты
+    .modal-contacts__wrp.js-scroll-wrp
+      p.modal-contacts__text Мы ответим на ваши вопросы, поможем, посоветуем и предоставим выгодное предложение
+      .modal-contacts__map-item.modal-contacts__map-item--map-link
+        .modal-contacts__map-item-icon
+          +icon("city-sign", 16, 16)
+        .modal-contacts__map-item-info
+          +link({href:"#"}).modal-contacts__map-item-title.js-show-map Смотреть на карте
+      .modal-contacts__content
+        .modal-contacts__sections
+          ul.modal-contacts__sections-list(data-accordion="parent" data-single)
+            each item in data
+              li.modal-contacts__sections-item(class=item.class ? item.class : null data-accordion="element")
+                +btn().modal-contacts__sections-btn(type="button" data-accordion="button")
+                  span!=item.text
+                  +icon('chevron-right', 32, 32)
+                .modal-contacts__sections-content(data-accordion="content")
+                  ul.modal-contacts__info-list
+                    each link in item.info
+                      li.modal-contacts__info-item
+                        if (!link.href)
+                          .modal-contacts__info-icon
+                            +icon(link.iconName, link.iconWidth, link.iconHeight)
+                          span.modal-contacts__info-title!=link.title
+                        else
+                          +link({href:link.href}).modal-contacts__info-link
+                            .link__icon-wrp
+                              +icon(link.iconName, link.iconWidth, link.iconHeight).link__icon
+                            span.modal-contacts__info-title!=link.title
+                            if link.subtitle
+                              span.modal-contacts__info-subtitle!=link.subtitle
+        .modal-contacts__address
+          .modal-contacts__map-wrp
+            +btn(type="button").modal-contacts__map-close-btn
+              +icon("icon-close", 20, 20).btn__icon
+            .modal-contacts__map
+              iframe(src="https://yandex.ru/map-widget/v1/?ll=37.624513%2C55.748635&z=12", width="389", height="378")
+            ul.modal-contacts__map-list
+              each link in addressList
+                li.modal-contacts__map-item
+                  .modal-contacts__map-item-icon
+                    +icon("city-sign", 16, 16)
+                  .modal-contacts__map-item-info
+                    +link({href:"#"}).modal-contacts__map-item-title!=link.title
+                    span.modal-contacts__map-item-text!=link.text
+          p.modal-contacts__map-post Почтовый адрес:&nbsp;<br>119361, г. Москва, Большая Очаковская ул., 47А,&nbsp;<br>стр. 1, офис 211

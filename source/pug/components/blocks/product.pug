@@ -1,0 +1,159 @@
+mixin product()
+
+  -
+    const list = [
+      {
+        path: 'content/product-slider',
+        image: 'odeon-1',
+        format: 'jpg',
+        width: '696',
+        height: '696',
+        altText: 'Каскадная люстра Odeon Light 4938/4',
+      },
+      {
+        path: 'content/product-slider',
+        image: 'odeon-2',
+        format: 'jpg',
+        width: '696',
+        height: '696',
+        altText: 'Каскадная люстра Odeon Light 4938/4',
+      },
+      {
+        path: 'content/product-slider',
+        image: 'odeon-3',
+        format: 'jpg',
+        width: '696',
+        height: '696',
+        altText: 'Каскадная люстра Odeon Light 4938/4',
+      },
+      {
+        mod: "graphic",
+        graphic: true,
+        text: "3D плеер"
+      },
+      {
+        mod: "video",
+        video: true,
+        src: "img/video/lotus.mp4",
+        width: '550',
+        height: '314',
+      },
+      {
+        path: 'content/product-slider',
+        image: 'odeon-4',
+        format: 'jpg',
+        width: '696',
+        height: '696',
+        altText: 'Каскадная люстра Odeon Light 4938/4',
+      },
+    ]
+
+  -
+    const listThumb = [
+      {
+        img: true,
+        path: 'content/product-slider',
+        image: 'thumb-odeon-1',
+        format: 'jpg',
+        width: '120',
+        height: '120',
+        altText: 'Каскадная люстра Odeon Light 4938/4',
+      },
+      {
+        img: true,
+        path: 'content/product-slider',
+        image: 'thumb-odeon-2',
+        format: 'jpg',
+        width: '120',
+        height: '120',
+        altText: 'Каскадная люстра Odeon Light 4938/4',
+      },
+      {
+        img: true,
+        path: 'content/product-slider',
+        image: 'thumb-odeon-3',
+        format: 'jpg',
+        width: '120',
+        height: '120',
+        altText: 'Каскадная люстра Odeon Light 4938/4',
+      },
+      {
+        text: true,
+        mod: "graphic",
+        text: "3D",
+        icon: {
+          name: "icon-cube",
+          width: '15',
+          height: '18',
+        }
+      },
+      {
+        text: true,
+        mod: "video",
+        text: "Видео",
+        icon: {
+          name: "icon-video",
+          width: '15',
+          height: '18',
+        }
+      },
+      {
+        img: true,
+        mod: "small",
+        path: 'content/product-slider',
+        image: 'thumb-odeon-4',
+        format: 'jpg',
+        width: '120',
+        height: '104',
+        altText: 'Каскадная люстра Odeon Light 4938/4',
+      },
+    ]
+
+  -
+    const infoBlockContent = [
+      {
+        text: "Доставка и возврат",
+        data: "modal-delivery",
+      },
+      {
+        text: "Нашли дешевле?",
+        data: "modal-cheap",
+      },
+      {
+        text: "Нужна установка?",
+        data: "modal-install",
+      },
+      {
+        text: "Узнать о снижении цены",
+        tip: true,
+      },
+    ]
+
+  +breadcrumbs([
+      {
+        href: "index.html",
+        text: "Главная",
+      },
+      {
+        mod: "active",
+        text: "Люстры",
+        list: [
+          "Подвесные",
+          "На штанге",
+          "Умные люстры",
+          "Каскадные",
+          "Кольца",
+        ],
+      },
+      {
+        text: "Каскадная люстра Odeon Light 4938/4",
+      },
+    ]).is-active.breadcrumbs--big-margin
+
+  .product
+    .container
+      +product-slider(list, listThumb)
+      .product__information
+        +product-info()
+        +info-block(infoBlockContent)
+

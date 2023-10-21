@@ -1,0 +1,68 @@
+.delivery-wishes {
+  &__title {
+    margin-right: 11px;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    font-weight: 300;
+    font-size: size(24px);
+    line-height: size(30px);
+
+    @include vp-1023 {
+      font-size: size(20px);
+      line-height: size(26px);
+    }
+
+    @include vp-767 {
+      font-size: size(16px);
+      line-height: size(22px);
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    padding: 0;
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+
+    transition: $trans-default;
+    transition-property: margin-bottom;
+
+    @include has-hover {
+      &:hover .delivery-wishes__icon {
+        color: rgba($color-fiord, 0.7);
+      }
+    }
+  }
+
+  .is-active[data-accordion="element"] &__button {
+    margin-bottom: size(16px);
+  }
+
+  &__icon {
+    transition: $trans-default;
+    transition-property: color, transform;
+    color: $color-fiord;
+
+    @include vp-767 {
+      width: size(14px);
+      height: size(8px);
+    }
+  }
+
+  &__content {
+    display: grid;
+    gap: size(16px);
+  }
+
+  &__textarea {
+    min-height: size(135px);
+  }
+
+  .is-active[data-accordion="element"] &__icon {
+    transform: rotate(180deg);
+  }
+}

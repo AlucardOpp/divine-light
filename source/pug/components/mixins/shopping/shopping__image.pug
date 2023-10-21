@@ -1,0 +1,6 @@
+mixin shopping__image(options = {})
+  - const image = options.image || [];
+  - const isWithdrawnSale = options.isWithdrawnSale || false;
+
+  .shopping__image(class=isWithdrawnSale ? "opacity" : null)
+    +picture(...image)

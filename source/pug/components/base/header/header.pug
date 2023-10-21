@@ -1,0 +1,1960 @@
+mixin header(headerMods, currentUrl)
+  -
+    const headerLinks = [
+      {
+        href: "#",
+        text: "Доставка и оплата",
+      },
+      {
+        href: "#",
+        text: "Шоу-рум",
+      },
+      {
+        href: "#",
+        text: "Дизайнерам",
+      },
+      {
+        href: "#",
+        text: "Выезд эксперта",
+      },
+      {
+        href: "#",
+        text: "Контакты",
+        attr: "contacts",
+      },
+    ]
+
+    const userMenuList = [
+      {
+        href: "#",
+        title: "Скидки",
+        iconName: "sale",
+        iconWidth: 19,
+        iconHeight: 18,
+        mod: "yellow-color",
+      },
+      {
+        href: "#",
+        title: "Войти",
+        iconName: "login",
+        iconWidth: 24,
+        iconHeight: 24,
+        badge: true,
+        badgeMod: "circle",
+      },
+      {
+        href: "#",
+        title: "Сравнение",
+        iconName: "compare",
+        iconWidth: 24,
+        iconHeight: 24,
+        mod: "disabled",
+        badge: "20",
+      },
+      {
+        href: "#",
+        title: "Избранное",
+        iconName: "favorite",
+        iconWidth: 25,
+        iconHeight: 24,
+        mod: "disabled",
+        badge: "7",
+      },
+      {
+        href: "#",
+        title: "Корзина",
+        iconName: "basket",
+        iconWidth: 24,
+        iconHeight: 24,
+        mod: "disabled",
+        badge: "99+",
+      },
+    ]
+
+    const userMenuListLogin = [
+      {
+        href: "#",
+        title: "Скидки",
+        iconName: "sale",
+        iconWidth: 19,
+        iconHeight: 18,
+        mod: "yellow-color",
+      },
+      {
+        href: "#",
+        title: "Константин",
+        iconName: "login",
+        iconWidth: 24,
+        iconHeight: 24,
+        mod: "notice",
+        badge: true,
+        badgeMod: "circle",
+      },
+      {
+        href: "#",
+        title: "Сравнение",
+        iconName: "compare",
+        iconWidth: 24,
+        iconHeight: 24,
+        mod: "notice",
+        badge: "20",
+      },
+      {
+        href: "#",
+        title: "Избранное",
+        iconName: "favorite",
+        iconWidth: 25,
+        iconHeight: 24,
+        mod: "notice",
+        badge: "7",
+      },
+      {
+        href: "#",
+        title: "Корзина",
+        iconName: "basket",
+        iconWidth: 24,
+        iconHeight: 24,
+        mod: "notice",
+        badge: "99+",
+      },
+    ]
+
+    const sliderList = [
+      {
+        title: "Свет Denkirs",
+        iconName: "sun",
+        iconWidth: 16,
+        iconHeight: 16,
+      },
+      {
+        title: "Черная пятница",
+        iconName: "sale",
+        iconWidth: 16,
+        iconHeight: 16,
+        mod: "yellow-color",
+      },
+      {
+        title: "Люстры",
+      },
+      {
+        title: "Светильники",
+      },
+      {
+        title: "Споты и точечный свет",
+      },
+      {
+        title: "Трековый свет",
+      },
+      {
+        title: "Бра",
+      },
+      {
+        title: "Торшеры",
+      },
+      {
+        title: "Настольные лампы",
+      },
+      {
+        title: "Подсветка и светодиодные ленты",
+      },
+      {
+        title: "Свет",
+      },
+      {
+        title: "Лампы",
+      },
+      {
+        title: "Умный дом",
+      },
+      {
+        title: "Уличный свет",
+      },
+      {
+        title: "Свет для детский",
+      },
+      {
+        title: "Свет для праздника",
+      },
+      {
+        title: "Технический свет",
+      },
+      {
+        title: "Электроустановка",
+      },
+    ]
+
+    const tabbarMenuList = [
+      {
+        type: "button",
+        label: "Главная",
+        iconName: "icon-logo",
+        iconWidth: 24,
+        iconHeight: 24,
+        linkMod: "main",
+      },
+      {
+        type: "button",
+        label: "Каталог",
+        iconName: "catalog",
+        iconWidth: 24,
+        iconHeight: 24,
+      },
+      {
+        href: "#",
+        label: "Скидки",
+        iconName: "sale",
+        iconWidth: 19,
+        iconHeight: 18,
+      },
+      {
+        href: "#",
+        label: "Войти",
+        iconName: "login",
+        iconWidth: 24,
+        iconHeight: 24,
+        badge: true,
+        badgeMod: "circle",
+      },
+      {
+        href: "#",
+        label: "Корзина",
+        iconName: "basket",
+        iconWidth: 24,
+        iconHeight: 24,
+        badge: "20",
+      },
+    ]
+
+    const tabbarMenuListLogin = [
+      {
+        type: "button",
+        label: "Главная",
+        iconName: "icon-logo",
+        iconWidth: 24,
+        iconHeight: 24,
+        mod: "notice",
+        badge: "7",
+      },
+      {
+        type: "button",
+        label: "Каталог",
+        iconName: "catalog",
+        iconWidth: 24,
+        iconHeight: 24,
+        mod: "notice",
+        badge: "20",
+      },
+      {
+        href: "#",
+        label: "Скидки",
+        iconName: "sale",
+        iconWidth: 19,
+        iconHeight: 18,
+      },
+      {
+        href: "#",
+        label: "Войти",
+        iconName: "login",
+        iconWidth: 24,
+        iconHeight: 24,
+        mod: "notice",
+        badge: true,
+        badgeMod: "circle",
+      },
+      {
+        href: "#",
+        label: "Корзина",
+        iconName: "basket",
+        iconWidth: 24,
+        iconHeight: 24,
+        mod: "notice",
+        badge: "20",
+      },
+    ]
+
+    const btnMenuList = [
+      {
+        title: "Люстры",
+      },
+      {
+        title: "Светильники",
+      },
+      {
+        title: "Споты и точечные светильники",
+      },
+      {
+        title: "Трековые светильники",
+      },
+      {
+        title: "Бра",
+      },
+      {
+        title: "Торшеры",
+      },
+      {
+        title: "Настольные лампы",
+      },
+      {
+        title: "Лампы",
+      },
+      {
+        title: "Умный дом",
+      },
+      {
+        title: "Подсветка",
+      },
+      {
+        title: "Светодиодные ленты",
+      },
+      {
+        title: "Уличный свет",
+      },
+      {
+        title: "Свет для детский",
+      },
+      {
+        title: "Свет для праздника",
+      },
+      {
+        title: "Технический свет",
+      },
+      {
+        title: "Электроустановка",
+      },
+      {
+        title: "Распродажа",
+        iconName: "sale",
+        iconWidth: 16,
+        iconHeight: 16,
+        mod: "yellow-color",
+      },
+    ]
+
+    const contentMenuList = [
+      {
+        title: "Люстры",
+        hasBack: true,
+        backClass: "js-menu-back",
+        closeClass: "js-menu-close",
+        typesList: [
+          {
+            imageName: "img-1",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Подвесные",
+          },
+          {
+            imageName: "img-2",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "На штанге",
+          },
+          {
+            imageName: "img-3",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Потолочные",
+          },
+          {
+            imageName: "img-4",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Накладные",
+          },
+          {
+            imageName: "img-5",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Каскадные",
+          },
+          {
+            imageName: "img-6",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Для натяжных потолков",
+          },
+          {
+            imageName: "img-7",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Дизайнерские",
+          },
+          {
+            imageName: "img-8",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "С пультом",
+          },
+          {
+            imageName: "img-9",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Светодиодные",
+          },
+          {
+            imageName: "img-10",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Большие",
+          },
+          {
+            imageName: "img-11",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Недорогие",
+          },
+        ],
+      },
+      {
+        title: "Светильники",
+        hasBack: true,
+        backClass: "js-menu-back",
+        closeClass: "js-menu-close",
+        typesList: [
+          {
+            imageName: "img-1",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Подвесные",
+          },
+          {
+            imageName: "img-1",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Подвесные",
+          },
+          {
+            imageName: "img-1",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Подвесные",
+          },
+          {
+            imageName: "img-1",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Подвесные",
+          },
+          {
+            imageName: "img-1",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Подвесные",
+          },
+          {
+            imageName: "img-1",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Подвесные",
+          },
+          {
+            imageName: "img-1",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Подвесные",
+          },
+          {
+            imageName: "img-1",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Подвесные",
+          },
+          {
+            imageName: "img-1",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Подвесные",
+          },
+          {
+            imageName: "img-1",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Подвесные",
+          },
+          {
+            imageName: "img-1",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Подвесные",
+          },
+        ],
+      },
+      {
+        title: "Споты и точечные светильники",
+        hasBack: true,
+        backClass: "js-menu-back",
+        closeClass: "js-menu-close",
+        typesList: [
+          {
+            imageName: "img-2",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "На штанге",
+          },
+          {
+            imageName: "img-2",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "На штанге",
+          },
+          {
+            imageName: "img-2",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "На штанге",
+          },
+          {
+            imageName: "img-2",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "На штанге",
+          },
+          {
+            imageName: "img-2",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "На штанге",
+          },
+          {
+            imageName: "img-2",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "На штанге",
+          },
+          {
+            imageName: "img-2",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "На штанге",
+          },
+          {
+            imageName: "img-2",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "На штанге",
+          },
+          {
+            imageName: "img-2",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "На штанге",
+          },
+          {
+            imageName: "img-2",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "На штанге",
+          },
+          {
+            imageName: "img-2",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "На штанге",
+          },
+        ],
+      },
+      {
+        title: "Трековые светильники",
+        hasBack: true,
+        backClass: "js-menu-back",
+        closeClass: "js-menu-close",
+        typesList: [
+          {
+            imageName: "img-1",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Подвесные",
+          },
+          {
+            imageName: "img-2",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "На штанге",
+          },
+          {
+            imageName: "img-3",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Потолочные",
+          },
+          {
+            imageName: "img-4",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Накладные",
+          },
+          {
+            imageName: "img-5",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Каскадные",
+          },
+          {
+            imageName: "img-6",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Для натяжных потолков",
+          },
+          {
+            imageName: "img-7",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Дизайнерские",
+          },
+          {
+            imageName: "img-8",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "С пультом",
+          },
+          {
+            imageName: "img-9",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Светодиодные",
+          },
+          {
+            imageName: "img-10",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Большие",
+          },
+          {
+            imageName: "img-11",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Недорогие",
+          },
+        ],
+      },
+      {
+        title: "Бра",
+        hasBack: true,
+        backClass: "js-menu-back",
+        closeClass: "js-menu-close",
+        typesList: [
+          {
+            imageName: "img-1",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Подвесные",
+          },
+          {
+            imageName: "img-2",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "На штанге",
+          },
+          {
+            imageName: "img-3",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Потолочные",
+          },
+          {
+            imageName: "img-4",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Накладные",
+          },
+          {
+            imageName: "img-5",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Каскадные",
+          },
+          {
+            imageName: "img-6",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Для натяжных потолков",
+          },
+          {
+            imageName: "img-7",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Дизайнерские",
+          },
+          {
+            imageName: "img-8",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "С пультом",
+          },
+          {
+            imageName: "img-9",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Светодиодные",
+          },
+          {
+            imageName: "img-10",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Большие",
+          },
+          {
+            imageName: "img-11",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Недорогие",
+          },
+        ],
+      },
+      {
+        title: "Торшеры",
+        hasBack: true,
+        backClass: "js-menu-back",
+        closeClass: "js-menu-close",
+        typesList: [
+          {
+            imageName: "img-1",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Подвесные",
+          },
+          {
+            imageName: "img-2",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "На штанге",
+          },
+          {
+            imageName: "img-3",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Потолочные",
+          },
+          {
+            imageName: "img-4",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Накладные",
+          },
+          {
+            imageName: "img-5",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Каскадные",
+          },
+          {
+            imageName: "img-6",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Для натяжных потолков",
+          },
+          {
+            imageName: "img-7",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Дизайнерские",
+          },
+          {
+            imageName: "img-8",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "С пультом",
+          },
+          {
+            imageName: "img-9",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Светодиодные",
+          },
+          {
+            imageName: "img-10",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Большие",
+          },
+          {
+            imageName: "img-11",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Недорогие",
+          },
+        ],
+      },
+      {
+        title: "Настольные лампы",
+        hasBack: true,
+        backClass: "js-menu-back",
+        closeClass: "js-menu-close",
+        typesList: [
+          {
+            imageName: "img-1",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Подвесные",
+          },
+          {
+            imageName: "img-2",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "На штанге",
+          },
+          {
+            imageName: "img-3",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Потолочные",
+          },
+          {
+            imageName: "img-4",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Накладные",
+          },
+          {
+            imageName: "img-5",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Каскадные",
+          },
+          {
+            imageName: "img-6",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Для натяжных потолков",
+          },
+          {
+            imageName: "img-7",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Дизайнерские",
+          },
+          {
+            imageName: "img-8",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "С пультом",
+          },
+          {
+            imageName: "img-9",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Светодиодные",
+          },
+          {
+            imageName: "img-10",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Большие",
+          },
+          {
+            imageName: "img-11",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Недорогие",
+          },
+        ],
+      },
+      {
+        title: "Лампы",
+        hasBack: true,
+        backClass: "js-menu-back",
+        closeClass: "js-menu-close",
+        typesList: [
+          {
+            imageName: "img-1",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Подвесные",
+          },
+          {
+            imageName: "img-2",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "На штанге",
+          },
+          {
+            imageName: "img-3",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Потолочные",
+          },
+          {
+            imageName: "img-4",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Накладные",
+          },
+          {
+            imageName: "img-5",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Каскадные",
+          },
+          {
+            imageName: "img-6",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Для натяжных потолков",
+          },
+          {
+            imageName: "img-7",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Дизайнерские",
+          },
+          {
+            imageName: "img-8",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "С пультом",
+          },
+          {
+            imageName: "img-9",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Светодиодные",
+          },
+          {
+            imageName: "img-10",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Большие",
+          },
+          {
+            imageName: "img-11",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Недорогие",
+          },
+        ],
+      },
+      {
+        title: "Умный дом",
+        hasBack: true,
+        backClass: "js-menu-back",
+        closeClass: "js-menu-close",
+        typesList: [
+          {
+            imageName: "img-1",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Подвесные",
+          },
+          {
+            imageName: "img-2",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "На штанге",
+          },
+          {
+            imageName: "img-3",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Потолочные",
+          },
+          {
+            imageName: "img-4",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Накладные",
+          },
+          {
+            imageName: "img-5",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Каскадные",
+          },
+          {
+            imageName: "img-6",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Для натяжных потолков",
+          },
+          {
+            imageName: "img-7",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Дизайнерские",
+          },
+          {
+            imageName: "img-8",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "С пультом",
+          },
+          {
+            imageName: "img-9",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Светодиодные",
+          },
+          {
+            imageName: "img-10",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Большие",
+          },
+          {
+            imageName: "img-11",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Недорогие",
+          },
+        ],
+      },
+      {
+        title: "Подсветка",
+        hasBack: true,
+        backClass: "js-menu-back",
+        closeClass: "js-menu-close",
+        typesList: [
+          {
+            imageName: "img-1",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Подвесные",
+          },
+          {
+            imageName: "img-2",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "На штанге",
+          },
+          {
+            imageName: "img-3",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Потолочные",
+          },
+          {
+            imageName: "img-4",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Накладные",
+          },
+          {
+            imageName: "img-5",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Каскадные",
+          },
+          {
+            imageName: "img-6",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Для натяжных потолков",
+          },
+          {
+            imageName: "img-7",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Дизайнерские",
+          },
+          {
+            imageName: "img-8",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "С пультом",
+          },
+          {
+            imageName: "img-9",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Светодиодные",
+          },
+          {
+            imageName: "img-10",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Большие",
+          },
+          {
+            imageName: "img-11",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Недорогие",
+          },
+        ],
+      },
+      {
+        title: "Светодиодные ленты",
+        hasBack: true,
+        backClass: "js-menu-back",
+        closeClass: "js-menu-close",
+        typesList: [
+          {
+            imageName: "img-1",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Подвесные",
+          },
+          {
+            imageName: "img-2",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "На штанге",
+          },
+          {
+            imageName: "img-3",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Потолочные",
+          },
+          {
+            imageName: "img-4",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Накладные",
+          },
+          {
+            imageName: "img-5",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Каскадные",
+          },
+          {
+            imageName: "img-6",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Для натяжных потолков",
+          },
+          {
+            imageName: "img-7",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Дизайнерские",
+          },
+          {
+            imageName: "img-8",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "С пультом",
+          },
+          {
+            imageName: "img-9",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Светодиодные",
+          },
+          {
+            imageName: "img-10",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Большие",
+          },
+          {
+            imageName: "img-11",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Недорогие",
+          },
+        ],
+      },
+      {
+        title: "Уличный свет",
+        hasBack: true,
+        backClass: "js-menu-back",
+        closeClass: "js-menu-close",
+        typesList: [
+          {
+            imageName: "img-1",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Подвесные",
+          },
+          {
+            imageName: "img-2",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "На штанге",
+          },
+          {
+            imageName: "img-3",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Потолочные",
+          },
+          {
+            imageName: "img-4",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Накладные",
+          },
+          {
+            imageName: "img-5",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Каскадные",
+          },
+          {
+            imageName: "img-6",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Для натяжных потолков",
+          },
+          {
+            imageName: "img-7",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Дизайнерские",
+          },
+          {
+            imageName: "img-8",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "С пультом",
+          },
+          {
+            imageName: "img-9",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Светодиодные",
+          },
+          {
+            imageName: "img-10",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Большие",
+          },
+          {
+            imageName: "img-11",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Недорогие",
+          },
+        ],
+      },
+      {
+        title: "Свет для детский",
+        hasBack: true,
+        backClass: "js-menu-back",
+        closeClass: "js-menu-close",
+        typesList: [
+          {
+            imageName: "img-1",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Подвесные",
+          },
+          {
+            imageName: "img-2",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "На штанге",
+          },
+          {
+            imageName: "img-3",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Потолочные",
+          },
+          {
+            imageName: "img-4",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Накладные",
+          },
+          {
+            imageName: "img-5",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Каскадные",
+          },
+          {
+            imageName: "img-6",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Для натяжных потолков",
+          },
+          {
+            imageName: "img-7",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Дизайнерские",
+          },
+          {
+            imageName: "img-8",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "С пультом",
+          },
+          {
+            imageName: "img-9",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Светодиодные",
+          },
+          {
+            imageName: "img-10",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Большие",
+          },
+          {
+            imageName: "img-11",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Недорогие",
+          },
+        ],
+      },
+      {
+        title: "Свет для праздника",
+        hasBack: true,
+        backClass: "js-menu-back",
+        closeClass: "js-menu-close",
+        typesList: [
+          {
+            imageName: "img-1",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Подвесные",
+          },
+          {
+            imageName: "img-2",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "На штанге",
+          },
+          {
+            imageName: "img-3",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Потолочные",
+          },
+          {
+            imageName: "img-4",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Накладные",
+          },
+          {
+            imageName: "img-5",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Каскадные",
+          },
+          {
+            imageName: "img-6",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Для натяжных потолков",
+          },
+          {
+            imageName: "img-7",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Дизайнерские",
+          },
+          {
+            imageName: "img-8",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "С пультом",
+          },
+          {
+            imageName: "img-9",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Светодиодные",
+          },
+          {
+            imageName: "img-10",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Большие",
+          },
+          {
+            imageName: "img-11",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Недорогие",
+          },
+        ],
+      },
+      {
+        title: "Технический свет",
+        hasBack: true,
+        backClass: "js-menu-back",
+        closeClass: "js-menu-close",
+        typesList: [
+          {
+            imageName: "img-1",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Подвесные",
+          },
+          {
+            imageName: "img-2",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "На штанге",
+          },
+          {
+            imageName: "img-3",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Потолочные",
+          },
+          {
+            imageName: "img-4",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Накладные",
+          },
+          {
+            imageName: "img-5",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Каскадные",
+          },
+          {
+            imageName: "img-6",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Для натяжных потолков",
+          },
+          {
+            imageName: "img-7",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Дизайнерские",
+          },
+          {
+            imageName: "img-8",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "С пультом",
+          },
+          {
+            imageName: "img-9",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Светодиодные",
+          },
+          {
+            imageName: "img-10",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Большие",
+          },
+          {
+            imageName: "img-11",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Недорогие",
+          },
+        ],
+      },
+      {
+        title: "Электроустановка",
+        hasBack: true,
+        backClass: "js-menu-back",
+        closeClass: "js-menu-close",
+        typesList: [
+          {
+            imageName: "img-1",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Подвесные",
+          },
+          {
+            imageName: "img-2",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "На штанге",
+          },
+          {
+            imageName: "img-3",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Потолочные",
+          },
+          {
+            imageName: "img-4",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Накладные",
+          },
+          {
+            imageName: "img-5",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Каскадные",
+          },
+          {
+            imageName: "img-6",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Для натяжных потолков",
+          },
+          {
+            imageName: "img-7",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Дизайнерские",
+          },
+          {
+            imageName: "img-8",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "С пультом",
+          },
+          {
+            imageName: "img-9",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Светодиодные",
+          },
+          {
+            imageName: "img-10",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Большие",
+          },
+          {
+            imageName: "img-11",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Недорогие",
+          },
+        ],
+      },
+      {
+        title: "Распродажа",
+        hasBack: true,
+        backClass: "js-menu-back",
+        closeClass: "js-menu-close",
+        typesList: [
+          {
+            imageName: "img-1",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Подвесные",
+          },
+          {
+            imageName: "img-2",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "На штанге",
+          },
+          {
+            imageName: "img-3",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Потолочные",
+          },
+          {
+            imageName: "img-4",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Накладные",
+          },
+          {
+            imageName: "img-5",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Каскадные",
+          },
+          {
+            imageName: "img-6",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Для натяжных потолков",
+          },
+          {
+            imageName: "img-7",
+            imageWidth: 80,
+            imageHeight: 80,
+            title: "Дизайнерские",
+          },
+          {
+            imageName: "img-8",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "С пультом",
+          },
+          {
+            imageName: "img-9",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Светодиодные",
+          },
+          {
+            imageName: "img-10",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Большие",
+          },
+          {
+            imageName: "img-11",
+            imageWidth: 81,
+            imageHeight: 80,
+            title: "Недорогие",
+          },
+        ],
+      },
+    ]
+
+    const longFilters = [
+      {
+        title: "Помещение",
+        hasBack: true,
+        backClass: "js-menu-back",
+        closeClass: "js-menu-close",
+        list: [
+          {
+            text: "Гостиная",
+          },
+          {
+            text: "Спальня",
+          },
+          {
+            text: "Детская",
+          },
+          {
+            text: "Прихожая",
+          },
+          {
+            text: "Кухня",
+          },
+          {
+            text: "Ванная",
+          },
+          {
+            text: "Дача",
+          },
+          {
+            text: "Кабинет",
+          },
+          {
+            text: "Холл",
+          },
+          {
+            text: "Все помещения",
+            mod: "underline",
+          },
+        ],
+      },
+      {
+        title: "Стиль",
+        hasBack: true,
+        backClass: "js-menu-back",
+        closeClass: "js-menu-close",
+        list: [
+          {
+            text: "Современный",
+          },
+          {
+            text: "Лофт",
+          },
+          {
+            text: "Классика",
+          },
+          {
+            text: "Прованс",
+          },
+          {
+            text: "Восточный",
+          },
+          {
+            text: "Хай-тек",
+          },
+          {
+            text: "Арт-деко",
+          },
+          {
+            text: "Кантри",
+          },
+          {
+            text: "Тиффани",
+          },
+          {
+            text: "Все стили",
+            mod: "underline",
+          },
+        ],
+      },
+      {
+        title: "Материал",
+        hasBack: true,
+        backClass: "js-menu-back",
+        closeClass: "js-menu-close",
+        list: [
+          {
+            text: "Стеклянные",
+          },
+          {
+            text: "Хрустальные",
+          },
+          {
+            text: "Деревянные",
+          },
+          {
+            text: "Металлические",
+          },
+          {
+            text: "Текстильные",
+          },
+          {
+            text: "Пластиковые",
+          },
+          {
+            text: "Керамические",
+          },
+          {
+            text: "Металлические",
+          },
+          {
+            text: "Кованые",
+          },
+          {
+            text: "Все материалы",
+            mod: "underline",
+          },
+        ],
+      },
+    ]
+
+    const shortFilters = [
+      {
+        title: "Страна",
+        hasBack: true,
+        backClass: "js-menu-back",
+        closeClass: "js-menu-close",
+        list: [
+          {
+            text: "Италия",
+          },
+          {
+            text: "Чехия",
+          },
+          {
+            text: "Германия",
+          },
+          {
+            text: "Китай",
+          },
+          {
+            text: "Россия",
+          },
+          {
+            text: "Все страны",
+            mod: "underline",
+          },
+        ],
+      },
+      {
+        title: "Цвет",
+        hasBack: true,
+        backClass: "js-menu-back",
+        closeClass: "js-menu-close",
+        list: [
+          {
+            text: "Белый",
+          },
+          {
+            text: "Бежевый",
+          },
+          {
+            text: "Синий",
+          },
+          {
+            text: "Хром",
+          },
+          {
+            text: "Черный",
+          },
+          {
+            text: "Все цвета",
+            mod: "underline",
+          },
+        ],
+      },
+    ]
+
+    const brandsFilter = [
+      {
+        label: "Lightstar",
+        imgName: "brand-1",
+        imageWidth: 78,
+        imageHeight: 56,
+      },
+      {
+        label: "MW-light",
+        imgName: "brand-2",
+        imageWidth: 94,
+        imageHeight: 31,
+      },
+      {
+        label: "Maytoni",
+        imgName: "brand-3",
+        imageWidth: 94,
+        imageHeight: 35,
+      },
+      {
+        label: "Odeon light",
+        imgName: "brand-4",
+        imageWidth: 101,
+        imageHeight: 35,
+      },
+    ]
+
+  header.header(class=headerMods)
+    .header__top-menu
+      .container
+        .header__contacts
+          +link({href: "#"}).header__contacts-link.header__contacts-link--city(data-open-modal="city")
+            .header__contacts-link-inner
+              +icon("city-sign", 16, 16).link__icon
+              span Москва
+          +link({href: "tel:+74951266735"}).header__contacts-link.header__contacts-link--phone
+            .header__contacts-link-inner
+              +icon("phone", 16, 16).link__icon
+              span 8-495-126-67-35
+              span.header__contacts-link-text Заказать звонок
+        nav.main-nav
+          ul.main-nav__list
+            each link in headerLinks
+              - const activeState = currentUrl === link.href;
+              li.main-nav__item
+                if (activeState)
+                  span.main-nav__link.is-active= link.text
+                else if link.attr
+                  +link({href: link.href}).main-nav__link(data-open-modal=link.attr)
+                    span!=link.text
+                else
+                  +link({href: link.href}).main-nav__link
+                    span!=link.text
+    .header__main
+      .container
+        if (currentUrl === "index.html")
+          //- lighthouse снимает 10 баллов SEO за <a> без href
+          span.header__logo
+            +picture("content", "logo", "png", 159, 44, "Логотип Дивайн Лайт")
+        else
+          a.header__logo(href="index.html", aria-label="Переход на главную")
+            +picture("content", "logo", "png", 159, 44, "Логотип Дивайн Лайт")
+        .header__catalog-search
+          +btn().header__catalog-btn
+            span.header__catalog-icon-wrp
+              +icon("burger", 24, 24).btn__icon.btn__icon--margin-right.header__catalog-burger-icon
+              +icon("icon-close", 20, 20).btn__icon.btn__icon--margin-right.header__catalog-close-icon
+            span.header__catalog-btn-label Каталог
+          +form-search()
+        ul.header__user-menu
+          if (headerMods === "is-login")
+            each item in userMenuListLogin
+              li.header__user-menu-item(class=item.mod ? `header__user-menu-item--${item.mod}` : null)
+                +link({href: item.href})
+                  .link__icon-wrp
+                    +icon(item.iconName, item.iconWidth, item.iconHeight).link__icon
+                    if item.badge
+                      +badge(item.badge).badge--discount-color(class=item.badgeMod ? `badge--${item.badgeMod}` : null)
+                  span!=item.title
+                if (item.title === "Корзина")
+                  +basket-popup()
+          else
+            each item in userMenuList
+              li.header__user-menu-item(class=item.mod ? `header__user-menu-item--${item.mod}` : null)
+                +link({href: item.href})
+                  .link__icon-wrp
+                    +icon(item.iconName, item.iconWidth, item.iconHeight).link__icon
+                    if item.badge
+                      +badge(item.badge).badge--discount-color(class=item.badgeMod ? `badge--${item.badgeMod}` : null)
+                  span!=item.title
+    +header-slider(sliderList)
+    if (headerMods === "is-login")
+      +tabbar(currentUrl, tabbarMenuListLogin)
+    else
+      +tabbar(currentUrl, tabbarMenuList)
+    .header-catalog
+      .header-catalog__overlay
+      .header-catalog__menu
+        .header-catalog__tabs.tabs(data-tabs="parent")
+          .header-catalog__controls.tabs__controls(data-tabs="controls")
+            .header-catalog__controls-contacts
+              +link({href: "#"}).header-catalog__contacts-link.header-catalog__contacts-link--city(data-open-modal="city")
+                +icon("city-sign", 16, 16).link__icon
+                span Москва
+              +link({href: "tel:+74951266735"}).header-catalog__contacts-link.header-catalog__contacts-link--phone
+                +icon("phone", 16, 16).link__icon
+                span 8-495-126-67-35
+                span.header-catalog__contacts-link-text Заказать звонок
+            .header-catalog__comparison-and-favorites
+              button(type="button").header-catalog__comparison-and-favorites-comparison
+                +icon("compare2", 15, 15)
+                | Сравнение
+              button(type="button").header-catalog__comparison-and-favorites-favorites
+                +icon("favorite-2", 15, 15)
+                | Избранное
+            each btn in btnMenuList
+              +btn.tabs__control.header-catalog__tab-link(class=btn.mod ? `header-catalog__tab-link--${btn.mod}` : null type="button" data-tabs="control")
+                if btn.iconName
+                  +icon(btn.iconName, btn.iconWidth, btn.iconHeight).btn__icon
+                span!=btn.title
+            .header-catalog__controls-selection
+              +btn({type: "button"}).header-catalog__selection-btn
+                span.header-catalog__selection-btn-icon
+                  +icon("sun", 16, 16).btn__icon
+                span Подбор трекового света
+            .header-catalog__controls-nav
+              .header-catalog__controls-nav-wrp
+                ul.header-catalog__nav-list
+                  each link in headerLinks
+                    - const activeState = currentUrl === link.href;
+                    li.header-catalog__nav-item
+                      if (activeState)
+                        span.header-catalog__nav-link.is-active= link.text
+                      else if link.attr
+                        +link({href: link.href}).header-catalog__nav-link(data-open-modal=link.attr)
+                          span!=link.text
+                      else
+                        +link({href: link.href}).header-catalog__nav-link
+                          span!=link.text
+          .header-catalog__content-wrp
+            .header-catalog__content.tabs__content(data-tabs="content")
+              each block in contentMenuList
+                .tabs__element.tabs__element(data-tabs="element")
+                  +mobile-navbar(block)
+                  .header-catalog__content-inner
+                    ul.header-catalog__types
+                      each item in block.typesList
+                        li.header-catalog__types-item
+                          +link({href: "#"})
+                            .header-catalog__types-img
+                              +picture("content/catalog-menu", item.imageName, "png", item.imageWidth, item.imageHeight, "Красивая люстра")
+                            span.header-catalog__types-title!=item.title
+                      li.header-catalog__types-item.header-catalog__types-item--all
+                        +link({href: "#"})
+                          span.header-catalog__types-title Смотреть все
+                            span.header-catalog__types-title-text &nbsp;типы
+                    .header-catalog__filters-wrp
+                      .header-catalog__filters-inner
+                        each filter in longFilters
+                          .header-catalog__filter
+                            +link({href: "#"}).header-catalog__filter-title(class="js-submenu-open")!=filter.title
+                            .header-catalog__filter-list-wrp
+                              +mobile-navbar(filter)
+                              ul.header-catalog__filter-list
+                                each item in filter.list
+                                  li.header-catalog__filter-item(class=item.mod ? `header-catalog__filter-item--${item.mod}` : null)
+                                    +link({href: "#"})
+                                      span.header-catalog__filter-text!=item.text
+                        .header-catalog__short-filters
+                          each filter in shortFilters
+                            .header-catalog__filter
+                              +link({href: "#"}).header-catalog__filter-title(class="js-submenu-open")!=filter.title
+                              .header-catalog__filter-list-wrp
+                                +mobile-navbar(filter)
+                                ul.header-catalog__filter-list
+                                  each item in filter.list
+                                    li.header-catalog__filter-item(class=item.mod ? `header-catalog__filter-item--${item.mod}` : null)
+                                      +link({href: "#"})
+                                        span.header-catalog__filter-text!=item.text
+                          .header-catalog__selection-btn-wrp
+                            +btn({type: "button"}).header-catalog__selection-btn
+                              span.header-catalog__selection-btn-icon
+                                +icon("sun", 16, 16).btn__icon
+                              span Подбор трекового света
+                      .header-catalog__brands-filter
+                        ul.header-catalog__brands-list
+                          each item in brandsFilter
+                            li.header-catalog__brands-item
+                              +link({href: "#", label: item.label})
+                                +picture("content/catalog-menu", item.imgName, "png", item.imageWidth, item.imageHeight, "Логотип производителя")

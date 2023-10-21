@@ -1,0 +1,7 @@
+mixin filter-type(data)
+  .filter-type
+    button(type='button').filter-type__back.j-back
+      +icon('arrow-down', 14, 8)
+    span= data.title
+    button(type='button').filter-type__close.j-close
+      +icon('close', 11, 11)

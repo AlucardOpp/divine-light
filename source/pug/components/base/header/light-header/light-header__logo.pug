@@ -1,0 +1,4 @@
+mixin light-header__logo()
+  .light-header__logo
+    +main-logo({currentUrl}).light-header__logo-desktop
+    +main-logo({currentUrl, type: "mini"}).light-header__logo-mobile

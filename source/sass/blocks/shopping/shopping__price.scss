@@ -1,0 +1,13 @@
+.shopping {
+  &__price {
+    grid-column: fourth-col-start / span 1;
+    grid-row: span 2;
+    margin-top: 8px;
+
+    @include vp-767 {
+      margin-right: 16px;
+
+      grid-column: second-col-start / span 1;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+.might-like {
+  &__category-list-image {
+    margin-bottom: 8px;
+    width: 96px;
+    height: 96px;
+
+    @include vp-767 {
+      width: 72px;
+      height: 72px;
+    }
+  }
+}

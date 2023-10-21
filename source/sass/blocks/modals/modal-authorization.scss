@@ -1,0 +1,60 @@
+.modal--authorization .modal__content {
+  width: size(500px);
+  border-radius: 12px;
+
+  @include vp-767 {
+    padding-top: size(23px);
+    padding-left: size(23px);
+  }
+}
+
+.modal--authorization .modal__close-btn {
+  top: size(10px);
+  right: size(10px);
+
+  @include vp-767 {
+    @include vp-767 {
+      top: size(7px);
+      right: size(2px);
+    }
+
+    svg {
+      @include vp-767 {
+        width: size(10px);
+        height: size(10px);
+      }
+    }
+  }
+}
+
+.modal-authorization__title {
+  margin: 0;
+  margin-bottom: size(15px);
+}
+
+.modal-authorization__description {
+  margin: 0;
+  margin-bottom: size(30px);
+
+  @include vp-767 {
+    margin-bottom: size(22px);
+  }
+}
+
+.modal-authorization__btn button {
+  @include vp-767 {
+    font-size: size(14px);
+    line-height: size(18px);
+  }
+}
+
+.modal-authorization__input-wrapper {
+  margin-bottom: size(20px);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: size(15px);
+}
+
+.modal-authorization__form {
+  margin-bottom: size(15px);
+}

@@ -1,0 +1,10 @@
+mixin basket-section()
+  section.basket-section.container
+    +section-heading({text: "Корзина", buttonType: "popup"}).basket-section__heading
+      .basket-section__heading-popup-content
+        button(type="button").basket-section__popup-btn.basket-section__popup-btn--print!="Распечатать страницу"
+        button(type="button" data-open-modal="cart").basket-section__popup-btn.basket-section__popup-btn--empty!="Очистить корзину"
+    .basket-section__row
+      +shopping().basket-section__content
+      .basket-section__popup
+        +basket-menu

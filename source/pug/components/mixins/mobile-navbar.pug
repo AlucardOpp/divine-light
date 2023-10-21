@@ -1,0 +1,8 @@
+mixin mobile-navbar(data)
+  .mobile-navbar
+    if (data.hasBack)
+      +btn(class=data.backClass ? data.backClass : null type="button").mobile-navbar__back-btn
+        +icon("chevron-right", 32, 32).btn__icon
+    span.mobile-navbar__title!=data.title
+    +btn(class=data.closeClass ? data.closeClass : null type="button").mobile-navbar__close-btn
+      +icon("icon-close", 20, 20).btn__icon

@@ -1,0 +1,17 @@
+.chips {
+  border-radius: size(12px);
+  background-color: $color-alice-blue-3;
+  font-size: size(18px);
+  font-weight: 400;
+  line-height: size(24px);
+  color: $color-fiord;
+  padding: size(8px) size(16px);
+  text-transform: none;
+
+  @include vp-1023 {
+    font-size: 16px;
+    line-height: 22px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+}

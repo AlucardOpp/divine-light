@@ -1,0 +1,46 @@
+.modal--alas .modal__content {
+  width: size(410px);
+  border-radius: 12px;
+
+  @include vp-767 {
+    padding-top: size(23px);
+    padding-left: size(23px);
+  }
+}
+
+.modal--alas .modal__close-btn {
+  top: size(10px);
+  right: size(10px);
+
+  @include vp-767 {
+    top: size(7px);
+    right: size(13px);
+    width: 11px;
+    height: 11px;
+
+    svg {
+      width: 11px;
+      height: 11px;
+    }
+  }
+}
+
+.modal-alas__title {
+  margin-bottom: size(14px);
+}
+
+.modal-alas__description {
+  margin: 0;
+  margin-bottom: size(30px);
+
+  @include vp-767 {
+    margin-bottom: size(22px);
+  }
+}
+
+.modal-alas__btn button {
+  @include vp-767 {
+    font-size: size(14px);
+    line-height: size(18px);
+  }
+}

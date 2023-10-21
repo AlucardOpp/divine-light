@@ -1,0 +1,23 @@
+mixin main-logo(options = {})
+  - const currentUrl = options.currentUrl || '';
+  - const type = options.type || '';
+  - const className = options.className || ['main-logo'];
+
+  -
+    if (type === 'mini') {
+      className.push('main-logo--type-mini')
+    }
+
+  if (currentUrl === "index.html")
+    //- lighthouse снимает 10 баллов SEO за <a> без href
+    span(class=className)
+      if (type === 'mini')
+        +icon("main-logo-mini", 32, 32)
+      else
+        +picture("content", "logo", "png", 159, 44, "Логотип Дивайн Лайт")
+  else
+    a(class=className, href="index.html", aria-label="Переход на главную")
+      if (type === 'mini')
+        +icon("main-logo-mini", 32, 32)
+      else
+        +picture("content", "logo", "png", 159, 44, "Логотип Дивайн Лайт")

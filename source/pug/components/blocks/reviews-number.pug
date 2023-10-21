@@ -1,0 +1,10 @@
+mixin reviews-number(ratingList)
+  .reviews-number
+    h2.visually-hidden Количество отзывов согласно оценкам пользователей
+    ul.reviews-number__list
+      each item in ratingList
+        li.reviews-number__item
+          p.reviews-number__stars-number !{item.starsNumber}
+          +rating-diagram(194, 16, item.rating, "scale", "scale-color").rating-diagram--size-194-16
+          .reviews-number__value
+            +link({href: "#"})(aria-label="Ссылка на страницу с отзывами") !{item.reviewsNumber}

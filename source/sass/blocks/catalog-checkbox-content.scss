@@ -1,0 +1,272 @@
+.catalog-checkbox-content {
+  max-height: size(215px);
+  padding: 0;
+  overflow: auto;
+  scrollbar-width: size(4px);
+  scrollbar-width: thin;
+  scrollbar-color: $color-transparent $color-solitude-1;
+
+  @include vp-1023 {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-height: unset;
+    margin-top: size(16px);
+    padding-top: size(75px);
+    padding-bottom: size(80px);
+    background-color: $color-default-white;
+  }
+
+  &--mobile {
+    display: none;
+
+    @include vp-1023 {
+      display: block;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100vh;
+      margin: 0;
+      padding: 32px 32px 0;
+      overflow-y: auto;
+      overflow-x: hidden;
+      transform: translateX(-100%);
+      pointer-events: none;
+      transition: transform 1s ease;
+      z-index: 11;
+      border: none;
+    }
+
+    @include vp-767 {
+      padding: 0 16px;
+    }
+
+    .filters & {
+      @include vp-1023 {
+        padding-bottom: 32px;
+      }
+
+      @include vp-767 {
+        padding-bottom: 16px;
+      }
+    }
+
+    &.is-active {
+      transform: translateX(0);
+      pointer-events: all;
+    }
+  }
+
+  &::-webkit-scrollbar {
+    width: 4px;
+    background: $color-transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $color-solitude-1;
+    border-radius: size(50px);
+  }
+
+  &.is-active {
+    opacity: 1;
+    pointer-events: all;
+    visibility: visible;
+
+    .catalog-checkbox-content__show-button {
+      opacity: 1;
+      pointer-events: all;
+      visibility: visible;
+    }
+  }
+
+  &__item {
+    margin-bottom: size(4px);
+
+    @include vp-1023 {
+      margin-bottom: size(10px);
+    }
+
+    span {
+      span {
+        max-width: size(171px);
+        margin-right: size(4px);
+        padding-top: size(1px);
+        color: $color-fiord;
+        transition: color $trans-default;
+
+        @include vp-1023 {
+          max-width: unset;
+        }
+      }
+
+      span:last-child {
+        padding-top: size(1px);
+        font-size: size(14px);
+        color: $color-spindle-1;
+      }
+    }
+  }
+
+  input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  label > span {
+    display: inline-flex;
+    align-items: flex-start;
+    user-select: none;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      width: size(24px);
+      height: size(24px);
+      flex-shrink: 0;
+      flex-grow: 0;
+      border: 2px solid $color-solitude-1;
+      border-radius: size(4px);
+      margin-right: size(8px);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 50% 50%;
+      outline: none;
+      -webkit-tap-highlight-color: $color-transparent;
+      transition: border-color $trans-default, background-image $trans-default, opacity $trans-default, background-color $trans-default;
+
+      @include vp-1279 {
+        margin-right: size(6px);
+      }
+    }
+  }
+
+  label > input:not(:disabled):not(:checked) + span:hover {
+    cursor: pointer;
+
+    span:first-child {
+      color: $color-black-pearl;
+    }
+
+    span:last-child {
+      color: $color-bermuda-grey;
+    }
+
+    &::before {
+      border-color: $color-pattens-blue-2;
+    }
+  }
+
+  /* стили для активного чекбокса (при нажатии на него) */
+  label > input:not(:disabled):active + span {
+    opacity: 0.5;
+  }
+
+  /* стили для чекбокса, находящегося в фокусе */
+  // label > input:focus + span {
+  //   opacity: 0.5;
+  //   cursor: pointer;
+  // }
+
+  label > input:checked + span {
+    cursor: pointer;
+  }
+
+  label > input:checked + span:hover {
+    cursor: pointer;
+
+    &:before {
+      background-color: $color-golden-yellow;
+    }
+  }
+
+  /* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
+  // label > input:focus:not(:checked) + span::before {
+  //   opacity: 0.5;
+  // }
+
+  /* стили для чекбокса, находящегося в состоянии checked */
+  label > input:checked + span::before {
+    border-color: $color-transparent;
+    background-color: $color-lemon;
+    background-image: url("../img/svg/icon-check.svg");
+    background-size: size(13px) size(9px);
+    background-repeat: no-repeat;
+  }
+
+  /* стили для чекбокса, находящегося в состоянии disabled */
+  label > input:disabled + span {
+    opacity: 0.5;
+  }
+
+  &__color {
+    width: size(16px);
+    height: size(16px);
+    margin: auto;
+    margin-right: size(4px);
+    border-radius: 50%;
+  }
+
+  &__color--white {
+    border: 1px solid $color-spindle-1;
+  }
+
+  &__show-button {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    position: absolute;
+    right: -180px;
+    top: 0;
+    z-index: 3;
+
+    &:hover::before {
+      border-right-color: $color-golden-yellow;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: -22px;
+
+      transform: translateY(-50%);
+
+      border: 11px solid $color-transparent;
+      border-right: 11px solid $color-lemon;
+      background: $color-transparent;
+
+      @include vp-1023 {
+        display: none;
+      }
+    }
+
+    @include vp-1023 {
+      display: none;
+      position: sticky;
+      bottom: 32px;
+      right: 0;
+      width: 100%;
+      z-index: 101;
+      opacity: 0;
+      pointer-events: none;
+      visibility: hidden;
+    }
+
+    .catalog-checkbox-content--mobile & {
+      @include vp-1023 {
+        bottom: 0;
+      }
+    }
+
+    .catalog-checkbox-content--mobile.is-active & {
+      @include vp-1023 {
+        display: block;
+      }
+    }
+  }
+}

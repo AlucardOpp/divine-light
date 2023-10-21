@@ -1,0 +1,55 @@
+.info-block {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+
+  @include vp-767 {
+    flex-wrap: nowrap;
+    margin-right: -16px;
+    margin-left: -16px;
+    padding-left: 16px;
+    padding-right: 16px;
+    overflow-x: scroll;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: size(24px) 0 -10px;
+    padding: 0;
+    list-style: none;
+
+    @include vp-767 {
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__item {
+    margin-right: size(10px);
+    margin-bottom: size(10px);
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__btn {
+    border-radius: size(12px);
+    background-color: $color-alice-blue-3;
+    font-size: size(16px);
+    line-height: size(22px);
+    color: $color-fiord;
+    padding: size(5px) size(11px);
+    border-color: $color-transparent;
+
+    @include has-hover {
+      &:hover {
+        background-color: $color-solitude-2;
+      }
+    }
+  }
+}

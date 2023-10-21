@@ -1,0 +1,23 @@
+mixin about-chandeliers()
+  include ./about-chandeliers-data
+
+  .about-chandeliers(data-accordion="parent")
+    .about-chandeliers__accordion(data-accordion="element")
+      button.about-chandeliers__head(
+        type="button",
+        data-accordion="button",
+        toggle-button
+      )
+        p!= data.text.prepend.firstPart
+        .about-chandeliers__row
+          .about-chandeliers__read-more Читать дальше
+          .about-chandeliers__hide скрыть
+          +icon("arrow-down", 24, 15)
+      .about-chandeliers__body(data-accordion="content")
+        p!= data.text.prepend.secondPart
+        include ./about-chandeliers-first-part-text
+        div.images-row
+          +picture("content/about-chandeliers", "image-1", "jpg", 320, 240)
+          +picture("content/about-chandeliers", "image-2", "jpg", 320, 240)
+          +picture("content/about-chandeliers", "image-3", "jpg", 320, 240)
+        include ./about-chandeliers-second-part-text

@@ -1,0 +1,11 @@
+mixin modal-authorization()
+  .modal-authorization
+    h2.title-2.modal-authorization__title Авторизация
+    div(data-validate).modal-authorization__form
+      form(method="get" action="#")
+        .modal-authorization__input-wrapper
+          +custom-input({inputLabel: "Введите ИНН (для Юр.лица):", inputError: "Неверный ИНН", inputName: "user-tax", inputMinLength: "10", inputMaxLength: "10"})(data-limitations="digit").custom-input--label-on-top.custom-input--grey
+          +custom-input({inputLabel: "Введите телефон (для Физ.лица):", inputType: "tel", inputPlaceholder: "70000000000", inputMinLength: "11", inputMaxLength: "11", inputError: "Введите телефон", inputName: "user-phone"})(data-limitations="digit").custom-input--label-on-top.custom-input--grey
+          +custom-input({inputLabel: "Пароль:", inputType: "password", inputName: "user-password",  inputError: "Не корректный пароль", inputMinLength: "4"})(data-validate-type="text").custom-input--label-on-top.custom-input--grey
+        +btn({text: "Войти", type: 'submit'}).btn--primary
+    +link({text: "Восстановить пароль", href: "#"}).link--underline

@@ -1,0 +1,18 @@
+mixin might-like()
+  include ./might-like__category-list
+  include ./might-like__filters
+  include ./might-like-data
+
+  section.might-like
+    .might-like__content(data-tabs="parent")
+      .container
+        +section-heading({text: "Вам также может понравится", isOnlyText: true}).might-like__section-heading
+        +might-like__category-list({tabs: true,})
+      div(data-tabs="content")
+        each item, index in Array(3)
+          div(data-tabs="element").might-like__tab-element
+            +might-like__filters({filtersList})
+            +slider-cards()(data-slider-cards="slider").slider-cards--type-slider.container
+              each card in cards.slider.slice(index * 2)
+                .slider-cards__swiper-slide.swiper-slide
+                  +product-card(card)

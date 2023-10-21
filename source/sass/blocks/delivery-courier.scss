@@ -1,0 +1,134 @@
+.delivery-courier {
+  display: grid;
+  row-gap: size(24px);
+  column-gap: size(20px);
+  grid-template-columns: 1fr size(340px);
+  width: 100%;
+
+  @include vp-1279 {
+    grid-template-columns: repeat(2, minmax(456px, 1fr));
+  }
+
+  @include vp-1023 {
+    grid-template-columns: repeat(2, minmax(344px, 1fr));
+    gap: size(24px) size(16px);
+  }
+
+  @include vp-767 {
+    grid-template-columns: 1fr auto;
+    gap: size(16px);
+  }
+
+  &__title,
+  &__delivery-adress-input,
+  &__wrap-delivery-adress,
+  &__comment,
+  &__contactless-delivery {
+    grid-column: 1 / 1;
+  }
+
+  &__delivery-adress-input,
+  &__wrap-delivery-adress,
+  &__comment,
+  &__contactless-delivery {
+    @include vp-767 {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__delivery-adress-input,
+  &__delivery-map {
+    @include vp-767 {
+      display: none;
+    }
+  }
+
+  &__delivery-map {
+    grid-column: 2 / -1;
+    grid-row: 2 / span 4;
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 24px;
+    color: $color-fiord;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    @include vp-767 {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__wrap-delivery-adress {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(48px, auto);
+    grid-auto-columns: minmax(96px, auto);
+    grid-gap: size(8px);
+    align-items: flex-start;
+
+    @include vp-767 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__delivery-city,
+  &__delivery-street {
+    grid-column: 1 / -1;
+  }
+
+  &__delivery-adress-input {
+    min-height: size(48px);
+  }
+
+  &__comment {
+    min-height: size(135px);
+  }
+
+  &__contactless-delivery {
+    justify-self: flex-start;
+    // min-height: 24px; // временно
+  }
+
+  &__map-button {
+    display: none;
+
+    @include vp-767 {
+      padding: size(5px) size(6px);
+      padding-left: size(8px);
+      display: flex;
+
+      font-size: size(14px);
+      line-height: size(18px);
+    }
+
+    .icon {
+      margin-right: size(6px);
+    }
+  }
+
+  &__delivery-porch.custom-input--simple-type {
+    .custom-input__label {
+      @include vp-1599 {
+        color: transparent;
+      }
+
+      &::before {
+        content: "Пд.";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        color: transparent;
+
+        @include vp-1599 {
+          color: $color-bermuda-grey;
+        }
+      }
+    }
+  }
+}

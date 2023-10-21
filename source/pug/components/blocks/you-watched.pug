@@ -1,0 +1,25 @@
+mixin you-watched()
+  -
+    const card = {
+      properties: ["вариант 1", "15 x 21 мм"],
+      isSliderCard: true,
+      isAvailable: true,
+      isOldPrice: true,
+      isDiscount: true,
+      isItemNew: true,
+      isVideo: true,
+      isSaleItem: true,
+      isShowNumberProduct: true,
+      isFavorites: true,
+      isMatching: true,
+    }
+
+  - const cardCounter = 8;
+  section.you-watched
+    +section-heading({
+      text: "Вы смотрели",
+    }).container
+    +slider-cards()(data-slider-cards="slider").slider-cards--type-slider.container
+      - for (let i = 0; i < cardCounter; i++)
+          .slider-cards__swiper-slide.swiper-slide
+            +product-card(card)

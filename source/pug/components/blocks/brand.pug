@@ -1,0 +1,67 @@
+mixin brand()
+  include ../mixins/found/found-variables
+
+  -
+    const dataList = [
+      {
+        title: "Все",
+      },
+      {
+        title: "Подвесные",
+      },
+      {
+        title: "Светодиодные",
+      },
+      {
+        title: "Для натяжных потолков",
+      },
+      {
+        title: "Подвесные",
+      },
+      {
+        title: "С пультом",
+      }
+    ]
+
+  section.brand
+    +section-heading({text: "MW-LIGHT", info: "254 товаров", isAddSpanText: true}).container
+    .container
+      .brand__info
+        +about-brand()
+      .brand__slider
+        h2.title.title--h3 Товары представлены в&nbsp;категориях:
+        +slider-list(dataList)
+
+    .choice.container
+      .choice__enabled-filtering-options
+        +filter-btn(['Тип: Подвесные', 'Тип: Каскадные', 'Площадь освещения, м2: 6-10',])
+      .choice__filters
+        +filters-brand()
+      .choice__sorting-mobile
+        +filter-select-list()
+      .choice__row
+        .choice__sorting-desktop
+          +filter-select-list()
+        .found
+          .found__row
+            +product-card(cardSimple)
+            +product-card(card)
+            +product-card(cardSimple)
+            - for (let i = 0; i < 2; i++)
+              +product-card(cardSimple)
+            +product-card(card)
+            - for (let i = 0; i < 2; i++)
+              +product-card(cardSimple)
+            - for (let i = 0; i < 2; i++)
+              +product-card(card)
+            - for (let i = 0; i < 2; i++)
+              +product-card(cardSimple)
+            +product-card(card)
+            +product-card(cardSimple)
+            - for (let i = 0; i < 6; i++)
+              +product-card(card)
+          +btn({text: "Показать еще"}).found__more-btn
+          .found__bottom-row
+            +pagination()
+            +go-page()
+        +about-chandeliers()

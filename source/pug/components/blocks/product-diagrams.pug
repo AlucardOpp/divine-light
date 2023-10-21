@@ -1,0 +1,8 @@
+mixin product-diagrams(rating, ratingList, criterionList)
+  section.product-diagrams
+    +product-rating(rating)
+    +reviews-number(ratingList)
+
+    +btn({text: "Написать отзыв", href: "#"})(data-open-modal="authorization").product-diagrams__btn.btn--padding-16.btn--wight-medium.btn--size-medium.btn--width100
+
+    +criteria-rating(criterionList)

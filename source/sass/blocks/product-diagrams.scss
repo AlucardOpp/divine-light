@@ -1,0 +1,44 @@
+.product-diagrams {
+  margin-right: size(120px);
+
+  @include vp-1439 {
+    margin-right: size(96px);
+    width: size(264px);
+  }
+
+  @include vp-1279 {
+    width: size(298px);
+    margin-right: size(80px);
+  }
+
+
+  @include vp-1023 {
+    width: 100%;
+    margin-right: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  @include vp-767 {
+    flex-direction: column;
+    margin-bottom: size(35px);
+  }
+}
+
+.product-diagrams__btn {
+  width: 100%;
+  
+  @include vp-1023 {
+    margin-bottom: size(37px);
+    order: 1;
+    font-size: size(16px);
+    line-height: size(22px);
+  }
+
+  @include vp-767 {
+    max-width: 360px;
+    // min-width: 270px;
+    order: 0;
+    margin-bottom: size(31px);
+  }
+}

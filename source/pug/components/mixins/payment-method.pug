@@ -1,0 +1,19 @@
+mixin payment-method()
+  section.payment-method()&attributes(attributes)
+    h2.payment-method__title Способ оплаты
+    div.payment-method__list.scaffold-color(radio-buttons="parent")
+      +btn({href:"#"}).btn--true-light.payment-method__item(radio-buttons="element").is-active
+        .payment-method__item-big-image
+          +picture('content', 'sbp-logo', 'png', 96, 48, 'Логотип СБП платежной системы')
+      +btn({href:"#"}).btn--true-light.payment-method__item(radio-buttons="element")
+        h2.payment-method__item-title Картой онлайн
+        .payment-method__item-image-list
+          +icon('mir-logo', 24, 24).payment-method__item-small-image
+          +icon('mastercard-logo', 24, 24).payment-method__item-small-image
+          +icon('visa-logo', 24, 24).payment-method__item-small-image
+      +btn({href:"#"}).btn--true-light.payment-method__item(radio-buttons="element")
+        h2.payment-method__item-title При получении
+        p.payment-method__item-desc Наличными курьеру, СБП&nbsp;или&nbsp;картой
+      +btn({href:"#"}).btn--true-light.payment-method__item(radio-buttons="element")
+        h2.payment-method__item-title Банковский перевод
+        p.payment-method__item-desc Оплата по счету

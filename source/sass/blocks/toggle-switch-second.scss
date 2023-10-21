@@ -1,0 +1,68 @@
+.toggle-switch-second {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+
+  &:hover input:checked + .toggle-switch-second__toggle-switch {
+    background-color: $color-golden-yellow;
+  }
+
+  &:hover .toggle-switch-second__toggle-switch {
+    background-color: $color-pattens-blue-2;
+  }
+
+  @include has-hover {
+    &:hover .toggle-switch-second__toggle-switch-label {
+      color: rgba($color-fiord, 0.7);
+    }
+  }
+
+  &__toggle-switch {
+    width: 40px;
+    height: 24px;
+    margin: 0;
+    margin-right: 8px;
+    padding: 4px;
+    overflow: visible;
+
+    background-color: $color-pattens-blue;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+
+    transition: $trans-default;
+    transition-property: background-color;
+  }
+
+  input:checked + &__toggle-switch {
+    background-color: $color-lemon;
+
+    &:hover {
+      background-color: rgba($color-pattens-blue, 0.5);
+    }
+  }
+
+  &__switcher {
+    width: 16px;
+    height: 16px;
+
+    background-color: $color-default-white;
+    border-radius: 50%;
+
+    transition: $trans-default;
+    transition-property: transform, background-color;
+  }
+
+  input:checked ~ &__toggle-switch &__switcher {
+    transform: translate(16px);
+  }
+
+  &__toggle-switch-label {
+    font-size: 14px;
+    line-height: 18px;
+    color: $color-fiord;
+
+    transition: $trans-default;
+    transition-property: color;
+  }
+}

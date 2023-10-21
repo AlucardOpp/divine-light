@@ -1,0 +1,145 @@
+.select-pickup-point {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+
+  &__column {
+    display: grid;
+    width: 100%;
+    margin-bottom: size(24px);
+
+    gap: size(24px) 0;
+
+    @include vp-1023 {
+      margin-bottom: size(24px);
+    }
+
+    @include vp-767 {
+      gap: 0;
+    }
+  }
+
+  &__title,
+  &__search-input,
+  &__checkbox-list {
+    grid-column: 1 / span 1;
+  }
+
+  &__search-input {
+    @include vp-767 {
+      margin-bottom: size(24px);
+      // min-height: size(48px); // временно
+    }
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 0;
+
+    font-weight: 300;
+    font-size: size(18px);
+    line-height: size(24px);
+    color: $color-fiord;
+
+    @include vp-767 {
+      margin-bottom: size(14px);
+    }
+  }
+
+  &__checkbox-list {
+    display: grid;
+    justify-content: flex-start;
+    grid-auto-flow: column;
+    gap: size(26px);
+  }
+
+  &__wrapper {
+    display: flex;
+    width: 100%;
+    height: size(440px);
+
+    @include vp-1023 {
+      height: size(340px);
+    }
+
+    @include vp-767 {
+      height: size(260px);
+    }
+  }
+
+  &__map {
+    flex-grow: 1;
+    flex-shrink: 1;
+    height: 100%;
+
+    border-radius: 12px;
+
+    transition: $trans-default;
+    transition-property: min-height;
+
+    @include vp-1023 {
+      min-width: size(344px);
+    }
+
+    @include vp-767 {
+      min-width: 100%;
+      // min-height: size(260px); // временно;
+    }
+  }
+
+  &__wrapper.is-active {
+    min-height: size(537px);
+
+    @include vp-1023 {
+      min-height: size(387px);
+    }
+
+    @include vp-767 {
+      min-height: size(260px);
+    }
+  }
+
+  &__delivery-locations {
+    position: relative;
+
+    flex-grow: 1;
+    flex-shrink: 0;
+    max-width: 0;
+    max-height: 0;
+    margin-right: 0;
+    overflow: hidden;
+
+    // border-width: 0; // временно
+
+    transition: 0.6s $tf-default;
+    transition-property: max-width, margin-right, opacity, min-height, max-height;
+
+    @include vp-767 {
+      display: none; // временно тут она трансформируется в модалку
+    }
+  }
+
+  &__wrapper.is-active {
+    .select-pickup-point__delivery-locations {
+      width: 100%;
+      max-width: size(348px);
+      max-height: 100%;
+      margin-right: size(12px);
+
+      border-width: size(2px); // временно
+    }
+  }
+
+  &__delivery-locations > .delivery-locations {
+    transition: 0.6s $tf-default;
+    transition-property: min-height;
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    @include vp-767 {
+      display: none;
+    }
+  }
+}

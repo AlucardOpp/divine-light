@@ -1,0 +1,24 @@
+mixin light-header(headerMods, currentUrl, options = {})
+  include ./light-header__logo
+  include ./light-header__payment-security
+  include ./light-header__return-guarantee
+  include ./light-header__return-to-car
+
+  - const isActivePage = options.isActivePage || false;
+  - const isShortTextBtn = isActivePage;
+
+  header.light-header(class=headerMods)
+      if isActivePage
+        .container
+          .light-header__content.container-mini
+            +light-header__logo()
+            +phone-link().light-header__phone
+            +light-header__return-to-car({isShortTextBtn})
+      else
+        .light-header__content.container
+          +light-header__logo()
+          +phone-link().light-header__phone
+          +light-header__return-guarantee()
+          +light-header__payment-security()
+          +light-header__return-to-car({isShortTextBtn})
+

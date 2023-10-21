@@ -1,0 +1,28 @@
+.delivery-transport-company {
+  max-width: 408px;
+
+  &__desc {
+    margin-bottom: size(16px);
+    font-size: size(16px);
+    line-height: size(22px);
+    color: $color-fiord;
+  }
+
+  &__info-message {
+    display: flex;
+    width: fit-content;
+    font-size: size(14px);
+    line-height: size(18px);
+    background-color: $color-ivory;
+    border-radius: size(12px);
+    padding: size(12px);
+  }
+
+  &__bold-text {
+    font-weight: 600;
+  }
+
+  &__icon {
+    margin-right: size(7px);
+  }
+}

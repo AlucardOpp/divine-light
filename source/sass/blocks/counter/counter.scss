@@ -1,0 +1,24 @@
+@import "./counter__button-minus";
+@import "./counter__button-plus";
+@import "./counter__discount-badge";
+@import "./counter__row";
+@import "./counter__quantity-products";
+@import "./counter__quantity-restrictions";
+
+.counter {
+  display: flex;
+  align-items: center;
+
+  .btn {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    border-radius: 8px;
+    color: $color-black-pearl;
+
+    &:disabled {
+      color: $color-spindle-2;
+    }
+  }
+}

@@ -1,0 +1,154 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Список страниц";
+
+block main
+  style.
+    .container {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    h1 {
+      font-size: 24px;
+      line-height: 28px;
+    }
+
+    a {
+      color: rgb(10, 10, 175);
+    }
+
+    li {
+      font-size: 18px;
+      line-height: 22px;
+      margin-bottom: 7px;
+    }
+
+    img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      display: block;
+      margin-bottom: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+
+      ol {
+        padding-left: 20px;
+      }
+
+      ol li {
+        margin-bottom: 15px;
+      }
+    }
+
+  -
+    const pages = [
+      {
+        name: "UI-kit — ui-kit.html",
+        src: "ui-kit.html"
+      },
+      {
+        name: "Главная — index.html",
+        src: "index.html"
+      },
+      {
+        name: "Главная (с авторизацией) — index-login.html",
+        src: "index-login.html"
+      },
+      {
+        name: "Карточка продукта — product-card.html",
+        src: "product-card.html"
+      },
+      {
+        name: "Каталог — catalog.html",
+        src: "catalog.html"
+      },
+      {
+        name: "Корзина — basket.html",
+        src: "basket.html"
+      },
+      {
+        name: "Чекаут(Не авторизован/зареган) — checkout.html",
+        src: "checkout.html"
+      },
+      {
+        name: "Чекаут(Сообщение об ошибке) — checkout-error.html",
+        src: "checkout-error.html"
+      },
+      {
+        name: "Чекаут(Сообщение об успехе) — checkout-success.html",
+        src: "checkout-success.html"
+      },
+      {
+        name: "Чекаут(Информационное сообщение) — checkout-info.html",
+        src: "checkout-info.html"
+      },
+      {
+        name: "Чекаут(в состоянии активации) — active.html",
+        src: "active.html"
+      },
+      {
+        name: "Чекаут(в состоянии активации)-новая — active-new.html",
+        src: "active-new.html"
+      },
+      {
+        name: "Чекаут(выбрал доставку) — checkout-selected.html",
+        src: "checkout-selected.html"
+      },
+      {
+        name: "Оставить отзыв (только если зареган и покупал данный товар) — product-review.html",
+        src: "product-review.html"
+      },
+      {
+        name: "Отзыв клиента заполненный — users-review.html",
+        src: "users-review.html"
+      },
+      {
+        name: "Отзывы клиентов на 5 звезд — great-reviews.html",
+        src: "great-reviews.html"
+      },
+      {
+        name: "Спасибо — thanks.html",
+        src: "thanks.html"
+      },
+      {
+        name: "Карточка товара (новая) — goods.html",
+        src: "goods.html"
+      },
+      {
+        name: "Варианты карточек — cards-list.html",
+        src: "cards-list.html"
+      },
+      {
+        name: "temp — temp.html",
+        src: "temp.html"
+      },
+      {
+        name: "Теги — tag.html",
+        src: "tag.html"
+      },
+      {
+        name: "Бренды — brands.html",
+        src: "brands.html"
+      },
+      {
+        name: "Бренд — brand.html",
+        src: "brand.html"
+      }
+    ]
+
+  main
+    .container
+      img(src="img/content/logo@2x.png", width="300", alt="Логотип проекта")
+      h1 Список страниц
+      ol
+        each page in pages
+          li
+            a(href=page.src)= page.name

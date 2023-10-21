@@ -1,0 +1,14 @@
+mixin filter-btn(data)
+  .filter-btn
+    +filter-type({
+      title: 'Фильтр',
+      })
+    .filter-btn__title-wrap
+      p.filter-btn__title Используются
+      button(type="reset" data-reset-sliders="button").btn.filter-btn__reset Сбросить все
+        +icon('close', 11, 11)
+    .filter-btn__wrap
+      each item in data
+        button(type="button").btn.filter-btn__button
+          span= item
+          +icon('close', 11, 11)

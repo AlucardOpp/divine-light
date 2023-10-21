@@ -1,0 +1,53 @@
+mixin basket-menu()
+  .basket-menu
+    .basket-menu__promo(data-validate)
+      form(method="get" action="#")
+        .basket-menu__input.custom-input.custom-input--simple-type(data-validate-type="text")
+          label
+            input(type="text" name="basket-promo")
+            span!="Есть промокод?"
+          p.basket-menu__invalid!="Указанный промокод не&nbsp;существует или срок его действия истек. Попробуйте указать другой промокод"
+        .basket-menu__promo-btn-wrap
+          button.btn.basket-menu__promo-btn(type="submit")
+            +icon('icon-ok', 19, 13).basket-menu__promo-btn-icon
+            span.basket-menu__promo-btn-text Применить
+    .basket-menu__switch.toggle-switch
+      span.toggle-switch__title Списать #[span.basket-menu__switch-count!="187"] #[span.basket-menu__declination!="бонусов"]
+      .toggle-switch__wrap
+        label
+          input(type="checkbox")
+          span.toggle-switch__round(tabindex='0')
+    ul.basket-menu__info
+      li.basket-menu__info-item
+        span.basket-menu__info-description #[span.basket-menu__info-goods!="10 товаров"] • #[span.basket-menu__info-kg!="35"] кг
+        span.basket-menu__info-price!="15 487 ₽"
+      li.basket-menu__info-item
+        span.basket-menu__info-description!="Скидка"
+        span.basket-menu__info-price.basket-menu__info-price--discount!="- 8 974 ₽"
+      li.basket-menu__info-item
+        span.basket-menu__info-description!="Доставка"
+        .basket-menu__info-price.basket-menu__info-price--starting
+          span!="от 1 ₽"
+          button(type="button" data-tooltip="question").basket-menu__info-delivery
+            +icon("question", 24, 24).basket-menu__info-svg.basket-menu__info-svg--default
+            +icon("question-active", 24, 24).basket-menu__info-svg.basket-menu__info-svg--active
+          .basket-menu__question-popup.visually-hidden(data-tooltip="question-content")
+            p.basket-menu__question-text!="Точная стоимость будет рассчитана после ввода адреса и выбора способа доставки"
+    .basket-menu__total
+      span.basket-menu__total-text!="Общая стоимость"
+      span.basket-menu__total-price!="15 487 ₽"
+    +btn({text: "Перейти к оформлению", href: "#"}).basket-menu__ordering
+  .basket-section__notification.basket-section__notification--delete
+    +icon('notification-delete', 24, 24)
+    .basket-section__notification-text
+      p!="Товар удален"
+  .basket-section__notification.basket-section__notification--connection
+    +icon('notification-error', 24, 24)
+    .basket-section__notification-text
+      p!="Сервер недоступен"
+      span!="Возможно у&nbsp;вас низкая скорость интернета. Попробуйте позже"
+  .basket-section__notification.basket-section__notification--promo
+    +icon('notification-error', 24, 24)
+    .basket-section__notification-text
+      p!="Указанный промокод не&nbsp;существует или срок его действия истек"
+      span!="Попробуйте указать другой промокод"

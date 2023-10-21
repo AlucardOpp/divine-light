@@ -1,0 +1,18 @@
+.tooltip-alert {
+  cursor: pointer;
+
+  &__icon {
+    color: $color-radical-red;
+
+    transition: $trans-default;
+    transition-property: color;
+    width: inherit;
+    height: inherit;
+
+    @include has-hover {
+      &:hover {
+        color: rgba($color-radical-red, 0.7);
+      }
+    }
+  }
+}

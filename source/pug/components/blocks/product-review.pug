@@ -1,0 +1,44 @@
+mixin product-review()
+  -
+    const productImg = {
+      path: 'content/reviews',
+      image: 'thumb-odeon-light',
+      format: 'jpg',
+      width: '80',
+      height: '80',
+      title: "Каскадная люстра Odeon Light 4938/4",
+      altText: "Каскадная люстра Odeon Light 4938/4"
+    }
+  section.product-review.product-review--appearance
+    .container
+      +reviews-header("Ваш отзыв о товаре", "#")
+      +product-img(productImg).product-img--margin
+
+      div(data-validate).product-review__form
+        form(method="post")
+          .product-review__rating
+            p.product-review__title Общая оценка
+            +product-rate({inputName: "stars-empty"}).product-rate--rating-none
+
+          .product-review__criteria
+            p.product-review__title Внешний вид, качество и&nbsp;установка
+            +product-rate({inputName: "appearance", captionName: "Внешний вид"}).product-rate--line-svg
+            +product-rate({inputName: "quality", captionName: "Качество"}).product-rate--line-svg
+            +product-rate({inputName: "installation", captionName: "Легкость установки"}).product-rate--line-svg
+
+          +custom-input({tag: "textarea", style: 'simple', inputLabel: "Комментарий", inputError: 'Напишите несколько слов о товаре'})(data-validate-type="text").product-review__comment
+
+          .product-review__img-container
+            .product-review__user-img.is-hide
+            .product-review__img-upload
+              input(type="file" id="user-images" name="user-images").product-review__upload.visually-hidden
+              label(for="user-images")
+                +icon("load-img", 24, 24)
+                span.product-review__text-upload Нажмите на&nbsp;кнопку или перетащите фото в&nbsp;эту область до&nbsp;
+                  span.product-review__text-number 10
+                  | &nbsp;изображений в&nbsp;формате PNG, JPEG.
+
+          +link({href:"#", text: "Правила публикации", isExternal: true}).link--underline.product-review__publishing-rules
+          .product-review__wrapper-btn
+            +btn({text: "Отменить", type: "reset"}).btn--true-secondary.btn--padding-16.product-review__btn-reset
+            +btn({text: "Отправить отзыв", type: "submit"}).btn--wight-medium.btn--padding-16.product-review__btn-submit

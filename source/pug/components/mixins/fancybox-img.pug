@@ -1,0 +1,6 @@
+mixin fancybox-img(data)
+  .fancybox-img.swiper&attributes(attributes)
+    .swiper-wrapper
+      each img in data
+        .swiper-slide(data-src=img.imgBig)
+          +picture(img.path, img.image, img.format, img.width, img.height, img.altText)

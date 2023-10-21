@@ -1,0 +1,14 @@
+.info-message {
+  display: flex;
+  align-items: flex-start;
+  padding: 8px;
+  background-color: $color-ivory;
+  border-radius: 12px;
+  font-size: 12px;
+  line-height: 16px;
+
+  .icon {
+    margin-right: 5px;
+    flex-shrink: 0;
+  }
+}

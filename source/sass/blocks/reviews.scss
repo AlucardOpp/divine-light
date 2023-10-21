@@ -1,0 +1,256 @@
+.reviews {
+  position: relative;
+
+  @include vp-767 {
+    padding-bottom: 40px;
+  }
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__write-review {
+    position: absolute;
+    top: 16px;
+    left: 0;
+    margin-right: size(24px);
+
+    @include vp-1599 {
+      margin-right: 24px;
+    }
+
+    @include vp-1023 {
+      position: static;
+      margin-bottom: 5px;
+      margin-right: 0;
+    }
+
+    @include vp-767 {
+      margin-right: 0;
+    }
+  }
+
+  &__slider {
+    position: relative;
+    margin-left: size(288px);
+    overflow: hidden;
+
+    @include vp-1599 {
+      margin-left: 288px;
+    }
+
+    @include vp-1023 {
+      margin-right: -32px;
+      margin-left: -32px;
+    }
+
+    @include vp-767 {
+      margin-right: -16px;
+      margin-left: -16px;
+    }
+
+    .swiper-slide {
+      padding-top: size(16px);
+      width: size(336px);
+
+      @include vp-1599 {
+        width: 336px;
+      }
+
+      @include vp-1023 {
+        width: 284px;
+      }
+    }
+
+    .slider-cards__swiper-wrapper {
+      padding-left: size(32px);
+
+      @include vp-1023 {
+        padding-left: 0;
+      }
+    }
+
+    .slider-cards__swiper {
+      padding: 0;
+
+      @include vp-1023 {
+        padding-left: 32px;
+        padding-right: 32px;
+      }
+
+      @include vp-767 {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+    }
+
+    .slider-cards__swiper-button-prev,
+    .slider-cards__swiper-button-next {
+      top: 30%;
+
+      @include vp-1023 {
+        display: none;
+      }
+    }
+
+    .swiper {
+      padding-bottom: size(78px);
+
+      @include vp-1599 {
+        padding-bottom: size(64px);
+      }
+
+      @include vp-1439 {
+        padding-bottom: size(80px);
+      }
+
+      @include vp-1279 {
+        padding-bottom: size(146px);
+      }
+
+      @include vp-1023 {
+        padding-bottom: size(32px);
+      }
+
+      @include vp-767 {
+        padding-bottom: size(24px);
+      }
+    }
+  }
+
+  &__bottom {
+    position: relative;
+
+    @include vp-767 {
+      margin-top: 24px;
+    }
+  }
+
+  &__link {
+    @include vp-767 {
+      display: inline-block;
+      padding: 9px;
+      text-align: center;
+      font-size: 16px;
+      line-height: 22px;
+      border-radius: 12px;
+    }
+
+    &--write {
+      display: none;
+
+      @include vp-767 {
+        background-color: $color-lemon;
+        display: block;
+        margin-bottom: 12px;
+      }
+    }
+
+    &--video {
+      position: absolute;
+      right: size(54px);
+      bottom: -#{64px};
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: size(120px);
+      height: size(120px);
+      background-color: $color-laser-lemon;
+      border-radius: 50%;
+
+      transition: $trans-default;
+      transition-property: color;
+
+      transform: rotate(-20deg);
+
+      @media (hover: hover), screen and (min-width: 0\0) {
+        &:hover,
+        &:focus {
+          color: rgba(0, 30, 52 , 0.7);
+        }
+      }
+
+      @include vp-1599 {
+        width: 120px;
+        height: 120px;
+        right: 83px;
+        bottom: -78px;
+      }
+
+      @include vp-1279 {
+        right: 66px;
+        bottom: -50px;
+      }
+
+      @include vp-1023 {
+        width: 96px;
+        height: 96px;
+        bottom: -52px;
+        right: 46px;
+      }
+
+      @include vp-767 {
+        position: static;
+        transform: none;
+
+        width: 100%;
+        height: auto;
+
+        background-color: $color-ivory;
+      }
+
+      span {
+        display: inline-block;
+        text-align: center;
+        width: size(96px);
+
+        font-size: size(14px);
+        line-height: size(18px);
+
+        @include vp-1599 {
+          width: 96px;
+          font-size: 14px;
+          line-height: 18px;
+        }
+
+        @include vp-1023 {
+          width: 80px;
+          font-size: 12px;
+          line-height: 16px;
+        }
+
+        @include vp-767 {
+          position: static;
+          width: auto;
+
+          font-size: 16px;
+          line-height: 22px;
+          transform: none;
+          color: $color-fiord;
+        }
+      }
+    }
+  }
+
+  .section-heading {
+    margin-bottom: 15px;
+
+    @include vp-1439 {
+      margin-bottom: 14px;
+    }
+
+    @include vp-1279 {
+      margin-bottom: 12px;
+    }
+
+    @include vp-1023 {
+      margin-bottom: 27px;
+    }
+
+    @include vp-767 {
+      margin-bottom: 16px;
+    }
+  }
+}

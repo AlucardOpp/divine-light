@@ -1,0 +1,19 @@
+mixin shopping()
+  include ./shopping-variables
+  include ./shopping__card
+  include ./shopping__badges-list
+  include ./shopping__image
+  include ./shopping__private-number
+  include ./shopping__product-under-order
+  include ./shopping__need-installation
+  include ./shopping__delete-item
+  include ./shopping__gift
+  include ./shopping__withdrawn-sale
+  include ./shopping__title
+  include ./shopping__on-request-button
+
+  section.shopping()&attributes(attributes)
+    h2.visually-hidden Cписок покупок
+    ul.shopping__list
+      each card in cardsOptions
+        +shopping__card(card)

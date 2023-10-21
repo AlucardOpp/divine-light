@@ -1,0 +1,20 @@
+mixin banners()
+  section.banners.container.section()&attributes(attributes)
+    h2.visually-hidden="Баннеры"
+    .banners__swiper
+      .banners__container.swiper
+        ul.banners__list.swiper-wrapper
+          li.banners__item.swiper-slide
+            .banners__image
+              +picture("content/banners", "banners-1", "png", 696, 208, "Изображение баннера")
+          li.banners__item.swiper-slide
+            .banners__image
+              +picture("content/banners", "banners-2", "png", 696, 208, "Изображение баннера")
+          li.banners__item.swiper-slide
+            .banners__image
+              +picture("content/banners", "banners-1", "png", 696, 208, "Изображение баннера")
+          li.banners__item.swiper-slide
+            .banners__image
+              +picture("content/banners", "banners-2", "png", 696, 208, "Изображение баннера")
+        .banners__swiper-button-next.swiper-button-next(data-swiper="button-next")
+        .banners__swiper-button-prev.swiper-button-prev(data-swiper="button-prev")
